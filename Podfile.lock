@@ -1,0 +1,64 @@
+PODS:
+  - AFNetworking (3.2.1):
+    - AFNetworking/NSURLSession (= 3.2.1)
+    - AFNetworking/Reachability (= 3.2.1)
+    - AFNetworking/Security (= 3.2.1)
+    - AFNetworking/Serialization (= 3.2.1)
+    - AFNetworking/UIKit (= 3.2.1)
+  - AFNetworking/NSURLSession (3.2.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.2.1)
+  - AFNetworking/Security (3.2.1)
+  - AFNetworking/Serialization (3.2.1)
+  - AFNetworking/UIKit (3.2.1):
+    - AFNetworking/NSURLSession
+  - AvoidCrash (2.5.2)
+  - FBRetainCycleDetector (0.1.4)
+  - MBProgressHUD (1.1.0)
+  - MJExtension (3.2.1)
+  - MJRefresh (3.3.1)
+  - MLeaksFinder (1.0.0):
+    - FBRetainCycleDetector
+  - PYSearch (0.9.1)
+  - YYKit (1.0.9):
+    - YYKit/no-arc (= 1.0.9)
+  - YYKit/no-arc (1.0.9)
+
+DEPENDENCIES:
+  - AFNetworking
+  - AvoidCrash (~> 2.5.2)
+  - MBProgressHUD
+  - MJExtension
+  - MJRefresh
+  - MLeaksFinder
+  - PYSearch
+  - YYKit
+
+SPEC REPOS:
+  trunk:
+    - AFNetworking
+    - AvoidCrash
+    - FBRetainCycleDetector
+    - MBProgressHUD
+    - MJExtension
+    - MJRefresh
+    - MLeaksFinder
+    - PYSearch
+    - YYKit
+
+SPEC CHECKSUMS:
+  AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
+  AvoidCrash: 28c6916fe19bd2b84126b8dec7cbe61c9a12741d
+  FBRetainCycleDetector: 46f8179bbb1c587deee3ea838a1a3ee02acf5015
+  MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
+  MJExtension: 635f2c663dcb1bf76fa4b715b2570a5710aec545
+  MJRefresh: eeda70fbf0ad277f3178cef1cd0c3532591d6237
+  MLeaksFinder: 8c435bd2f6d070af18cff082b503b21adc130fc0
+  PYSearch: 76dee18eea3309b60921a5d6a69390a63a5dda15
+  YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
+
+PODFILE CHECKSUM: 96c6b2ff9be6fb7ac7b33dd65b362d2a7d1efd79
+
+COCOAPODS: 1.8.4
