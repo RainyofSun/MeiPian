@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "AppDelegate+CatchCrash.h"
+#import "MPMainViewController.h"
 
 @interface AppDelegate ()
 
@@ -51,7 +53,8 @@
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
-    self.window.rootViewController = [[UIViewController alloc] init];
+    self.window.rootViewController = [[MPMainViewController alloc] initWithNibName:@"MPMainViewController" bundle:nil];
+    [self catchCrash];
 }
 
 
