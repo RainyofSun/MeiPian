@@ -1,0 +1,856 @@
+{
+    "config_items": [
+        {
+            "id": "1",
+            "key": "bg_style",
+            "title": "背景样式",
+            "display_style": "1",
+            "default_item": 0,
+            "is_vip":true,
+            "options": [
+                {
+                    "data": {
+                        "bg_style": {
+                            "value": 1,
+                            "ext": {
+                                "article": {
+                                    "fixed": 3,
+                                    "scale": 0.872
+                                },
+                                "caption": {
+                                    "top": 420,
+                                    "topDiff": 108
+                                },
+                                "headGradient": {
+                                    "top": 404,
+                                    "height": 250,
+                                    "opacity": 1,
+                                    "isFullScreen": true
+                                }
+                            }
+                        }
+                    },
+                    "ui_data": {
+                        "icon": "https://ss2.meipian.me/app/image/ctpl/typesetting_style_2.png",
+                        "is_vip":true,
+                        "title": "渐变置顶"
+
+                    },
+                    "grow_data": {
+                        "view_name": "typeset_popup",
+                        "click_name": "mb_style_click",
+                        "ext1": {
+                            "style": "wide_image_gradient"
+                        }
+                    }
+                },
+                {
+                    "data": {
+                        "bg_style": {
+                            "value": 2,
+                            "ext": {
+                                "article": {
+                                    "fixed": 3,
+                                    "scale": 0.667
+                                },
+                                "caption": {
+                                    "top": 396,
+                                    "topDiff": 108
+                                },
+                                "arcBg": {
+                                    "top": 460,
+                                    "height": 500000,
+                                    "opacity": 1,
+                                    "shadow": true
+                                }
+                            }
+                        }
+                    },
+                    "ui_data": {
+                        "icon": "https://ss2.meipian.me/app/image/ctpl/typesetting_style_1.png",
+                        "is_vip":true,
+                        "title": "宽图置顶"
+                    },
+                    "grow_data": {
+                        "view_name": "typeset_popup",
+                        "click_name": "mb_style_click",
+                        "ext1": {
+                            "style": "wide_image_card"
+                        }
+                    }
+                },
+                {
+                    "data": {
+                        "bg_style": {
+                            "value": 3,
+                            "ext": {
+                                "article": {
+                                    "fixed": 4,
+                                    "scale": 0,
+                                    "padding": 30
+                                },
+                                "caption": {
+                                    "top": 366,
+                                    "topDiff": 108
+                                },
+                                "arcBg": {
+                                    "top": 430,
+                                    "height": 30000,
+                                    "opacity": 0.85,
+                                    "allradius": true
+                                }
+                            }
+                        }
+                    },
+                    "ui_data": {
+                        "icon": "https://ss2.meipian.me/app/image/ctpl/typesetting_style_3.png",
+                        "is_vip":true,
+                        "title": "长图卡片"
+                    },
+                    "grow_data": {
+                        "view_name": "typeset_popup",
+                        "click_name": "mb_style_click",
+                        "ext1": {
+                            "style": "long_image_card"
+                        }
+                    }
+                },
+                {
+                    "data": {
+                        "bg_style": {
+                            "value": 4,
+                            "ext": {
+                                "article": {
+                                    "fixed": 4,
+                                    "scale": 0
+                                },
+                                "caption": {
+                                    "top": 420,
+                                    "topDiff": 108
+                                },
+                                "headGradient": {
+                                    "top": 420,
+                                    "height": 258,
+                                    "opacity": 0.5,
+                                    "isFullScreen": true
+                                }
+                            }
+                        }
+                    },
+                    "ui_data": {
+                        "icon": "https://ss2.meipian.me/app/image/ctpl/typesetting_style_4.png",
+                        "is_vip":true,
+                        "title": "长图模糊"
+                    },
+                    "grow_data": {
+                        "view_name": "typeset_popup",
+                        "click_name": "mb_style_click",
+                        "ext1": {
+                            "style": "long_image_hazy"
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "id": "2",
+            "key": "color_tpl",
+            "title": "背景颜色",
+            "display_style": "2",
+            "default_item": 0,
+            "is_vip":true,
+            "options": [
+                {
+                    "data": {
+                        "color_tpl": {
+                            "value": 1,
+                            "ext": {
+                                "colors": {
+                                    "s1": "#191919",
+                                    "s2": "#757575",
+                                    "s3": "#2F92FF",
+                                    "s4": "#ff6c18",
+                                    "s5": "#ffffff",
+                                    "s6": "#E4E4E4"
+                                },
+                                "editor": [
+                                    "#191919",
+                                    "#9B9B9B",
+                                    "#ED2308",
+                                    "#FF8A00",
+                                    "#39B54A",
+                                    "#167EFB",
+                                    "#B06FBB"
+                                ]
+                            }
+                        }
+                    },
+                    "ui_data": {
+                        "color": "#ffffff",
+                        "border_color": "#D7D9DE",
+                        "is_vip":true,
+                        "selected_color": "#F1F2F6"
+                    },
+                    "grow_data": {
+                        "view_name": "typeset_popup",
+                        "click_name": "background_color_click",
+                        "ext1": {
+                            "color": "#ffffff"
+                        }
+                    }
+                },
+                {
+                    "data": {
+                        "color_tpl": {
+                            "value": 12,
+                            "ext": {
+                                "colors": {
+                                    "s1": "#E4E4E4",
+                                    "s2": "#9B9B9B",
+                                    "s3": "#2F92FF",
+                                    "s4": "#FF6C18",
+                                    "s5": "#191919",
+                                    "s6": "#FFFFFF"
+                                },
+                                "editor": [
+                                    "#E4E4E4",
+                                    "#9B9B9B",
+                                    "#ED2308",
+                                    "#FF8A00",
+                                    "#39B54A",
+                                    "#167EFB",
+                                    "#B06FBB"
+                                ]
+                            }
+                        }
+                    },
+                    "ui_data": {
+                        "color": "#191919",
+                        "is_vip":true,
+                        "selected_color": "#F1F2F6"
+                    },
+                    "grow_data": {
+                        "view_name": "typeset_popup",
+                        "click_name": "background_color_click",
+                        "ext1": {
+                            "color": "#191919"
+                        }
+                    }
+                },
+                {
+                    "data": {
+                        "color_tpl": {
+                            "value": 2,
+                            "ext": {
+                                "colors": {
+                                    "s1": "#295826",
+                                    "s2": "#649061",
+                                    "s3": "#2F92FF",
+                                    "s4": "#FF6C18",
+                                    "s5": "#BDE5BB",
+                                    "s6": "#FFFFFF"
+                                },
+                                "editor": [
+                                    "#295826",
+                                    "#84B581",
+                                    "#ED2308",
+                                    "#FF8A00",
+                                    "#39B54A",
+                                    "#167EFB",
+                                    "#B06FBB"
+                                ]
+                            }
+                        }
+                    },
+                    "ui_data": {
+                        "color": "#BDE5BB",
+                        "is_vip":true,
+                        "selected_color": "#F1F2F6"
+                    },
+                    "grow_data": {
+                        "view_name": "typeset_popup",
+                        "click_name": "background_color_click",
+                        "ext1": {
+                            "color": "#BDE5BB"
+                        }
+                    }
+                },
+                {
+                    "data": {
+                        "color_tpl": {
+                            "value": 3,
+                            "ext": {
+                                "colors": {
+                                    "s1": "#FFFFE5",
+                                    "s2": "#BED7AC",
+                                    "s3": "#F1CD64",
+                                    "s4": "#FF6C18",
+                                    "s5": "#3E763A",
+                                    "s6": "#FFFFFF"
+                                },
+                                "editor": [
+                                    "#FFFFE5",
+                                    "#BED7AC",
+                                    "#ED2308",
+                                    "#FF8A00",
+                                    "#39B54A",
+                                    "#59A4FF",
+                                    "#B06FBB"
+                                ]
+                            }
+                        }
+                    },
+                    "ui_data": {
+                        "color": "#3E763A",
+                        "is_vip":true,
+                        "selected_color": "#F1F2F6"
+                    },
+                    "grow_data": {
+                        "view_name": "typeset_popup",
+                        "click_name": "background_color_click",
+                        "ext1": {
+                            "color": "#3E763A"
+                        }
+                    }
+                },
+                {
+                    "data": {
+                        "color_tpl": {
+                            "value": 10,
+                            "ext": {
+                                "colors": {
+                                    "s1": "#1A3D3F",
+                                    "s2": "#5E9A9D",
+                                    "s3": "#2F92FF",
+                                    "s4": "#FF6C18",
+                                    "s5": "#A0E7ED",
+                                    "s6": "#FFFFFF"
+                                },
+                                "editor": [
+                                    "#1A3D3F",
+                                    "#5E9A9D",
+                                    "#ED2308",
+                                    "#FF8A00",
+                                    "#39B54A",
+                                    "#167EFB",
+                                    "#B06FBB"
+                                ]
+                            }
+                        }
+                    },
+                    "ui_data": {
+                        "color": "#A0E7ED",
+                        "is_vip":true,
+                        "selected_color": "#F1F2F6"
+                    },
+                    "grow_data": {
+                        "view_name": "typeset_popup",
+                        "click_name": "background_color_click",
+                        "ext1": {
+                            "color": "#A0E7ED"
+                        }
+                    }
+                },
+                {
+                    "data": {
+                        "color_tpl": {
+                            "value": 9,
+                            "ext": {
+                                "colors": {
+                                    "s1": "#2F5977",
+                                    "s2": "#8BB5D2",
+                                    "s3": "#2F92FF",
+                                    "s4": "#FF6C18",
+                                    "s5": "#CBE7FB",
+                                    "s6": "#FFFFFF"
+                                },
+                                "editor": [
+                                    "#2F5977",
+                                    "#8BB5D2",
+                                    "#ED2308",
+                                    "#FF8A00",
+                                    "#39B54A",
+                                    "#167EFB",
+                                    "#B06FBB"
+                                ]
+                            }
+                        }
+                    },
+                    "ui_data": {
+                        "color": "#CBE7FB",
+                        "is_vip":true,
+                        "selected_color": "#F1F2F6"
+                    },
+                    "grow_data": {
+                        "view_name": "typeset_popup",
+                        "click_name": "background_color_click",
+                        "ext1": {
+                            "color": "#CBE7FB"
+                        }
+                    }
+                },
+                {
+                    "data": {
+                        "color_tpl": {
+                            "value": 11,
+                            "ext": {
+                                "colors": {
+                                    "s1": "#0D242F",
+                                    "s2": "#4888A7",
+                                    "s3": "#2F92FF",
+                                    "s4": "#FF6C18",
+                                    "s5": "#74C7F0",
+                                    "s6": "#FFFFFF"
+                                },
+                                "editor": [
+                                    "#0D242F",
+                                    "#4888A7",
+                                    "#ED2308",
+                                    "#FF8A00",
+                                    "#39B54A",
+                                    "#167EFB",
+                                    "#B06FBB"
+                                ]
+                            }
+                        }
+                    },
+                    "ui_data": {
+                        "color": "#74C7F0",
+                        "is_vip":true,
+                        "selected_color": "#F1F2F6"
+                    },
+                    "grow_data": {
+                        "view_name": "typeset_popup",
+                        "click_name": "background_color_click",
+                        "ext1": {
+                            "color": "#74C7F0"
+                        }
+                    }
+                },
+                {
+                    "data": {
+                        "color_tpl": {
+                            "value": 4,
+                            "ext": {
+                                "colors": {
+                                    "s1": "#390661",
+                                    "s2": "#7955A7",
+                                    "s3": "#2F92FF",
+                                    "s4": "#FF6C18",
+                                    "s5": "#D6C7FF",
+                                    "s6": "#FFFFFF"
+                                },
+                                "editor": [
+                                    "#390661",
+                                    "#7955A7",
+                                    "#ED2308",
+                                    "#FF8A00",
+                                    "#39B54A",
+                                    "#167EFB",
+                                    "#B06FBB"
+                                ]
+                            }
+                        }
+                    },
+                    "ui_data": {
+                        "color": "#D6C7FF",
+                        "is_vip":true,
+                        "selected_color": "#F1F2F6"
+                    },
+                    "grow_data": {
+                        "view_name": "typeset_popup",
+                        "click_name": "background_color_click",
+                        "ext1": {
+                            "color": "#D6C7FF"
+                        }
+                    }
+                },
+                {
+                    "data": {
+                        "color_tpl": {
+                            "value": 5,
+                            "ext": {
+                                "colors": {
+                                    "s1": "#4B2320",
+                                    "s2": "#9F7662",
+                                    "s3": "#2F92FF",
+                                    "s4": "#FF6C18",
+                                    "s5": "#FFDEB3",
+                                    "s6": "#FFFFFF"
+                                },
+                                "editor": [
+                                    "#4B2320",
+                                    "#9F7662",
+                                    "#ED2308",
+                                    "#FF8A00",
+                                    "#39B54A",
+                                    "#167EFB",
+                                    "#B06FBB"
+                                ]
+                            }
+                        }
+                    },
+                    "ui_data": {
+                        "color": "#FFDEB3",
+                        "is_vip":true,
+                        "selected_color": "#F1F2F6"
+                    },
+                    "grow_data": {
+                        "view_name": "typeset_popup",
+                        "click_name": "background_color_click",
+                        "ext1": {
+                            "color": "#FFDEB3"
+                        }
+                    }
+                },
+                {
+                    "data": {
+                        "color_tpl": {
+                            "value": 6,
+                            "ext": {
+                                "colors": {
+                                    "s1": "#4B2320",
+                                    "s2": "#C28A8C",
+                                    "s3": "#2F92FF",
+                                    "s4": "#FF6C18",
+                                    "s5": "#FEDEE3",
+                                    "s6": "#FFFFFF"
+                                },
+                                "editor": [
+                                    "#4B2320",
+                                    "#C28A8C",
+                                    "#ED2308",
+                                    "#FF8A00",
+                                    "#39B54A",
+                                    "#167EFB",
+                                    "#B06FBB"
+                                ]
+                            }
+                        }
+                    },
+                    "ui_data": {
+                        "color": "#FEDEE3",
+                        "is_vip":true,
+                        "selected_color": "#F1F2F6"
+                    },
+                    "grow_data": {
+                        "view_name": "typeset_popup",
+                        "click_name": "background_color_click",
+                        "ext1": {
+                            "color": "#FEDEE3"
+                        }
+                    }
+                },
+                {
+                    "data": {
+                        "color_tpl": {
+                            "value": 7,
+                            "ext": {
+                                "colors": {
+                                    "s1": "#FFEBE8",
+                                    "s2": "#F7ADA1",
+                                    "s3": "#FFEA94",
+                                    "s4": "#FFAD02",
+                                    "s5": "#EF4930",
+                                    "s6": "#FFFFFF"
+                                },
+                                "editor": [
+                                    "#FFEBE8",
+                                    "#F7ADA1",
+                                    "#AF1500",
+                                    "#FF9921",
+                                    "#39B54A",
+                                    "#167EFB",
+                                    "#AF21C7"
+                                ]
+                            }
+                        }
+                    },
+                    "ui_data": {
+                        "color": "#EF4930",
+                        "is_vip":true,
+                        "selected_color": "#F1F2F6"
+                    },
+                    "grow_data": {
+                        "view_name": "typeset_popup",
+                        "click_name": "background_color_click",
+                        "ext1": {
+                            "color": "#EF4930"
+                        }
+                    }
+                },
+                {
+                    "data": {
+                        "color_tpl": {
+                            "value": 8,
+                            "ext": {
+                                "colors": {
+                                    "s1": "#FFE3E1",
+                                    "s2": "#F2A9A2",
+                                    "s3": "#FFEA94",
+                                    "s4": "#FF6C18",
+                                    "s5": "#B9372B",
+                                    "s6": "#FFFFFF"
+                                },
+                                "editor": [
+                                    "#FFE3E1",
+                                    "#F2A9A2",
+                                    "#FF3F25",
+                                    "#FF8A00",
+                                    "#39B54A",
+                                    "#167EFB",
+                                    "#B06FBB"
+                                ]
+                            }
+                        }
+                    },
+                    "ui_data": {
+                        "color": "#B9372B",
+                        "is_vip":true,
+                        "selected_color": "#F1F2F6"
+                    },
+                    "grow_data": {
+                        "view_name": "typeset_popup",
+                        "click_name": "background_color_click",
+                        "ext1": {
+                            "color": "#B9372B"
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "id": "3",
+            "key": "caption_style",
+            "title": "头像和昵称",
+            "display_style": "3",
+            "default_item": 1,
+            "is_vip":true,
+            "options": [
+                {
+                    "data": {
+                        "caption_style": {
+                            "value": 1,
+                            "ext": {
+                                "caption": {
+                                    "style": 1
+                                }
+                            }
+                        }
+                    },
+                    "ui_data": {
+                        "icon": "https://ss2.meipian.me/app/image/ctpl/typesetting_name_left_unselect.png",
+                        "selected_icon": "https://ss2.meipian.me/app/image/ctpl/typesetting_name_left_select.png",
+                        "is_vip":true,
+                        "title": "左对齐"
+                    },
+                    "grow_data": {
+                        "view_name": "typeset_popup",
+                        "click_name": "head_nickname_click",
+                        "ext1": {
+                            "style": "left"
+                        }
+                    }
+                },
+                {
+                    "data": {
+                        "caption_style": {
+                            "value": 2,
+                            "ext": {
+                                "caption": {
+                                    "style": 2
+                                }
+                            }
+                        }
+                    },
+                    "ui_data": {
+                        "icon": "https://ss2.meipian.me/app/image/ctpl/typesetting_name_centre_unselect.png",
+                        "selected_icon": "https://ss2.meipian.me/app/image/ctpl/typesetting_name_centre_select.png",
+                        "is_vip":true,
+                        "title": "居中"
+                    },
+                    "grow_data": {
+                        "view_name": "typeset_popup",
+                        "click_name": "head_nickname_click",
+                        "ext1": {
+                            "style": "center"
+                        }
+                    }
+                },
+                {
+                    "data": {
+                        "caption_style": {
+                            "value": 3,
+                            "ext": {
+                                "caption": {
+                                    "style": 3
+                                }
+                            }
+                        }
+                    },
+                    "ui_data": {
+                        "icon": "https://ss2.meipian.me/app/image/ctpl/typesetting_name_empty_unselect.png",
+                        "selected_icon": "https://ss2.meipian.me/app/image/ctpl/typesetting_name_empty_select.png",
+                        "is_vip":true,
+                        "title": "无"
+                    },
+                    "grow_data": {
+                        "view_name": "typeset_popup",
+                        "click_name": "head_nickname_click",
+                        "ext1": {
+                            "style": "none"
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "id": "4",
+            "key": "img_style",
+            "title": "图片排布",
+            "display_style": "3",
+            "default_item": 0,
+            "is_vip":true,
+            "options": [
+                {
+                    "data": {
+                        "img_style": {
+                            "value": 1,
+                            "ext": {
+                                "images": {
+                                    "type": 0,
+                                    "style": 1
+                                }
+                            }
+                        }
+                    },
+                    "ui_data": {
+                        "icon": "https://ss2.meipian.me/app/image/ctpl/typesetting_pic_normal_unselect.png",
+                        "selected_icon": "https://ss2.meipian.me/app/image/ctpl/typesetting_pic_normal_select.png",
+                        "is_vip":true,
+                        "title": "直角"
+                    },
+                    "grow_data": {
+                        "view_name": "typeset_popup",
+                        "click_name": "image_pb_click",
+                        "ext1": {
+                            "style": "no_tonglan"
+                        }
+                    }
+                },
+                {
+                    "data": {
+                        "img_style": {
+                            "value": 2,
+                            "ext": {
+                                "images": {
+                                    "style": 0,
+                                    "type": 0
+                                }
+                            }
+                        }
+                    },
+                    "ui_data": {
+                        "icon": "https://ss2.meipian.me/app/image/ctpl/typesetting_pic_full_unselect.png",
+                        "selected_icon": "https://ss2.meipian.me/app/image/ctpl/typesetting_pic_full_select.png",
+                        "is_vip":true,
+                        "title": "通栏"
+                    },
+                    "grow_data": {
+                        "view_name": "typeset_popup",
+                        "click_name": "image_pb_click",
+                        "ext1": {
+                            "style": "tonglan"
+                        }
+                    }
+                },
+                {
+                    "data": {
+                        "img_style": {
+                            "value": 3,
+                            "ext": {
+                                "images": {
+                                    "style": 1,
+                                    "type": 1
+                                }
+                            }
+                        }
+                    },
+                    "ui_data": {
+                        "icon": "https://ss2.meipian.me/app/image/ctpl/typesetting_pic_circle_unselect.png",
+                        "selected_icon": "https://ss2.meipian.me/app/image/ctpl/typesetting_pic_circle_select.png",
+                        "is_vip":true,
+                        "title": "圆角"
+                    },
+                    "grow_data": {
+                        "view_name": "typeset_popup",
+                        "click_name": "image_pb_click",
+                        "ext1": {
+                            "style": "no_tonglan"
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "id": "5",
+            "key": "text_direction",
+            "title": "文字排布",
+            "display_style": "3",
+            "default_item": 0,
+            "is_vip":false,
+            "options": [
+                {
+                    "data": {
+                        "text_direction": {
+                            "value": 1,
+                            "ext": {
+                                "article": {
+                                    "text_direction": 1
+                                }
+                            }
+                        }
+                    },
+                    "ui_data": {
+                        "icon": "https://ss2.meipian.me/app/image/ctpl/typesetting_word_up_unselect.png",
+                        "selected_icon": "https://ss2.meipian.me/app/image/ctpl/typesetting_word_up_select.png",
+                        "is_vip":false,
+                        "title": "字上图下"
+                    },
+                    "grow_data": {
+                        "view_name": "typeset_popup",
+                        "click_name": "text_pb_click",
+                        "ext1": {
+                            "style": "zstx"
+                        }
+                    }
+                },
+                {
+                    "data": {
+                        "text_direction": {
+                            "value": 2,
+                            "ext": {
+                                "article": {
+                                    "text_direction": 2
+                                }
+                            }
+                        }
+                    },
+                    "ui_data": {
+                        "icon": "https://ss2.meipian.me/app/image/ctpl/typesetting_word_down_unselect.png",
+                        "selected_icon": "https://ss2.meipian.me/app/image/ctpl/typesetting_word_down_select.png",
+                        "is_vip":false,
+                        "title": "字下图上"
+                    },
+                    "grow_data": {
+                        "view_name": "typeset_popup",
+                        "click_name": "text_pb_click",
+                        "ext1": {
+                            "style": "zxts"
+                        }
+                    }
+                }
+            ]
+        }
+    ]
+}

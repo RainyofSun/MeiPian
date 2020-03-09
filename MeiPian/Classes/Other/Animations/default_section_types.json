@@ -1,0 +1,49 @@
+{
+  "show": [
+
+    {
+      "icon": "",
+      "title": "文字",
+      "name": "text",
+      "disable": 0
+    },
+    {
+      "icon": "",
+      "title": "图片",
+      "name": "image",
+      "disable": 0
+    },
+    {
+      "icon": "",
+      "title": "视频",
+      "name": "video",
+      "disable": 0
+    },
+    {
+      "icon": "",
+      "title": "拼图",
+      "name": "image_collage",
+      "disable": 0
+    }
+  ],
+  "hide": [
+    {
+      "icon": "",
+      "title": "位置",
+      "name": "location",
+      "disable": 0
+    },
+    {
+      "icon": "",
+      "title": "标题",
+      "name": "title",
+      "disable": 0
+    },
+    {
+      "icon": "",
+      "title": "投票",
+      "name": "vote",
+      "disable": 0
+    }
+  ]
+}

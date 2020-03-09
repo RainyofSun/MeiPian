@@ -1,0 +1,65 @@
+{
+    "common_resource_zip_url": "https://ss2.meipian.me/subtitle/subtitle_edit_resource_v34.zip",
+    "style_list": [
+        {
+            "id": 1,
+            "name": "优雅",
+            "cover_img_url": "https://ss2.meipian.me/subtitle/cover/subtitle_style01@2x.png",
+            "status": 0
+        },
+        {
+            "id": 2,
+            "name": "谷雨时节",
+            "cover_img_url": "https://ss2.meipian.me/subtitle/cover/subtitle_style02@2x.png",
+            "status": 0
+        },
+        {
+            "id": 3,
+            "name": "一起旅行",
+            "cover_img_url": "https://ss2.meipian.me/subtitle/cover/subtitle_style03@2x.png",
+            "status": 0
+        },
+        {
+            "id": 4,
+            "name": "环游世界",
+            "cover_img_url": "https://ss2.meipian.me/subtitle/cover/subtitle_style04@2x.png",
+            "status": 0
+        },
+        {
+            "id": 5,
+            "name": "影集记录",
+            "cover_img_url": "https://ss2.meipian.me/subtitle/cover/subtitle_style05@2x.png",
+            "status": 0
+        },
+        {
+            "id": 6,
+            "name": "飞行员",
+            "cover_img_url": "https://ss2.meipian.me/subtitle/cover/subtitle_style06@2x.png",
+            "status": 0
+        },
+        {
+            "id": 7,
+            "name": "享受假期",
+            "cover_img_url": "https://ss2.meipian.me/subtitle/cover/subtitle_style07@2x.png",
+            "status": 0
+        },
+        {
+            "id": 9,
+            "name": "红色日记本",
+            "cover_img_url": "https://ss2.meipian.me/subtitle/cover/subtitle_style09@2x.png",
+            "status": 0
+        },
+        {
+            "id": 11,
+            "name": "微笑",
+            "cover_img_url": "https://ss2.meipian.me/subtitle/cover/subtitle_style10@2x.png",
+            "status": 0
+        },
+        {
+            "id": 12,
+            "name": "摄影爱好者",
+            "cover_img_url": "https://ss2.meipian.me/subtitle/cover/subtitle_style12@2x.png",
+            "status": 0
+        }
+    ]
+}    

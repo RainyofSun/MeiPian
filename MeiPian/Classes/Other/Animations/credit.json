@@ -1,0 +1,16 @@
+[
+ {"status":1,"max_times":1,"name":"register","type":2,"credits":20},
+ {"status":1,"max_times":1,"name":"update_user_info","type":2,"credits":20},
+ {"status":1,"max_times":1,"name":"bind_contact","type":2,"credits":20},
+ {"status":1,"max_times":1,"name":"open_notification","type":2,"credits":20},
+ {"status":1,"max_times":1,"name":"authorize_contacts","type":2,"credits":20},
+ {"status":1,"max_times":1,"name":"create_content","type":1,"credits":10},
+ {"status":1,"max_times":5,"name":"read_content","type":1,"credits":1},
+ {"status":1,"max_times":5,"name":"praise_content","type":1,"credits":2},
+ {"status":1,"max_times":5,"name":"comment_content","type":1,"credits":3},
+ {"status":1,"max_times":5,"name":"share_content","type":1,"credits":2},
+ {"status":1,"max_times":2,"name":"follow_user","type":1,"credits":5},
+ {"status":1,"max_times":2,"name":"click_push_notification","type":1,"credits":10},
+ {"status":1,"max_times":0,"name":"buy_meipian_print","type":3,"credits":0},
+ {"status":1,"max_times":0,"name":"recommend_article","type":3,"credits":50}
+ ]

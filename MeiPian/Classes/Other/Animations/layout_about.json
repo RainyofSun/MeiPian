@@ -1,0 +1,251 @@
+{
+    "_style": {
+        "item": {
+            "paddingLeft": 33,
+            "paddingRight": 33,
+            "width": "100%",
+            "height":65,
+            "justifyContent": "center"
+        },
+        "item_row": {
+            "flexDirection" : "row",
+            "justifyContent": "flex-start"
+        },
+        "title": {
+            "font": 17,
+            "textColor": "#191919"
+        },
+        "desc": {
+            "font": 15,
+            "marginTop": 4,
+            "textColor": "#2F92FF"
+        },
+        "enter": {
+            "image": "setting_arrow",
+            "position": "absolute",
+            "right": 33
+        },
+        "divider": {
+            "position": "absolute",
+            "height": 1,
+            "bottom":0,
+            "left":33,
+            "right":33,
+            "width": "100%",
+            "bg": "#F1F2F6"
+        }
+    },
+    "layout": {
+        "view": "UIView",
+        "width": "100%",
+        "alignItems": "center",
+        "flexGrow": 1,
+        "marginBottom": "{{ safeBottom }}",
+        "subviews": [
+            {
+                "view":"UIImageView",
+                "width": 80,
+                "height": 80,
+                "image": "icon"
+            },
+            {
+                "view": "UILabel",
+                "font": 18,
+                "marginTop": 20,
+                "textColor": "#191919",
+                "text": "{{ version }}"
+            },
+            {
+                "view": "UIView",
+                "marginTop": 30,
+                "paddingLeft": 33,
+                "paddingRight": 33,
+                "width": "100%",
+                "height":1,
+                "justifyContent": "center",
+                "subviews": [
+                    {
+                        "view": "UIView",
+                        "style": "divider"
+                    }
+                ]
+                
+            },
+            {
+                "view": "MPView",
+                "style": "item",
+                "bindtap": "doRateapp",
+                "subviews": [
+                    {
+                        "view": "UILabel",
+                        "style": "title",
+                        "text": "给个好评"
+                    },
+                    {
+                        "view": "UIImageView",
+                        "style": "enter"
+                    },
+                    {
+                        "view": "UIView",
+                        "style": "divider"
+                    }
+                ]
+            },
+            {
+                "view": "MPView",
+                "style": "item",
+                "bindtap": "enterBetaVersion",
+                "display": "{{ showUpdate }}",
+                "subviews": [
+                    {
+                        "view": "UIView",
+                        "style": "item_row",
+                        "alignItems": "center",
+                        "subviews": [
+                            {
+                                "view": "UILabel",
+                                "style": "title",
+                                "text": "更新版本"
+                            },
+                            {
+                                "view": "UILabel",
+                                "font": 12,
+                                "text": "新",
+                                "textAlignment":"NSTextAlignmentCenter",
+                                "textColor": "#FFFFFF",
+                                "bg": "#F04638",
+                                "marginLeft":5,
+                                "height":18,
+                                "width": 30,
+                                "corner":9
+                            }
+                        ]
+                    },
+                    {
+                        "view": "UIImageView",
+                        "style": "enter"
+                    },
+                    {
+                        "view": "UIView",
+                        "style": "divider"
+                    }
+                ]
+            },
+            {
+                "view": "MPView",
+                "style": "item",
+                "bindtap": "openMeipianSite",
+                "subviews": [
+                    {
+                        "view": "UILabel",
+                        "style": "title",
+                        "text": "美篇官网"
+                    },
+                    {
+                        "view": "UILabel",
+                        "style": "desc",
+                        "textColor": "#576B95",
+                        "text": "https://www.meipian.cn"
+                    },
+                    {
+                        "view": "UIImageView",
+                        "style": "enter"
+                    },
+                    {
+                        "view": "UIView",
+                        "style": "divider"
+                    }
+                ]
+            },
+            {
+                "view": "MPView",
+                "style": "item",
+                "bindtap": "openSupport",
+                "subviews": [
+                    {
+                        "view": "UILabel",
+                        "style": "title",
+                        "text": "美篇官方邮箱"
+                    },
+                    {
+                        "view": "UILabel",
+                        "style": "desc",
+                        "textColor": "#576B95",
+                        "font": 15,
+                        "text": "support@meipian.cn"
+                    },
+                    {
+                        "view": "UIImageView",
+                        "style": "enter"
+                    },
+                    {
+                        "view": "UIView",
+                        "style": "divider"
+                    }
+                ]
+            },
+            {
+                "view": "UIView",
+                "justifyContent": "flex-end",
+                "alignItems": "center",
+                "flexGrow": 1,
+                "subviews": [
+                    {
+                        "view": "UIView",
+                        "marginBottom": 20,
+                        "flexDirection" : "row",
+                        "subviews": [
+                            {
+                                "view": "MPView",
+                                "bindtap": "gotoAboutAgreement",
+                                "subviews": [
+                                    {
+                                        "view": "UILabel",
+                                        "font": 12,
+                                        "textColor": "#5C5E61",
+                                        "text": "《美篇用户协议》"
+                                    },
+                                    {
+                                        "view": "UIView",
+                                        "height": 1,
+                                        "bg": "#5C5E61",
+                                        "marginLeft": 8,
+                                        "marginRight": 8
+                                        
+                                    }
+                                ]
+                            },{
+                                "view": "MPView",
+                                "bindtap": "gotoAboutPrivace",
+                                "subviews": [
+                                    {
+                                        "view": "UILabel",
+                                        "font": 12,
+                                        "textColor": "#5C5E61",
+                                        "text": "《美篇隐私协议》"
+                                    },
+                                    {
+                                        "view": "UIView",
+                                        "height": 1,
+                                        "bg": "#5C5E61",
+                                        "marginLeft": 8,
+                                        "marginRight": 8
+                                        
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "view": "UILabel",
+                        "font": 12,
+                        "marginBottom": 20,
+                        "textColor": "#9B9B9B",
+                        "text": "{{ copy_right }}"
+                    }
+                ]
+            }
+            
+        ]
+    }
+}

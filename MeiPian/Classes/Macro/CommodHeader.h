@@ -41,17 +41,16 @@
 
 // 头文件
 #import "MacroDefinitionHeader.h"
-//#import "NotificationName.h"
-//#import "YZRequestInterence.h"
+#import "NotificationName.h"
+#import "MPRequestInterence.h"
 
 // 公用基础文件
-//#import "YZModulesMsgSend.h"
-//#import "YZUserStatusGlobalModel.h"
-//#import "YZUserInfoCache.h"
-//#import "YZUserDefaultsCache.h"
-//#import "TelePhoneTextField.h"
-//#import "MBHUDToastManager.h"
-//#import "AppCycleScrollview.h"
-//#import "YZPopMenuView.h"
+#import "MPModulesMsgSend.h"
+#import "MPUserStatusGlobalModel.h"
+#import "MPUserInfoCache.h"
+#import "MPUserDefaultsCache.h"
+#import "TelePhoneTextField.h"
+#import "MBHUDToastManager.h"
+#import "AppCycleScrollview.h"
 
 #endif /* CommodHeader_h */

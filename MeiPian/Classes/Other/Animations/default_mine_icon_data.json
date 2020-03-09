@@ -1,0 +1,50 @@
+[
+    {
+        "icon": "https://ss2.meipian.me/app/plugin_icon_checkin.png",
+        "title": "签到",
+        "uri": "meipian://credit/center?url=https://www.meipian.cn/app/credit",
+        "type": "button"
+    },
+    {
+        "icon": "https://ss2.meipian.me/app/plugin_icon_wallet.png",
+        "title": "钱包",
+        "uri": "meipian://user/wallet",
+        "type": "button"
+    },
+    {
+        "icon": "",
+        "type": "separator",
+        "title": "",
+        "uri": ""
+    },
+    {
+        "icon": "https://ss2.meipian.me/app/plugin_icon_statistics.png",
+        "title": "访问统计",
+        "uri": "meipian://user/data",
+        "type": "button"
+    },
+    {
+        "icon": "https://ss2.meipian.me/app/plugin_icon_recycle.png",
+        "title": "最近删除",
+        "uri": "meipian://mine/recycle",
+        "type": "button"
+    },
+    {
+        "icon": "https://ss2.meipian.me/app/plugin_icon_pc.png",
+        "title": "美篇电脑版",
+        "uri": "https://www.meipian.cn/m1i2kvw?from=appview",
+        "type": "button"
+    },
+    {
+        "icon": "https://ss2.meipian.me/app/plugin_icon_service.png",
+        "title": "客服和帮助",
+        "uri": "meipian://mine/setting/faq?url=https://test-www.meipian.cn/faq/?version=4.12",
+        "type": "button"
+    },
+    {
+        "icon": "https://ss2.meipian.me/app/plugin_icon_setting.png",
+        "title": "设置",
+        "uri": "meipian://app/setting",
+        "type": "button"
+    }
+]
