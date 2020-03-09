@@ -51,8 +51,6 @@
 #define MAIN_BLUE_COLOR     RGB(39,102,225)
 #define MAIN_GRAY_COLOR     RGB(147,157,166)
 #define MAIN_LIGHT_GRAY_COLOR   HexColor(0xF4F4F4)
-// 适配黑暗模式颜色
-#define YZPageColor       @"YZPageColor"
 
 #define LEDTOSTVITHMEAGE(message,superView) \
 if (message!=nil) {\

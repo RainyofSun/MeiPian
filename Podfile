@@ -10,6 +10,7 @@ def all_Pods
     pod 'AvoidCrash', '~> 2.5.2'
     pod "PYSearch"
     pod 'MLeaksFinder'
+    pod 'lottie-ios'
 end
 
 target 'MeiPian' do

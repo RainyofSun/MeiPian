@@ -18,6 +18,7 @@
 #import "UIScrollView+EmptyDataSet.h"
 #import <AvoidCrash.h>
 #import "AppWriteLogToFile.h"
+#import <Lottie.h>
 
 // 分类
 #import "UIView+AutoLayout.h"
