@@ -33,8 +33,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     [self.mainVM loadTabBarController:self];
-    [self showGuideView];
-    [self.mainVM whetherUserNeedLogin:self];
+    [self.mainVM showAdView:self];
 }
 
 - (void)dealloc {
@@ -61,19 +60,6 @@
         // 页面监测慎用
         [[NSNotificationCenter defaultCenter] postNotificationName:(NSNotificationName)NetChangeErrorNotify object:@{}];
     }
-}
-
-/*
- 展示新手引导图
- */
-- (void)showGuideView {
-//    WeakSelf;
-//    [self.guideVM showGreenHandsGuideDisBlock:^{
-//        [weakSelf.mainVM whetherUserNeedLogin:weakSelf];
-//        UITabBarController *tabVC = (UITabBarController *)self.childViewControllers.firstObject;
-//        UINavigationController *nav = (UINavigationController *)tabVC.childViewControllers.firstObject;
-//        [YZModulesMsgSend sendCumtomMethodMsg:nav.topViewController methodName:@selector(sendHomePageRequest)];
-//    }];
 }
 
 /*

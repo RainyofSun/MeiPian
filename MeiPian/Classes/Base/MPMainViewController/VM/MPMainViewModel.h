@@ -12,10 +12,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface MPMainViewModel : MPBaseViewModel
 
-/// rootVC 判断
-- (void)whetherUserNeedLogin:(UIViewController *)vc;
 /// 配置tabbar
 - (void)loadTabBarController:(UIViewController *)vc;
+/// 展示广告页
+- (void)showAdView:(UIViewController *)vc;
 
 @end
 

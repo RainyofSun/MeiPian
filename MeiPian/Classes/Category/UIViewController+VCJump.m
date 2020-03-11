@@ -1,13 +1,13 @@
 //
 //  UIViewController+VCJump.m
-//  XiaoYeMa
+//  MeiPian
 //
 //  Created by 刘冉 on 2019/8/26.
 //  Copyright © 2019 YZ_BMAC. All rights reserved.
 //
 
 #import "UIViewController+VCJump.h"
-//#import "YZNavigationViewController.h"
+#import "MPNavigationViewController.h"
 
 @implementation UIViewController (VCJump)
 
@@ -46,15 +46,15 @@
             NSLog(@"拦截二次弹窗");
             return;
         }
-//        if (presentVCClass) {
-//            YZNavigationViewController *nav = [[YZNavigationViewController alloc] initWithRootViewController:[[presentVCClass alloc] init]];
-//            [self presentViewController:nav animated:YES completion:nil];
-//        }
+        if (presentVCClass) {
+            MPNavigationViewController *nav = [[MPNavigationViewController alloc] initWithRootViewController:[[presentVCClass alloc] init]];
+            [self presentViewController:nav animated:YES completion:nil];
+        }
     } else if ([navVc isKindOfClass:[UIViewController class]]) {
-//        YZNavigationViewController *nav = [[YZNavigationViewController alloc] initWithRootViewController:navVc];
-//        nav.modalPresentationStyle = UIModalPresentationOverCurrentContext;
-//        self.definesPresentationContext = YES;
-//        [self presentViewController:nav animated:YES completion:nil];
+        MPNavigationViewController *nav = [[MPNavigationViewController alloc] initWithRootViewController:navVc];
+        nav.modalPresentationStyle = UIModalPresentationOverCurrentContext;
+        self.definesPresentationContext = YES;
+        [self presentViewController:nav animated:YES completion:nil];
     }
 
 }

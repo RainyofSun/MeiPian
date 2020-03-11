@@ -12,6 +12,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface MPAdvertisingViewModel : MPBaseViewModel
 
+/// 展示广告页
+- (void)showAdvertisingViewDisBlock:(void(^)(BOOL isLinkAD))disAdViewBlock;
+
 @end
 
 NS_ASSUME_NONNULL_END

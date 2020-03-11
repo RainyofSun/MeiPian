@@ -1,6 +1,6 @@
 //
 //  NSObject+Observer.m
-//  XiaoYeMa
+//  MeiPian
 //
 //  Created by 刘冉 on 2019/8/23.
 //  Copyright © 2019 YZ_BMAC. All rights reserved.

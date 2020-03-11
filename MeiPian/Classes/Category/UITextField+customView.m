@@ -1,6 +1,6 @@
 //
 //  UITextField+customView.m
-//  XiaoYeMa
+//  MeiPian
 //
 //  Created by 刘冉 on 2019/8/22.
 //  Copyright © 2019 YZ_BMAC. All rights reserved.
@@ -70,6 +70,20 @@
     [rightV addSubview:customView];
     self.rightView = rightV;
     self.rightViewMode = UITextFieldViewModeAlways;
+}
+
+- (void)createLeftCustomView:(UIView *)customView {
+    UIView *rightV          = [[UIView alloc]initWithFrame:CGRectMake(0, 0, CGRectGetWidth(customView.bounds), CGRectGetHeight(self.bounds))];
+    [rightV addSubview:customView];
+    self.leftView = rightV;
+    self.leftViewMode = UITextFieldViewModeAlways;
+}
+
+- (void)createLeftEmptyView:(CGFloat)viewW {
+    UIView *leftV = [[UIView alloc]initWithFrame:CGRectMake(0, 0, viewW, CGRectGetHeight(self.bounds))];
+    leftV.backgroundColor = [UIColor clearColor];
+    self.leftView = leftV;
+    self.leftViewMode = UITextFieldViewModeAlways;
 }
 
 @end

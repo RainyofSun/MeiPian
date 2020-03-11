@@ -38,6 +38,7 @@
 #import "UITextField+ToolBar.h"
 #import "NSObject+FileCache.h"
 #import "UIPickerView+MalPicker.h"
+#import "NSDate+CompareTime.h"
 
 // 头文件
 #import "MacroDefinitionHeader.h"
@@ -52,5 +53,7 @@
 #import "TelePhoneTextField.h"
 #import "MBHUDToastManager.h"
 #import "AppCycleScrollview.h"
+#import "EGLSGlobalGCDTimer.h"
+#import "AppFileManager.h"
 
 #endif /* CommodHeader_h */

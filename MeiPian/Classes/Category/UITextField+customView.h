@@ -1,6 +1,6 @@
 //
 //  UITextField+customView.h
-//  XiaoYeMa
+//  MeiPian
 //
 //  Created by 刘冉 on 2019/8/22.
 //  Copyright © 2019 YZ_BMAC. All rights reserved.
@@ -22,6 +22,10 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)createRightVTarget:(id)target action:(SEL)sel;
 ///添加自定义右视图
 - (void)createRightCustomView:(UIView *)customView;
+///添加自定义左视图
+- (void)createLeftCustomView:(UIView *)customView;
+///添加左侧空白视图
+- (void)createLeftEmptyView:(CGFloat)viewW;
 
 @end
 

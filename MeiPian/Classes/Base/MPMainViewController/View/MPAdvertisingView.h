@@ -8,10 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
-NS_ASSUME_NONNULL_BEGIN
-
 @interface MPAdvertisingView : UIView
+
+/** adDisBlock */
+@property (nonatomic,copy) void (^adDisBlock)(NSInteger senderTag);
+/// 更新倒计时文字
+- (void)updateTimeBtnAttributeTitle:(NSAttributedString *)attributeTitle;
+/// 倒计时结束
+- (void)disappearADView;
+/// 加载广告图片
+- (void)loadADPic:(UIImage *)adImg;
 
 @end
 
-NS_ASSUME_NONNULL_END

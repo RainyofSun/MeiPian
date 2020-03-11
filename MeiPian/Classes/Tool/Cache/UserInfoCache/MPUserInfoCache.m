@@ -1,6 +1,6 @@
 //
 //  MPUserInfoCache.m
-//  XiaoYeMa
+//  MeiPian
 //
 //  Created by 刘冉 on 2019/9/3.
 //  Copyright © 2019 MP_BMAC. All rights reserved.

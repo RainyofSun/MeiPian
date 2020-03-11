@@ -2,7 +2,7 @@
 //  MPWeiChatLoginViewController.h
 //  MeiPian
 //
-//  Created by EGLS_BMAC on 2020/3/9.
+//  Created by EGLS_BMAC on 2020/3/11.
 //  Copyright © 2020 EGLS_BMAC. All rights reserved.
 //
 
