@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface MPPhoneLoginView : UIView
 
+- (void)reloadPhoneAreaCode:(NSString *)code;
+
 @end
 
 NS_ASSUME_NONNULL_END

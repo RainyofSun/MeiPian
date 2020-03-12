@@ -16,6 +16,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)loadAccountLoginMainView:(UIViewController *)vc;
 /// 界面按钮点击逻辑
 - (void)mainViewBtnLogic:(UIViewController *)vc senderTag:(NSNumber *)senderTag;
+/// 更新电话区号
+- (void)updateAreaCode:(NSString *)code;
 
 @end
 

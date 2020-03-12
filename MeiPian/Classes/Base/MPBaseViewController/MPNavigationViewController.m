@@ -30,13 +30,13 @@
         self.interactivePopGestureRecognizer.delegate = self;
         _orientationMask = UIInterfaceOrientationMaskPortrait;
         _preferredInterfaceOrientation =UIInterfaceOrientationPortrait;
-        self.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName:[UIColor whiteColor]};
+        self.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName:[UIColor blackColor]};
         //            [self.navigationBar setBackgroundImage:[UIImage imageWithColor:HexColor(0xfcdd73) size:CGSizeMake(WINDOW_WIDTH, 64)] forBarMetrics:UIBarMetricsDefault];
         self.navigationBar.barTintColor = RGB(255, 255, 255);
         self.navigationBar.translucent = NO;
-        [self.navigationBar setBackgroundImage:[UIImage imageWithColor:MAIN_BLUE_COLOR]
+        [self.navigationBar setBackgroundImage:[UIImage imageWithColor:[UIColor whiteColor]]
                                                       forBarMetrics:UIBarMetricsDefault];
-        [self.navigationBar setShadowImage:[UIImage imageWithColor:HexColor(0xEEEEEE)]];
+        [self.navigationBar setShadowImage:[UIImage imageWithColor:[UIColor whiteColor]]];
     }
     return self;
 }

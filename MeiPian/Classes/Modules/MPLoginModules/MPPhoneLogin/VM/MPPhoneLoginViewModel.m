@@ -9,6 +9,13 @@
 #import "MPPhoneLoginViewModel.h"
 #import "MPPhoneLoginView.h"
 
+@interface MPPhoneLoginViewModel ()
+
+/** phoneView */
+@property (nonatomic,strong) MPPhoneLoginView *phoneView;
+
+@end
+
 @implementation MPPhoneLoginViewModel
 
 - (void)dealloc {
@@ -19,9 +26,9 @@
 // 账号登录主界面
 - (void)loadAccountLoginMainView:(UIViewController *)vc {
     [vc setNavHiden:YES];
-    MPPhoneLoginView *phoneView = [[[NSBundle mainBundle] loadNibNamed:@"MPPhoneLoginView" owner:nil options:nil] firstObject];
-    [vc.view addSubview:phoneView];
-    [phoneView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsZero];
+    self.phoneView = [[[NSBundle mainBundle] loadNibNamed:@"MPPhoneLoginView" owner:nil options:nil] firstObject];
+    [vc.view addSubview:self.phoneView];
+    [self.phoneView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsZero];
 }
 
 // 界面按钮点击逻辑
@@ -36,6 +43,14 @@
         default:
             break;
     }
+}
+
+// 更新电话区号
+- (void)updateAreaCode:(NSString *)code {
+    if (!code.length) {
+        return;
+    }
+    [self.phoneView reloadPhoneAreaCode:code];
 }
 
 @end

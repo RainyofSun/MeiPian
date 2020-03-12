@@ -12,10 +12,15 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface TelephoneCodeViewModel : NSObject
 
+/** disCallBack */
+@property (nonatomic,copy) void (^disCallBack)(NSString *areaCode);
+
 /// 加载主界面
 - (void)loadTelephoneCodeMainView:(UIViewController *)vc;
-/// 加载searchVC
-- (void)loadNavSearchItem:(UIViewController *)vc;
+/// 设置Nav
+- (void)setNavItems:(UIViewController *)vc;
+/// 给控件调用者发送消息 --->调用者务必实现此方法:updateAreaCode:(NSString *)code,否则点击会崩溃
+- (void)sendMsgToCaller:(NSString *)msg callee:(UIViewController *)vc;
 
 @end
 

@@ -12,6 +12,8 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *phoneTextFiled;
 @property (weak, nonatomic) IBOutlet UIButton *smsCodeBtn;
+/** phoneAreaCodeBtn */
+@property (nonatomic,strong) UIButton *phoneAreaCodeBtn;
 
 @end
 
@@ -24,6 +26,11 @@
 
 - (void)dealloc {
     NSLog(@"DELLOC : %@",NSStringFromClass(self.class));
+}
+
+#pragma mark - public methods
+- (void)reloadPhoneAreaCode:(NSString *)code {
+    [self.phoneAreaCodeBtn setTitle:code forState:UIControlStateNormal];
 }
 
 - (IBAction)touchPhoneViewBtn:(UIButton *)sender {
@@ -40,14 +47,14 @@
     self.smsCodeBtn.layer.cornerRadius = CGRectGetHeight(self.smsCodeBtn.bounds)/2;
     self.phoneTextFiled.clipsToBounds = self.smsCodeBtn.clipsToBounds = YES;
 
-   UIButton *phoneAreaCodeBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    [phoneAreaCodeBtn setTitle:@"+86" forState:UIControlStateNormal];
-    [phoneAreaCodeBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [phoneAreaCodeBtn setImage:[UIImage imageNamed:@"sign_icon_arrow_down"] forState:UIControlStateNormal];
-    phoneAreaCodeBtn.frame = CGRectMake(0, 0, 70, CGRectGetHeight(self.phoneTextFiled.bounds));
-    [phoneAreaCodeBtn changeButtonImgRightAndTextLeft:10];
-    [phoneAreaCodeBtn addTarget:self action:@selector(selectedCountryCode:) forControlEvents:UIControlEventTouchUpInside];
-    [self.phoneTextFiled createLeftCustomView:phoneAreaCodeBtn];
+    self.phoneAreaCodeBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [self.phoneAreaCodeBtn setTitle:@"+86" forState:UIControlStateNormal];
+    [self.phoneAreaCodeBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [self.phoneAreaCodeBtn setImage:[UIImage imageNamed:@"sign_icon_arrow_down"] forState:UIControlStateNormal];
+    self.phoneAreaCodeBtn.frame = CGRectMake(0, 0, 70, CGRectGetHeight(self.phoneTextFiled.bounds));
+    [self.phoneAreaCodeBtn changeButtonImgRightAndTextLeft:10];
+    [self.phoneAreaCodeBtn addTarget:self action:@selector(selectedCountryCode:) forControlEvents:UIControlEventTouchUpInside];
+    [self.phoneTextFiled createLeftCustomView:self.phoneAreaCodeBtn];
 }
 
 @end

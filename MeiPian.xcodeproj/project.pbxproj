@@ -90,6 +90,10 @@
 		131B455F241644EC00A99F73 /* MPAdvertisingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 131B455E241644EC00A99F73 /* MPAdvertisingView.m */; };
 		131B45622416453400A99F73 /* MPAdvertisingViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 131B45612416453400A99F73 /* MPAdvertisingViewModel.m */; };
 		131B45652416455A00A99F73 /* MPMainViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 131B45642416455A00A99F73 /* MPMainViewModel.m */; };
+		132C7E172419CF67007E3142 /* TelephoneCodeData.m in Sources */ = {isa = PBXBuildFile; fileRef = 132C7E162419CF67007E3142 /* TelephoneCodeData.m */; };
+		132C7E1A2419D977007E3142 /* TelephoneCodeIndexView.m in Sources */ = {isa = PBXBuildFile; fileRef = 132C7E192419D977007E3142 /* TelephoneCodeIndexView.m */; };
+		132C7E20241A2800007E3142 /* MPHomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 132C7E1E241A2800007E3142 /* MPHomePageViewController.m */; };
+		132C7E21241A2800007E3142 /* MPHomePageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 132C7E1F241A2800007E3142 /* MPHomePageViewController.xib */; };
 		133E70B3241881B900A4C3E4 /* MPWeiChatLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 133E70B1241881B900A4C3E4 /* MPWeiChatLoginViewController.m */; };
 		133E70B4241881B900A4C3E4 /* MPWeiChatLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 133E70B2241881B900A4C3E4 /* MPWeiChatLoginViewController.xib */; };
 		133E70B824188C0400A4C3E4 /* MPBasePopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 133E70B724188C0400A4C3E4 /* MPBasePopViewController.m */; };
@@ -272,6 +276,13 @@
 		131B45612416453400A99F73 /* MPAdvertisingViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPAdvertisingViewModel.m; sourceTree = "<group>"; };
 		131B45632416455A00A99F73 /* MPMainViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPMainViewModel.h; sourceTree = "<group>"; };
 		131B45642416455A00A99F73 /* MPMainViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPMainViewModel.m; sourceTree = "<group>"; };
+		132C7E152419CF67007E3142 /* TelephoneCodeData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TelephoneCodeData.h; sourceTree = "<group>"; };
+		132C7E162419CF67007E3142 /* TelephoneCodeData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TelephoneCodeData.m; sourceTree = "<group>"; };
+		132C7E182419D977007E3142 /* TelephoneCodeIndexView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TelephoneCodeIndexView.h; sourceTree = "<group>"; };
+		132C7E192419D977007E3142 /* TelephoneCodeIndexView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TelephoneCodeIndexView.m; sourceTree = "<group>"; };
+		132C7E1D241A2800007E3142 /* MPHomePageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPHomePageViewController.h; sourceTree = "<group>"; };
+		132C7E1E241A2800007E3142 /* MPHomePageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPHomePageViewController.m; sourceTree = "<group>"; };
+		132C7E1F241A2800007E3142 /* MPHomePageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MPHomePageViewController.xib; sourceTree = "<group>"; };
 		133E70B0241881B900A4C3E4 /* MPWeiChatLoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPWeiChatLoginViewController.h; sourceTree = "<group>"; };
 		133E70B1241881B900A4C3E4 /* MPWeiChatLoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPWeiChatLoginViewController.m; sourceTree = "<group>"; };
 		133E70B2241881B900A4C3E4 /* MPWeiChatLoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MPWeiChatLoginViewController.xib; sourceTree = "<group>"; };
@@ -1007,6 +1018,24 @@
 			path = UserDefaultsCache;
 			sourceTree = "<group>";
 		};
+		132C7E1B241A27AF007E3142 /* MPHomeModules */ = {
+			isa = PBXGroup;
+			children = (
+				132C7E1C241A27D9007E3142 /* VC */,
+			);
+			path = MPHomeModules;
+			sourceTree = "<group>";
+		};
+		132C7E1C241A27D9007E3142 /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				132C7E1D241A2800007E3142 /* MPHomePageViewController.h */,
+				132C7E1E241A2800007E3142 /* MPHomePageViewController.m */,
+				132C7E1F241A2800007E3142 /* MPHomePageViewController.xib */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
 		133E70B524188B0E00A4C3E4 /* PopWindows */ = {
 			isa = PBXGroup;
 			children = (
@@ -1098,6 +1127,8 @@
 			children = (
 				133E70FE2418E5B800A4C3E4 /* TelephoneCodeView.h */,
 				133E70FF2418E5B800A4C3E4 /* TelephoneCodeView.m */,
+				132C7E182419D977007E3142 /* TelephoneCodeIndexView.h */,
+				132C7E192419D977007E3142 /* TelephoneCodeIndexView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1116,6 +1147,8 @@
 			children = (
 				133E71022418E5D600A4C3E4 /* TelephoneCodeViewModel.h */,
 				133E71032418E5D600A4C3E4 /* TelephoneCodeViewModel.m */,
+				132C7E152419CF67007E3142 /* TelephoneCodeData.h */,
+				132C7E162419CF67007E3142 /* TelephoneCodeData.m */,
 			);
 			path = VM;
 			sourceTree = "<group>";
@@ -1409,6 +1442,7 @@
 		13DBCF4B2410B2A000D99014 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				132C7E1B241A27AF007E3142 /* MPHomeModules */,
 				133E70C424189AAA00A4C3E4 /* WebH5Module */,
 				131B45122416266800A99F73 /* MPLoginModules */,
 			);
@@ -1598,6 +1632,7 @@
 				131B44C924161AD400A99F73 /* praiseData.json in Resources */,
 				131B44D624161AD400A99F73 /* img_5.png in Resources */,
 				131B44D424161AD400A99F73 /* img_3.png in Resources */,
+				132C7E21241A2800007E3142 /* MPHomePageViewController.xib in Resources */,
 				133E70F72418E32E00A4C3E4 /* CountryPhoneCode.plist in Resources */,
 				131B450A24161B0100A99F73 /* localerror.json in Resources */,
 				131B44FF24161B0100A99F73 /* country_code.json in Resources */,
@@ -1722,6 +1757,7 @@
 				133E70DD2418BB9800A4C3E4 /* MPAccountLoginViewModel.m in Sources */,
 				131B455F241644EC00A99F73 /* MPAdvertisingView.m in Sources */,
 				131B454E2416404C00A99F73 /* MPBaseModel.m in Sources */,
+				132C7E20241A2800007E3142 /* MPHomePageViewController.m in Sources */,
 				133E70EF2418D90E00A4C3E4 /* MPPhoneLoginViewModel.m in Sources */,
 				13DBCF0A2410B14900D99014 /* MPModulesMsgSend.m in Sources */,
 				133E71042418E5D600A4C3E4 /* TelephoneCodeViewModel.m in Sources */,
@@ -1729,6 +1765,7 @@
 				13DBCF092410B14900D99014 /* RuntimeTool.m in Sources */,
 				131B45342416376900A99F73 /* MPBaseViewController.m in Sources */,
 				131B453D2416395F00A99F73 /* MPBaseWebViewController.m in Sources */,
+				132C7E1A2419D977007E3142 /* TelephoneCodeIndexView.m in Sources */,
 				131B455A2416422200A99F73 /* MPUserInfoCache.m in Sources */,
 				131810CC241796E2004828A3 /* MPWeiChatLoginView.m in Sources */,
 				131B45372416389600A99F73 /* MPTabBarViewController.m in Sources */,
@@ -1740,6 +1777,7 @@
 				13DBCECE2410B09500D99014 /* AppFileManager.m in Sources */,
 				133E70D324189AAB00A4C3E4 /* MPPDFViewController.m in Sources */,
 				13DBCF0B2410B14900D99014 /* MPBackupMessage.m in Sources */,
+				132C7E172419CF67007E3142 /* TelephoneCodeData.m in Sources */,
 				131B455B2416422200A99F73 /* MPUserDefaultsCache.m in Sources */,
 				13DBCF082410B14900D99014 /* Reachability.m in Sources */,
 				13DBCF0E2410B14900D99014 /* ZXCategorySliderBar.m in Sources */,

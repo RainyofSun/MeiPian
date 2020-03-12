@@ -22,7 +22,20 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self.telephoneCodeVM loadTelephoneCodeMainView:self];
-    [self.telephoneCodeVM loadNavSearchItem:self];
+    [self.telephoneCodeVM setNavItems:self];
+    [self blockCallBack];
+}
+
+- (void)dealloc {
+    NSLog(@"DELLOC : %@",NSStringFromClass(self.class));
+}
+
+- (void)blockCallBack {
+    __weak typeof(self) weakSelf = self;
+    self.telephoneCodeVM.disCallBack = ^(NSString * _Nonnull areaCode) {
+        [weakSelf.telephoneCodeVM sendMsgToCaller:areaCode callee:weakSelf];
+        [weakSelf.navigationController dismissViewControllerAnimated:YES completion:nil];
+    };
 }
 
 #pragma mark - lazy

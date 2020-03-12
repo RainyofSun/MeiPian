@@ -8,6 +8,7 @@
 
 #import "MPPhoneLoginViewController.h"
 #import "MPPhoneLoginViewModel.h"
+#import "TelephoneAreaCodeViewController.h"
 
 @interface MPPhoneLoginViewController ()
 
@@ -31,7 +32,12 @@
 
 // 选择电话区号
 - (void)selectedCountryPhoneCode {
-    
+    [self presentNavVC:@"TelephoneAreaCodeViewController"];
+}
+
+// 更新电话区号
+- (void)updateAreaCode:(NSString *)code {
+    [self.phoneLoginVM updateAreaCode:code];
 }
 
 #pragma mark - lazy

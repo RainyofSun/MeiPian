@@ -76,6 +76,7 @@
     [self.skipBtn setBackgroundColor:RGB(86, 87, 89)];
     self.skipBtn.layer.cornerRadius = 15.f;
     self.skipBtn.clipsToBounds = YES;
+    self.adImgBtn.adjustsImageWhenHighlighted = NO;
     
     self.skipBtn.tag = 0;
     self.adImgBtn.tag = 1;
