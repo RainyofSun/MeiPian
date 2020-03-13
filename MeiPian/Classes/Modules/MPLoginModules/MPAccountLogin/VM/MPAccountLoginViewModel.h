@@ -16,6 +16,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)loadAccountLoginMainView:(UIViewController *)vc;
 /// 界面按钮点击逻辑
 - (void)mainViewBtnLogic:(UIViewController *)vc senderTag:(NSNumber *)senderTag;
+/// 添加/删除textFiled的监听通知
+- (void)addOrDeleteTextFiledObserver:(BOOL)isAdd;
 
 @end
 

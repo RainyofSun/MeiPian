@@ -86,7 +86,7 @@ static char *const GCDTimerKey      = "GCDTimerKey";
     } else {
         // 按钮不可用状态
         if (self.selectedText.length) {
-            [self setTitle:[NSString stringWithFormat:@"%@ (%lds)",self.selectedText,time] forState:UIControlStateNormal];
+            [self setTitle:[NSString stringWithFormat:@"%lds%@",time,self.selectedText] forState:UIControlStateNormal];
         } else {
             [self setTitle:[NSString stringWithFormat:@"%ld",time] forState:UIControlStateNormal];
         }

@@ -24,6 +24,16 @@
     [self.accountLoginVM loadAccountLoginMainView:self];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.accountLoginVM addOrDeleteTextFiledObserver:YES];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [self.accountLoginVM addOrDeleteTextFiledObserver:NO];
+}
+
 #pragma mark - 消息透传
 - (void)touchAccountLoginViewBtn:(NSNumber *)senderTag {
     [self.accountLoginVM mainViewBtnLogic:self senderTag:senderTag];

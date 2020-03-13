@@ -7,6 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1315E137241B2D3B00F7B452 /* MPSMSCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1315E135241B2D3B00F7B452 /* MPSMSCodeViewController.m */; };
+		1315E138241B2D3B00F7B452 /* MPSMSCodeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1315E136241B2D3B00F7B452 /* MPSMSCodeViewController.xib */; };
+		1315E13B241B2E3800F7B452 /* MPSMSCodeViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1315E13A241B2E3800F7B452 /* MPSMSCodeViewModel.m */; };
+		1315E13E241B2ECE00F7B452 /* MPSMSCodeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1315E13D241B2ECE00F7B452 /* MPSMSCodeView.m */; };
+		1315E140241B2EE700F7B452 /* MPSMSCodeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1315E13F241B2EE700F7B452 /* MPSMSCodeView.xib */; };
+		1315E143241B6C2100F7B452 /* MPForgetPWDView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1315E142241B6C2100F7B452 /* MPForgetPWDView.m */; };
+		1315E146241B6C5B00F7B452 /* MPForgetPWDViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1315E145241B6C5A00F7B452 /* MPForgetPWDViewModel.m */; };
+		1315E148241B6D3800F7B452 /* MPForgetPWDView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1315E147241B6D3800F7B452 /* MPForgetPWDView.xib */; };
+		1315E14C241B76AD00F7B452 /* MPNewPWDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1315E14A241B76AD00F7B452 /* MPNewPWDViewController.m */; };
+		1315E14D241B76AD00F7B452 /* MPNewPWDViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1315E14B241B76AD00F7B452 /* MPNewPWDViewController.xib */; };
+		1315E150241B772700F7B452 /* MPNewPWDViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1315E14F241B772700F7B452 /* MPNewPWDViewModel.m */; };
+		1315E153241B77A400F7B452 /* MPNewPWDView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1315E152241B77A400F7B452 /* MPNewPWDView.m */; };
+		1315E155241B77AE00F7B452 /* MPNewPWDView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1315E154241B77AE00F7B452 /* MPNewPWDView.xib */; };
 		131810C0241775F2004828A3 /* EGLSGlobalGCDTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 131810BF241775F2004828A3 /* EGLSGlobalGCDTimer.m */; };
 		131810C324177FA9004828A3 /* MPADDownLoadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 131810C224177FA9004828A3 /* MPADDownLoadManager.m */; };
 		131810C624178819004828A3 /* NSDate+CompareTime.m in Sources */ = {isa = PBXBuildFile; fileRef = 131810C524178819004828A3 /* NSDate+CompareTime.m */; };
@@ -170,6 +183,27 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1315E134241B2D3B00F7B452 /* MPSMSCodeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPSMSCodeViewController.h; sourceTree = "<group>"; };
+		1315E135241B2D3B00F7B452 /* MPSMSCodeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPSMSCodeViewController.m; sourceTree = "<group>"; };
+		1315E136241B2D3B00F7B452 /* MPSMSCodeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MPSMSCodeViewController.xib; sourceTree = "<group>"; };
+		1315E139241B2E3800F7B452 /* MPSMSCodeViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPSMSCodeViewModel.h; sourceTree = "<group>"; };
+		1315E13A241B2E3800F7B452 /* MPSMSCodeViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPSMSCodeViewModel.m; sourceTree = "<group>"; };
+		1315E13C241B2ECE00F7B452 /* MPSMSCodeView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPSMSCodeView.h; sourceTree = "<group>"; };
+		1315E13D241B2ECE00F7B452 /* MPSMSCodeView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPSMSCodeView.m; sourceTree = "<group>"; };
+		1315E13F241B2EE700F7B452 /* MPSMSCodeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MPSMSCodeView.xib; sourceTree = "<group>"; };
+		1315E141241B6C2100F7B452 /* MPForgetPWDView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPForgetPWDView.h; sourceTree = "<group>"; };
+		1315E142241B6C2100F7B452 /* MPForgetPWDView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPForgetPWDView.m; sourceTree = "<group>"; };
+		1315E144241B6C5A00F7B452 /* MPForgetPWDViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPForgetPWDViewModel.h; sourceTree = "<group>"; };
+		1315E145241B6C5A00F7B452 /* MPForgetPWDViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPForgetPWDViewModel.m; sourceTree = "<group>"; };
+		1315E147241B6D3800F7B452 /* MPForgetPWDView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MPForgetPWDView.xib; sourceTree = "<group>"; };
+		1315E149241B76AD00F7B452 /* MPNewPWDViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPNewPWDViewController.h; sourceTree = "<group>"; };
+		1315E14A241B76AD00F7B452 /* MPNewPWDViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPNewPWDViewController.m; sourceTree = "<group>"; };
+		1315E14B241B76AD00F7B452 /* MPNewPWDViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MPNewPWDViewController.xib; sourceTree = "<group>"; };
+		1315E14E241B772700F7B452 /* MPNewPWDViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPNewPWDViewModel.h; sourceTree = "<group>"; };
+		1315E14F241B772700F7B452 /* MPNewPWDViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPNewPWDViewModel.m; sourceTree = "<group>"; };
+		1315E151241B77A400F7B452 /* MPNewPWDView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPNewPWDView.h; sourceTree = "<group>"; };
+		1315E152241B77A400F7B452 /* MPNewPWDView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPNewPWDView.m; sourceTree = "<group>"; };
+		1315E154241B77AE00F7B452 /* MPNewPWDView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MPNewPWDView.xib; sourceTree = "<group>"; };
 		131810BE241775F2004828A3 /* EGLSGlobalGCDTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGLSGlobalGCDTimer.h; sourceTree = "<group>"; };
 		131810BF241775F2004828A3 /* EGLSGlobalGCDTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGLSGlobalGCDTimer.m; sourceTree = "<group>"; };
 		131810C124177FA9004828A3 /* MPADDownLoadManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPADDownLoadManager.h; sourceTree = "<group>"; };
@@ -882,6 +916,8 @@
 		131B4526241636C700A99F73 /* VM */ = {
 			isa = PBXGroup;
 			children = (
+				1315E144241B6C5A00F7B452 /* MPForgetPWDViewModel.h */,
+				1315E145241B6C5A00F7B452 /* MPForgetPWDViewModel.m */,
 			);
 			path = VM;
 			sourceTree = "<group>";
@@ -896,6 +932,9 @@
 		131B4528241636C700A99F73 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				1315E141241B6C2100F7B452 /* MPForgetPWDView.h */,
+				1315E142241B6C2100F7B452 /* MPForgetPWDView.m */,
+				1315E147241B6D3800F7B452 /* MPForgetPWDView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -903,6 +942,9 @@
 		131B4529241636CD00A99F73 /* VC */ = {
 			isa = PBXGroup;
 			children = (
+				1315E149241B76AD00F7B452 /* MPNewPWDViewController.h */,
+				1315E14A241B76AD00F7B452 /* MPNewPWDViewController.m */,
+				1315E14B241B76AD00F7B452 /* MPNewPWDViewController.xib */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -910,6 +952,8 @@
 		131B452A241636CD00A99F73 /* VM */ = {
 			isa = PBXGroup;
 			children = (
+				1315E14E241B772700F7B452 /* MPNewPWDViewModel.h */,
+				1315E14F241B772700F7B452 /* MPNewPWDViewModel.m */,
 			);
 			path = VM;
 			sourceTree = "<group>";
@@ -924,6 +968,9 @@
 		131B452C241636CE00A99F73 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				1315E151241B77A400F7B452 /* MPNewPWDView.h */,
+				1315E152241B77A400F7B452 /* MPNewPWDView.m */,
+				1315E154241B77AE00F7B452 /* MPNewPWDView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -938,6 +985,8 @@
 		131B452E241636D500A99F73 /* VM */ = {
 			isa = PBXGroup;
 			children = (
+				1315E139241B2E3800F7B452 /* MPSMSCodeViewModel.h */,
+				1315E13A241B2E3800F7B452 /* MPSMSCodeViewModel.m */,
 			);
 			path = VM;
 			sourceTree = "<group>";
@@ -945,6 +994,9 @@
 		131B452F241636D500A99F73 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				1315E13C241B2ECE00F7B452 /* MPSMSCodeView.h */,
+				1315E13D241B2ECE00F7B452 /* MPSMSCodeView.m */,
+				1315E13F241B2EE700F7B452 /* MPSMSCodeView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -952,6 +1004,9 @@
 		131B4530241636D500A99F73 /* VC */ = {
 			isa = PBXGroup;
 			children = (
+				1315E134241B2D3B00F7B452 /* MPSMSCodeViewController.h */,
+				1315E135241B2D3B00F7B452 /* MPSMSCodeViewController.m */,
+				1315E136241B2D3B00F7B452 /* MPSMSCodeViewController.xib */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -1576,6 +1631,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				131B44C524161AD400A99F73 /* img0.png in Resources */,
+				1315E140241B2EE700F7B452 /* MPSMSCodeView.xib in Resources */,
 				131B44C724161AD400A99F73 /* loading_more.json in Resources */,
 				131B450424161B0100A99F73 /* feed_interestTagsV2.json in Resources */,
 				131B44D224161AD400A99F73 /* img_0.png in Resources */,
@@ -1604,6 +1660,7 @@
 				131B44D324161AD400A99F73 /* img_2.png in Resources */,
 				131B44FC24161B0100A99F73 /* dot_black.json in Resources */,
 				131B451124161B0100A99F73 /* dot_white.json in Resources */,
+				1315E148241B6D3800F7B452 /* MPForgetPWDView.xib in Resources */,
 				133E70DA2418BA9400A4C3E4 /* MPAccountLoginViewController.xib in Resources */,
 				131B44C024161AD400A99F73 /* hc.png in Resources */,
 				131B44C824161AD400A99F73 /* zan.png in Resources */,
@@ -1615,6 +1672,7 @@
 				131B451024161B0100A99F73 /* register_white.json in Resources */,
 				13DBCF552410B4A000D99014 /* MPMainViewController.xib in Resources */,
 				133E70E22418BC6A00A4C3E4 /* MPAccountLoginView.xib in Resources */,
+				1315E138241B2D3B00F7B452 /* MPSMSCodeViewController.xib in Resources */,
 				131B44CF24161AD400A99F73 /* full_praise.json in Resources */,
 				131B44B924161AD400A99F73 /* unpraiseSmallData.json in Resources */,
 				131B44CC24161AD400A99F73 /* image_0.png in Resources */,
@@ -1635,6 +1693,8 @@
 				132C7E21241A2800007E3142 /* MPHomePageViewController.xib in Resources */,
 				133E70F72418E32E00A4C3E4 /* CountryPhoneCode.plist in Resources */,
 				131B450A24161B0100A99F73 /* localerror.json in Resources */,
+				1315E14D241B76AD00F7B452 /* MPNewPWDViewController.xib in Resources */,
+				1315E155241B77AE00F7B452 /* MPNewPWDView.xib in Resources */,
 				131B44FF24161B0100A99F73 /* country_code.json in Resources */,
 				131B450624161B0100A99F73 /* default_section_types.json in Resources */,
 				131B450B24161B0100A99F73 /* layout_about.json in Resources */,
@@ -1714,10 +1774,13 @@
 				133E70B824188C0400A4C3E4 /* MPBasePopViewController.m in Sources */,
 				13DBCF022410B14900D99014 /* AppCycleScrollview.m in Sources */,
 				13DBCED42410B12A00D99014 /* TelePhoneTextField.m in Sources */,
+				1315E150241B772700F7B452 /* MPNewPWDViewModel.m in Sources */,
 				133E70D124189AAB00A4C3E4 /* MPWebViewController.m in Sources */,
 				131B453A241638E900A99F73 /* MPNavigationViewController.m in Sources */,
+				1315E14C241B76AD00F7B452 /* MPNewPWDViewController.m in Sources */,
 				13DBCF382410B15500D99014 /* UIApplication+TopController.m in Sources */,
 				133E70C324188F2D00A4C3E4 /* SeparateLineButton.m in Sources */,
+				1315E13B241B2E3800F7B452 /* MPSMSCodeViewModel.m in Sources */,
 				13DBCF0C2410B14900D99014 /* MBHUDToastManager.m in Sources */,
 				13DBCF462410B15500D99014 /* UIView+Radius.m in Sources */,
 				13DBCF3E2410B15500D99014 /* UIViewController+Navigation.m in Sources */,
@@ -1735,9 +1798,13 @@
 				131B454C2416404C00A99F73 /* MPBaseUserInfoModel.m in Sources */,
 				13DBCF3A2410B15500D99014 /* UITextField+customView.m in Sources */,
 				133E70E62418D82A00A4C3E4 /* MPForgetPWDViewController.m in Sources */,
+				1315E153241B77A400F7B452 /* MPNewPWDView.m in Sources */,
 				13DBCF442410B15500D99014 /* NSObject+Time.m in Sources */,
 				133E70EB2418D86000A4C3E4 /* MPPhoneLoginViewController.m in Sources */,
 				13DBCF392410B15500D99014 /* UIPickerView+MalPicker.m in Sources */,
+				1315E137241B2D3B00F7B452 /* MPSMSCodeViewController.m in Sources */,
+				1315E146241B6C5B00F7B452 /* MPForgetPWDViewModel.m in Sources */,
+				1315E143241B6C2100F7B452 /* MPForgetPWDView.m in Sources */,
 				131B454D2416404C00A99F73 /* MPBaseViewModel.m in Sources */,
 				133E70D524189AAB00A4C3E4 /* MPPDFViewModel.m in Sources */,
 				13DBCF062410B14900D99014 /* UIView+AutoLayout.m in Sources */,
@@ -1755,6 +1822,7 @@
 				133E70D424189AAB00A4C3E4 /* MPPDFFatherViewController.m in Sources */,
 				13DBCF482410B15500D99014 /* UIViewController+VCJump.m in Sources */,
 				133E70DD2418BB9800A4C3E4 /* MPAccountLoginViewModel.m in Sources */,
+				1315E13E241B2ECE00F7B452 /* MPSMSCodeView.m in Sources */,
 				131B455F241644EC00A99F73 /* MPAdvertisingView.m in Sources */,
 				131B454E2416404C00A99F73 /* MPBaseModel.m in Sources */,
 				132C7E20241A2800007E3142 /* MPHomePageViewController.m in Sources */,

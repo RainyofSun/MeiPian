@@ -30,6 +30,11 @@
     [self registerTestField];
 }
 
+- (void)removeNotificationReference {
+    self.delegate = nil;
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
 -(void)registerTestField {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textFieldDidChange:) name:UITextFieldTextDidChangeNotification object:nil];
     _limitCount =11+2;

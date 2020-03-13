@@ -38,6 +38,9 @@ static NSInteger expireDays = 1;    // 清理广告缓存的间隔时间
         if ([adDate getDaysTo:[NSDate date]] >= expireDays) {
             [self.downLoadManager removeLoalADPicFile:adFilePath];
             [self cacheADFile];
+            if (disAdViewBlock) {
+                disAdViewBlock(NO);
+            }
         } else {
             [self setupADView:disAdViewBlock];
         }

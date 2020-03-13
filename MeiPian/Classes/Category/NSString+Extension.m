@@ -59,6 +59,12 @@
     return [phoneTest evaluateWithObject:self];
 }
 
+// 密码强度
+- (BOOL)passwordStronger {
+    NSString *passWordRegex = @"^(?=.*[a-zA-Z0-9].*)(?=.*[a-zA-Z\\W].*)(?=.*[0-9\\W].*).{8,16}$";
+    NSPredicate *phoneTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@",passWordRegex];
+    return [phoneTest evaluateWithObject:self];
+}
 
 // 正则判断手机号码地址格式
 - (BOOL)isMobileNumber {

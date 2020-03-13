@@ -10,6 +10,13 @@
 #import "MPAccountLoginView.h"
 #import "MPLoginWaysPopViewController.h"
 
+@interface MPAccountLoginViewModel ()
+
+/** accountView */
+@property (nonatomic,strong) MPAccountLoginView *accountView;
+
+@end
+
 @implementation MPAccountLoginViewModel
 
 - (void)dealloc {
@@ -20,10 +27,10 @@
 // 账号登录主界面
 - (void)loadAccountLoginMainView:(UIViewController *)vc {
     [vc setNavHiden:YES];
-    MPAccountLoginView *accountView = [[[NSBundle mainBundle] loadNibNamed:@"MPAccountLoginView" owner:nil options:nil] firstObject];
-    [vc.view addSubview:accountView];
-    [accountView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsZero];
-    [accountView updateProtocolAttributeText:[self protocolAttributeText:@"登录即表示同意《美篇用户协议》《美篇隐私协议》"]];
+    self.accountView = [[[NSBundle mainBundle] loadNibNamed:@"MPAccountLoginView" owner:nil options:nil] firstObject];
+    [vc.view addSubview:self.accountView];
+    [self.accountView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsZero];
+    [self.accountView updateProtocolAttributeText:[self protocolAttributeText:@"登录即表示同意《美篇用户协议》《美篇隐私协议》"]];
 }
 
 // 界面按钮点击逻辑
@@ -37,7 +44,7 @@
             [vc.navigationController dismissViewControllerAnimated:YES completion:nil];
             break;
         case 2:
-            
+            [vc pushVC:@"MPForgetPWDViewController"];
             break;
         case 3:
             [MBHUDToastManager showBriefAlert:@"微信登录"];
@@ -54,6 +61,11 @@
         default:
             break;
     }
+}
+
+// 添加/删除textFiled的监听通知
+- (void)addOrDeleteTextFiledObserver:(BOOL)isAdd {
+    isAdd ? [self.accountView addNotification] : [self.accountView removeNotification];
 }
 
 #pragma mark - private methods

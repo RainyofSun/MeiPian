@@ -38,7 +38,11 @@
             [vc.navigationController popViewControllerAnimated:YES];
             break;
         case 1:
-            
+            if (![[self.phoneView getPhoneNum] isValidateMobileNumber]) {
+                [MBHUDToastManager showBriefAlert:@"请输入正确的手机号码"];
+                return;
+            }
+            [vc pushVC:[MPModulesMsgSend sendMsg:@{@"phone":[self.phoneView getPhoneNum],@"isForgetPwd":@(NO)} vcName:@"MPSMSCodeViewController"]];
             break;
         default:
             break;

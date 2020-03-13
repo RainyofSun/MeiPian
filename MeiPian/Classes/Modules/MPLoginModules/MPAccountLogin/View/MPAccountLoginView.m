@@ -25,11 +25,9 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     [self setupUI];
-    [self addNotification];
 }
 
 - (void)dealloc {
-    [self removeNotification];
     NSLog(@"DELLOC : %@",NSStringFromClass(self.class));
 }
 
@@ -48,8 +46,6 @@
 - (IBAction)touchAccountViewBtn:(UIButton *)sender {
     [MPModulesMsgSend sendCumtomMethodMsg:[self nearsetViewController] methodName:@selector(touchAccountLoginViewBtn:) params:[NSNumber numberWithInteger:sender.tag]];
 }
-
-#pragma mark - UITextFieldDelegate
 
 #pragma mark - 通知
 - (void)textFieldDidChangeValue:(NSNotification *)notification {

@@ -7,8 +7,12 @@
 //
 
 #import "MPForgetPWDViewController.h"
+#import "MPForgetPWDViewModel.h"
 
 @interface MPForgetPWDViewController ()
+
+/** forgetPWDVM */
+@property (nonatomic,strong) MPForgetPWDViewModel *forgetPWDVM;
 
 @end
 
@@ -17,6 +21,30 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    [self.forgetPWDVM loadForgetPWDMainView:self];
+}
+
+#pragma mark - 消息c透传
+- (void)touchForgetPWDViewBtn:(NSNumber *)senderTag {
+    [self.forgetPWDVM mainViewBtnLogic:self senderTag:senderTag];
+}
+
+// 选择电话区号
+- (void)selectedCountryPhoneCode {
+    [self presentNavVC:@"TelephoneAreaCodeViewController"];
+}
+
+// 更新电话区号
+- (void)updateAreaCode:(NSString *)code {
+    [self.forgetPWDVM updateAreaCode:code];
+}
+
+#pragma mark - public methods
+- (MPForgetPWDViewModel *)forgetPWDVM {
+    if (!_forgetPWDVM) {
+        _forgetPWDVM = [[MPForgetPWDViewModel alloc] init];
+    }
+    return _forgetPWDVM;
 }
 
 /*

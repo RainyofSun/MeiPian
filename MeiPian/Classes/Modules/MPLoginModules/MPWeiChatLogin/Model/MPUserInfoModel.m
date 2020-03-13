@@ -23,6 +23,7 @@
     [aCoder encodeObject:self.sex forKey:@"sex"];
     [aCoder encodeObject:self.token forKey:@"token"];
     [aCoder encodeObject:self.isWork forKey:@"isWork"];
+    [aCoder encodeObject:self.tokenTimesTamp forKey:@"tokenTimesTamp"];
 }
 
 -(id)initWithCoder:(NSCoder *)aDecoder {
@@ -36,6 +37,7 @@
             self.sex = [aDecoder decodeObjectForKey:@"sex"];
             self.token = [aDecoder decodeObjectForKey:@"token"];
             self.isWork = [aDecoder decodeObjectForKey:@"isWork"];
+            self.tokenTimesTamp = [aDecoder decodeObjectForKey:@"tokenTimesTamp"];
         }
     }
     return self;

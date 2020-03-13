@@ -26,6 +26,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (BOOL)isMobileNumber;
 /// 是否含有系统表情
 - (BOOL)isContainEmoji;
+/// 正则验证密码强度
+- (BOOL)passwordStronger;
 /// URLDecode解码
 - (NSDictionary *)urlDecode;
 /// 32位 (较为常用)

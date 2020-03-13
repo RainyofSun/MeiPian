@@ -1,8 +1,8 @@
 //
-//  MPPhoneLoginView.h
+//  MPForgetPWDView.h
 //  MeiPian
 //
-//  Created by EGLS_BMAC on 2020/3/11.
+//  Created by EGLS_BMAC on 2020/3/13.
 //  Copyright © 2020 EGLS_BMAC. All rights reserved.
 //
 
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MPPhoneLoginView : UIView
+@interface MPForgetPWDView : UIView
 
 - (void)reloadPhoneAreaCode:(NSString *)code;
 - (NSString *)getPhoneNum;

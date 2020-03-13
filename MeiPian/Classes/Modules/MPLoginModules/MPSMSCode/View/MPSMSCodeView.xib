@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="MPSMSCodeView">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pca-qg-61F">
+                    <rect key="frame" x="0.0" y="39" width="414" height="818"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r9Z-s4-E3q">
+                            <rect key="frame" x="20" y="20" width="25" height="25"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="r9Z-s4-E3q" secondAttribute="height" multiplier="1:1" id="igN-i5-dgF"/>
+                                <constraint firstAttribute="width" constant="25" id="sbe-fa-sH0"/>
+                            </constraints>
+                            <state key="normal" image="login_back"/>
+                            <connections>
+                                <action selector="touchSmsCodeViewBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="lou-Hb-eZv"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="输入验证码" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k6p-8Y-0Xo">
+                            <rect key="frame" x="35" y="120" width="137" height="33"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="27"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="短信验证码已发送至 " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ayB-OG-LBk">
+                            <rect key="frame" x="35" y="168" width="142" height="18"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <color key="textColor" red="0.54117647059999996" green="0.54117647059999996" blue="0.54117647059999996" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入验证码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9ak-zA-NsF">
+                            <rect key="frame" x="35" y="236" width="344" height="50"/>
+                            <color key="backgroundColor" red="0.92941176469999998" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="rT7-z1-zAC"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                            <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                        </textField>
+                        <button opaque="NO" tag="1" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q4d-0E-x7n">
+                            <rect key="frame" x="35" y="316" width="344" height="50"/>
+                            <color key="backgroundColor" red="0.70196078429999997" green="0.83529411760000005" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <state key="normal" title="登录"/>
+                            <connections>
+                                <action selector="touchSmsCodeViewBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="FbS-vo-ohS"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstItem="9ak-zA-NsF" firstAttribute="width" secondItem="Pca-qg-61F" secondAttribute="width" multiplier="0.83" id="0Hz-9v-fxE"/>
+                        <constraint firstItem="9ak-zA-NsF" firstAttribute="centerX" secondItem="Pca-qg-61F" secondAttribute="centerX" id="6z9-ee-EhT"/>
+                        <constraint firstItem="r9Z-s4-E3q" firstAttribute="top" secondItem="Pca-qg-61F" secondAttribute="top" constant="20" id="FCQ-18-5kF"/>
+                        <constraint firstItem="k6p-8Y-0Xo" firstAttribute="top" secondItem="Pca-qg-61F" secondAttribute="top" constant="120" id="GQE-QT-EvG"/>
+                        <constraint firstItem="ayB-OG-LBk" firstAttribute="leading" secondItem="k6p-8Y-0Xo" secondAttribute="leading" id="QcV-0K-fM5"/>
+                        <constraint firstItem="Q4d-0E-x7n" firstAttribute="centerX" secondItem="Pca-qg-61F" secondAttribute="centerX" id="Qxj-Du-t41"/>
+                        <constraint firstItem="Q4d-0E-x7n" firstAttribute="height" secondItem="9ak-zA-NsF" secondAttribute="height" id="RbV-Xy-pmu"/>
+                        <constraint firstItem="k6p-8Y-0Xo" firstAttribute="leading" secondItem="Pca-qg-61F" secondAttribute="leading" constant="35" id="TRc-5X-NWR"/>
+                        <constraint firstItem="r9Z-s4-E3q" firstAttribute="width" secondItem="r9Z-s4-E3q" secondAttribute="height" multiplier="1:1" id="eHq-65-B3c"/>
+                        <constraint firstItem="r9Z-s4-E3q" firstAttribute="leading" secondItem="Pca-qg-61F" secondAttribute="leading" constant="20" id="hgA-Tj-BbG"/>
+                        <constraint firstItem="9ak-zA-NsF" firstAttribute="top" secondItem="ayB-OG-LBk" secondAttribute="bottom" constant="50" id="hgk-R2-i8k"/>
+                        <constraint firstItem="Q4d-0E-x7n" firstAttribute="width" secondItem="9ak-zA-NsF" secondAttribute="width" id="m9M-x8-2MD"/>
+                        <constraint firstItem="Q4d-0E-x7n" firstAttribute="top" secondItem="9ak-zA-NsF" secondAttribute="bottom" constant="30" id="v4I-YT-h2I"/>
+                        <constraint firstItem="ayB-OG-LBk" firstAttribute="top" secondItem="k6p-8Y-0Xo" secondAttribute="bottom" constant="15" id="wDa-Kd-4gl"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Pca-qg-61F" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="I6X-5H-d6D"/>
+                <constraint firstItem="Pca-qg-61F" firstAttribute="height" secondItem="vUN-kp-3ea" secondAttribute="height" id="NIe-fk-yG7"/>
+                <constraint firstItem="Pca-qg-61F" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="kig-Cg-YvC"/>
+                <constraint firstItem="Pca-qg-61F" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" id="qco-d5-IOZ"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="nextBtn" destination="Q4d-0E-x7n" id="mJN-fa-9Zw"/>
+                <outlet property="smsCodeTextFiled" destination="9ak-zA-NsF" id="2wk-a2-utg"/>
+                <outlet property="topTipLab" destination="ayB-OG-LBk" id="AEK-hA-gJK"/>
+            </connections>
+            <point key="canvasLocation" x="132" y="121"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="login_back" width="22" height="22"/>
+    </resources>
+</document>

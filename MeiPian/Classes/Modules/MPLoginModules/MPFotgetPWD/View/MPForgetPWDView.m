@@ -1,23 +1,24 @@
 //
-//  MPPhoneLoginView.m
+//  MPForgetPWDView.m
 //  MeiPian
 //
-//  Created by EGLS_BMAC on 2020/3/11.
+//  Created by EGLS_BMAC on 2020/3/13.
 //  Copyright © 2020 EGLS_BMAC. All rights reserved.
 //
 
-#import "MPPhoneLoginView.h"
+#import "MPForgetPWDView.h"
 
-@interface MPPhoneLoginView ()<LEDTelePhoneTextFieldDelegate>
+@interface MPForgetPWDView ()<LEDTelePhoneTextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet TelePhoneTextField *phoneTextFiled;
 @property (weak, nonatomic) IBOutlet UIButton *smsCodeBtn;
+
 /** phoneAreaCodeBtn */
 @property (nonatomic,strong) UIButton *phoneAreaCodeBtn;
 
 @end
 
-@implementation MPPhoneLoginView
+@implementation MPForgetPWDView
 
 - (void)awakeFromNib {
     [super awakeFromNib];
@@ -39,8 +40,8 @@
     return [self.phoneTextFiled.text stringByReplacingOccurrencesOfString:@" " withString:@""];
 }
 
-- (IBAction)touchPhoneViewBtn:(UIButton *)sender {
-    [MPModulesMsgSend sendCumtomMethodMsg:[self nearsetViewController] methodName:@selector(touchPhoneLoginViewBtn:) params:[NSNumber numberWithInteger:sender.tag]];
+- (IBAction)touchForgetPWDViewBtn:(UIButton *)sender {
+    [MPModulesMsgSend sendCumtomMethodMsg:[self nearsetViewController] methodName:@selector(touchForgetPWDViewBtn:) params:[NSNumber numberWithInteger:sender.tag]];
 }
 
 - (void)selectedCountryCode:(UIButton *)sender {

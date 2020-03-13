@@ -24,17 +24,12 @@
     NSLog(@"刷新网络请求");
 }
 
+- (void)reloadPageData {
+    
+}
+
 - (void)showAdLink {
     NSLog(@"广告链接");
-}
-
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    [self presentNavVC:@"TelephoneAreaCodeViewController"];
-}
-
-// 更新电话区号
-- (void)updateAreaCode:(NSString *)code {
-    
 }
 
 /*

@@ -14,6 +14,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// 协议富文本
 - (void)updateProtocolAttributeText:(NSAttributedString *)attributeProtocol;
+- (void)addNotification;
+- (void)removeNotification;
 
 @end
 

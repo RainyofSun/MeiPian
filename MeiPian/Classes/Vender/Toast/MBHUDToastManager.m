@@ -195,6 +195,12 @@ BOOL isShowGloomy;//是否显示深色背景
         gloomyView.alpha = 0;
         [hud removeFromSuperview];
         [gloomyView removeFromSuperview];
+        if (prestrainView) {
+            prestrainView = nil;
+        }
+        if (gloomyView) {
+            gloomyView = nil;
+        }
 #else
         [UIView animateWithDuration:0.5 animations:^{
             gloomyView.frame = CGRectZero;

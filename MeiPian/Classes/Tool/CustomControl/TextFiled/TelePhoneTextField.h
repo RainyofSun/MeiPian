@@ -26,6 +26,7 @@ typedef enum : NSUInteger {
 
 - (void)setFiledTextStyle:(FormatStyle)style;
 - (void)creadCardFormart:(NSString*)text;
+- (void)removeNotificationReference;
 
 @end
 
