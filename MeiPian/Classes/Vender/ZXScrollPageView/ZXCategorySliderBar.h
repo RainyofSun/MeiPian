@@ -39,4 +39,7 @@
 
 - (void)adjustIndicateViewX:(UIScrollView *)scrollView direction:(NSString *)direction;
 
+/// 设置元素之间的间隔
+- (instancetype)initWithFrame:(CGRect)frame itemInterval:(CGFloat)interval;
+
 @end

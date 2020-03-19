@@ -9,8 +9,17 @@
 #import "MPTabBarViewController.h"
 #import "MPNavigationViewController.h"
 #import "MPHomePageViewController.h"
+#import "MPCirclePageViewController.h"
+#import "MPMessagePageViewController.h"
+#import "MPMinePageViewController.h"
+#import "MPBaseCustomTabBar.h"
 
-@interface MPTabBarViewController ()<UITabBarControllerDelegate>
+@interface MPTabBarViewController ()<MPCustomTabBarDelegate>
+
+/** customBar */
+@property (nonatomic,strong) MPBaseCustomTabBar *customBar;
+/** emptyIndex */
+@property (nonatomic,assign) NSInteger emptyIndex;
 
 @end
 
@@ -19,92 +28,58 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [self setupUI];
     [self setViewController];
 }
 
--(void)viewDidLayoutSubviews {
-    [super viewDidLayoutSubviews];
-    if (IS_PAD) {
-        CGRect frame = self.tabBar.frame;
-        frame.size.height = 90;
-        frame.origin.y = self.view.frame.size.height - frame.size.height;
-        self.tabBar.frame = frame;
-        self.tabBar.barStyle = UIBarStyleBlack;
-    }
-}
-
-#pragma mark - UITabBarControllerDelegate
-- (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController {
-
+#pragma mark - MPCustomTabBarDelegate
+- (BOOL)shouldSelectedViewController:(NSInteger)viewControllerIndex {
     return YES;
 }
 
-- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController {
-    if ([viewController isKindOfClass:[UINavigationController class]]) {
-        UIViewController*topVC = [(UINavigationController*)viewController topViewController];
-        if (topVC && [topVC isKindOfClass:[MPBaseViewController class]]) {
-            [MPModulesMsgSend sendCumtomMethodMsg:topVC methodName:@selector(reloadPageData)];
-        }
+- (void)didSelectedViewController:(NSInteger)viewControllerIndex {
+    if (viewControllerIndex == self.emptyIndex) {
+        [[UIApplication sharedApplication].keyWindow.rootViewController presentVC:@"MPCorpusViewController"];
+        return;
     }
-}
-
-- (void)setupUI {
-    UIColor *tabBarBgColor = [UIColor whiteColor];
-    [[UITabBar appearance] setBarTintColor:tabBarBgColor];
-    [UITabBar appearance].translucent = NO;
-    self.delegate = self;
-    [self setupTabBarColor];
-}
-
-- (void)setupTabBarColor {
-    // 未选中状态的标题颜色
-    CGFloat fontSize = 13;
-    if ([UIDevice currentDevice].userInterfaceIdiom==UIUserInterfaceIdiomPad) {
-        fontSize = 18;
+    viewControllerIndex = viewControllerIndex > self.emptyIndex ? (viewControllerIndex - 1) : viewControllerIndex;
+    MPNavigationViewController *selectedNav = (MPNavigationViewController *)[self.childViewControllers objectAtIndex:viewControllerIndex];
+    UIViewController*topVC = [selectedNav topViewController];
+    if (topVC && [topVC isKindOfClass:[MPBaseViewController class]]) {
+        [MPModulesMsgSend sendCumtomMethodMsg:topVC methodName:@selector(reloadPageData)];
     }
-    [[UITabBarItem appearance] setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:fontSize], NSForegroundColorAttributeName:MAIN_GRAY_COLOR} forState:UIControlStateNormal];
-    // 选中状态的标题颜色
-    [[UITabBarItem appearance] setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:fontSize], NSForegroundColorAttributeName:[UIColor blackColor]} forState:UIControlStateSelected];
+    self.selectedIndex = viewControllerIndex;
 }
 
 - (void)setViewController {
-    NSArray *controllers    = @[@"MPHomePageViewController",];
-    NSArray *titles         = @[@"首页",];
+    //设置tabbar背景颜色
+    [[UITabBar appearance] setBackgroundImage:[UIImage imageWithColor:[UIColor whiteColor]]];
+    [[UITabBar appearance] setShadowImage:[UIImage imageWithColor:[UIColor whiteColor]]];
+
+    NSArray *controllers    = @[@"MPHomePageViewController",@"MPCirclePageViewController",@"",@"MPMessagePageViewController",@"MPMinePageViewController"];
+    NSArray *titles         = @[@"首页",@"圈子",@"",@"消息",@"我的"];
+    self.emptyIndex         = 2;
+    self.customBar = [[MPBaseCustomTabBar alloc] initWithTitleSource:titles];
+    [self.customBar setNormalItemTextColor:RGB(125, 125, 125) selectedTextColor:[UIColor blackColor]];
+    self.customBar.tabBarDelegate = self;
+    [self setValue:self.customBar forKey:@"tabBar"];
     for (int i = 0; i < titles.count; i++) {
-        [self setupViewControllerWithControllerString:controllers[i] title:titles[i] image:@"" andSelectedImage:@""];
+        [self setupViewControllerWithControllerString:controllers[i] title:titles[i]];
     }
 }
 
-/**
- *  初始化一个子控制器
- *
- *  @param controller           需要初始化的子控制器
- *  @param title                标题
- *  @param image                图标
- *  @param selectedImage        选中的图标
- */
--(void)setupViewControllerWithControllerString:(NSString *)controller title:(NSString *)title image:(NSString *)image andSelectedImage:(NSString *)selectedImage{
-    /**改变tabbarItem的padding*/
-    //    UIEdgeInsets insets = UIEdgeInsetsMake(6, 0, -6, 0);
+-(void)setupViewControllerWithControllerString:(NSString *)controller title:(NSString *)title {
+    if (!controller.length) {
+        return;
+    }
     Class class = NSClassFromString(controller);
     UIViewController* viewCon = [[class alloc]init];
     [viewCon setNavHiden:YES];
     MPNavigationViewController* nav = [[MPNavigationViewController alloc] initWithRootViewController:viewCon];
-    if (title) {
-        viewCon.navigationItem.title = title;
-        viewCon.tabBarItem.title = title;
-    }
-    if (image.length) {
-        viewCon.tabBarItem.image            = [[UIImage imageNamed:image] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-        //    viewCon.tabBarItem.imageInsets = UIEdgeInsetsMake(-30, 0, 30, 0);
-        viewCon.tabBarItem.selectedImage    = [[UIImage imageNamed:selectedImage] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    }
     NSMutableArray* array = [NSMutableArray arrayWithArray:self.viewControllers];
-    //    viewCon.tabBarItem.imageInsets = insets;
     [array addObject:nav];
     self.viewControllers = array;
 }
+
 /*
 #pragma mark - Navigation
 

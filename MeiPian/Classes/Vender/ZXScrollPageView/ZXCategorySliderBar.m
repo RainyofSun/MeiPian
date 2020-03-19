@@ -75,15 +75,16 @@ NSString *const RESETCOLORNOTIFICATION = @"RESETCOLORNOTIFICATION";
 @property (nonatomic, assign) NSInteger currentIndex;
 @property (nonatomic, assign) CGFloat lastContentOffsetX;
 @property (nonatomic, assign) BOOL isOutScreen;
+/** itemInteval */
+@property (nonatomic,assign) CGFloat itemInteval;
 
 @end
 
 @implementation ZXCategorySliderBar
 
-- (instancetype)initWithFrame:(CGRect)frame
-{
-    self = [super initWithFrame:frame];
-    if (self) {
+- (instancetype)initWithFrame:(CGRect)frame itemInterval:(CGFloat)interval {
+    if (self = [super initWithFrame:frame]) {
+        _itemInteval = interval;
         [self commonInit];
         [self setUpUI];
     }

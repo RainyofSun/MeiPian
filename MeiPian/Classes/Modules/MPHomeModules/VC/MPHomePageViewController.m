@@ -7,8 +7,12 @@
 //
 
 #import "MPHomePageViewController.h"
+#import "MPHomePageMainViewModel.h"
 
 @interface MPHomePageViewController ()
+
+/** homePageMainVM */
+@property (nonatomic,strong) MPHomePageMainViewModel *homePageMainVM;
 
 @end
 
@@ -17,6 +21,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    self.view.backgroundColor = [UIColor redColor];
+    [self.homePageMainVM loadTopPageControl:self];
 }
 
 #pragma mark - 消息透传
@@ -25,11 +31,19 @@
 }
 
 - (void)reloadPageData {
-    
+    NSLog(@"刷新JJ请求");
 }
 
 - (void)showAdLink {
     NSLog(@"广告链接");
+}
+
+#pragma mark - lazy
+- (MPHomePageMainViewModel *)homePageMainVM {
+    if (!_homePageMainVM) {
+        _homePageMainVM = [[MPHomePageMainViewModel alloc] init];
+    }
+    return _homePageMainVM;
 }
 
 /*

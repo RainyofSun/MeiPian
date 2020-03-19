@@ -55,5 +55,7 @@
 #import "AppCycleScrollview.h"
 #import "EGLSGlobalGCDTimer.h"
 #import "AppFileManager.h"
+#import "DeviceUtils.h"
+#import "MPNetRequestManager.h"
 
 #endif /* CommodHeader_h */
