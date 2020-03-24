@@ -35,12 +35,21 @@
 		13161F242421FDA600A1A373 /* MPCorpusView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13161F232421FDA600A1A373 /* MPCorpusView.xib */; };
 		13161F27242209A100A1A373 /* MPCorpusBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 13161F26242209A100A1A373 /* MPCorpusBtn.m */; };
 		131712C02423104B008A172E /* MPHomePageMainViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 131712BF2423104B008A172E /* MPHomePageMainViewModel.m */; };
-		131712C4242315A4008A172E /* MPHomePageControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 131712C3242315A4008A172E /* MPHomePageControlView.m */; };
-		131712C724231606008A172E /* MPPageControlSliderBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 131712C624231606008A172E /* MPPageControlSliderBar.m */; };
 		131712CE24235E42008A172E /* MPAttentionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 131712CD24235E42008A172E /* MPAttentionView.m */; };
 		131712D124235E58008A172E /* MPRecommandView.m in Sources */ = {isa = PBXBuildFile; fileRef = 131712D024235E58008A172E /* MPRecommandView.m */; };
 		131712D424235E78008A172E /* MPTopicView.m in Sources */ = {isa = PBXBuildFile; fileRef = 131712D324235E78008A172E /* MPTopicView.m */; };
 		131712D724235E95008A172E /* MPPhotographAlbumView.m in Sources */ = {isa = PBXBuildFile; fileRef = 131712D624235E95008A172E /* MPPhotographAlbumView.m */; };
+		131745772429B3650062876F /* XLPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1317456B2429B3650062876F /* XLPageViewController.m */; };
+		131745782429B3650062876F /* XLPageSegmentedTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1317456C2429B3650062876F /* XLPageSegmentedTitleView.m */; };
+		131745792429B3650062876F /* XLPageBasicTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1317456D2429B3650062876F /* XLPageBasicTitleView.m */; };
+		1317457A2429B3650062876F /* XLPageViewControllerConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 1317456E2429B3650062876F /* XLPageViewControllerConfig.m */; };
+		1317457B2429B3650062876F /* XLPageTitleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 131745742429B3650062876F /* XLPageTitleCell.m */; };
+		1317457C2429B3650062876F /* XLPageViewControllerUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 131745752429B3650062876F /* XLPageViewControllerUtil.m */; };
+		131745812429B46D0062876F /* MPHomePageSubViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1317457F2429B46D0062876F /* MPHomePageSubViewController.m */; };
+		131745822429B46D0062876F /* MPHomePageSubViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 131745802429B46D0062876F /* MPHomePageSubViewController.xib */; };
+		131745862429E41C0062876F /* MPHomePageSliderBarTitleCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 131745852429E41C0062876F /* MPHomePageSliderBarTitleCollectionViewCell.m */; };
+		13174589242A03B40062876F /* MPCustomHomePageNavView.m in Sources */ = {isa = PBXBuildFile; fileRef = 13174588242A03B40062876F /* MPCustomHomePageNavView.m */; };
+		1317458C242A14130062876F /* MPPageControlSliderBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1317458A242A14130062876F /* MPPageControlSliderBar.m */; };
 		131810C0241775F2004828A3 /* EGLSGlobalGCDTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 131810BF241775F2004828A3 /* EGLSGlobalGCDTimer.m */; };
 		131810C324177FA9004828A3 /* MPADDownLoadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 131810C224177FA9004828A3 /* MPADDownLoadManager.m */; };
 		131810C624178819004828A3 /* NSDate+CompareTime.m in Sources */ = {isa = PBXBuildFile; fileRef = 131810C524178819004828A3 /* NSDate+CompareTime.m */; };
@@ -258,10 +267,6 @@
 		13161F26242209A100A1A373 /* MPCorpusBtn.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPCorpusBtn.m; sourceTree = "<group>"; };
 		131712BE2423104B008A172E /* MPHomePageMainViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPHomePageMainViewModel.h; sourceTree = "<group>"; };
 		131712BF2423104B008A172E /* MPHomePageMainViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPHomePageMainViewModel.m; sourceTree = "<group>"; };
-		131712C2242315A4008A172E /* MPHomePageControlView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPHomePageControlView.h; sourceTree = "<group>"; };
-		131712C3242315A4008A172E /* MPHomePageControlView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPHomePageControlView.m; sourceTree = "<group>"; };
-		131712C524231606008A172E /* MPPageControlSliderBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPPageControlSliderBar.h; sourceTree = "<group>"; };
-		131712C624231606008A172E /* MPPageControlSliderBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPPageControlSliderBar.m; sourceTree = "<group>"; };
 		131712CC24235E42008A172E /* MPAttentionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPAttentionView.h; sourceTree = "<group>"; };
 		131712CD24235E42008A172E /* MPAttentionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPAttentionView.m; sourceTree = "<group>"; };
 		131712CF24235E58008A172E /* MPRecommandView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPRecommandView.h; sourceTree = "<group>"; };
@@ -270,6 +275,27 @@
 		131712D324235E78008A172E /* MPTopicView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPTopicView.m; sourceTree = "<group>"; };
 		131712D524235E95008A172E /* MPPhotographAlbumView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPPhotographAlbumView.h; sourceTree = "<group>"; };
 		131712D624235E95008A172E /* MPPhotographAlbumView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPPhotographAlbumView.m; sourceTree = "<group>"; };
+		1317456B2429B3650062876F /* XLPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLPageViewController.m; sourceTree = "<group>"; };
+		1317456C2429B3650062876F /* XLPageSegmentedTitleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLPageSegmentedTitleView.m; sourceTree = "<group>"; };
+		1317456D2429B3650062876F /* XLPageBasicTitleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLPageBasicTitleView.m; sourceTree = "<group>"; };
+		1317456E2429B3650062876F /* XLPageViewControllerConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLPageViewControllerConfig.m; sourceTree = "<group>"; };
+		1317456F2429B3650062876F /* XLPageViewControllerUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLPageViewControllerUtil.h; sourceTree = "<group>"; };
+		131745702429B3650062876F /* XLPageTitleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLPageTitleCell.h; sourceTree = "<group>"; };
+		131745712429B3650062876F /* XLPageSegmentedTitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLPageSegmentedTitleView.h; sourceTree = "<group>"; };
+		131745722429B3650062876F /* XLPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLPageViewController.h; sourceTree = "<group>"; };
+		131745732429B3650062876F /* XLPageBasicTitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLPageBasicTitleView.h; sourceTree = "<group>"; };
+		131745742429B3650062876F /* XLPageTitleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLPageTitleCell.m; sourceTree = "<group>"; };
+		131745752429B3650062876F /* XLPageViewControllerUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLPageViewControllerUtil.m; sourceTree = "<group>"; };
+		131745762429B3650062876F /* XLPageViewControllerConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLPageViewControllerConfig.h; sourceTree = "<group>"; };
+		1317457E2429B46D0062876F /* MPHomePageSubViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPHomePageSubViewController.h; sourceTree = "<group>"; };
+		1317457F2429B46D0062876F /* MPHomePageSubViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPHomePageSubViewController.m; sourceTree = "<group>"; };
+		131745802429B46D0062876F /* MPHomePageSubViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MPHomePageSubViewController.xib; sourceTree = "<group>"; };
+		131745842429E41C0062876F /* MPHomePageSliderBarTitleCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPHomePageSliderBarTitleCollectionViewCell.h; sourceTree = "<group>"; };
+		131745852429E41C0062876F /* MPHomePageSliderBarTitleCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPHomePageSliderBarTitleCollectionViewCell.m; sourceTree = "<group>"; };
+		13174587242A03B40062876F /* MPCustomHomePageNavView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPCustomHomePageNavView.h; sourceTree = "<group>"; };
+		13174588242A03B40062876F /* MPCustomHomePageNavView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPCustomHomePageNavView.m; sourceTree = "<group>"; };
+		1317458A242A14130062876F /* MPPageControlSliderBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPPageControlSliderBar.m; sourceTree = "<group>"; };
+		1317458B242A14130062876F /* MPPageControlSliderBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPPageControlSliderBar.h; sourceTree = "<group>"; };
 		131810BE241775F2004828A3 /* EGLSGlobalGCDTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGLSGlobalGCDTimer.h; sourceTree = "<group>"; };
 		131810BF241775F2004828A3 /* EGLSGlobalGCDTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGLSGlobalGCDTimer.m; sourceTree = "<group>"; };
 		131810C124177FA9004828A3 /* MPADDownLoadManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPADDownLoadManager.h; sourceTree = "<group>"; };
@@ -660,11 +686,12 @@
 		131712BC24231023008A172E /* View */ = {
 			isa = PBXGroup;
 			children = (
+				131745832429E3CD0062876F /* CustomTopTitleView */,
 				131712CB24235E15008A172E /* PhotographAlbum */,
 				131712CA24235DF7008A172E /* TopicView */,
 				131712C924235DEE008A172E /* RecommandView */,
 				131712C824235DD9008A172E /* AttentionView */,
-				131712C124231581008A172E /* HomePageMainView */,
+				131712C124231581008A172E /* HomePageSubVC */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -676,15 +703,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		131712C124231581008A172E /* HomePageMainView */ = {
+		131712C124231581008A172E /* HomePageSubVC */ = {
 			isa = PBXGroup;
 			children = (
-				131712C2242315A4008A172E /* MPHomePageControlView.h */,
-				131712C3242315A4008A172E /* MPHomePageControlView.m */,
-				131712C524231606008A172E /* MPPageControlSliderBar.h */,
-				131712C624231606008A172E /* MPPageControlSliderBar.m */,
+				1317457E2429B46D0062876F /* MPHomePageSubViewController.h */,
+				1317457F2429B46D0062876F /* MPHomePageSubViewController.m */,
+				131745802429B46D0062876F /* MPHomePageSubViewController.xib */,
 			);
-			path = HomePageMainView;
+			path = HomePageSubVC;
 			sourceTree = "<group>";
 		};
 		131712C824235DD9008A172E /* AttentionView */ = {
@@ -699,6 +725,8 @@
 		131712C924235DEE008A172E /* RecommandView */ = {
 			isa = PBXGroup;
 			children = (
+				1317458B242A14130062876F /* MPPageControlSliderBar.h */,
+				1317458A242A14130062876F /* MPPageControlSliderBar.m */,
 				131712CF24235E58008A172E /* MPRecommandView.h */,
 				131712D024235E58008A172E /* MPRecommandView.m */,
 			);
@@ -721,6 +749,36 @@
 				131712D624235E95008A172E /* MPPhotographAlbumView.m */,
 			);
 			path = PhotographAlbum;
+			sourceTree = "<group>";
+		};
+		1317456A2429B3650062876F /* XLPageViewController */ = {
+			isa = PBXGroup;
+			children = (
+				131745732429B3650062876F /* XLPageBasicTitleView.h */,
+				1317456D2429B3650062876F /* XLPageBasicTitleView.m */,
+				131745712429B3650062876F /* XLPageSegmentedTitleView.h */,
+				1317456C2429B3650062876F /* XLPageSegmentedTitleView.m */,
+				131745702429B3650062876F /* XLPageTitleCell.h */,
+				131745742429B3650062876F /* XLPageTitleCell.m */,
+				131745722429B3650062876F /* XLPageViewController.h */,
+				1317456B2429B3650062876F /* XLPageViewController.m */,
+				131745762429B3650062876F /* XLPageViewControllerConfig.h */,
+				1317456E2429B3650062876F /* XLPageViewControllerConfig.m */,
+				1317456F2429B3650062876F /* XLPageViewControllerUtil.h */,
+				131745752429B3650062876F /* XLPageViewControllerUtil.m */,
+			);
+			path = XLPageViewController;
+			sourceTree = "<group>";
+		};
+		131745832429E3CD0062876F /* CustomTopTitleView */ = {
+			isa = PBXGroup;
+			children = (
+				131745842429E41C0062876F /* MPHomePageSliderBarTitleCollectionViewCell.h */,
+				131745852429E41C0062876F /* MPHomePageSliderBarTitleCollectionViewCell.m */,
+				13174587242A03B40062876F /* MPCustomHomePageNavView.h */,
+				13174588242A03B40062876F /* MPCustomHomePageNavView.m */,
+			);
+			path = CustomTopTitleView;
 			sourceTree = "<group>";
 		};
 		131810BD241775F2004828A3 /* GlobalTimer */ = {
@@ -1642,6 +1700,7 @@
 		13DBCECA2410B08400D99014 /* Vender */ = {
 			isa = PBXGroup;
 			children = (
+				1317456A2429B3650062876F /* XLPageViewController */,
 				13DBCED52410B14900D99014 /* APPLoopPage */,
 				13DBCEF92410B14900D99014 /* AppWriteLogFile */,
 				13DBCEE12410B14900D99014 /* EmptyListView */,
@@ -2037,6 +2096,7 @@
 				131B450A24161B0100A99F73 /* localerror.json in Resources */,
 				1315E14D241B76AD00F7B452 /* MPNewPWDViewController.xib in Resources */,
 				1315E155241B77AE00F7B452 /* MPNewPWDView.xib in Resources */,
+				131745822429B46D0062876F /* MPHomePageSubViewController.xib in Resources */,
 				131B44FF24161B0100A99F73 /* country_code.json in Resources */,
 				131B450624161B0100A99F73 /* default_section_types.json in Resources */,
 				131B450B24161B0100A99F73 /* layout_about.json in Resources */,
@@ -2108,13 +2168,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				131712C724231606008A172E /* MPPageControlSliderBar.m in Sources */,
+				13174589242A03B40062876F /* MPCustomHomePageNavView.m in Sources */,
 				131810C0241775F2004828A3 /* EGLSGlobalGCDTimer.m in Sources */,
 				13DBCF412410B15500D99014 /* NSString+JSEscape.m in Sources */,
 				13DBCF422410B15500D99014 /* UIControl+EventInterval.m in Sources */,
 				13DBCF542410B4A000D99014 /* MPMainViewController.m in Sources */,
+				131745792429B3650062876F /* XLPageBasicTitleView.m in Sources */,
 				13DBCF072410B14900D99014 /* UIScrollView+EmptyDataSet.m in Sources */,
 				131B45622416453400A99F73 /* MPAdvertisingViewModel.m in Sources */,
+				1317458C242A14130062876F /* MPPageControlSliderBar.m in Sources */,
 				13161F122421D03D00A1A373 /* MPMinePageViewController.m in Sources */,
 				13DBCF052410B14900D99014 /* AppCycleScrollviewFlowLayout.m in Sources */,
 				133E70B824188C0400A4C3E4 /* MPBasePopViewController.m in Sources */,
@@ -2167,18 +2229,23 @@
 				13DBCF402410B15500D99014 /* UIButton+Timer.m in Sources */,
 				13DBCF432410B15500D99014 /* NSString+Extension.m in Sources */,
 				133E71002418E5B800A4C3E4 /* TelephoneCodeView.m in Sources */,
+				131745782429B3650062876F /* XLPageSegmentedTitleView.m in Sources */,
 				13161EFB2420CAAF00A1A373 /* MPBaseCustomTabBar.m in Sources */,
 				13161F042420E08F00A1A373 /* MPCirclePageViewController.m in Sources */,
 				133E70BC24188D6300A4C3E4 /* MPLoginWaysPopViewController.m in Sources */,
 				13161F1F2421FCA800A1A373 /* MPCorpusViewModel.m in Sources */,
+				1317457B2429B3650062876F /* XLPageTitleCell.m in Sources */,
 				131810C324177FA9004828A3 /* MPADDownLoadManager.m in Sources */,
 				13DBCF3F2410B15500D99014 /* NSObject+Observer.m in Sources */,
+				131745862429E41C0062876F /* MPHomePageSliderBarTitleCollectionViewCell.m in Sources */,
+				131745812429B46D0062876F /* MPHomePageSubViewController.m in Sources */,
 				131B454F2416404C00A99F73 /* MPUserStatusGlobalModel.m in Sources */,
 				13DBCEC62410AFC200D99014 /* AppDelegate+CatchCrash.m in Sources */,
 				13161F0B2421D01C00A1A373 /* MPMessagePageViewController.m in Sources */,
 				131810C624178819004828A3 /* NSDate+CompareTime.m in Sources */,
 				131810C924179568004828A3 /* MPWeiChatLoginViewModel.m in Sources */,
 				133E70D424189AAB00A4C3E4 /* MPPDFFatherViewController.m in Sources */,
+				1317457A2429B3650062876F /* XLPageViewControllerConfig.m in Sources */,
 				13DBCF482410B15500D99014 /* UIViewController+VCJump.m in Sources */,
 				133E70DD2418BB9800A4C3E4 /* MPAccountLoginViewModel.m in Sources */,
 				13161F192421F77500A1A373 /* MPCorpusViewController.m in Sources */,
@@ -2203,11 +2270,12 @@
 				131B45372416389600A99F73 /* MPTabBarViewController.m in Sources */,
 				13DBCF132410B14900D99014 /* AppWriteLogGetFile.m in Sources */,
 				13DBCF032410B14900D99014 /* AppPageControl.m in Sources */,
+				1317457C2429B3650062876F /* XLPageViewControllerUtil.m in Sources */,
 				13DBCF0D2410B14900D99014 /* ZXPageCollectionView.m in Sources */,
 				133E70FB2418E57400A4C3E4 /* TelephoneAreaCodeViewController.m in Sources */,
+				131745772429B3650062876F /* XLPageViewController.m in Sources */,
 				133E70F22418D95D00A4C3E4 /* MPPhoneLoginView.m in Sources */,
 				13DBCECE2410B09500D99014 /* AppFileManager.m in Sources */,
-				131712C4242315A4008A172E /* MPHomePageControlView.m in Sources */,
 				131BB3B7241F1B690084B4BB /* MPNetRequestManager.m in Sources */,
 				131712C02423104B008A172E /* MPHomePageMainViewModel.m in Sources */,
 				133E70D324189AAB00A4C3E4 /* MPPDFViewController.m in Sources */,

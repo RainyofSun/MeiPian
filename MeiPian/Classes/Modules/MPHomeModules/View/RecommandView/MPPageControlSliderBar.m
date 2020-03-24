@@ -14,15 +14,6 @@
 @property (nonatomic,strong) UIView *btnContainerView;
 /** btnArray */
 @property (nonatomic,strong) NSMutableArray <UIButton *>*btnArray;
-/** lineLayer */
-@property (nonatomic,strong) CALayer *lineLayer;
-
-/** itemWidthArray */
-@property (nonatomic,strong) NSMutableArray *itemWidthArray;
-/** itemOriginXArray */
-@property (nonatomic,strong) NSMutableArray *itemOriginXArray;
-/** distance */
-@property (nonatomic,assign) CGFloat distance;
 
 @end
 
@@ -46,8 +37,6 @@
 #pragma mark - public methods
 - (void)loadSliderBarTitleSource:(NSArray<NSString *> *)titleSource {
     self.btnArray = [NSMutableArray arrayWithCapacity:titleSource.count];
-    self.itemWidthArray = [NSMutableArray arrayWithCapacity:titleSource.count];
-    self.itemOriginXArray = [NSMutableArray arrayWithCapacity:titleSource.count];
     [self setupSliderbarItems:titleSource];
 }
 
@@ -60,11 +49,6 @@
         return;
     }
     [self resetTopSliderItemStatus];
-    [self switchItemAnimationScale:sender.titleLabel];
-    [UIView animateWithDuration:0.3 animations:^{
-        sender.titleLabel.font = [UIFont boldSystemFontOfSize:17];
-        self.lineLayer.centerX = sender.centerX;
-    }];
     sender.titleLabel.alpha = 1;
     sender.selected = !sender.selected;
     [MPModulesMsgSend sendCumtomMethodMsg:self.superview methodName:@selector(switchTopSliderBarItem:) params:[NSNumber numberWithInteger:sender.tag]];
@@ -77,11 +61,6 @@
     self.btnContainerView.frame = CGRectMake(0, 0, CGRectGetWidth(self.bounds) * 0.67, CGRectGetHeight(self.bounds));
     self.btnContainerView.centerX = self.centerX;
     [self addSubview:self.btnContainerView];
-    
-    self.lineLayer.cornerRadius = 2.f;
-    self.lineLayer.masksToBounds = YES;
-    self.lineLayer.backgroundColor = RGB(38, 121, 255).CGColor;
-    [self.btnContainerView.layer addSublayer:self.lineLayer];
 }
 
 - (void)setupSliderbarItems:(NSArray<NSString *> *)titleSource {
@@ -90,7 +69,6 @@
     for (NSInteger i = 0; i < titleSource.count; i ++) {
         UIButton *item = [UIButton buttonWithType:UIButtonTypeCustom];
         item.tag = i;
-        i == 0 ? [self switchItemAnimationScale:item.titleLabel] : nil;
         i != 0 ? item.titleLabel.alpha = 0.8 : 1;
         item.selected = (i == 0);
         [item setTitle:titleSource[i] forState:UIControlStateNormal];
@@ -101,41 +79,12 @@
         [self.btnContainerView addSubview:item];
         [self.btnArray addObject:item];
     }
-    CGFloat lineW = [titleSource.firstObject widthForFont:[UIFont boldSystemFontOfSize:17]] * 0.75;
-    self.lineLayer.frame = CGRectMake(0, itemH - 5, lineW, 3);
-    self.lineLayer.centerX = self.btnArray.firstObject.centerX;
-    self.distance = itemW - lineW;
-}
-
-// 切换动画 -- 放大
-- (void)switchItemAnimationScale:(UIView *)item {
-    CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"transform.scale"];
-    animation.fromValue = [NSNumber numberWithFloat:1.];
-    animation.toValue = [NSNumber numberWithFloat:1.05];
-    animation.duration = .2;
-    animation.repeatCount = 0;
-    animation.removedOnCompletion = NO;
-    animation.fillMode = kCAFillModeForwards;
-    [item.layer addAnimation:animation forKey:@"zoom"];
-}
-
-// 切换动画 -- 正常
-- (void)switchItemAnimationNormal:(UIView *)item {
-    CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"transform.scale"];
-    animation.fromValue = [NSNumber numberWithFloat:1.05];
-    animation.toValue = [NSNumber numberWithFloat:1.];
-    animation.duration = .2;
-    animation.repeatCount = 0;
-    animation.removedOnCompletion = NO;
-    animation.fillMode = kCAFillModeForwards;
-    [item.layer addAnimation:animation forKey:@"zoom"];
 }
 
 // 重置状态
 - (void)resetTopSliderItemStatus {
     for (UIButton *item in self.btnArray) {
         if (item.selected) {
-            [self switchItemAnimationNormal:item.titleLabel];
             item.titleLabel.font = [UIFont systemFontOfSize:17];
             item.titleLabel.alpha = 0.8;
             item.selected = NO;
@@ -150,13 +99,6 @@
         _btnContainerView = [[UIView alloc] init];
     }
     return _btnContainerView;
-}
-
-- (CALayer *)lineLayer {
-    if (!_lineLayer) {
-        _lineLayer = [CALayer layer];
-    }
-    return _lineLayer;
 }
 
 @end
