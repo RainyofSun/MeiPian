@@ -2,8 +2,8 @@
 //  MPNetRequestManager.m
 //  MeiPian
 //
-//  Created by EGLS_BMAC on 2020/3/16.
-//  Copyright © 2020 EGLS_BMAC. All rights reserved.
+//  Created by MP_BMAC on 2020/3/16.
+//  Copyright © 2020 MP_BMAC. All rights reserved.
 //
 
 #import "MPNetRequestManager.h"
@@ -15,7 +15,7 @@ static NSInteger forceUpdateAppCode = 414;  // 强制更新app
 
 @implementation MPNetRequestManager
 
-+ (NSURLSessionDataTask *)EGLSNetRequestType:(AFNRequestType)requestType requestUrl:(NSString *)url requestParams:(NSDictionary *)params success:(SuccessCallBack)success failure:(FailureCallBack)failure{
++ (NSURLSessionDataTask *)MPNetRequestType:(AFNRequestType)requestType requestUrl:(NSString *)url requestParams:(NSDictionary *)params success:(SuccessCallBack)success failure:(FailureCallBack)failure{
     return [BaseNetWorkingRequest AFNReqeustType:requestType reqesutUrl:url params:params success:^(NSURLSessionDataTask *task, id responseObject) {
         if (responseObject) {
             NSDictionary *verifyData = (NSDictionary *)responseObject;
@@ -36,7 +36,7 @@ static NSInteger forceUpdateAppCode = 414;  // 强制更新app
     } failure:failure];
 }
 
-+ (NSURLSessionDataTask *)EGLSNetRequestType:(AFNRequestType)requestType reqesutUrl:(NSString *)url params:(NSDictionary *)params img:(NSData *)uploadImg success:(SuccessCallBack)success failure:(FailureCallBack)failure{
++ (NSURLSessionDataTask *)MPNetRequestType:(AFNRequestType)requestType reqesutUrl:(NSString *)url params:(NSDictionary *)params img:(NSData *)uploadImg success:(SuccessCallBack)success failure:(FailureCallBack)failure{
     return [BaseNetWorkingRequest AFNReqeustType:requestType reqesutUrl:url params:params img:uploadImg success:^(NSURLSessionDataTask *task, id responseObject) {
         if (responseObject) {
             NSDictionary *verifyData = (NSDictionary *)responseObject;
@@ -56,11 +56,11 @@ static NSInteger forceUpdateAppCode = 414;  // 强制更新app
     } failure:failure];
 }
 
-+ (void)EGLSCancelRequestWithRequestTask:(NSURLSessionDataTask *)requestTask {
++ (void)MPCancelRequestWithRequestTask:(NSURLSessionDataTask *)requestTask {
     [BaseNetWorkingRequest cancelRequestWithRequestTask:requestTask];
 }
 
-+ (void)EGLSCancelRequestWithRequestTaskList:(NSArray<NSURLSessionDataTask *> *)requestTaskList {
++ (void)MPCancelRequestWithRequestTaskList:(NSArray<NSURLSessionDataTask *> *)requestTaskList {
     [BaseNetWorkingRequest cancelRequestWithRequestTaskList:requestTaskList];
 }
 

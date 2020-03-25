@@ -12,7 +12,7 @@
 #import "MPWeiChatLoginViewController.h"
 #import "MPAdvertisingViewModel.h"
 
-static NSInteger tokenExpireTime = 5400000;
+static NSInteger tokenExpireTime = 54000000;
 
 @interface MPMainViewModel ()
 

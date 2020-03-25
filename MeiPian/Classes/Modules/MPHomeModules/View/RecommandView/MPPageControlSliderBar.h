@@ -13,8 +13,6 @@ NS_ASSUME_NONNULL_BEGIN
 @interface MPPageControlSliderBar : UIView
 
 - (void)loadSliderBarTitleSource:(NSArray <NSString *>*)titleSource;
-/// line动画
-- (void)lineAnimation:(NSInteger)senderTag;
 
 @end
 

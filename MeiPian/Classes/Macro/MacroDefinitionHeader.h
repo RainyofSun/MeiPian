@@ -48,7 +48,7 @@
 #define RGBA(R,G,B,A)  [UIColor colorWithRed:(R * 1.0) / 255.0 green:(G * 1.0) / 255.0 blue:(B * 1.0) / 255.0 alpha:A]
 #define HexColor(hexValue)  [UIColor colorWithRed:((float)(((hexValue) & 0xFF0000) >> 16))/255.0 green:((float)(((hexValue) & 0xFF00) >> 8))/255.0 blue:((float)((hexValue) & 0xFF))/255.0 alpha:1.0]   //16进制颜色值，如：#000000 , 注意：在使用的时候hexValue写成：0x000000
 #define HexAColor(hexValue,a)  [UIColor colorWithRed:((float)(((hexValue) & 0xFF0000) >> 16))/255.0 green:((float)(((hexValue) & 0xFF00) >> 8))/255.0 blue:((float)((hexValue) & 0xFF))/255.0 alpha:a]
-#define MAIN_BLUE_COLOR     RGB(39,102,225)
+#define MAIN_BLUE_COLOR     RGB(48, 130, 255)
 #define MAIN_GRAY_COLOR     RGB(147,157,166)
 #define MAIN_LIGHT_GRAY_COLOR   HexColor(0xF4F4F4)
 

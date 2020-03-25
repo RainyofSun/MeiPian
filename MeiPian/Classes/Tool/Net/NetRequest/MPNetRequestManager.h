@@ -2,8 +2,8 @@
 //  MPNetRequestManager.h
 //  MeiPian
 //
-//  Created by EGLS_BMAC on 2020/3/16.
-//  Copyright © 2020 EGLS_BMAC. All rights reserved.
+//  Created by MP_BMAC on 2020/3/16.
+//  Copyright © 2020 MP_BMAC. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -22,7 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
  * @param   failure     FailureCallBack   失败返回
  * @return              NSURLSessionDataTask          请求标识
  */
-+ (NSURLSessionDataTask *)EGLSNetRequestType:(AFNRequestType)requestType requestUrl:(NSString *)url requestParams:(NSDictionary *)params success:(SuccessCallBack)success failure:(FailureCallBack)failure;
++ (NSURLSessionDataTask *)MPNetRequestType:(AFNRequestType)requestType requestUrl:(NSString *)url requestParams:(NSDictionary *)params success:(SuccessCallBack)success failure:(FailureCallBack)failure;
 
 /**
  * @brief                                 上传OCR图片
@@ -34,19 +34,19 @@ NS_ASSUME_NONNULL_BEGIN
  * @param   failure     FailureCallBack   失败返回
  * @return              NSURLSessionDataTask          请求标识
  */
-+ (NSURLSessionDataTask *)EGLSNetRequestType:(AFNRequestType)requestType reqesutUrl:(NSString *)url params:(NSDictionary *)params img:(NSData *)uploadImg success:(SuccessCallBack)success failure:(FailureCallBack)failure;
++ (NSURLSessionDataTask *)MPNetRequestType:(AFNRequestType)requestType reqesutUrl:(NSString *)url params:(NSDictionary *)params img:(NSData *)uploadImg success:(SuccessCallBack)success failure:(FailureCallBack)failure;
 
 /**
  * @brief                                 取消单个请求
  * @param   requestTask   NSNumber        数据请求类型
  */
-+ (void)EGLSCancelRequestWithRequestTask:(NSNumber *)requestTask;
++ (void)MPCancelRequestWithRequestTask:(NSNumber *)requestTask;
 
 /**
  * @brief                                 批量取消请求
  * @param   requestTaskList   NSArray     数据请求类型
  */
-+ (void)EGLSCancelRequestWithRequestTaskList:(NSArray<NSURLSessionDataTask *> *)requestTaskList;
++ (void)MPCancelRequestWithRequestTaskList:(NSArray<NSURLSessionDataTask *> *)requestTaskList;
 
 @end
 

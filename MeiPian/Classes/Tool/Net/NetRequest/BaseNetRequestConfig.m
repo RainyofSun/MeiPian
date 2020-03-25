@@ -36,9 +36,9 @@ static  BaseNetRequestConfig *config = nil;
 }
 
 - (void)setRequestHeader:(NSDictionary *)params {
-//    [self.manager.requestSerializer setValue:[params objectForKey:@"guest_id"] forHTTPHeaderField:@"guest_id"];
-//    [self.manager.requestSerializer setValue:[params objectForKey:@"user_id"] forHTTPHeaderField:@"user_id"];
-//    [self.manager.requestSerializer setValue:[params objectForKey:@"token"] forHTTPHeaderField:@"token"];
+    [self.manager.requestSerializer setValue:[params objectForKey:@"guest_id"] forHTTPHeaderField:@"guest_id"];
+    [self.manager.requestSerializer setValue:[params objectForKey:@"user_id"] forHTTPHeaderField:@"user_id"];
+    [self.manager.requestSerializer setValue:[params objectForKey:@"token"] forHTTPHeaderField:@"token"];
 //    [self.manager.requestSerializer setValue:[DeviceUtils getDeviceTerminalId] forHTTPHeaderField:@"device_id"];
 }
 

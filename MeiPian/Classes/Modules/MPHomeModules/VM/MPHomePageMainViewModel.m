@@ -22,12 +22,18 @@ static NSString *topSliderBarIndifier = @"MPHomePageSliderBarTitle";
 
 /** pageControlView */
 @property (nonatomic,strong) XLPageViewController *pageControlView;
+/** attentionView */
+@property (nonatomic,strong) MPAttentionView *attentionView;
+/** recommandView */
+@property (nonatomic,strong) MPRecommandView *recommandView;
+/** topicView */
+@property (nonatomic,strong) MPTopicView *topicView;
+/** albumView */
+@property (nonatomic,strong) MPPhotographAlbumView *albumView;
 /** selectedItemIndex */
 @property (nonatomic,assign) NSInteger selectedItemIndex;
 /** titleArray */
 @property (nonatomic,strong) NSArray <NSString *>*titleArray;
-/** itemViewArray */
-@property (nonatomic,strong) NSMutableArray <UIView *>*itemViewArray;
 
 @end
 
@@ -54,7 +60,7 @@ static NSString *topSliderBarIndifier = @"MPHomePageSliderBarTitle";
     self.pageControlView.delegate = self;
     self.pageControlView.dataSource = self;
     [self.pageControlView registerClass:[MPHomePageSliderBarTitleCollectionViewCell class] forTitleViewCellWithReuseIdentifier:topSliderBarIndifier];
-    self.pageControlView.selectedIndex = 1;
+    self.pageControlView.selectedIndex = self.selectedItemIndex;
     
     UIButton *leftBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     [leftBtn setTitle:@"122" forState:UIControlStateNormal];
@@ -72,6 +78,30 @@ static NSString *topSliderBarIndifier = @"MPHomePageSliderBarTitle";
 #pragma mark - XLPageViewControllerDelegate
 - (UIViewController *)pageViewController:(XLPageViewController *)pageViewController viewControllerForIndex:(NSInteger)index {
     MPHomePageSubViewController *subVC = [[MPHomePageSubViewController alloc] initWithNibName:@"MPHomePageSubViewController" bundle:nil];
+    switch (index) {
+        case 0:
+            if (!_attentionView) {
+                [subVC addHomePageSubView:self.attentionView];
+            }
+            break;
+        case 1:
+            if (!_recommandView) {
+                [subVC addHomePageSubView:self.recommandView];
+            }
+            break;
+        case 2:
+            if (!_topicView) {
+                [subVC addHomePageSubView:self.topicView];
+            }
+            break;
+        case 3:
+            if (!_albumView) {
+                [subVC addHomePageSubView:self.albumView];
+            }
+            break;
+        default:
+            break;
+    }
     return subVC;
 }
 
@@ -143,6 +173,34 @@ static NSString *topSliderBarIndifier = @"MPHomePageSliderBarTitle";
         _pageControlView = [[XLPageViewController alloc] initWithConfig:[self pageControlConfig]];
     }
     return _pageControlView;
+}
+
+- (MPAttentionView *)attentionView {
+    if (!_attentionView) {
+        _attentionView = [[MPAttentionView alloc] init];
+    }
+    return _attentionView;
+}
+
+- (MPRecommandView *)recommandView {
+    if (!_recommandView) {
+        _recommandView = [[MPRecommandView alloc] init];
+    }
+    return _recommandView;
+}
+
+- (MPTopicView *)topicView {
+    if (!_topicView) {
+        _topicView = [[MPTopicView alloc] init];
+    }
+    return _topicView;
+}
+
+- (MPPhotographAlbumView *)albumView {
+    if (!_albumView) {
+        _albumView = [[MPPhotographAlbumView alloc] init];
+    }
+    return _albumView;
 }
 
 @end

@@ -10,10 +10,10 @@
 
 @interface MPPageControlSliderBar ()
 
-/** btnContainerView */
-@property (nonatomic,strong) UIView *btnContainerView;
 /** btnArray */
 @property (nonatomic,strong) NSMutableArray <UIButton *>*btnArray;
+/** lineLayer */
+@property (nonatomic,strong) CALayer *lineLayer;
 
 @end
 
@@ -40,16 +40,14 @@
     [self setupSliderbarItems:titleSource];
 }
 
-- (void)lineAnimation:(NSInteger)senderTag {
-    [self touchTopSliderBar:self.btnArray[senderTag]];
-}
-
 - (void)touchTopSliderBar:(UIButton *)sender {
     if (sender.selected) {
         return;
     }
     [self resetTopSliderItemStatus];
     sender.titleLabel.alpha = 1;
+    sender.titleLabel.font = [UIFont boldSystemFontOfSize:17];
+    [sender setTitleColor:MAIN_BLUE_COLOR forState:UIControlStateNormal];
     sender.selected = !sender.selected;
     [MPModulesMsgSend sendCumtomMethodMsg:self.superview methodName:@selector(switchTopSliderBarItem:) params:[NSNumber numberWithInteger:sender.tag]];
 }
@@ -57,14 +55,14 @@
 #pragma mark - private methods
 - (void)setupUI {
     self.backgroundColor = [UIColor whiteColor];
-    self.btnContainerView.backgroundColor = [UIColor whiteColor];
-    self.btnContainerView.frame = CGRectMake(0, 0, CGRectGetWidth(self.bounds) * 0.67, CGRectGetHeight(self.bounds));
-    self.btnContainerView.centerX = self.centerX;
-    [self addSubview:self.btnContainerView];
+    self.lineLayer.backgroundColor = MAIN_LIGHT_GRAY_COLOR.CGColor;
+    
+    [self.layer addSublayer:self.lineLayer];
 }
 
 - (void)setupSliderbarItems:(NSArray<NSString *> *)titleSource {
-    CGFloat itemW = CGRectGetWidth(self.btnContainerView.bounds)/titleSource.count;
+    CGFloat distance = 10;
+    CGFloat itemW = (CGRectGetWidth(self.bounds) - distance *(titleSource.count + 1))/titleSource.count;
     CGFloat itemH = CGRectGetHeight(self.bounds);
     for (NSInteger i = 0; i < titleSource.count; i ++) {
         UIButton *item = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -72,13 +70,15 @@
         i != 0 ? item.titleLabel.alpha = 0.8 : 1;
         item.selected = (i == 0);
         [item setTitle:titleSource[i] forState:UIControlStateNormal];
-        [item setTitleColor:RGB(31, 31, 31) forState:UIControlStateNormal];
+        [item setTitleColor:(item.selected ? MAIN_BLUE_COLOR : RGB(31, 31, 31)) forState:UIControlStateNormal];
         item.selected ? item.titleLabel.font = [UIFont boldSystemFontOfSize:17] : nil;
         [item addTarget:self action:@selector(touchTopSliderBar:) forControlEvents:UIControlEventTouchUpInside];
-        item.frame = CGRectMake(itemW * i, 0, itemW, itemH);
-        [self.btnContainerView addSubview:item];
+        item.frame = CGRectMake((itemW + distance) * i + distance, 0, itemW, itemH);
+        [self addSubview:item];
         [self.btnArray addObject:item];
     }
+    
+    self.lineLayer.frame = CGRectMake(0, CGRectGetHeight(self.bounds) - 0.5, CGRectGetWidth(self.bounds), 0.5);
 }
 
 // 重置状态
@@ -87,6 +87,7 @@
         if (item.selected) {
             item.titleLabel.font = [UIFont systemFontOfSize:17];
             item.titleLabel.alpha = 0.8;
+            [item setTitleColor:RGB(31, 31, 31) forState:UIControlStateNormal];
             item.selected = NO;
             break;
         }
@@ -94,11 +95,11 @@
 }
 
 #pragma mark - lazy
-- (UIView *)btnContainerView {
-    if (!_btnContainerView) {
-        _btnContainerView = [[UIView alloc] init];
+- (CALayer *)lineLayer {
+    if (!_lineLayer) {
+        _lineLayer = [CALayer layer];
     }
-    return _btnContainerView;
+    return _lineLayer;
 }
 
 @end

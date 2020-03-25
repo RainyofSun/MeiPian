@@ -19,6 +19,12 @@
     // Do any additional setup after loading the view from its nib.
 }
 
+#pragma mark - public methods
+- (void)addHomePageSubView:(UIView *)subView {
+    [self.view addSubview:subView];
+    [subView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsZero];
+}
+
 /*
 #pragma mark - Navigation
 

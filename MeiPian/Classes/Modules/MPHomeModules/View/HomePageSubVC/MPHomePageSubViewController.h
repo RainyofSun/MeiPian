@@ -12,6 +12,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface MPHomePageSubViewController : MPBaseViewController
 
+/// 添加子View
+- (void)addHomePageSubView:(UIView *)subView;
+
 @end
 
 NS_ASSUME_NONNULL_END
