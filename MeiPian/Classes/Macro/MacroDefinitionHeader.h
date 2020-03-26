@@ -49,8 +49,9 @@
 #define HexColor(hexValue)  [UIColor colorWithRed:((float)(((hexValue) & 0xFF0000) >> 16))/255.0 green:((float)(((hexValue) & 0xFF00) >> 8))/255.0 blue:((float)((hexValue) & 0xFF))/255.0 alpha:1.0]   //16进制颜色值，如：#000000 , 注意：在使用的时候hexValue写成：0x000000
 #define HexAColor(hexValue,a)  [UIColor colorWithRed:((float)(((hexValue) & 0xFF0000) >> 16))/255.0 green:((float)(((hexValue) & 0xFF00) >> 8))/255.0 blue:((float)((hexValue) & 0xFF))/255.0 alpha:a]
 #define MAIN_BLUE_COLOR     RGB(48, 130, 255)
+#define MAIN_BLACK_COLOR    RGB(31, 31, 31)
 #define MAIN_GRAY_COLOR     RGB(147,157,166)
-#define MAIN_LIGHT_GRAY_COLOR   HexColor(0xF4F4F4)
+#define MAIN_LIGHT_GRAY_COLOR   RGB(237,239,245)
 
 #define LEDTOSTVITHMEAGE(message,superView) \
 if (message!=nil) {\

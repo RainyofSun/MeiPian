@@ -20,6 +20,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSString *)timestampSwitchTime:(NSInteger)timestamp andFormatter:(NSString *)format;
 /// 获取当前时间字符串
 - (NSString *)currentTimeStr;
+/// 获取当天日历号
+- (NSString *)currentCalendarNum;
 /// 简单将时间字符串转换为NSDate
 - (NSDate *)dateFromString:(NSString *)dateString;
 /// 对比两个时间的先后关系

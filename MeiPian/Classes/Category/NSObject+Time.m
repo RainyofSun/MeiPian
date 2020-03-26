@@ -51,6 +51,12 @@
     return  currentDateStr;
 }
 
+- (NSString *)currentCalendarNum {
+    NSString *currentTime = [self currentTimeStr];
+    NSArray <NSString *>*timeArray = [[currentTime componentsSeparatedByString:@" "].firstObject componentsSeparatedByString:@"-"];
+    return timeArray.lastObject;
+}
+
 - (NSDate *)dateFromString:(NSString *)dateString {
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat: @"yyyy-MM-dd HH:mm"];

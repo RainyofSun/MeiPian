@@ -15,6 +15,7 @@
 #import "MPHomePageSubViewController.h"
 #import "MPHomePageSliderBarTitleCollectionViewCell.h"
 #import "MPCustomHomePageNavView.h"
+#import "MPCalendarBtn.h"
 
 static NSString *topSliderBarIndifier = @"MPHomePageSliderBarTitle";
 
@@ -62,9 +63,8 @@ static NSString *topSliderBarIndifier = @"MPHomePageSliderBarTitle";
     [self.pageControlView registerClass:[MPHomePageSliderBarTitleCollectionViewCell class] forTitleViewCellWithReuseIdentifier:topSliderBarIndifier];
     self.pageControlView.selectedIndex = self.selectedItemIndex;
     
-    UIButton *leftBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    [leftBtn setTitle:@"122" forState:UIControlStateNormal];
-    [leftBtn setTitleColor:[UIColor systemBlueColor] forState:UIControlStateNormal];
+    MPCalendarBtn *leftBtn = [MPCalendarBtn buttonWithType:UIButtonTypeCustom];
+    [leftBtn setTitle:[self currentCalendarNum] forState:UIControlStateNormal];
     [leftBtn addTarget:self action:@selector(touchSlideBarLeftItem:) forControlEvents:UIControlEventTouchUpInside];
     
     UIButton *rightBtn = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -125,6 +125,9 @@ static NSString *topSliderBarIndifier = @"MPHomePageSliderBarTitle";
 #pragma mark - 点击NavBar
 - (void)touchSlideBarLeftItem:(UIButton *)sender {
     NSLog(@"跳转日历签到");
+    if (!sender.selected) {
+        sender.selected = !sender.selected;
+    }
 }
 
 - (void)touchSlideBarRightItem:(UIButton *)sender {

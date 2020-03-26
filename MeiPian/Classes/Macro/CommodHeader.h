@@ -57,5 +57,6 @@
 #import "AppFileManager.h"
 #import "DeviceUtils.h"
 #import "MPNetRequestManager.h"
+#import "MPBaseTableView.h"
 
 #endif /* CommodHeader_h */
