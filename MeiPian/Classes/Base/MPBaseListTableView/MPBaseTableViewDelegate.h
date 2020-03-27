@@ -26,7 +26,7 @@ NS_ASSUME_NONNULL_BEGIN
  设置cell的高度
  @return 返回cell高度 默认高度45
  */
-- (CGFloat)MPHeightForRowAtIndexPath;
+- (CGFloat)MPHeightForRowAtIndexPath:(NSIndexPath *)index;
 
 @end
 

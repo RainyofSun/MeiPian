@@ -11,9 +11,6 @@
 
 @interface MPBaseTableView ()<UITableViewDelegate,UITableViewDataSource>
 
-/** tableViewSource */
-@property (nonatomic,strong) NSMutableArray <id>*tableViewSource;
-
 @end
 
 @implementation MPBaseTableView
@@ -41,12 +38,6 @@
     tableView.backgroundColor = MAIN_LIGHT_GRAY_COLOR;
     tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     return tableView;
-}
-
-- (void)loadListSource:(NSArray<id> *)listSource {
-    [self.tableViewSource removeAllObjects];
-    [self.tableViewSource addObjectsFromArray:listSource];
-    [self reloadData];
 }
 
 - (void)registerClass:(NSString *)cellClassName forTableViewCellWithReuseIdentifier:(NSString *)identifier withNibFile:(BOOL)hasXibFile {
@@ -90,8 +81,8 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (self.tableDalegate != nil && [self.tableDalegate respondsToSelector:@selector(MPHeightForRowAtIndexPath)]) {
-        return [self.tableDalegate MPHeightForRowAtIndexPath];
+    if (self.tableDalegate != nil && [self.tableDalegate respondsToSelector:@selector(MPHeightForRowAtIndexPath:)]) {
+        return [self.tableDalegate MPHeightForRowAtIndexPath:indexPath];
     } else {
         return 45;
     }
@@ -121,15 +112,13 @@
 #pragma mark - setter
 - (void)setIsCompleteRequest:(BOOL)isCompleteRequest {
     _isCompleteRequest = isCompleteRequest;
-    isCompleteRequest ? [self.mj_header endRefreshing] : nil;
-}
-
-#pragma mark - lazy
-- (NSMutableArray<id> *)tableViewSource {
-    if (!_tableViewSource) {
-        _tableViewSource = [NSMutableArray array];
+    if (isCompleteRequest) {
+        if (self.mj_header.isRefreshing) {
+            [self.mj_header endRefreshing];
+        } else if (self.mj_footer.isRefreshing) {
+            [self.mj_footer endRefreshing];
+        }
     }
-    return _tableViewSource;
 }
 
 @end

@@ -27,11 +27,6 @@ NS_ASSUME_NONNULL_BEGIN
 + (MPBaseTableView *)setupListView;
 
 /**
- 加载数据
- */
-- (void)loadListSource:(NSArray <id>*)listSource;
-
-/**
  自定义cell时用到
  */
 - (void)registerClass:(NSString *)cellClassName forTableViewCellWithReuseIdentifier:(NSString *)identifier withNibFile:(BOOL)hasXibFile;

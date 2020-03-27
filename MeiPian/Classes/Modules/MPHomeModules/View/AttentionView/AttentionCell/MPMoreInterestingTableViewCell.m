@@ -25,8 +25,6 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
-    [self setDefaultData];
-    [self setupUI];
 }
 
 - (void)layoutSubviews {
@@ -40,12 +38,18 @@
     NSLog(@"DELLOC : %@",NSStringFromClass(self.class));
 }
 
+#pragma mark - public methods
+- (void)loadFindMoreModel:(MPAttentionModelConfig *)modelSource {
+    self.headSource = modelSource.findMore.images;
+    [self setupUI];
+}
+
 #pragma mark - private methods
 - (void)setupUI {
     
     [self.containerView addSubview:self.headImgContainerView];
     
-    CGFloat itemW = 40;
+    CGFloat itemW = 36;
     CGFloat itemY = 80 * 0.85 * 0.5 - itemW/2;
     for (NSInteger i = 0; i < self.headSource.count; i ++) {
         UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(100 - itemW/2 * (i + 2), itemY, itemW, itemW)];
@@ -56,13 +60,6 @@
         imgView.clipsToBounds = YES;
         [self.headImgContainerView addSubview:imgView];
     }
-}
-
-- (void)setDefaultData {
-    self.headSource = @[@"https://ss2.meipian.me/users/82441686/9c94335a8cf241a2831c3d96f95050aa.jpg",
-                        @"https://ss2.meipian.me/users/86221110/7732c26487934d4a822dc7063117a27f.jpg",
-                        @"https://ss2.meipian.me/users/85846178/fc26aca2fbd8467087455184cc989fe0.jpg",
-                        @"https://ss2.meipian.me/users/50475709/e2df163be3d74f2eac5a9c040718d273.jpg"];
 }
 
 #pragma mark - lazy

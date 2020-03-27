@@ -7,10 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MPAttentionModelConfig.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface MPMoreInterestingTableViewCell : UITableViewCell
+
+- (void)loadFindMoreModel:(MPAttentionModelConfig *)modelSource;
 
 @end
 

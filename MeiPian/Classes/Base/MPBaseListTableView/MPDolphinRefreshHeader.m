@@ -8,6 +8,13 @@
 
 #import "MPDolphinRefreshHeader.h"
 
+@interface MPDolphinRefreshHeader ()
+
+/** animationImgView */
+@property (nonatomic,strong) YYAnimatedImageView *animationImgView;
+
+@end
+
 @implementation MPDolphinRefreshHeader
 
 - (void)dealloc {
@@ -17,26 +24,52 @@
 #pragma mark -重写方法
 - (void)prepare {
     [super prepare];
-    self.stateLabel.hidden = self.lastUpdatedTimeLabel.hidden = YES;
-    
-    // 设置普通状态的动画图片
-    NSMutableArray *idleImages = [NSMutableArray array];
-    for (NSUInteger i = 1; i<=60; i++) {
-        UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"dropdown_anim__000%zd", i]];
-        [idleImages addObject:image];
+    self.stateLabel.hidden = self.lastUpdatedTimeLabel.hidden = self.gifView.hidden = YES;
+    [self addSubview:self.animationImgView];
+}
+
+- (void)placeSubviews {
+    [super placeSubviews];
+    CGFloat itemW = 62;
+    self.animationImgView.frame = CGRectMake(ScreenWidth/2 - itemW/2, CGRectGetHeight(self.bounds)/2 - itemW/2, itemW, itemW);
+    self.animationImgView.contentMode = UIViewContentModeScaleAspectFit;
+}
+
+- (void)setState:(MJRefreshState)state {
+    MJRefreshCheckState;
+    switch (state) {
+        case MJRefreshStateIdle:
+             /** 普通闲置状态 */
+            //在这里设置子控件在普通闲置状态的界面展示
+            self.animationImgView.image = [UIImage imageNamed:@"mp_refresh_normal"];
+            break;
+        case MJRefreshStatePulling:
+            /** 松开就可以进行刷新的状态 */
+            //在这里设置子控件在松开就可以进行刷新的状态的界面展示
+            self.animationImgView.image = [UIImage imageNamed:@"mp_refresh_ready"];
+            break;
+        case MJRefreshStateRefreshing:
+            /** 正在刷新中的状态 */
+            //在这里设置子控件在正在刷新中的状态的界面展示
+            self.animationImgView.image = [YYImage imageNamed:@"mp_refreshing"];
+            break;
+        case MJRefreshStateWillRefresh:
+            /** 即将要刷新的状态 */
+            break;
+        case MJRefreshStateNoMoreData:
+            /** 没有更多数据了 */
+            break;
+        default:
+            break;
     }
-     [self setImages:idleImages forState:MJRefreshStateIdle];
-    
-    // 设置即将刷新状态的动画图片（一松开就会刷新的状态）
-    NSMutableArray *refreshingImages = [NSMutableArray array];
-    for (NSUInteger i = 1; i<=3; i++) {
-        UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"dropdown_loading_0%zd", i]];
-        [refreshingImages addObject:image];
+}
+
+#pragma mark - lazy
+- (YYAnimatedImageView *)animationImgView {
+    if (!_animationImgView) {
+        _animationImgView = [[YYAnimatedImageView alloc] init];
     }
-    [self setImages:refreshingImages forState:MJRefreshStatePulling];
-    
-    // 设置正在刷新状态的动画图片
-    [self setImages:refreshingImages forState:MJRefreshStateRefreshing];
+    return _animationImgView;
 }
 
 @end
