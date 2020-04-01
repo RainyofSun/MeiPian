@@ -3,7 +3,7 @@
 //  MeiPian
 //
 //  Created by 刘冉 on 2019/8/23.
-//  Copyright © 2019 YZ_BMAC. All rights reserved.
+//  Copyright © 2019 MP_BMAC. All rights reserved.
 //
 
 #import "NSObject+Observer.h"
@@ -12,7 +12,7 @@
 @implementation NSObject (Observer)
 
 // 交换后的方法
-- (void)YZ_RemoveObserver:(NSObject *)observer forKeyPath:(NSString *)keyPath {
+- (void)MP_RemoveObserver:(NSObject *)observer forKeyPath:(NSString *)keyPath {
     if ([self observerKeyPath:keyPath observer:observer]) {
         [self removeObserver:observer forKeyPath:keyPath];
     } else {
@@ -21,7 +21,7 @@
 }
 
 // 交换后的方法
-- (void)YZ_AddLEDObserver:(NSObject *)observer forKeyPath:(NSString *)keyPath options:(NSKeyValueObservingOptions)options context:(nullable void *)context {
+- (void)MP_AddLEDObserver:(NSObject *)observer forKeyPath:(NSString *)keyPath options:(NSKeyValueObservingOptions)options context:(nullable void *)context {
     if (![self observerKeyPath:keyPath observer:observer]) {
         [self addObserver:observer forKeyPath:keyPath options:options context:context];
     } else {

@@ -23,6 +23,8 @@ static NSString *InterestingTipCellIndifier     = @"InsterestingTipCell";
 @property (nonatomic,strong) MPAttentionViewModel *attentionVM;
 /** attentionSource */
 @property (nonatomic,strong) NSArray <MPAttentionModelConfig *>*attentionSource;
+/** loadFirst */
+@property (nonatomic,assign) BOOL loadFirst;
 
 @end
 
@@ -78,8 +80,19 @@ static NSString *InterestingTipCellIndifier     = @"InsterestingTipCell";
     }
 }
 
+- (void)MPBaseTableView:(MPBaseTableView *)tableView willDisplayCell:(UITableViewCell *)cell withRowAndIndex:(NSIndexPath *)index {
+    if ([cell isKindOfClass:[MPInterestingPeopleTableViewCell class]]) {
+        MPInterestingPeopleTableViewCell *interestCell = (MPInterestingPeopleTableViewCell *)cell;
+        [interestCell cellAlphaAnimation];
+    }
+}
+
 - (void)MPDropRefreshLoadMoreSource {
-    [self requestData];
+    [self requestData:(self.loadFirst ? MPLoadingType_Normal : MPLoadingType_Refresh)];
+}
+
+- (void)MPPullRefreshDataSource {
+    [self requestData:MPLoadingType_More];
 }
 
 #pragma mark - private methods
@@ -91,15 +104,16 @@ static NSString *InterestingTipCellIndifier     = @"InsterestingTipCell";
     self.listTableView.tableDalegate = self;
     self.listTableView.tableDataSource = self;
     [self addSubview:self.listTableView];
+    self.loadFirst = YES;
 }
 
-- (void)requestData {
+- (void)requestData:(MPLoadingType)loadType {
     WeakSelf;
     [self.attentionVM MPAttentionPeopleInfo:^(id  _Nonnull returnValue) {
         weakSelf.attentionSource = (NSArray <MPAttentionModelConfig *>*)returnValue;
-        [weakSelf.listTableView reloadData];
         weakSelf.listTableView.isCompleteRequest = YES;
-    }];
+        weakSelf.loadFirst = NO;
+    } requestType:loadType];
 }
 
 #pragma mark - lazy

@@ -28,6 +28,14 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (CGFloat)MPHeightForRowAtIndexPath:(NSIndexPath *)index;
 
+/**
+ 屏幕将要显示的cell
+ @param tableView   实例
+ @param cell        将要显示的cell
+ @param index       cell的Index
+ */
+- (void)MPBaseTableView:(MPBaseTableView *)tableView willDisplayCell:(UITableViewCell *)cell withRowAndIndex:(NSIndexPath *)index;
+
 @end
 
 NS_ASSUME_NONNULL_END

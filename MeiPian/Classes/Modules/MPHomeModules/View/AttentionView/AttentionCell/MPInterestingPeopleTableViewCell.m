@@ -78,7 +78,7 @@
 
 - (void)layoutSubviews {
     [super layoutSubviews];
-    self.lineLayer.frame = CGRectMake(75, CGRectGetHeight(self.contentView.bounds)-0.5, CGRectGetWidth(self.contentView.bounds) - 75, 0.5);
+    self.lineLayer.frame = CGRectMake(65, CGRectGetHeight(self.contentView.bounds)-0.5, CGRectGetWidth(self.contentView.bounds) - 75, 0.5);
 }
 
 - (void)dealloc {
@@ -97,8 +97,15 @@
         [self.vipImgView setImageWithURL:[NSURL URLWithString:userInfo.interestUsers.bedge_img] options:YYWebImageOptionSetImageWithFadeAnimation];
     }
     if (userInfo.interestUsers.label_img.length) {
-        [self.highQualityAuthorImgView setImageWithURL:[NSURL URLWithString:userInfo.interestUsers.label_img] options:YYWebImageOptionSetImageWithFadeAnimation];
+        [self.highQualityAuthorImgView setImageWithURL:[NSURL URLWithString:userInfo.interestUsers.label_img] options:YYWebImageOptionSetImageWithFadeAnimation | YYWebImageOptionProgressiveBlur];
     }
+}
+
+- (void)cellAlphaAnimation {
+    self.headImgBtn.alpha = 0.4;
+    [UIView animateWithDuration:ALPHAANIMATIONTIME animations:^{
+        self.headImgBtn.alpha = 1;
+    }];
 }
 
 #pragma mark - private methods

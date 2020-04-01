@@ -39,6 +39,7 @@
 #import "NSObject+FileCache.h"
 #import "UIPickerView+MalPicker.h"
 #import "NSDate+CompareTime.h"
+#import "UIImageView+ImageScale.h"
 
 // 头文件
 #import "MacroDefinitionHeader.h"

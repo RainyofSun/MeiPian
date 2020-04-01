@@ -8,6 +8,7 @@
 
 #import "MPBaseTableView.h"
 #import "MPDolphinRefreshHeader.h"
+#import "MPAutoFooter.h"
 
 @interface MPBaseTableView ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -20,6 +21,7 @@
         self.delegate = self;
         self.dataSource = self;
         [self setRefreshHeader];
+        [self setRefreshFooter];
     }
     return self;
 }
@@ -71,6 +73,12 @@
     }
 }
 
+- (void)loadMoreData {
+    if (self.tableDataSource != nil && [self.tableDataSource respondsToSelector:@selector(MPPullRefreshDataSource)]) {
+        [self.tableDataSource MPPullRefreshDataSource];
+    }
+}
+
 #pragma mark - UITableViewDelegate & UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if (self.tableDataSource != nil && [self.tableDataSource respondsToSelector:@selector(MPNumberOfRowsInSection)]) {
@@ -102,11 +110,23 @@
     }
 }
 
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (self.tableDalegate != nil && [self.tableDalegate respondsToSelector:@selector(MPBaseTableView:willDisplayCell:withRowAndIndex:)]) {
+        [self.tableDalegate MPBaseTableView:self willDisplayCell:cell withRowAndIndex:indexPath];
+    }
+}
+
 #pragma mark - private methods
 - (void)setRefreshHeader {
     self.mj_header = [MPDolphinRefreshHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
     // 马上进入刷新状态
     [self.mj_header beginRefreshing];
+}
+
+- (void)setRefreshFooter {
+    MPAutoFooter *footer = [MPAutoFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreData)];
+    footer.triggerAutomaticallyRefreshPercent = 0.3;
+    self.mj_footer = footer;
 }
 
 #pragma mark - setter
@@ -119,6 +139,7 @@
             [self.mj_footer endRefreshing];
         }
     }
+    [self reloadData];
 }
 
 @end

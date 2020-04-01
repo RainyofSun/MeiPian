@@ -38,6 +38,11 @@
 
 #define KeyWindow           [[[UIApplication sharedApplication] delegate] window]
 
+// 数据最大值
+#define MAXDATA     10
+// 动画时间
+#define ALPHAANIMATIONTIME  0.6
+
 // 设备判断
 #define IS_IPHONE   (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
 #define IS_PAD      (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)

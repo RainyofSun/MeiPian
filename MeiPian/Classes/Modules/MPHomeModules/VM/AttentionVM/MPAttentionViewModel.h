@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface MPAttentionViewModel : MPBaseViewModel
 
 /// 获取关注信息
-- (void)MPAttentionPeopleInfo:(ReturnValueBlock)dataBlock;
+- (void)MPAttentionPeopleInfo:(ReturnValueBlock)dataBlock requestType:(MPLoadingType)loadType;
 
 @end
 

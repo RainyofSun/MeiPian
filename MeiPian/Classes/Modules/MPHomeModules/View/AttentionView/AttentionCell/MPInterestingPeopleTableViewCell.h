@@ -18,6 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface MPInterestingPeopleTableViewCell : UITableViewCell
 
 - (void)loadInterestUsersInfo:(MPAttentionModelConfig *)userInfo;
+- (void)cellAlphaAnimation;
 
 @end
 
