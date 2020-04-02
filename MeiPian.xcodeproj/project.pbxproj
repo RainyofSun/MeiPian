@@ -167,6 +167,9 @@
 		1318CFDC242C7EF200AAB4CB /* MPMoreInterestingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1318CFDA242C7EF200AAB4CB /* MPMoreInterestingTableViewCell.m */; };
 		1318CFDD242C7EF200AAB4CB /* MPMoreInterestingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1318CFDB242C7EF200AAB4CB /* MPMoreInterestingTableViewCell.xib */; };
 		1318CFE0242C935300AAB4CB /* MPBaseTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1318CFDF242C935300AAB4CB /* MPBaseTableView.m */; };
+		1319A2F824359A04009EE296 /* MPSheYingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1319A2F724359A04009EE296 /* MPSheYingView.m */; };
+		1319A2FC2435C458009EE296 /* MPSheYingViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1319A2FB2435C458009EE296 /* MPSheYingViewModel.m */; };
+		1319A3072435CB39009EE296 /* MPSheYingConfigModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1319A3062435CB39009EE296 /* MPSheYingConfigModel.m */; };
 		131B447F24161A8700A99F73 /* MPResource.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 131B447E24161A8700A99F73 /* MPResource.xcassets */; };
 		131B44B724161AD400A99F73 /* video_detail_next.json in Resources */ = {isa = PBXBuildFile; fileRef = 131B448124161AD400A99F73 /* video_detail_next.json */; };
 		131B44B824161AD400A99F73 /* heart.png in Resources */ = {isa = PBXBuildFile; fileRef = 131B448424161AD400A99F73 /* heart.png */; };
@@ -645,6 +648,12 @@
 		1318CFDB242C7EF200AAB4CB /* MPMoreInterestingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MPMoreInterestingTableViewCell.xib; sourceTree = "<group>"; };
 		1318CFDE242C935300AAB4CB /* MPBaseTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPBaseTableView.h; sourceTree = "<group>"; };
 		1318CFDF242C935300AAB4CB /* MPBaseTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPBaseTableView.m; sourceTree = "<group>"; };
+		1319A2F624359A04009EE296 /* MPSheYingView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPSheYingView.h; sourceTree = "<group>"; };
+		1319A2F724359A04009EE296 /* MPSheYingView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPSheYingView.m; sourceTree = "<group>"; };
+		1319A2FA2435C458009EE296 /* MPSheYingViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPSheYingViewModel.h; sourceTree = "<group>"; };
+		1319A2FB2435C458009EE296 /* MPSheYingViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPSheYingViewModel.m; sourceTree = "<group>"; };
+		1319A3052435CB39009EE296 /* MPSheYingConfigModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPSheYingConfigModel.h; sourceTree = "<group>"; };
+		1319A3062435CB39009EE296 /* MPSheYingConfigModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPSheYingConfigModel.m; sourceTree = "<group>"; };
 		131B447E24161A8700A99F73 /* MPResource.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MPResource.xcassets; sourceTree = "<group>"; };
 		131B448124161AD400A99F73 /* video_detail_next.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = video_detail_next.json; sourceTree = "<group>"; };
 		131B448424161AD400A99F73 /* heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heart.png; sourceTree = "<group>"; };
@@ -1341,6 +1350,7 @@
 		131673DA2431DDAC001FAF4C /* RecommandModel */ = {
 			isa = PBXGroup;
 			children = (
+				1319A3042435CB1E009EE296 /* SheYingModel */,
 				131DF94924348D68006F25C3 /* JingXuanModel */,
 				131673DB2431DDBE001FAF4C /* AllModel */,
 			);
@@ -1385,6 +1395,7 @@
 		131673EA2431E263001FAF4C /* RecommandVM */ = {
 			isa = PBXGroup;
 			children = (
+				1319A2F92435C43D009EE296 /* SheYingVM */,
 				131673EB2431E281001FAF4C /* AllVM */,
 				131DF93B243479DA006F25C3 /* JingXuanVM */,
 				131DF938243478CB006F25C3 /* MPRecommandViewModel.h */,
@@ -1457,6 +1468,7 @@
 		131712C924235DEE008A172E /* RecommandView */ = {
 			isa = PBXGroup;
 			children = (
+				1319A2F5243599AB009EE296 /* SheYingView */,
 				131DF93F24347ABC006F25C3 /* JingXuanView */,
 				131673C62431CA5B001FAF4C /* AllView */,
 				1317458B242A14130062876F /* MPPageControlSliderBar.h */,
@@ -1579,6 +1591,33 @@
 				1313D579242E0B5F0054A52D /* MPInterestingPeopleTableViewCell.xib */,
 			);
 			path = AttentionCell;
+			sourceTree = "<group>";
+		};
+		1319A2F5243599AB009EE296 /* SheYingView */ = {
+			isa = PBXGroup;
+			children = (
+				1319A2F624359A04009EE296 /* MPSheYingView.h */,
+				1319A2F724359A04009EE296 /* MPSheYingView.m */,
+			);
+			path = SheYingView;
+			sourceTree = "<group>";
+		};
+		1319A2F92435C43D009EE296 /* SheYingVM */ = {
+			isa = PBXGroup;
+			children = (
+				1319A2FA2435C458009EE296 /* MPSheYingViewModel.h */,
+				1319A2FB2435C458009EE296 /* MPSheYingViewModel.m */,
+			);
+			path = SheYingVM;
+			sourceTree = "<group>";
+		};
+		1319A3042435CB1E009EE296 /* SheYingModel */ = {
+			isa = PBXGroup;
+			children = (
+				1319A3052435CB39009EE296 /* MPSheYingConfigModel.h */,
+				1319A3062435CB39009EE296 /* MPSheYingConfigModel.m */,
+			);
+			path = SheYingModel;
 			sourceTree = "<group>";
 		};
 		131B448024161AD400A99F73 /* Animations */ = {
@@ -3389,6 +3428,7 @@
 				13DBCF3A2410B15500D99014 /* UITextField+customView.m in Sources */,
 				1313D571242DE2D20054A52D /* MPInterestUsersModel.m in Sources */,
 				133E70E62418D82A00A4C3E4 /* MPForgetPWDViewController.m in Sources */,
+				1319A2FC2435C458009EE296 /* MPSheYingViewModel.m in Sources */,
 				1315E153241B77A400F7B452 /* MPNewPWDView.m in Sources */,
 				13DBCF442410B15500D99014 /* NSObject+Time.m in Sources */,
 				131BB3AC241F199E0084B4BB /* BaseNetRequestConfig.m in Sources */,
@@ -3424,6 +3464,7 @@
 				13503C12243317DC0080F0F0 /* UIImageView+ImageScale.m in Sources */,
 				131B454F2416404C00A99F73 /* MPUserStatusGlobalModel.m in Sources */,
 				13DBCEC62410AFC200D99014 /* AppDelegate+CatchCrash.m in Sources */,
+				1319A2F824359A04009EE296 /* MPSheYingView.m in Sources */,
 				13161F0B2421D01C00A1A373 /* MPMessagePageViewController.m in Sources */,
 				131810C624178819004828A3 /* NSDate+CompareTime.m in Sources */,
 				131810C924179568004828A3 /* MPWeiChatLoginViewModel.m in Sources */,
@@ -3440,6 +3481,7 @@
 				131B454E2416404C00A99F73 /* MPBaseModel.m in Sources */,
 				132C7E20241A2800007E3142 /* MPHomePageViewController.m in Sources */,
 				133E70EF2418D90E00A4C3E4 /* MPPhoneLoginViewModel.m in Sources */,
+				1319A3072435CB39009EE296 /* MPSheYingConfigModel.m in Sources */,
 				13DBCF0A2410B14900D99014 /* MPModulesMsgSend.m in Sources */,
 				131BB3AD241F199E0084B4BB /* BusinessRequestErrorHander.m in Sources */,
 				131DF94C24349188006F25C3 /* MPJingXuanConfigModel.m in Sources */,

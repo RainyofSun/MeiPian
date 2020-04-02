@@ -63,12 +63,12 @@
         switch (allModel.style.integerValue) {
             case 2:
                 configModel.cellType    = RecommandAllArticleCellStyle_OnePic;
-                configModel.cellHeight  = 200;
+                configModel.cellHeight  = 210;
                 [self.articleAllSource addObject:configModel];
                 break;
             case 3:
                 configModel.cellType    = RecommandAllArticleCellStyle_ThreePic;
-                configModel.cellHeight  = 180;
+                configModel.cellHeight  = ([configModel.recommandAllModel.article.title widthForFont:[UIFont systemFontOfSize:17]] > (ScreenWidth - 30)) ? 180 : 160;
                 [self.articleAllSource addObject:configModel];
                 break;
             default:

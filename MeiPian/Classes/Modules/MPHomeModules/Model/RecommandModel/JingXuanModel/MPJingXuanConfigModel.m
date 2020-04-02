@@ -10,6 +10,13 @@
 
 @implementation MPJingXuanConfigModel
 
+- (instancetype)init {
+    if (self = [super init]) {
+        self.isBrowse = NO;
+    }
+    return self;
+}
+
 - (void)dealloc {
     NSLog(@"DELLOC : %@",NSStringFromClass(self.class));
 }
@@ -34,6 +41,10 @@
     } else {
         return @"";
     }
+}
+
+- (UIColor *)textColor {
+    return self.isBrowse ? HexColor(0x8E8E8F) : MAIN_BLACK_COLOR;
 }
 
 @end

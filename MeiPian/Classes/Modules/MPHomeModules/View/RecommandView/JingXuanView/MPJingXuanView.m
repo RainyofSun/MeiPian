@@ -49,13 +49,18 @@ static NSString *RecommandJXCell    = @"JXCell";
 }
 
 - (CGFloat)MPHeightForRowAtIndexPath:(NSIndexPath *)index {
-    return 120;
+    return 95;
 }
 
 - (UITableViewCell *)MPBaseTableView:(MPBaseTableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)index {
     MPJXTableViewCell *cell = [tableView dequeueReusableTableViewCellWithIdentifier:RecommandJXCell forIndex:index];
     [cell loadJingXuanCellSource:self.JXArticleSource[index.row]];
     return cell;
+}
+
+- (void)MPBaseTableView:(MPBaseTableView *)tableView didSelectedAtIndex:(NSIndexPath *)index {
+    MPJXTableViewCell *cell = [tableView MPBaseTableViewCellForRowAtIndex:index];
+    [cell loadJingXuanCellSource:[self.JXVM modifyJingXuanModelData:index.row]];
 }
 
 - (void)MPDropRefreshLoadMoreSource {

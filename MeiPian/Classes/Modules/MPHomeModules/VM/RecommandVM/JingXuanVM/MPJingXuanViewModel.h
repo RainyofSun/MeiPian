@@ -13,7 +13,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface MPJingXuanViewModel : MPRecommandViewModel
 
-
+/// 修改model颜色数据
+- (MPJingXuanConfigModel *)modifyJingXuanModelData:(NSInteger)index;
 
 @end
 

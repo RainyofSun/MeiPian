@@ -22,8 +22,6 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *articleTypeBtnW;
 /** imgControlsArray */
 @property (nonatomic,strong) NSMutableArray <UIImageView *>*imgControlsArray;
-/** lineLayer */
-@property (nonatomic,strong) CALayer *lineLayer;
 
 @end
 
@@ -34,11 +32,6 @@
     // Initialization code
     [self setupUI];
     [self setImgviewControls];
-}
-
-- (void)layoutSubviews {
-    [super layoutSubviews];
-    self.lineLayer.frame = CGRectMake(15, CGRectGetHeight(self.containerView.bounds)-0.5, ScreenWidth - 30, 0.5);
 }
 
 - (void)dealloc {
@@ -79,9 +72,6 @@
     
     self.articleTypeBtn.layer.cornerRadius = CGRectGetHeight(self.articleTypeBtn.bounds)/2;
     self.articleTypeBtn.clipsToBounds = YES;
-    
-    self.lineLayer.backgroundColor = RGB(237, 237, 237).CGColor;
-    [self.containerView.layer addSublayer:self.lineLayer];
 }
 
 - (void)setImgviewControls {
@@ -98,14 +88,6 @@
         [self.coverContainerView addSubview:imgView];
         [self.imgControlsArray addObject:imgView];
     }
-}
-
-#pragma mark - lazy
-- (CALayer *)lineLayer {
-    if (!_lineLayer) {
-        _lineLayer = [CALayer layer];
-    }
-    return _lineLayer;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

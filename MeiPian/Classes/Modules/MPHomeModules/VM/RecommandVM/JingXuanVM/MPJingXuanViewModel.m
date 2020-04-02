@@ -49,21 +49,18 @@
     }];
 }
 
+// 修改model颜色数据
+- (MPJingXuanConfigModel *)modifyJingXuanModelData:(NSInteger)index {
+    self.articleDataSource[index].isBrowse = YES;
+    return self.articleDataSource[index];
+}
+
 #pragma mark - private methods
 - (NSArray <MPJingXuanConfigModel *>*)combineArticleJXDataSource:(NSArray <MPJingXuanConfigModel *>*)modelSource loadType:(MPLoadingType)loadType {
     if (loadType == MPLoadingType_Normal || loadType == MPLoadingType_Refresh) {
         [self.articleDataSource removeAllObjects];
     }
-    
-//    for (MPJingXuanConfigModel *configModel in modelSource) {
-//        if (configModel.article.visit_count.stringValue.length) {
-//            configModel.commentsText = [NSString stringWithFormat:@"%@阅读",configModel.article.visit_count];
-//        }
-//        if (configModel.article.comment_count.stringValue.length) {
-//            configModel.commentsText = [NSString stringWithFormat:@"%@   %@评论",configModel.commentsText,configModel.article.comment_count];
-//        }
-//    }
-//    
+      
     [self.articleDataSource addObjectsFromArray:modelSource];
     
     self.isResetNoMoreData = (modelSource.count < self.pageCount);

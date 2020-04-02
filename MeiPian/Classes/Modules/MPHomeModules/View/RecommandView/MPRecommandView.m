@@ -10,6 +10,7 @@
 #import "MPPageControlSliderBar.h"
 #import "MPRecommandAllView.h"
 #import "MPJingXuanView.h"
+#import "MPSheYingView.h"
 
 @interface MPRecommandView ()<UIScrollViewDelegate>
 
@@ -23,6 +24,8 @@
 @property (nonatomic,strong) MPRecommandAllView *allView;
 /** JXView */
 @property (nonatomic,strong) MPJingXuanView *JXView;
+/** SYView */
+@property (nonatomic,strong) MPSheYingView *SYView;
 
 @end
 
@@ -57,6 +60,11 @@
         case 1:
             [self.mainScrollView addSubview:self.JXView];
             self.JXView.frame = CGRectMake(ScreenWidth * senderTag.integerValue, 0, ScreenWidth, CGRectGetHeight(self.allView.bounds));
+            [self.mainScrollView setContentOffset:CGPointMake(ScreenWidth * senderTag.integerValue, 0) animated:YES];
+            break;
+        case 2:
+            [self.mainScrollView addSubview:self.SYView];
+            self.SYView.frame = CGRectMake(ScreenWidth * senderTag.integerValue, 0, ScreenWidth, CGRectGetHeight(self.allView.bounds));
             [self.mainScrollView setContentOffset:CGPointMake(ScreenWidth * senderTag.integerValue, 0) animated:YES];
             break;
         default:
@@ -116,7 +124,7 @@
 #pragma mark - lazy
 - (MPPageControlSliderBar *)topBar {
     if (!_topBar) {
-        _topBar = [[MPPageControlSliderBar alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, 40)];
+        _topBar = [[MPPageControlSliderBar alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, 50)];
     }
     return _topBar;
 }
@@ -133,6 +141,13 @@
         _JXView = [[MPJingXuanView alloc] init];
     }
     return _JXView;
+}
+
+- (MPSheYingView *)SYView {
+    if (!_SYView) {
+        _SYView = [[MPSheYingView alloc] init];
+    }
+    return _SYView;
 }
 
 @end

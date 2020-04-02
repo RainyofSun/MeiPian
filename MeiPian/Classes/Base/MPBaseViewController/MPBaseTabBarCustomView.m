@@ -24,6 +24,8 @@
 @property (nonatomic,strong) UIColor *selectedColor;
 /** emptyTitleIndex */
 @property (nonatomic,assign) NSInteger emptyTitleIndex;
+/** lineLayer */
+@property (nonatomic,strong) CALayer *lineLayer;
 
 @end
 
@@ -113,6 +115,10 @@
         [self addSubview:item];
         [_itemSource addObject:item];
     }
+    self.lineLayer = [CALayer layer];
+    self.lineLayer.backgroundColor = [UIColor colorWithRed:237/255.0 green:237/255.0 blue:237/255.0 alpha:1].CGColor;
+    self.lineLayer.frame = CGRectMake(0, 0, CGRectGetWidth(self.bounds), 1);
+    [self.layer addSublayer:self.lineLayer];
 }
 
 #pragma mark - private methods

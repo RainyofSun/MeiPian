@@ -20,6 +20,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,strong) MPJingXuanAuthorModel *author;
 /** commentsText */
 @property (nonatomic,strong) NSString *commentsText;
+/** isBrowse */
+@property (nonatomic,assign) BOOL isBrowse;
+/** textColor */
+@property (nonatomic,strong) UIColor *textColor;
 
 @end
 
