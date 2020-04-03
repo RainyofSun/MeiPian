@@ -224,17 +224,17 @@ static CGFloat rubberBandDistance(CGFloat offset, CGFloat dimension) {
         if (mainOffsetY < 0) {
             // 滚动到顶部之后继续往上滚动需要乘以一个小于1的系数
             mainOffsetY = self.mainScrollView.contentOffset.y - rubberBandDistance(detal, ScreenHeight);
-//            CGFloat subScrollViewOffsetY = self.articleView.listTableView.contentOffset.y - detal;
-//            if (subScrollViewOffsetY < 0) {
-//                // 触发下拉刷新
-//                mainOffsetY = 0;
-//                subScrollViewOffsetY = self.articleView.listTableView.contentOffset.y - rubberBandDistance(detal, ScreenHeight);
-//                self.articleView.listTableView.contentOffset = CGPointMake(0, subScrollViewOffsetY);
-//                if (subScrollViewOffsetY <= -30) {
-//                    [self.articleView.listTableView.mj_header beginRefreshing];
-//                }
-//                NSLog(@"subScrollViewOffsetY %f",subScrollViewOffsetY);
-//            }
+            CGFloat subScrollViewOffsetY = self.articleView.listTableView.contentOffset.y - detal;
+            if (subScrollViewOffsetY < 0) {
+                // 触发子Scrollview下拉刷新
+                mainOffsetY = 0;
+                subScrollViewOffsetY = self.articleView.listTableView.contentOffset.y - rubberBandDistance(detal, ScreenHeight);
+                self.articleView.listTableView.contentOffset = CGPointMake(0, subScrollViewOffsetY);
+                if (subScrollViewOffsetY <= -30) {
+                    [self.articleView manualTriggerArticleRefresh];
+                }
+            }
+            NSLog(@"sub %f",subScrollViewOffsetY);
         } else if (mainOffsetY > LOOPVIEWH) {
             mainOffsetY = LOOPVIEWH;
         }
@@ -289,6 +289,9 @@ static CGFloat rubberBandDistance(CGFloat offset, CGFloat dimension) {
 // 判断是否超出ViewFrame的边界
 - (BOOL)outsideFrame {
     if (self.mainScrollView.contentOffset.y < 0) {
+        return YES;
+    }
+    if (self.articleView.listTableView.contentOffset.y < 0) {
         return YES;
     }
     if (self.articleView.listTableView.contentSize.height > self.articleView.listTableView.frame.size.height) {

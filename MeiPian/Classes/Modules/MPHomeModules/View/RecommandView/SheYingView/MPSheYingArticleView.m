@@ -22,6 +22,8 @@ static NSString *RecommandThreePicCell      = @"ThreePicCell";
 @property (nonatomic,strong) NSArray <MPSheYingConfigModel *>*SYArticleSource;
 /** isLoadFirst */
 @property (nonatomic,assign) BOOL isLoadFirst;
+/** manualRefreshStart */
+@property (nonatomic,assign) BOOL manualRefreshStart;
 
 @end
 
@@ -41,6 +43,22 @@ static NSString *RecommandThreePicCell      = @"ThreePicCell";
 
 - (void)dealloc {
     NSLog(@"DELLOC : %@",NSStringFromClass(self.class));
+}
+
+#pragma mark - public methods
+- (void)manualTriggerArticleRefresh {
+    if (self.manualRefreshStart) {
+        NSLog(@"拦截无效刷新");
+        return;
+    }
+    NSLog(@"触发手动刷新");
+    self.manualRefreshStart = YES;
+    [self.listTableView.mj_header beginRefreshing];
+}
+
+- (void)resetManualTriggerStatus {
+    NSLog(@"重置手动刷新状态");
+    self.manualRefreshStart = NO;
 }
 
 #pragma mark - MPBaseTableViewDelegate & MPBaseTableViewDataSource
@@ -110,6 +128,7 @@ static NSString *RecommandThreePicCell      = @"ThreePicCell";
     [self.listTableView registerClass:@"MPOnePicTableViewCell" forTableViewCellWithReuseIdentifier:RecommandOnePicCell withNibFile:YES];
        [self.listTableView registerClass:@"MPThreePicTableViewCell" forTableViewCellWithReuseIdentifier:RecommandThreePicCell withNibFile:YES];
     self.isLoadFirst = YES;
+    self.manualRefreshStart = NO;
 }
 
 - (void)requestRecommandSheYingViewData:(MPLoadingType)loadType {
@@ -118,6 +137,7 @@ static NSString *RecommandThreePicCell      = @"ThreePicCell";
         weakSelf.SYArticleSource = (NSArray <MPSheYingConfigModel *>*)returnValue;
         weakSelf.listTableView.isCompleteRequest = YES;
         weakSelf.isLoadFirst = NO;
+        [weakSelf resetManualTriggerStatus];
     } requestType:loadType articleType:MPRecommandArticleType_SheYing];
 }
 

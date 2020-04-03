@@ -14,6 +14,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 /** listTableView */
 @property (nonatomic,strong) MPBaseTableView *listTableView;
+/// 上层手动触发列表上拉刷新
+- (void)manualTriggerArticleRefresh;
+/// 重置刷新状态
+- (void)resetManualTriggerStatus;
 
 @end
 
