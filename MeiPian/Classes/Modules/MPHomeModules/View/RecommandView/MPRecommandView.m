@@ -11,6 +11,9 @@
 #import "MPRecommandAllView.h"
 #import "MPJingXuanView.h"
 #import "MPSheYingView.h"
+#import "MPQingGanView.h"
+#import "MPWenXueView.h"
+#import "MPLvXingView.h"
 
 @interface MPRecommandView ()<UIScrollViewDelegate>
 
@@ -26,6 +29,12 @@
 @property (nonatomic,strong) MPJingXuanView *JXView;
 /** SYView */
 @property (nonatomic,strong) MPSheYingView *SYView;
+/** QHView */
+@property (nonatomic,strong) MPQingGanView *QGView;
+/** WXView */
+@property (nonatomic,strong) MPWenXueView *WXView;
+/** LXView */
+@property (nonatomic,strong) MPLvXingView *LXView;
 
 @end
 
@@ -65,6 +74,21 @@
         case 2:
             [self.mainScrollView addSubview:self.SYView];
             self.SYView.frame = CGRectMake(ScreenWidth * senderTag.integerValue, 0, ScreenWidth, CGRectGetHeight(self.allView.bounds));
+            [self.mainScrollView setContentOffset:CGPointMake(ScreenWidth * senderTag.integerValue, 0) animated:YES];
+            break;
+        case 3:
+            [self.mainScrollView addSubview:self.QGView];
+            self.QGView.frame = CGRectMake(ScreenWidth * senderTag.integerValue, 0, ScreenWidth, CGRectGetHeight(self.allView.bounds));
+            [self.mainScrollView setContentOffset:CGPointMake(ScreenWidth * senderTag.integerValue, 0) animated:YES];
+            break;
+        case 4:
+            [self.mainScrollView addSubview:self.WXView];
+            self.WXView.frame = CGRectMake(ScreenWidth * senderTag.integerValue, 0, ScreenWidth, CGRectGetHeight(self.allView.bounds));
+            [self.mainScrollView setContentOffset:CGPointMake(ScreenWidth * senderTag.integerValue, 0) animated:YES];
+            break;
+        case 5:
+            [self.mainScrollView addSubview:self.LXView];
+            self.LXView.frame = CGRectMake(ScreenWidth * senderTag.integerValue, 0, ScreenWidth, CGRectGetHeight(self.allView.bounds));
             [self.mainScrollView setContentOffset:CGPointMake(ScreenWidth * senderTag.integerValue, 0) animated:YES];
             break;
         default:
@@ -148,6 +172,27 @@
         _SYView = [[MPSheYingView alloc] init];
     }
     return _SYView;
+}
+
+- (MPQingGanView *)QGView {
+    if (!_QGView) {
+        _QGView = [[MPQingGanView alloc] init];
+    }
+    return _QGView;
+}
+
+- (MPWenXueView *)WXView {
+    if (!_WXView) {
+        _WXView = [[MPWenXueView alloc] init];
+    }
+    return _WXView;
+}
+
+- (MPLvXingView *)LXView {
+    if (!_LXView) {
+        _LXView = [[MPLvXingView alloc] init];
+    }
+    return _LXView;
 }
 
 @end
