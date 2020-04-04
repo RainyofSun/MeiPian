@@ -1,0 +1,79 @@
+{
+    "data": {
+        "main_channel": [
+            {
+                "id": 9000,
+                "icon_img_url": "",
+                "tag_name": "关注",
+                "uri": "meipian://follow/page?id=9000&tag_name=关注",
+                "fixed": 1
+            },
+            {
+                "id": 90001,
+                "icon_img_url": "",
+                "tag_name": "推荐",
+                "uri": "meipian://recommend/main?id=90001&tag_name=推荐",
+                "fixed": 1
+            },
+            {
+                "id": 9007,
+                "icon_img_url": "",
+                "tag_name": "话题",
+                "uri": "meipian://channel/talk?id=9007&tag_name=话题",
+                "fixed": 1
+            },
+            {
+                "id": 9003,
+                "icon_img_url": "",
+                "tag_name": "影集",
+                "uri": "meipian://channel/small/video?id=9003&tag_name=影集",
+                "fixed": 1
+            }
+        ],
+        "sub_channel": [
+            {
+                "id": 9001,
+                "icon_img_url": "",
+                "tag_name": "全部",
+                "uri": "meipian://recommend/articles?id=9001&tag_name=全部",
+                "fixed": 1
+            },
+            {
+                "id": 9006,
+                "icon_img_url": "",
+                "tag_name": "精选",
+                "uri": "meipian://channel/selected?id=9006&tag_name=精选",
+                "fixed": 1
+            },
+            {
+                "id": 9005,
+                "icon_img_url": "http://static2.ivwen.com/seo/1557042353553.jpg",
+                "tag_name": "摄影",
+                "uri": "meipian://channel/photography?id=9005&tag_name=摄影",
+                "fixed": 0
+            },
+            {
+                "id": 4,
+                "icon_img_url": "http://static2.ivwen.com/seo/1557042421047.jpg",
+                "tag_name": "情感",
+                "uri": "meipian://channel/other?id=4&tag_name=情感",
+                "fixed": 0
+            },
+            {
+                "id": 3,
+                "icon_img_url": "http://static2.ivwen.com/seo/1557042410603.jpg",
+                "tag_name": "文学",
+                "uri": "meipian://channel/other?id=3&tag_name=文学",
+                "fixed": 0
+            },
+            {
+                "id": 2,
+                "icon_img_url": "http://static2.ivwen.com/seo/1557042397891.jpg",
+                "tag_name": "旅行",
+                "uri": "meipian://channel/other?id=2&tag_name=旅行",
+                "fixed": 0
+            }
+        ]
+    },
+    "code": 1000
+}

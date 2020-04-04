@@ -25,6 +25,8 @@ typedef enum : NSUInteger {
 - (NSString *)requestHeader:(NSInteger)page articleType:(MPRecommandArticleType)type;
 /// 获取推荐的文章信息
 - (void)MPRecommandArticleInfo:(ReturnValueBlock)dataBlock requestType:(MPLoadingType)loadType articleType:(MPRecommandArticleType)type;
+/// 获取导航栏数据
+- (NSArray <NSString *>*)subNavSource;
 
 @end
 

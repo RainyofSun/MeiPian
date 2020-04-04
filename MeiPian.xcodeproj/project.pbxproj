@@ -432,6 +432,10 @@
 		13DBCF482410B15500D99014 /* UIViewController+VCJump.m in Sources */ = {isa = PBXBuildFile; fileRef = 13DBCF372410B15500D99014 /* UIViewController+VCJump.m */; };
 		13DBCF542410B4A000D99014 /* MPMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13DBCF522410B4A000D99014 /* MPMainViewController.m */; };
 		13DBCF552410B4A000D99014 /* MPMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13DBCF532410B4A000D99014 /* MPMainViewController.xib */; };
+		C8F1D6E42438846D005A8D3A /* TopBar.json in Resources */ = {isa = PBXBuildFile; fileRef = C8F1D6E32438846D005A8D3A /* TopBar.json */; };
+		C8F1D6E7243884BC005A8D3A /* BannerLoop0.json in Resources */ = {isa = PBXBuildFile; fileRef = C8F1D6E6243884BC005A8D3A /* BannerLoop0.json */; };
+		C8F1D6EB24388720005A8D3A /* MPHomePageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C8F1D6EA24388720005A8D3A /* MPHomePageModel.m */; };
+		C8F1D6EE24388BFA005A8D3A /* MPHomePageConfigModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C8F1D6ED24388BFA005A8D3A /* MPHomePageConfigModel.m */; };
 		FB540BA09796F7EAD57C3550 /* Pods_MeiPian.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9FA7FBBA9430BAC7FDDE84E /* Pods_MeiPian.framework */; };
 /* End PBXBuildFile section */
 
@@ -1038,6 +1042,12 @@
 		13DBCF512410B4A000D99014 /* MPMainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPMainViewController.h; sourceTree = "<group>"; };
 		13DBCF522410B4A000D99014 /* MPMainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPMainViewController.m; sourceTree = "<group>"; };
 		13DBCF532410B4A000D99014 /* MPMainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MPMainViewController.xib; sourceTree = "<group>"; };
+		C8F1D6E32438846D005A8D3A /* TopBar.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TopBar.json; sourceTree = "<group>"; };
+		C8F1D6E6243884BC005A8D3A /* BannerLoop0.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = BannerLoop0.json; sourceTree = "<group>"; };
+		C8F1D6E924388720005A8D3A /* MPHomePageModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPHomePageModel.h; sourceTree = "<group>"; };
+		C8F1D6EA24388720005A8D3A /* MPHomePageModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPHomePageModel.m; sourceTree = "<group>"; };
+		C8F1D6EC24388BFA005A8D3A /* MPHomePageConfigModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPHomePageConfigModel.h; sourceTree = "<group>"; };
+		C8F1D6ED24388BFA005A8D3A /* MPHomePageConfigModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPHomePageConfigModel.m; sourceTree = "<group>"; };
 		D9FA7FBBA9430BAC7FDDE84E /* Pods_MeiPian.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MeiPian.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBC2C69CDB1617B584547302 /* Pods-MeiPian.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MeiPian.debug.xcconfig"; path = "Target Support Files/Pods-MeiPian/Pods-MeiPian.debug.xcconfig"; sourceTree = "<group>"; };
 		ED8F50901CA41EECD63E57EC /* Pods-MeiPian.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MeiPian.release.xcconfig"; path = "Target Support Files/Pods-MeiPian/Pods-MeiPian.release.xcconfig"; sourceTree = "<group>"; };
@@ -1066,6 +1076,7 @@
 		1312C77C242B2EC1005887B6 /* HomePage */ = {
 			isa = PBXGroup;
 			children = (
+				C8F1D6E224388421005A8D3A /* TopBar */,
 				1312C814242B46DC005887B6 /* YingJi */,
 				1312C811242B4423005887B6 /* Topic */,
 				1312C7FC242B440C005887B6 /* Attention */,
@@ -1077,6 +1088,7 @@
 		1312C77D242B2ECC005887B6 /* Recommand */ = {
 			isa = PBXGroup;
 			children = (
+				C8F1D6E5243884AC005A8D3A /* BannerLoop */,
 				1312C77E242B2ED5005887B6 /* All */,
 				1312C77F242B2EE2005887B6 /* JingXuan */,
 				1312C7D3242B3F52005887B6 /* LvXing */,
@@ -1536,6 +1548,7 @@
 		131712BD24231029008A172E /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C8F1D6E8243886FD005A8D3A /* HomePageModel */,
 				131673DA2431DDAC001FAF4C /* RecommandModel */,
 				1313D568242DDAA50054A52D /* AttentionModel */,
 			);
@@ -3106,6 +3119,33 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		C8F1D6E224388421005A8D3A /* TopBar */ = {
+			isa = PBXGroup;
+			children = (
+				C8F1D6E32438846D005A8D3A /* TopBar.json */,
+			);
+			path = TopBar;
+			sourceTree = "<group>";
+		};
+		C8F1D6E5243884AC005A8D3A /* BannerLoop */ = {
+			isa = PBXGroup;
+			children = (
+				C8F1D6E6243884BC005A8D3A /* BannerLoop0.json */,
+			);
+			path = BannerLoop;
+			sourceTree = "<group>";
+		};
+		C8F1D6E8243886FD005A8D3A /* HomePageModel */ = {
+			isa = PBXGroup;
+			children = (
+				C8F1D6E924388720005A8D3A /* MPHomePageModel.h */,
+				C8F1D6EA24388720005A8D3A /* MPHomePageModel.m */,
+				C8F1D6EC24388BFA005A8D3A /* MPHomePageConfigModel.h */,
+				C8F1D6ED24388BFA005A8D3A /* MPHomePageConfigModel.m */,
+			);
+			path = HomePageModel;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -3189,6 +3229,7 @@
 				1312C7F6242B41B6005887B6 /* LvXing0.json in Resources */,
 				13B3D499242B591E0081F9D3 /* Flatten_8_2.json in Resources */,
 				13B3D4AB242B591E0081F9D3 /* Flatten_0_4.json in Resources */,
+				C8F1D6E7243884BC005A8D3A /* BannerLoop0.json in Resources */,
 				1312C7E1242B4087005887B6 /* WenXue7.json in Resources */,
 				13161F1A2421F77500A1A373 /* MPCorpusViewController.xib in Resources */,
 				13B3D4E1242B591E0081F9D3 /* Flatten_2_1.json in Resources */,
@@ -3351,6 +3392,7 @@
 				131B44D624161AD400A99F73 /* img_5.png in Resources */,
 				1312C793242B3A1A005887B6 /* all6.json in Resources */,
 				1312C807242B441C005887B6 /* Attention2.json in Resources */,
+				C8F1D6E42438846D005A8D3A /* TopBar.json in Resources */,
 				1312C7CD242B3F42005887B6 /* QingGan2.json in Resources */,
 				131B44D424161AD400A99F73 /* img_3.png in Resources */,
 				1312C7B3242B3D98005887B6 /* SheYing9.json in Resources */,
@@ -3546,6 +3588,7 @@
 				13DBCF392410B15500D99014 /* UIPickerView+MalPicker.m in Sources */,
 				1315E137241B2D3B00F7B452 /* MPSMSCodeViewController.m in Sources */,
 				1315E146241B6C5B00F7B452 /* MPForgetPWDViewModel.m in Sources */,
+				C8F1D6EE24388BFA005A8D3A /* MPHomePageConfigModel.m in Sources */,
 				1315E143241B6C2100F7B452 /* MPForgetPWDView.m in Sources */,
 				131B454D2416404C00A99F73 /* MPBaseViewModel.m in Sources */,
 				131673DE2431DDDC001FAF4C /* MPRecommandAllModel.m in Sources */,
@@ -3585,6 +3628,7 @@
 				1317457A2429B3650062876F /* XLPageViewControllerConfig.m in Sources */,
 				13DBCF482410B15500D99014 /* UIViewController+VCJump.m in Sources */,
 				133E70DD2418BB9800A4C3E4 /* MPAccountLoginViewModel.m in Sources */,
+				C8F1D6EB24388720005A8D3A /* MPHomePageModel.m in Sources */,
 				13161F192421F77500A1A373 /* MPCorpusViewController.m in Sources */,
 				1315E13E241B2ECE00F7B452 /* MPSMSCodeView.m in Sources */,
 				131712D724235E95008A172E /* MPPhotographAlbumView.m in Sources */,
