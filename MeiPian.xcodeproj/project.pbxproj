@@ -432,6 +432,8 @@
 		13DBCF482410B15500D99014 /* UIViewController+VCJump.m in Sources */ = {isa = PBXBuildFile; fileRef = 13DBCF372410B15500D99014 /* UIViewController+VCJump.m */; };
 		13DBCF542410B4A000D99014 /* MPMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13DBCF522410B4A000D99014 /* MPMainViewController.m */; };
 		13DBCF552410B4A000D99014 /* MPMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13DBCF532410B4A000D99014 /* MPMainViewController.xib */; };
+		C8B22B582439595A00606175 /* MPBannerLoopModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C8B22B572439595A00606175 /* MPBannerLoopModel.m */; };
+		C8B22B5C24395A3500606175 /* MPBannerLoopViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C8B22B5B24395A3500606175 /* MPBannerLoopViewModel.m */; };
 		C8F1D6E42438846D005A8D3A /* TopBar.json in Resources */ = {isa = PBXBuildFile; fileRef = C8F1D6E32438846D005A8D3A /* TopBar.json */; };
 		C8F1D6E7243884BC005A8D3A /* BannerLoop0.json in Resources */ = {isa = PBXBuildFile; fileRef = C8F1D6E6243884BC005A8D3A /* BannerLoop0.json */; };
 		C8F1D6EB24388720005A8D3A /* MPHomePageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C8F1D6EA24388720005A8D3A /* MPHomePageModel.m */; };
@@ -1042,6 +1044,10 @@
 		13DBCF512410B4A000D99014 /* MPMainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPMainViewController.h; sourceTree = "<group>"; };
 		13DBCF522410B4A000D99014 /* MPMainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPMainViewController.m; sourceTree = "<group>"; };
 		13DBCF532410B4A000D99014 /* MPMainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MPMainViewController.xib; sourceTree = "<group>"; };
+		C8B22B562439595A00606175 /* MPBannerLoopModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPBannerLoopModel.h; sourceTree = "<group>"; };
+		C8B22B572439595A00606175 /* MPBannerLoopModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPBannerLoopModel.m; sourceTree = "<group>"; };
+		C8B22B5A24395A3500606175 /* MPBannerLoopViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPBannerLoopViewModel.h; sourceTree = "<group>"; };
+		C8B22B5B24395A3500606175 /* MPBannerLoopViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPBannerLoopViewModel.m; sourceTree = "<group>"; };
 		C8F1D6E32438846D005A8D3A /* TopBar.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TopBar.json; sourceTree = "<group>"; };
 		C8F1D6E6243884BC005A8D3A /* BannerLoop0.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = BannerLoop0.json; sourceTree = "<group>"; };
 		C8F1D6E924388720005A8D3A /* MPHomePageModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPHomePageModel.h; sourceTree = "<group>"; };
@@ -1455,6 +1461,7 @@
 		131673DA2431DDAC001FAF4C /* RecommandModel */ = {
 			isa = PBXGroup;
 			children = (
+				C8B22B552439593D00606175 /* BannerLoopModel */,
 				1315B2932436E5BA00565B23 /* WenXueModel */,
 				1315B2872436E3CC00565B23 /* QingGanModel */,
 				1319A3042435CB1E009EE296 /* SheYingModel */,
@@ -1502,6 +1509,7 @@
 		131673EA2431E263001FAF4C /* RecommandVM */ = {
 			isa = PBXGroup;
 			children = (
+				C8B22B5924395A1600606175 /* BannerLoopVM */,
 				131DF938243478CB006F25C3 /* MPRecommandViewModel.h */,
 				131DF939243478CB006F25C3 /* MPRecommandViewModel.m */,
 				131673EB2431E281001FAF4C /* AllVM */,
@@ -3119,6 +3127,24 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		C8B22B552439593D00606175 /* BannerLoopModel */ = {
+			isa = PBXGroup;
+			children = (
+				C8B22B562439595A00606175 /* MPBannerLoopModel.h */,
+				C8B22B572439595A00606175 /* MPBannerLoopModel.m */,
+			);
+			path = BannerLoopModel;
+			sourceTree = "<group>";
+		};
+		C8B22B5924395A1600606175 /* BannerLoopVM */ = {
+			isa = PBXGroup;
+			children = (
+				C8B22B5A24395A3500606175 /* MPBannerLoopViewModel.h */,
+				C8B22B5B24395A3500606175 /* MPBannerLoopViewModel.m */,
+			);
+			path = BannerLoopVM;
+			sourceTree = "<group>";
+		};
 		C8F1D6E224388421005A8D3A /* TopBar */ = {
 			isa = PBXGroup;
 			children = (
@@ -3539,6 +3565,7 @@
 				133E70B824188C0400A4C3E4 /* MPBasePopViewController.m in Sources */,
 				131712D124235E58008A172E /* MPRecommandView.m in Sources */,
 				13DBCF022410B14900D99014 /* AppCycleScrollview.m in Sources */,
+				C8B22B582439595A00606175 /* MPBannerLoopModel.m in Sources */,
 				13DBCED42410B12A00D99014 /* TelePhoneTextField.m in Sources */,
 				1315E150241B772700F7B452 /* MPNewPWDViewModel.m in Sources */,
 				13161F27242209A100A1A373 /* MPCorpusBtn.m in Sources */,
@@ -3680,6 +3707,7 @@
 				13DBCF082410B14900D99014 /* Reachability.m in Sources */,
 				13DBCF0E2410B14900D99014 /* ZXCategorySliderBar.m in Sources */,
 				13DBCF3B2410B15500D99014 /* UIView+GetSuperVC.m in Sources */,
+				C8B22B5C24395A3500606175 /* MPBannerLoopViewModel.m in Sources */,
 				13DBCF042410B14900D99014 /* AppCycleCollectionViewCell.m in Sources */,
 				1313D561242D9CF10054A52D /* MPLocalData.m in Sources */,
 				13DBCF452410B15500D99014 /* UIButton+CustomBtn.m in Sources */,
