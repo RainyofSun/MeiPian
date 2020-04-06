@@ -8,6 +8,9 @@
 
 #import "MPSheYingBannerLoopView.h"
 #import "MPBannerLoopViewModel.h"
+#import "MPSheYingArticleTypeView.h"
+
+static CGFloat BannerHeightScale = 0.37;
 
 @interface MPSheYingBannerLoopView ()<AppCycleScrollviewDelegate>
 {
@@ -15,8 +18,14 @@
 }
 /** imgBannerView */
 @property (nonatomic,strong) AppCycleScrollview *imgBannerView;
+/** typeView */
+@property (nonatomic,strong) MPSheYingArticleTypeView *typeView;
 /** loopVM */
 @property (nonatomic,strong) MPBannerLoopViewModel *loopVM;
+/** loopH */
+@property (nonatomic,assign,readwrite) CGFloat loopH;
+/** lineLayer */
+@property (nonatomic,strong) CALayer *lineLayer;
 
 @end
 
@@ -25,21 +34,13 @@
 - (instancetype)init {
     if (self = [super init]) {
         LoopW = ScreenWidth - 30;
+        self.loopH = 280;
         [self setupImgBannerView];
+        [self setArticleTypeView];
+        [self setupUI];
         [self getLoopImgSource];
     }
     return self;
-}
-
-- (void)layoutSubviews {
-    [super layoutSubviews];
-    [self.imgBannerView autoAlignAxisToSuperviewAxis:ALAxisVertical];
-    [self.imgBannerView autoPinEdge:ALEdgeTop toEdge:ALEdgeTop ofView:self withOffset:10];
-    [self.imgBannerView autoSetDimensionsToSize:CGSizeMake(LoopW, LoopW * 0.36)];
-    
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        self.imgBannerView.placeholderImage = [UIImage imageNamed:@"image_loading_wide"];
-    });
 }
 
 - (void)dealloc {
@@ -54,19 +55,32 @@
 #pragma mark - private methods
 - (void)setupImgBannerView {
     
-    self.imgBannerView = [AppCycleScrollview appCycleScrollViewWithFrame:CGRectZero shouldInfiniteLoop:YES cycleDelegate:self];
+    self.imgBannerView = [AppCycleScrollview appCycleScrollViewWithFrame:CGRectMake(15, 15, LoopW, LoopW * BannerHeightScale) shouldInfiniteLoop:YES cycleDelegate:self];
     self.imgBannerView.imgCornerRadius = 5.0f;
-    self.imgBannerView.autoScrollTimeInterval = 5.0f;
+    self.imgBannerView.autoScrollTimeInterval = 3.0f;
     self.imgBannerView.isZoom = NO;
-//    self.imgBannerView.itemSpace = 10.f;
-    self.imgBannerView.heightProportion = 0.875;
+    self.imgBannerView.heightProportion = 1;
     self.imgBannerView.itemWidth = LoopW;
     self.imgBannerView.isHidePageControl = NO;
     [self addSubview:self.imgBannerView];
+    self.imgBannerView.placeholderImage = [UIImage imageNamed:@"image_loading_wide"];
+}
+
+- (void)setArticleTypeView {
+    self.typeView = [[MPSheYingArticleTypeView alloc] initWithFrame:CGRectMake(15, LoopW * BannerHeightScale + 23, LoopW, 250 - LoopW * BannerHeightScale)];
+    [self addSubview:self.typeView];
 }
 
 - (void)getLoopImgSource {
     self.imgBannerView.imageURLStringsGroup = [self.loopVM bannerLoopSource].allValues;
+}
+
+- (void)setupUI {
+    self.backgroundColor = [UIColor whiteColor];
+    self.lineLayer = [CALayer layer];
+    self.lineLayer.backgroundColor = MAIN_LIGHT_GRAY_COLOR.CGColor;
+    self.lineLayer.frame = CGRectMake(15, self.loopH - 1, LoopW, 1);
+    [self.layer addSublayer:self.lineLayer];
 }
 
 #pragma mark - lazy

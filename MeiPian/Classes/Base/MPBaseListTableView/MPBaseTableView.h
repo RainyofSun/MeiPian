@@ -20,6 +20,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,weak) id<MPBaseTableViewDataSource> tableDataSource;
 /** isCompleteRequest 数据访问结束,结束刷新状态 */
 @property (nonatomic,assign) BOOL isCompleteRequest;
+/** isOpenFooterRefresh 是否开启上拉加载 默认开启 */
+@property (nonatomic,assign) BOOL isOpenFooterRefresh;
 
 /**
  创建列表

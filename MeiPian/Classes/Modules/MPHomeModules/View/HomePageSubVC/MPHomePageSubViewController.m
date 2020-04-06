@@ -19,6 +19,11 @@
     // Do any additional setup after loading the view from its nib.
 }
 
+#pragma mark - 消息透传
+- (void)selectArticleType:(NSNumber *)senderTag {
+    NSLog(@"消息透传 %@",senderTag);
+}
+
 #pragma mark - public methods
 - (void)addHomePageSubView:(UIView *)subView {
     [self.view addSubview:subView];

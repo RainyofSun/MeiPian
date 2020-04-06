@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="topicCell" id="KGk-i7-Jjw" customClass="MPTopicTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="95"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="95"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XOu-Ay-Ysw">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="95"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jH5-rI-EpW">
+                                <rect key="frame" x="15" y="14.5" width="66.5" height="66.5"/>
+                                <color key="backgroundColor" red="0.92941176470588238" green="0.93725490196078431" blue="0.95686274509803915" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="jH5-rI-EpW" secondAttribute="height" multiplier="1:1" id="rL5-mW-2Sd"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="每逢佳节备思亲" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Bo-Tx-jUh">
+                                <rect key="frame" x="89.5" y="14.5" width="192" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Prn-Rd-clD">
+                                <rect key="frame" x="89.5" y="40.5" width="37.5" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="0.41176470588235292" green="0.40784313725490196" blue="0.42745098039215684" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J1O-w9-prS">
+                                <rect key="frame" x="89.5" y="63.5" width="38" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="0.41176470588235292" green="0.40784313725490196" blue="0.42745098039215684" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Prn-Rd-clD" firstAttribute="width" relation="lessThanOrEqual" secondItem="XOu-Ay-Ysw" secondAttribute="width" multiplier="0.8" id="54o-Wu-FPr"/>
+                            <constraint firstItem="J1O-w9-prS" firstAttribute="top" secondItem="Prn-Rd-clD" secondAttribute="bottom" constant="5" id="DJ4-hl-xPs"/>
+                            <constraint firstItem="9Bo-Tx-jUh" firstAttribute="top" secondItem="jH5-rI-EpW" secondAttribute="top" id="DT9-hy-eba"/>
+                            <constraint firstItem="9Bo-Tx-jUh" firstAttribute="leading" secondItem="jH5-rI-EpW" secondAttribute="trailing" constant="8" id="FCz-JW-J1r"/>
+                            <constraint firstItem="jH5-rI-EpW" firstAttribute="leading" secondItem="XOu-Ay-Ysw" secondAttribute="leading" constant="15" id="Gvc-vO-X4u"/>
+                            <constraint firstItem="Prn-Rd-clD" firstAttribute="leading" secondItem="9Bo-Tx-jUh" secondAttribute="leading" id="XgN-9c-1Nr"/>
+                            <constraint firstItem="jH5-rI-EpW" firstAttribute="height" secondItem="XOu-Ay-Ysw" secondAttribute="height" multiplier="0.7" id="bpH-nh-afr"/>
+                            <constraint firstItem="jH5-rI-EpW" firstAttribute="centerY" secondItem="XOu-Ay-Ysw" secondAttribute="centerY" id="f7J-PH-fHV"/>
+                            <constraint firstItem="9Bo-Tx-jUh" firstAttribute="width" secondItem="XOu-Ay-Ysw" secondAttribute="width" multiplier="0.6" id="hEC-5N-XtL"/>
+                            <constraint firstItem="J1O-w9-prS" firstAttribute="leading" secondItem="Prn-Rd-clD" secondAttribute="leading" id="q4h-pg-Uaw"/>
+                            <constraint firstItem="Prn-Rd-clD" firstAttribute="top" secondItem="9Bo-Tx-jUh" secondAttribute="bottom" constant="5" id="yGe-sv-HLO"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="XOu-Ay-Ysw" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="MgQ-SO-AIE"/>
+                    <constraint firstItem="XOu-Ay-Ysw" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="UNh-6R-fAD"/>
+                    <constraint firstItem="XOu-Ay-Ysw" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" id="v4Q-Do-Twa"/>
+                    <constraint firstItem="XOu-Ay-Ysw" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" id="vg4-ka-Ars"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
+            <connections>
+                <outlet property="articleImgView" destination="jH5-rI-EpW" id="cZa-sT-VMi"/>
+                <outlet property="articleSubTitleLab" destination="Prn-Rd-clD" id="b4w-fz-Nxs"/>
+                <outlet property="articleTitleLab" destination="9Bo-Tx-jUh" id="90w-XD-lCZ"/>
+                <outlet property="commentsLab" destination="J1O-w9-prS" id="mKh-D3-fVr"/>
+            </connections>
+            <point key="canvasLocation" x="-149" y="120"/>
+        </tableViewCell>
+    </objects>
+</document>

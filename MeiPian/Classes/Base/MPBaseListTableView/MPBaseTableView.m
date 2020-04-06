@@ -39,6 +39,7 @@
     MPBaseTableView *tableView = [[MPBaseTableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
     tableView.backgroundColor = MAIN_LIGHT_GRAY_COLOR;
     tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    tableView.isOpenFooterRefresh = YES;
     return tableView;
 }
 
@@ -74,7 +75,7 @@
 }
 
 - (void)loadMoreData {
-    if (self.tableDataSource != nil && [self.tableDataSource respondsToSelector:@selector(MPPullRefreshDataSource)]) {
+    if (self.tableDataSource != nil && [self.tableDataSource respondsToSelector:@selector(MPPullRefreshDataSource)] && self.isOpenFooterRefresh) {
         [self.tableDataSource MPPullRefreshDataSource];
     }
 }

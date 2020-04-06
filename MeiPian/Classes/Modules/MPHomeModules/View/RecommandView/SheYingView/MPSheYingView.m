@@ -11,7 +11,6 @@
 #import "MPSheYingBannerLoopView.h"
 #import "MPDynamicItem.h"
 
-static CGFloat LOOPVIEWH    = 300;
 /*f(x, d, c) = (x * d * c) / (d + c * x)
  where,
  x – distance from the edge
@@ -66,8 +65,8 @@ static CGFloat rubberBandDistance(CGFloat offset, CGFloat dimension) {
 - (void)layoutSubviews {
     [super layoutSubviews];
     [self.mainScrollView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsZero];
-    self.loopView.frame = CGRectMake(0, 0, CGRectGetWidth(self.bounds), LOOPVIEWH);
-    self.articleView.frame = CGRectMake(0, LOOPVIEWH, CGRectGetWidth(self.bounds), ScreenHeight);
+    self.loopView.frame = CGRectMake(0, 0, CGRectGetWidth(self.bounds), self.loopView.loopH);
+    self.articleView.frame = CGRectMake(0, self.loopView.loopH, CGRectGetWidth(self.bounds), ScreenHeight);
 }
 
 - (void)dealloc {
@@ -186,7 +185,7 @@ static CGFloat rubberBandDistance(CGFloat offset, CGFloat dimension) {
         // Fallback on earlier versions
     }
     self.mainScrollView.delegate = self;
-    self.mainScrollView.contentSize = CGSizeMake(0, ScreenHeight + LOOPVIEWH);
+    self.mainScrollView.contentSize = CGSizeMake(0, ScreenHeight + self.loopView.loopH);
     self.mainScrollView.bounces = NO;
     self.mainScrollView.showsVerticalScrollIndicator = NO;
     self.mainScrollView.showsHorizontalScrollIndicator = NO;
@@ -208,7 +207,7 @@ static CGFloat rubberBandDistance(CGFloat offset, CGFloat dimension) {
 //控制上下滚动的方法
 - (void)controlScrollForVertical:(CGFloat)detal AndState:(UIGestureRecognizerState)state {
     // 判断是MainScrollView滚动还是子ScrollView滚动,detal为手指移动的距离
-    if (self.mainScrollView.contentOffset.y >= LOOPVIEWH) {
+    if (self.mainScrollView.contentOffset.y >= self.loopView.loopH) {
         CGFloat offsetY = self.articleView.listTableView.contentOffset.y - detal;
         if (offsetY < 0) {
             // 当子ScrollView的contentOffSet小于0之后就b不再移动子ScrollView,而要移动mainScrollView
@@ -236,8 +235,8 @@ static CGFloat rubberBandDistance(CGFloat offset, CGFloat dimension) {
                 }
             }
             NSLog(@"sub %f",subScrollViewOffsetY);
-        } else if (mainOffsetY > LOOPVIEWH) {
-            mainOffsetY = LOOPVIEWH;
+        } else if (mainOffsetY > self.loopView.loopH) {
+            mainOffsetY = self.loopView.loopH;
         }
         NSLog(@"MainScrollView %f",mainOffsetY);
         self.mainScrollView.contentOffset = CGPointMake(0, mainOffsetY);
