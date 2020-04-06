@@ -71,6 +71,7 @@ static CGFloat rubberBandDistance(CGFloat offset, CGFloat dimension) {
 }
 
 - (void)dealloc {
+    [self.animator removeAllBehaviors];
     NSLog(@"DELLOC : %@",NSStringFromClass(self.class));
 }
 
