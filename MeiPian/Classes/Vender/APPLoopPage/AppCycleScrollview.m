@@ -281,6 +281,7 @@ static NSString *const cellID = @"cellID";
         bgImageView.contentMode = UIViewContentModeScaleToFill;
         bgImageView.layer.cornerRadius = self.imgCornerRadius;
         bgImageView.clipsToBounds = YES;
+        bgImageView.backgroundColor = HexColor(0xEDEFF4);
         [self addSubview:bgImageView];
         [self insertSubview:bgImageView belowSubview:self.collectionView];
         self.backgroundImageView = bgImageView;

@@ -14,6 +14,7 @@
 #import "MPQingGanView.h"
 #import "MPWenXueView.h"
 #import "MPLvXingView.h"
+#import "MPRecommandViewModel.h"
 
 @interface MPRecommandView ()<UIScrollViewDelegate>
 
@@ -35,6 +36,8 @@
 @property (nonatomic,strong) MPWenXueView *WXView;
 /** LXView */
 @property (nonatomic,strong) MPLvXingView *LXView;
+/** recommandVM */
+@property (nonatomic,strong) MPRecommandViewModel *recommandVM;
 
 @end
 
@@ -118,7 +121,7 @@
 
 #pragma mark - private methods
 - (void)setDefaultData {
-    self.titleArray = @[@"全部",@"精选",@"摄影",@"情感",@"文学",@"旅行"];
+    self.titleArray = [self.recommandVM subNavSource];
 }
 
 - (void)setupUI {
@@ -193,6 +196,14 @@
         _LXView = [[MPLvXingView alloc] init];
     }
     return _LXView;
+}
+
+
+- (MPRecommandViewModel *)recommandVM {
+    if (!_recommandVM) {
+        _recommandVM = [[MPRecommandViewModel alloc] init];
+    }
+    return _recommandVM;
 }
 
 @end

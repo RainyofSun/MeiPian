@@ -7,8 +7,25 @@
 //
 
 #import "MPRecommandViewModel.h"
+#import "MPHomePageConfigModel.h"
+
+@interface MPRecommandViewModel ()
+
+/** topBarSource */
+@property (nonatomic,strong) NSMutableArray <NSString *>*topBarSource;
+/** subSourceModel */
+@property (nonatomic,strong) NSArray <MPHomePageModel *>*subSourceModel;
+
+@end
 
 @implementation MPRecommandViewModel
+
+- (instancetype)init{
+    if (self = [super init]) {
+        [self setDefaultData];
+    }
+    return self;
+}
 
 - (void)dealloc {
     NSLog(@"DELLOC : %@",NSStringFromClass(self.class));
@@ -46,6 +63,31 @@
     }
     header = [header stringByAppendingFormat:@"%ld", (long)page];
     return header;
+}
+
+// 获取导航栏数据
+- (NSArray<NSString *> *)subNavSource {
+    return self.topBarSource;
+}
+
+#pragma mark - private methods
+- (void)setDefaultData {
+    WeakSelf;
+       [MPLocalData MPGetLocalDataFileName:@"TopBar" localData:^(id  _Nonnull responseObject) {
+           MPHomePageConfigModel *topBarModel = [MPHomePageConfigModel modelWithDictionary:(NSDictionary *)responseObject];
+           [weakSelf combineTopBarData:topBarModel];
+       } errorBlock:^(NSString * _Nullable errorInfo) {
+           
+       }];
+}
+
+- (void)combineTopBarData:(MPHomePageConfigModel *)configModel {
+    self.subSourceModel = configModel.sub_channel;
+    self.topBarSource = [NSMutableArray arrayWithCapacity:configModel.sub_channel.count];
+    WeakSelf;
+    [configModel.sub_channel enumerateObjectsUsingBlock:^(MPHomePageModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        [weakSelf.topBarSource addObject:obj.tag_name];
+    }];
 }
 
 @end

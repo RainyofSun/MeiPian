@@ -16,6 +16,7 @@
 #import "MPHomePageSliderBarTitleCollectionViewCell.h"
 #import "MPCustomHomePageNavView.h"
 #import "MPCalendarBtn.h"
+#import "MPHomePageConfigModel.h"
 
 static NSString *topSliderBarIndifier = @"MPHomePageSliderBarTitle";
 
@@ -34,7 +35,9 @@ static NSString *topSliderBarIndifier = @"MPHomePageSliderBarTitle";
 /** selectedItemIndex */
 @property (nonatomic,assign) NSInteger selectedItemIndex;
 /** titleArray */
-@property (nonatomic,strong) NSArray <NSString *>*titleArray;
+@property (nonatomic,strong) NSMutableArray <NSString *>*titleArray;
+/** topBarSource */
+@property (nonatomic,strong) MPHomePageConfigModel *topBarModel;
 
 @end
 
@@ -137,7 +140,21 @@ static NSString *topSliderBarIndifier = @"MPHomePageSliderBarTitle";
 #pragma mark - private methods
 - (void)setDefaultData {
     self.selectedItemIndex = 1;
-    self.titleArray = @[@"关注",@"推荐",@"话题",@"影集"];
+    WeakSelf;
+    [MPLocalData MPGetLocalDataFileName:@"TopBar" localData:^(id  _Nonnull responseObject) {
+        weakSelf.topBarModel = [MPHomePageConfigModel modelWithDictionary:(NSDictionary *)responseObject];
+        [weakSelf combineTopBarData:weakSelf.topBarModel];
+    } errorBlock:^(NSString * _Nullable errorInfo) {
+        
+    }];
+}
+
+- (void)combineTopBarData:(MPHomePageConfigModel *)configModel {
+    self.titleArray = [NSMutableArray arrayWithCapacity:configModel.main_channel.count];
+    WeakSelf;
+    [configModel.main_channel enumerateObjectsUsingBlock:^(MPHomePageModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        [weakSelf.titleArray addObject:obj.tag_name];
+    }];
 }
 
 - (XLPageViewControllerConfig *)pageControlConfig {
