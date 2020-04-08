@@ -7,8 +7,12 @@
 //
 
 #import "MPCirclePageViewController.h"
+#import "MPCirclePageViewModel.h"
 
 @interface MPCirclePageViewController ()
+
+/** circleVM */
+@property (nonatomic,strong) MPCirclePageViewModel *circleVM;
 
 @end
 
@@ -17,12 +21,21 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.view.backgroundColor = [UIColor orangeColor];
+    [self.circleVM loadMainCirclePageView:self];
+    [self.circleVM setupCircleNavItems:self];
 }
 
 #pragma mark - 消息透传
 - (void)reloadPageData {
     NSLog(@"刷新JJ请求");
+}
+
+#pragma mark - lazy
+- (MPCirclePageViewModel *)circleVM {
+    if (!_circleVM) {
+        _circleVM = [[MPCirclePageViewModel alloc] init];
+    }
+    return _circleVM;
 }
 
 /*

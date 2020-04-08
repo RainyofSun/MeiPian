@@ -44,7 +44,8 @@
 #pragma mark - private methods
 - (void)getDefaultData {
     WeakSelf;
-    [MPLocalData MPGetLocalDataFileName:@"BannerLoop0" localData:^(id  _Nonnull responseObject) {
+    NSInteger loopIndex = arc4random()%2;
+    [MPLocalData MPGetLocalDataFileName:[NSString stringWithFormat:@"BannerLoop%ld",loopIndex] localData:^(id  _Nonnull responseObject) {
         weakSelf.loopModelSource = [MPBannerLoopModel modelArrayWithDictArray:(NSArray *)responseObject];
         [weakSelf combineLoopSource];
     } errorBlock:^(NSString * _Nullable errorInfo) {

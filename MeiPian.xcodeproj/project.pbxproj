@@ -86,6 +86,10 @@
 		1313D574242DE7040054A52D /* MPAttentionModelConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 1313D573242DE7040054A52D /* MPAttentionModelConfig.m */; };
 		1313D57A242E0B5F0054A52D /* MPInterestingPeopleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1313D578242E0B5F0054A52D /* MPInterestingPeopleTableViewCell.m */; };
 		1313D57B242E0B5F0054A52D /* MPInterestingPeopleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1313D579242E0B5F0054A52D /* MPInterestingPeopleTableViewCell.xib */; };
+		13153DDB243C0CF200C70A9F /* BannerLoop1.json in Resources */ = {isa = PBXBuildFile; fileRef = 13153DD9243C0CF200C70A9F /* BannerLoop1.json */; };
+		13153DDC243C0CF200C70A9F /* BannerLoop2.json in Resources */ = {isa = PBXBuildFile; fileRef = 13153DDA243C0CF200C70A9F /* BannerLoop2.json */; };
+		13153DE0243C8DB400C70A9F /* MPCirclePageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 13153DDF243C8DB400C70A9F /* MPCirclePageView.m */; };
+		13153DEA243C905900C70A9F /* MPCirclePageViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 13153DE9243C905900C70A9F /* MPCirclePageViewModel.m */; };
 		1315B2862436E35500565B23 /* MPQingGanView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1315B2852436E35500565B23 /* MPQingGanView.m */; };
 		1315B28A2436E3E700565B23 /* MPQingGanConfigModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1315B2892436E3E700565B23 /* MPQingGanConfigModel.m */; };
 		1315B28E2436E42300565B23 /* MPQingGanViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1315B28D2436E42300565B23 /* MPQingGanViewModel.m */; };
@@ -180,6 +184,29 @@
 		1319A3072435CB39009EE296 /* MPSheYingConfigModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1319A3062435CB39009EE296 /* MPSheYingConfigModel.m */; };
 		1319A30A2435EA50009EE296 /* MPSheYingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1319A3092435EA50009EE296 /* MPSheYingView.m */; };
 		1319A30D2435EBBC009EE296 /* MPSheYingBannerLoopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1319A30C2435EBBC009EE296 /* MPSheYingBannerLoopView.m */; };
+		1319E3D8243D730D0044F36F /* MPCircleRecommandArticleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1319E3D7243D730D0044F36F /* MPCircleRecommandArticleView.m */; };
+		1319E3DB243D73460044F36F /* MPInterestingCircleArticleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1319E3DA243D73460044F36F /* MPInterestingCircleArticleView.m */; };
+		1319E3E0243D78C60044F36F /* MPRecommandCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1319E3DE243D78C60044F36F /* MPRecommandCollectionViewCell.m */; };
+		1319E3E1243D78C60044F36F /* MPRecommandCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1319E3DF243D78C60044F36F /* MPRecommandCollectionViewCell.xib */; };
+		1319E3E5243D7BB20044F36F /* MPInterestTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1319E3E3243D7BB20044F36F /* MPInterestTableViewCell.m */; };
+		1319E3E6243D7BB20044F36F /* MPInterestTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1319E3E4243D7BB20044F36F /* MPInterestTableViewCell.xib */; };
+		1319E3EA243D7C990044F36F /* MPCircleInterestArticleConfigModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1319E3E9243D7C990044F36F /* MPCircleInterestArticleConfigModel.m */; };
+		1319E3ED243D7E510044F36F /* MPCircleInterestViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1319E3EC243D7E510044F36F /* MPCircleInterestViewModel.m */; };
+		1319E3F0243D84090044F36F /* MPCircleRecommandConfigModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1319E3EF243D84090044F36F /* MPCircleRecommandConfigModel.m */; };
+		1319E3F3243D842E0044F36F /* MPCircleRecommandViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1319E3F2243D842E0044F36F /* MPCircleRecommandViewModel.m */; };
+		1319E3F7243DB84D0044F36F /* CircleRecommand.json in Resources */ = {isa = PBXBuildFile; fileRef = 1319E3F6243DB84D0044F36F /* CircleRecommand.json */; };
+		1319E403243DB9EA0044F36F /* CircleHomeTalks7.json in Resources */ = {isa = PBXBuildFile; fileRef = 1319E3F9243DB9EA0044F36F /* CircleHomeTalks7.json */; };
+		1319E404243DB9EA0044F36F /* CircleHomeTalks6.json in Resources */ = {isa = PBXBuildFile; fileRef = 1319E3FA243DB9EA0044F36F /* CircleHomeTalks6.json */; };
+		1319E405243DB9EA0044F36F /* CircleHomeTalks1.json in Resources */ = {isa = PBXBuildFile; fileRef = 1319E3FB243DB9EA0044F36F /* CircleHomeTalks1.json */; };
+		1319E406243DB9EA0044F36F /* CircleHomeTalks0.json in Resources */ = {isa = PBXBuildFile; fileRef = 1319E3FC243DB9EA0044F36F /* CircleHomeTalks0.json */; };
+		1319E407243DB9EA0044F36F /* CircleHomeTalks3.json in Resources */ = {isa = PBXBuildFile; fileRef = 1319E3FD243DB9EA0044F36F /* CircleHomeTalks3.json */; };
+		1319E408243DB9EA0044F36F /* CircleHomeTalks2.json in Resources */ = {isa = PBXBuildFile; fileRef = 1319E3FE243DB9EA0044F36F /* CircleHomeTalks2.json */; };
+		1319E409243DB9EA0044F36F /* CircleHomeTalks9.json in Resources */ = {isa = PBXBuildFile; fileRef = 1319E3FF243DB9EA0044F36F /* CircleHomeTalks9.json */; };
+		1319E40A243DB9EA0044F36F /* CircleHomeTalks5.json in Resources */ = {isa = PBXBuildFile; fileRef = 1319E400243DB9EA0044F36F /* CircleHomeTalks5.json */; };
+		1319E40B243DB9EA0044F36F /* CircleHomeTalks4.json in Resources */ = {isa = PBXBuildFile; fileRef = 1319E401243DB9EA0044F36F /* CircleHomeTalks4.json */; };
+		1319E40C243DB9EA0044F36F /* CircleHomeTalks8.json in Resources */ = {isa = PBXBuildFile; fileRef = 1319E402243DB9EA0044F36F /* CircleHomeTalks8.json */; };
+		1319E40F243DBF0C0044F36F /* MPCircleInterestArticleAuthorModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1319E40E243DBF0C0044F36F /* MPCircleInterestArticleAuthorModel.m */; };
+		1319E412243DBF840044F36F /* MPCircleInterestArticleTalkModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1319E411243DBF840044F36F /* MPCircleInterestArticleTalkModel.m */; };
 		131B447F24161A8700A99F73 /* MPResource.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 131B447E24161A8700A99F73 /* MPResource.xcassets */; };
 		131B44B724161AD400A99F73 /* video_detail_next.json in Resources */ = {isa = PBXBuildFile; fileRef = 131B448124161AD400A99F73 /* video_detail_next.json */; };
 		131B44B824161AD400A99F73 /* heart.png in Resources */ = {isa = PBXBuildFile; fileRef = 131B448424161AD400A99F73 /* heart.png */; };
@@ -534,6 +561,12 @@
 		1313D577242E0B5F0054A52D /* MPInterestingPeopleTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPInterestingPeopleTableViewCell.h; sourceTree = "<group>"; };
 		1313D578242E0B5F0054A52D /* MPInterestingPeopleTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPInterestingPeopleTableViewCell.m; sourceTree = "<group>"; };
 		1313D579242E0B5F0054A52D /* MPInterestingPeopleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MPInterestingPeopleTableViewCell.xib; sourceTree = "<group>"; };
+		13153DD9243C0CF200C70A9F /* BannerLoop1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = BannerLoop1.json; sourceTree = "<group>"; };
+		13153DDA243C0CF200C70A9F /* BannerLoop2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = BannerLoop2.json; sourceTree = "<group>"; };
+		13153DDE243C8DB400C70A9F /* MPCirclePageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPCirclePageView.h; sourceTree = "<group>"; };
+		13153DDF243C8DB400C70A9F /* MPCirclePageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPCirclePageView.m; sourceTree = "<group>"; };
+		13153DE8243C905900C70A9F /* MPCirclePageViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPCirclePageViewModel.h; sourceTree = "<group>"; };
+		13153DE9243C905900C70A9F /* MPCirclePageViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPCirclePageViewModel.m; sourceTree = "<group>"; };
 		1315B2842436E35500565B23 /* MPQingGanView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPQingGanView.h; sourceTree = "<group>"; };
 		1315B2852436E35500565B23 /* MPQingGanView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPQingGanView.m; sourceTree = "<group>"; };
 		1315B2882436E3E700565B23 /* MPQingGanConfigModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPQingGanConfigModel.h; sourceTree = "<group>"; };
@@ -695,6 +728,39 @@
 		1319A3092435EA50009EE296 /* MPSheYingView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPSheYingView.m; sourceTree = "<group>"; };
 		1319A30B2435EBBC009EE296 /* MPSheYingBannerLoopView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPSheYingBannerLoopView.h; sourceTree = "<group>"; };
 		1319A30C2435EBBC009EE296 /* MPSheYingBannerLoopView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPSheYingBannerLoopView.m; sourceTree = "<group>"; };
+		1319E3D6243D730D0044F36F /* MPCircleRecommandArticleView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPCircleRecommandArticleView.h; sourceTree = "<group>"; };
+		1319E3D7243D730D0044F36F /* MPCircleRecommandArticleView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPCircleRecommandArticleView.m; sourceTree = "<group>"; };
+		1319E3D9243D73460044F36F /* MPInterestingCircleArticleView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPInterestingCircleArticleView.h; sourceTree = "<group>"; };
+		1319E3DA243D73460044F36F /* MPInterestingCircleArticleView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPInterestingCircleArticleView.m; sourceTree = "<group>"; };
+		1319E3DD243D78C60044F36F /* MPRecommandCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPRecommandCollectionViewCell.h; sourceTree = "<group>"; };
+		1319E3DE243D78C60044F36F /* MPRecommandCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPRecommandCollectionViewCell.m; sourceTree = "<group>"; };
+		1319E3DF243D78C60044F36F /* MPRecommandCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MPRecommandCollectionViewCell.xib; sourceTree = "<group>"; };
+		1319E3E2243D7BB20044F36F /* MPInterestTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPInterestTableViewCell.h; sourceTree = "<group>"; };
+		1319E3E3243D7BB20044F36F /* MPInterestTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPInterestTableViewCell.m; sourceTree = "<group>"; };
+		1319E3E4243D7BB20044F36F /* MPInterestTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MPInterestTableViewCell.xib; sourceTree = "<group>"; };
+		1319E3E8243D7C990044F36F /* MPCircleInterestArticleConfigModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPCircleInterestArticleConfigModel.h; sourceTree = "<group>"; };
+		1319E3E9243D7C990044F36F /* MPCircleInterestArticleConfigModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPCircleInterestArticleConfigModel.m; sourceTree = "<group>"; };
+		1319E3EB243D7E510044F36F /* MPCircleInterestViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPCircleInterestViewModel.h; sourceTree = "<group>"; };
+		1319E3EC243D7E510044F36F /* MPCircleInterestViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPCircleInterestViewModel.m; sourceTree = "<group>"; };
+		1319E3EE243D84090044F36F /* MPCircleRecommandConfigModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPCircleRecommandConfigModel.h; sourceTree = "<group>"; };
+		1319E3EF243D84090044F36F /* MPCircleRecommandConfigModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPCircleRecommandConfigModel.m; sourceTree = "<group>"; };
+		1319E3F1243D842E0044F36F /* MPCircleRecommandViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPCircleRecommandViewModel.h; sourceTree = "<group>"; };
+		1319E3F2243D842E0044F36F /* MPCircleRecommandViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPCircleRecommandViewModel.m; sourceTree = "<group>"; };
+		1319E3F6243DB84D0044F36F /* CircleRecommand.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CircleRecommand.json; sourceTree = "<group>"; };
+		1319E3F9243DB9EA0044F36F /* CircleHomeTalks7.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CircleHomeTalks7.json; sourceTree = "<group>"; };
+		1319E3FA243DB9EA0044F36F /* CircleHomeTalks6.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CircleHomeTalks6.json; sourceTree = "<group>"; };
+		1319E3FB243DB9EA0044F36F /* CircleHomeTalks1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CircleHomeTalks1.json; sourceTree = "<group>"; };
+		1319E3FC243DB9EA0044F36F /* CircleHomeTalks0.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CircleHomeTalks0.json; sourceTree = "<group>"; };
+		1319E3FD243DB9EA0044F36F /* CircleHomeTalks3.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CircleHomeTalks3.json; sourceTree = "<group>"; };
+		1319E3FE243DB9EA0044F36F /* CircleHomeTalks2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CircleHomeTalks2.json; sourceTree = "<group>"; };
+		1319E3FF243DB9EA0044F36F /* CircleHomeTalks9.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CircleHomeTalks9.json; sourceTree = "<group>"; };
+		1319E400243DB9EA0044F36F /* CircleHomeTalks5.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CircleHomeTalks5.json; sourceTree = "<group>"; };
+		1319E401243DB9EA0044F36F /* CircleHomeTalks4.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CircleHomeTalks4.json; sourceTree = "<group>"; };
+		1319E402243DB9EA0044F36F /* CircleHomeTalks8.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CircleHomeTalks8.json; sourceTree = "<group>"; };
+		1319E40D243DBF0C0044F36F /* MPCircleInterestArticleAuthorModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPCircleInterestArticleAuthorModel.h; sourceTree = "<group>"; };
+		1319E40E243DBF0C0044F36F /* MPCircleInterestArticleAuthorModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPCircleInterestArticleAuthorModel.m; sourceTree = "<group>"; };
+		1319E410243DBF840044F36F /* MPCircleInterestArticleTalkModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPCircleInterestArticleTalkModel.h; sourceTree = "<group>"; };
+		1319E411243DBF840044F36F /* MPCircleInterestArticleTalkModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPCircleInterestArticleTalkModel.m; sourceTree = "<group>"; };
 		131B447E24161A8700A99F73 /* MPResource.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MPResource.xcassets; sourceTree = "<group>"; };
 		131B448124161AD400A99F73 /* video_detail_next.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = video_detail_next.json; sourceTree = "<group>"; };
 		131B448424161AD400A99F73 /* heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heart.png; sourceTree = "<group>"; };
@@ -1088,6 +1154,7 @@
 		1312C77B242B2EB1005887B6 /* LocalData */ = {
 			isa = PBXGroup;
 			children = (
+				1319E3F4243DB83F0044F36F /* CirclePage */,
 				1312C77C242B2EC1005887B6 /* HomePage */,
 			);
 			path = LocalData;
@@ -1288,6 +1355,33 @@
 			path = AttentionModel;
 			sourceTree = "<group>";
 		};
+		13153DDD243C8D9600C70A9F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1319E3DC243D789B0044F36F /* Cell */,
+				13153DDE243C8DB400C70A9F /* MPCirclePageView.h */,
+				13153DDF243C8DB400C70A9F /* MPCirclePageView.m */,
+				1319E3D6243D730D0044F36F /* MPCircleRecommandArticleView.h */,
+				1319E3D7243D730D0044F36F /* MPCircleRecommandArticleView.m */,
+				1319E3D9243D73460044F36F /* MPInterestingCircleArticleView.h */,
+				1319E3DA243D73460044F36F /* MPInterestingCircleArticleView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		13153DE1243C8DD400C70A9F /* VM */ = {
+			isa = PBXGroup;
+			children = (
+				13153DE8243C905900C70A9F /* MPCirclePageViewModel.h */,
+				13153DE9243C905900C70A9F /* MPCirclePageViewModel.m */,
+				1319E3EB243D7E510044F36F /* MPCircleInterestViewModel.h */,
+				1319E3EC243D7E510044F36F /* MPCircleInterestViewModel.m */,
+				1319E3F1243D842E0044F36F /* MPCircleRecommandViewModel.h */,
+				1319E3F2243D842E0044F36F /* MPCircleRecommandViewModel.m */,
+			);
+			path = VM;
+			sourceTree = "<group>";
+		};
 		1315B2832436E33400565B23 /* QingGanView */ = {
 			isa = PBXGroup;
 			children = (
@@ -1354,6 +1448,9 @@
 		13161EFF2420E02300A1A373 /* CircleModules */ = {
 			isa = PBXGroup;
 			children = (
+				1319E3E7243D7C4E0044F36F /* Model */,
+				13153DE1243C8DD400C70A9F /* VM */,
+				13153DDD243C8D9600C70A9F /* View */,
 				13161F002420E06900A1A373 /* VC */,
 			);
 			path = CircleModules;
@@ -1764,6 +1861,68 @@
 				1319A3062435CB39009EE296 /* MPSheYingConfigModel.m */,
 			);
 			path = SheYingModel;
+			sourceTree = "<group>";
+		};
+		1319E3DC243D789B0044F36F /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				1319E3DD243D78C60044F36F /* MPRecommandCollectionViewCell.h */,
+				1319E3DE243D78C60044F36F /* MPRecommandCollectionViewCell.m */,
+				1319E3DF243D78C60044F36F /* MPRecommandCollectionViewCell.xib */,
+				1319E3E2243D7BB20044F36F /* MPInterestTableViewCell.h */,
+				1319E3E3243D7BB20044F36F /* MPInterestTableViewCell.m */,
+				1319E3E4243D7BB20044F36F /* MPInterestTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		1319E3E7243D7C4E0044F36F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1319E3E8243D7C990044F36F /* MPCircleInterestArticleConfigModel.h */,
+				1319E3E9243D7C990044F36F /* MPCircleInterestArticleConfigModel.m */,
+				1319E3EE243D84090044F36F /* MPCircleRecommandConfigModel.h */,
+				1319E3EF243D84090044F36F /* MPCircleRecommandConfigModel.m */,
+				1319E40D243DBF0C0044F36F /* MPCircleInterestArticleAuthorModel.h */,
+				1319E40E243DBF0C0044F36F /* MPCircleInterestArticleAuthorModel.m */,
+				1319E410243DBF840044F36F /* MPCircleInterestArticleTalkModel.h */,
+				1319E411243DBF840044F36F /* MPCircleInterestArticleTalkModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1319E3F4243DB83F0044F36F /* CirclePage */ = {
+			isa = PBXGroup;
+			children = (
+				1319E3F8243DB9EA0044F36F /* CircleHomeTalks */,
+				1319E3F5243DB84D0044F36F /* CircleRecommanData */,
+			);
+			path = CirclePage;
+			sourceTree = "<group>";
+		};
+		1319E3F5243DB84D0044F36F /* CircleRecommanData */ = {
+			isa = PBXGroup;
+			children = (
+				1319E3F6243DB84D0044F36F /* CircleRecommand.json */,
+			);
+			path = CircleRecommanData;
+			sourceTree = "<group>";
+		};
+		1319E3F8243DB9EA0044F36F /* CircleHomeTalks */ = {
+			isa = PBXGroup;
+			children = (
+				1319E3FC243DB9EA0044F36F /* CircleHomeTalks0.json */,
+				1319E3FB243DB9EA0044F36F /* CircleHomeTalks1.json */,
+				1319E3FE243DB9EA0044F36F /* CircleHomeTalks2.json */,
+				1319E3FD243DB9EA0044F36F /* CircleHomeTalks3.json */,
+				1319E401243DB9EA0044F36F /* CircleHomeTalks4.json */,
+				1319E400243DB9EA0044F36F /* CircleHomeTalks5.json */,
+				1319E3FA243DB9EA0044F36F /* CircleHomeTalks6.json */,
+				1319E3F9243DB9EA0044F36F /* CircleHomeTalks7.json */,
+				1319E402243DB9EA0044F36F /* CircleHomeTalks8.json */,
+				1319E3FF243DB9EA0044F36F /* CircleHomeTalks9.json */,
+			);
+			path = CircleHomeTalks;
 			sourceTree = "<group>";
 		};
 		131B448024161AD400A99F73 /* Animations */ = {
@@ -3203,6 +3362,8 @@
 		C8F1D6E5243884AC005A8D3A /* BannerLoop */ = {
 			isa = PBXGroup;
 			children = (
+				13153DD9243C0CF200C70A9F /* BannerLoop1.json */,
+				13153DDA243C0CF200C70A9F /* BannerLoop2.json */,
 				C8F1D6E6243884BC005A8D3A /* BannerLoop0.json */,
 			);
 			path = BannerLoop;
@@ -3285,6 +3446,7 @@
 				1318CFBE242C5BB000AAB4CB /* 3.xuanku.caf in Resources */,
 				1312C7CE242B3F42005887B6 /* QingGan5.json in Resources */,
 				1312C7C8242B3F42005887B6 /* QingGan4.json in Resources */,
+				1319E406243DB9EA0044F36F /* CircleHomeTalks0.json in Resources */,
 				13B3D494242B591E0081F9D3 /* Flatten_1_5.json in Resources */,
 				1315E140241B2EE700F7B452 /* MPSMSCodeView.xib in Resources */,
 				131B44C724161AD400A99F73 /* loading_more.json in Resources */,
@@ -3307,6 +3469,7 @@
 				13161F1A2421F77500A1A373 /* MPCorpusViewController.xib in Resources */,
 				13B3D4E1242B591E0081F9D3 /* Flatten_2_1.json in Resources */,
 				13B3D4AC242B591E0081F9D3 /* Flatten_0_3.json in Resources */,
+				1319E40B243DB9EA0044F36F /* CircleHomeTalks4.json in Resources */,
 				133E70EC2418D86000A4C3E4 /* MPPhoneLoginViewController.xib in Resources */,
 				13B3D495242B591E0081F9D3 /* Flatten_1_4.json in Resources */,
 				131B44BC24161AD400A99F73 /* up.png in Resources */,
@@ -3351,6 +3514,7 @@
 				1312C7F8242B41B6005887B6 /* LvXing8.json in Resources */,
 				131B44FD24161B0100A99F73 /* image_splicing_template.json in Resources */,
 				131B44D324161AD400A99F73 /* img_2.png in Resources */,
+				13153DDB243C0CF200C70A9F /* BannerLoop1.json in Resources */,
 				13B3D4DA242B591E0081F9D3 /* Flatten_4_1.json in Resources */,
 				1318CFBF242C5BB000AAB4CB /* 4.dianziyin.caf in Resources */,
 				1312C7FA242B41B6005887B6 /* LvXing6.json in Resources */,
@@ -3362,6 +3526,7 @@
 				13B3D4C3242B591E0081F9D3 /* Flatten_3_3.json in Resources */,
 				13B3D4A4242B591E0081F9D3 /* Flatten_6_5.json in Resources */,
 				13B3D49E242B591E0081F9D3 /* Flatten_8_6.json in Resources */,
+				1319E404243DB9EA0044F36F /* CircleHomeTalks6.json in Resources */,
 				1315E148241B6D3800F7B452 /* MPForgetPWDView.xib in Resources */,
 				1318CFC7242C5BB000AAB4CB /* 10.guzheng.caf in Resources */,
 				133E70DA2418BA9400A4C3E4 /* MPAccountLoginViewController.xib in Resources */,
@@ -3370,6 +3535,7 @@
 				1312C7B4242B3D98005887B6 /* SheYing4.json in Resources */,
 				1312C794242B3A1A005887B6 /* all7.json in Resources */,
 				13B3D4E0242B591E0081F9D3 /* Flatten_2_0.json in Resources */,
+				1319E3E6243D7BB20044F36F /* MPInterestTableViewCell.xib in Resources */,
 				1312C7A0242B3B92005887B6 /* JingXuan6.json in Resources */,
 				131B44C824161AD400A99F73 /* zan.png in Resources */,
 				131B44CA24161AD400A99F73 /* filter.json in Resources */,
@@ -3389,6 +3555,7 @@
 				131B44C324161AD400A99F73 /* follow.json in Resources */,
 				1312C78D242B3A1A005887B6 /* all5.json in Resources */,
 				13B3D492242B591E0081F9D3 /* Flatten_1_0.json in Resources */,
+				1319E409243DB9EA0044F36F /* CircleHomeTalks9.json in Resources */,
 				13B3D4C5242B591E0081F9D3 /* Flatten_7_1.json in Resources */,
 				13B3D4A1242B591E0081F9D3 /* Flatten_8_1.json in Resources */,
 				131B451024161B0100A99F73 /* register_white.json in Resources */,
@@ -3417,6 +3584,7 @@
 				1313D57B242E0B5F0054A52D /* MPInterestingPeopleTableViewCell.xib in Resources */,
 				131B44B924161AD400A99F73 /* unpraiseSmallData.json in Resources */,
 				131673D92431CCED001FAF4C /* MPAdvertisingVideoTableViewCell.xib in Resources */,
+				1319E40C243DB9EA0044F36F /* CircleHomeTalks8.json in Resources */,
 				1312C809242B441C005887B6 /* Attention5.json in Resources */,
 				131B44CC24161AD400A99F73 /* image_0.png in Resources */,
 				13B3D4A7242B591E0081F9D3 /* Flatten_6_1.json in Resources */,
@@ -3437,6 +3605,7 @@
 				1312C7E2242B4087005887B6 /* WenXue9.json in Resources */,
 				131B44FE24161B0100A99F73 /* official_template_config_items.json in Resources */,
 				1312C813242B450A005887B6 /* Topic0.json in Resources */,
+				1319E408243DB9EA0044F36F /* CircleHomeTalks2.json in Resources */,
 				13B3D4B2242B591E0081F9D3 /* Flatten_0_6.json in Resources */,
 				13B3D4C2242B591E0081F9D3 /* Flatten_3_2.json in Resources */,
 				13B3D4BA242B591E0081F9D3 /* Flatten_5_4.json in Resources */,
@@ -3445,8 +3614,11 @@
 				1312C78E242B3A1A005887B6 /* all2.json in Resources */,
 				13B3D4BC242B591E0081F9D3 /* Flatten_3_0.json in Resources */,
 				13B3D4D8242B591E0081F9D3 /* Flatten_4_4.json in Resources */,
+				13153DDC243C0CF200C70A9F /* BannerLoop2.json in Resources */,
 				1312C7E7242B4087005887B6 /* WenXue8.json in Resources */,
 				13B3D4A2242B591E0081F9D3 /* Flatten_6_3.json in Resources */,
+				1319E403243DB9EA0044F36F /* CircleHomeTalks7.json in Resources */,
+				1319E407243DB9EA0044F36F /* CircleHomeTalks3.json in Resources */,
 				1312C80C242B441C005887B6 /* Attention4.json in Resources */,
 				13B3D491242B591E0081F9D3 /* Flatten_1_1.json in Resources */,
 				1312C792242B3A1A005887B6 /* all1.json in Resources */,
@@ -3468,6 +3640,7 @@
 				C8F1D6E42438846D005A8D3A /* TopBar.json in Resources */,
 				1312C7CD242B3F42005887B6 /* QingGan2.json in Resources */,
 				131B44D424161AD400A99F73 /* img_3.png in Resources */,
+				1319E3E1243D78C60044F36F /* MPRecommandCollectionViewCell.xib in Resources */,
 				1334C02F243B3379001ECC00 /* MPTopicTableViewCell.xib in Resources */,
 				1312C7B3242B3D98005887B6 /* SheYing9.json in Resources */,
 				13B3D4BD242B591E0081F9D3 /* Flatten_3_1.json in Resources */,
@@ -3500,6 +3673,7 @@
 				1318CFC3242C5BB000AAB4CB /* 6.tishiyin.caf in Resources */,
 				133E70F42418D96D00A4C3E4 /* MPPhoneLoginView.xib in Resources */,
 				1312C7B7242B3D98005887B6 /* SheYing8.json in Resources */,
+				1319E40A243DB9EA0044F36F /* CircleHomeTalks5.json in Resources */,
 				131B450724161B0100A99F73 /* default_mine_icon_data.json in Resources */,
 				131DF948243480F7006F25C3 /* MPJXTableViewCell.xib in Resources */,
 				1312C7BC242B3D98005887B6 /* SheYing3.json in Resources */,
@@ -3521,6 +3695,7 @@
 				13B3D4AE242B591E0081F9D3 /* YingJi0.json in Resources */,
 				131B44BA24161AD400A99F73 /* hand.png in Resources */,
 				13B3D4CD242B591E0081F9D3 /* Flatten_9_7.json in Resources */,
+				1319E405243DB9EA0044F36F /* CircleHomeTalks1.json in Resources */,
 				1312C7F3242B41B6005887B6 /* LvXing4.json in Resources */,
 				131B450024161B0100A99F73 /* character.json in Resources */,
 				13161F0C2421D01C00A1A373 /* MPMessagePageViewController.xib in Resources */,
@@ -3541,6 +3716,7 @@
 				131B450D24161B0100A99F73 /* register_black.json in Resources */,
 				1312C7F4242B41B6005887B6 /* LvXing9.json in Resources */,
 				1312C7B8242B3D98005887B6 /* SheYing5.json in Resources */,
+				1319E3F7243DB84D0044F36F /* CircleRecommand.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3600,6 +3776,7 @@
 				13DBCF412410B15500D99014 /* NSString+JSEscape.m in Sources */,
 				13DBCF422410B15500D99014 /* UIControl+EventInterval.m in Sources */,
 				1313D574242DE7040054A52D /* MPAttentionModelConfig.m in Sources */,
+				1319E412243DBF840044F36F /* MPCircleInterestArticleTalkModel.m in Sources */,
 				131DF94224347AD5006F25C3 /* MPJingXuanView.m in Sources */,
 				13DBCF542410B4A000D99014 /* MPMainViewController.m in Sources */,
 				131745792429B3650062876F /* XLPageBasicTitleView.m in Sources */,
@@ -3633,6 +3810,7 @@
 				13DBCF3E2410B15500D99014 /* UIViewController+Navigation.m in Sources */,
 				133E70D92418BA9400A4C3E4 /* MPAccountLoginViewController.m in Sources */,
 				131B4552241641BD00A99F73 /* MPUserInfoModel.m in Sources */,
+				1319E3E0243D78C60044F36F /* MPRecommandCollectionViewCell.m in Sources */,
 				13DBCF122410B14900D99014 /* AppWriteLogGetDate.m in Sources */,
 				13DBCEA92410A98B00D99014 /* AppDelegate.m in Sources */,
 				131BB3B0241F199E0084B4BB /* AFNReqeustError.m in Sources */,
@@ -3642,12 +3820,14 @@
 				13DBCF3D2410B15500D99014 /* UITextField+ToolBar.m in Sources */,
 				131BB3B4241F1A170084B4BB /* DeviceUtils.m in Sources */,
 				131B45652416455A00A99F73 /* MPMainViewModel.m in Sources */,
+				1319E3ED243D7E510044F36F /* MPCircleInterestViewModel.m in Sources */,
 				13DBCF102410B14900D99014 /* ZXCategoryItemView.m in Sources */,
 				133E70B3241881B900A4C3E4 /* MPWeiChatLoginViewController.m in Sources */,
 				13DBCEBA2410A98E00D99014 /* main.m in Sources */,
 				131712CE24235E42008A172E /* MPAttentionView.m in Sources */,
 				1315B29A2436E6C100565B23 /* MPWenXueConfigModel.m in Sources */,
 				131DF94F24349375006F25C3 /* MPJingXuanArticleModel.m in Sources */,
+				1319E3E5243D7BB20044F36F /* MPInterestTableViewCell.m in Sources */,
 				13161F222421FD9C00A1A373 /* MPCorpusView.m in Sources */,
 				131B454C2416404C00A99F73 /* MPBaseUserInfoModel.m in Sources */,
 				1318CFE0242C935300AAB4CB /* MPBaseTableView.m in Sources */,
@@ -3681,11 +3861,14 @@
 				13161EFB2420CAAF00A1A373 /* MPBaseCustomTabBar.m in Sources */,
 				131673EF2431E62B001FAF4C /* MPRecommadAllConfigModel.m in Sources */,
 				131DF93E24347A16006F25C3 /* MPJingXuanViewModel.m in Sources */,
+				1319E3F0243D84090044F36F /* MPCircleRecommandConfigModel.m in Sources */,
 				13161F042420E08F00A1A373 /* MPCirclePageViewController.m in Sources */,
 				1334C02E243B3379001ECC00 /* MPTopicTableViewCell.m in Sources */,
 				133E70BC24188D6300A4C3E4 /* MPLoginWaysPopViewController.m in Sources */,
 				13161F1F2421FCA800A1A373 /* MPCorpusViewModel.m in Sources */,
 				1334C026243B3110001ECC00 /* MPTopicConfigModel.m in Sources */,
+				1319E3EA243D7C990044F36F /* MPCircleInterestArticleConfigModel.m in Sources */,
+				1319E3D8243D730D0044F36F /* MPCircleRecommandArticleView.m in Sources */,
 				1317457B2429B3650062876F /* XLPageTitleCell.m in Sources */,
 				131810C324177FA9004828A3 /* MPADDownLoadManager.m in Sources */,
 				1315B2862436E35500565B23 /* MPQingGanView.m in Sources */,
@@ -3719,14 +3902,17 @@
 				13DBCF0A2410B14900D99014 /* MPModulesMsgSend.m in Sources */,
 				131BB3AD241F199E0084B4BB /* BusinessRequestErrorHander.m in Sources */,
 				1319A30A2435EA50009EE296 /* MPSheYingView.m in Sources */,
+				1319E40F243DBF0C0044F36F /* MPCircleInterestArticleAuthorModel.m in Sources */,
 				131DF94C24349188006F25C3 /* MPJingXuanConfigModel.m in Sources */,
 				133E71042418E5D600A4C3E4 /* TelephoneCodeViewModel.m in Sources */,
 				131673BC24319CE4001FAF4C /* MPAutoFooter.m in Sources */,
 				13DBCF472410B15500D99014 /* UINavigationController+NavigationBar.m in Sources */,
 				13DBCF092410B14900D99014 /* RuntimeTool.m in Sources */,
+				13153DEA243C905900C70A9F /* MPCirclePageViewModel.m in Sources */,
 				131BB3AF241F199E0084B4BB /* BussinessLogicError.m in Sources */,
 				131B45342416376900A99F73 /* MPBaseViewController.m in Sources */,
 				131B453D2416395F00A99F73 /* MPBaseWebViewController.m in Sources */,
+				1319E3F3243D842E0044F36F /* MPCircleRecommandViewModel.m in Sources */,
 				131BB3AA241F199E0084B4BB /* BaseNetWorkingRequest.m in Sources */,
 				132C7E1A2419D977007E3142 /* TelephoneCodeIndexView.m in Sources */,
 				131B455A2416422200A99F73 /* MPUserInfoCache.m in Sources */,
@@ -3751,6 +3937,7 @@
 				1313D56B242DDAE90054A52D /* MPAttentionModel.m in Sources */,
 				132C7E172419CF67007E3142 /* TelephoneCodeData.m in Sources */,
 				131712D424235E78008A172E /* MPTopicView.m in Sources */,
+				1319E3DB243D73460044F36F /* MPInterestingCircleArticleView.m in Sources */,
 				131B455B2416422200A99F73 /* MPUserDefaultsCache.m in Sources */,
 				1315B2922436E5A500565B23 /* MPWenXueView.m in Sources */,
 				131673C92431CA83001FAF4C /* MPRecommandAllView.m in Sources */,
@@ -3765,6 +3952,7 @@
 				13DBCF452410B15500D99014 /* UIButton+CustomBtn.m in Sources */,
 				131B454224163E5000A99F73 /* MPBaseViewController+CatchMsg.m in Sources */,
 				1315B28A2436E3E700565B23 /* MPQingGanConfigModel.m in Sources */,
+				13153DE0243C8DB400C70A9F /* MPCirclePageView.m in Sources */,
 				13DBCF112410B14900D99014 /* AppWriteLogToFile.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
