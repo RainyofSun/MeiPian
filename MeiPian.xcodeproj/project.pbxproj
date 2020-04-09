@@ -111,6 +111,7 @@
 		1315E150241B772700F7B452 /* MPNewPWDViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1315E14F241B772700F7B452 /* MPNewPWDViewModel.m */; };
 		1315E153241B77A400F7B452 /* MPNewPWDView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1315E152241B77A400F7B452 /* MPNewPWDView.m */; };
 		1315E155241B77AE00F7B452 /* MPNewPWDView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1315E154241B77AE00F7B452 /* MPNewPWDView.xib */; };
+		1315EAE0243EFC6C00CF19D1 /* MPCustomSliderBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1315EADF243EFC6C00CF19D1 /* MPCustomSliderBarView.m */; };
 		13161EFB2420CAAF00A1A373 /* MPBaseCustomTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 13161EFA2420CAAF00A1A373 /* MPBaseCustomTabBar.m */; };
 		13161EFE2420CB1000A1A373 /* MPBaseTabBarCustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 13161EFD2420CB1000A1A373 /* MPBaseTabBarCustomView.m */; };
 		13161F042420E08F00A1A373 /* MPCirclePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13161F022420E08F00A1A373 /* MPCirclePageViewController.m */; };
@@ -604,6 +605,8 @@
 		1315E151241B77A400F7B452 /* MPNewPWDView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPNewPWDView.h; sourceTree = "<group>"; };
 		1315E152241B77A400F7B452 /* MPNewPWDView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPNewPWDView.m; sourceTree = "<group>"; };
 		1315E154241B77AE00F7B452 /* MPNewPWDView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MPNewPWDView.xib; sourceTree = "<group>"; };
+		1315EADE243EFC6C00CF19D1 /* MPCustomSliderBarView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPCustomSliderBarView.h; sourceTree = "<group>"; };
+		1315EADF243EFC6C00CF19D1 /* MPCustomSliderBarView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPCustomSliderBarView.m; sourceTree = "<group>"; };
 		13161EF92420CAAF00A1A373 /* MPBaseCustomTabBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPBaseCustomTabBar.h; sourceTree = "<group>"; };
 		13161EFA2420CAAF00A1A373 /* MPBaseCustomTabBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPBaseCustomTabBar.m; sourceTree = "<group>"; };
 		13161EFC2420CB1000A1A373 /* MPBaseTabBarCustomView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPBaseTabBarCustomView.h; sourceTree = "<group>"; };
@@ -1784,6 +1787,8 @@
 				1318CFAE242C519100AAB4CB /* MPBaseTableViewDelegate.h */,
 				1318CFB0242C584300AAB4CB /* MPDolphinRefreshHeader.h */,
 				1318CFB1242C584300AAB4CB /* MPDolphinRefreshHeader.m */,
+				1315EADE243EFC6C00CF19D1 /* MPCustomSliderBarView.h */,
+				1315EADF243EFC6C00CF19D1 /* MPCustomSliderBarView.m */,
 			);
 			path = MPBaseListTableView;
 			sourceTree = "<group>";
@@ -3834,6 +3839,7 @@
 				13DBCF3A2410B15500D99014 /* UITextField+customView.m in Sources */,
 				1313D571242DE2D20054A52D /* MPInterestUsersModel.m in Sources */,
 				133E70E62418D82A00A4C3E4 /* MPForgetPWDViewController.m in Sources */,
+				1315EAE0243EFC6C00CF19D1 /* MPCustomSliderBarView.m in Sources */,
 				1319A2FC2435C458009EE296 /* MPSheYingViewModel.m in Sources */,
 				1315E153241B77A400F7B452 /* MPNewPWDView.m in Sources */,
 				13DBCF442410B15500D99014 /* NSObject+Time.m in Sources */,

@@ -120,7 +120,7 @@ static CGFloat rubberBandDistance(CGFloat offset, CGFloat dimension) {
             CGFloat currentY    = [recognizer translationInView:self].y;
             CGFloat currentX    = [recognizer translationInView:self].x;
             if (currentY == 0.0) {
-                self.isVertical = YES;
+                self.isVertical = NO;
             } else {
                 if (fabs(currentX)/currentY >= 5.0) {
                     self.isVertical = NO;

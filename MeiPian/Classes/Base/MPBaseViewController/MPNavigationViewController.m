@@ -36,7 +36,7 @@
         self.navigationBar.translucent = NO;
         [self.navigationBar setBackgroundImage:[UIImage imageWithColor:[UIColor whiteColor]]
                                                       forBarMetrics:UIBarMetricsDefault];
-        [self.navigationBar setShadowImage:[UIImage imageWithColor:[UIColor whiteColor]]];
+        [self.navigationBar setShadowImage:[UIImage imageWithColor:MAIN_LIGHT_GRAY_COLOR]];
     }
     return self;
 }

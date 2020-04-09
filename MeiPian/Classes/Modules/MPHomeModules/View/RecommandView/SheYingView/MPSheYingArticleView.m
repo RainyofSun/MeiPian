@@ -124,6 +124,7 @@ static NSString *RecommandThreePicCell      = @"ThreePicCell";
     self.listTableView.tableDalegate = self;
     self.listTableView.tableDataSource = self;
     self.listTableView.scrollEnabled = NO;
+    self.listTableView.isShowCustomSliderImgView = YES;
     [self addSubview:self.listTableView];
     [self.listTableView registerClass:@"MPOnePicTableViewCell" forTableViewCellWithReuseIdentifier:RecommandOnePicCell withNibFile:YES];
        [self.listTableView registerClass:@"MPThreePicTableViewCell" forTableViewCellWithReuseIdentifier:RecommandThreePicCell withNibFile:YES];

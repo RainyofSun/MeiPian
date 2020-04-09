@@ -22,6 +22,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,assign) BOOL isCompleteRequest;
 /** isOpenFooterRefresh 是否开启上拉加载 默认开启 */
 @property (nonatomic,assign) BOOL isOpenFooterRefresh;
+/** isShowCustomSliderImgView 是否显示自定义的滚动条 默认不显示 */
+@property (nonatomic,assign) BOOL isShowCustomSliderImgView;
 
 /**
  创建列表

@@ -12,7 +12,7 @@
 
 static NSString *CircleRecommandCell    = @"recommmandArticleCell";
 
-@interface MPCircleRecommandArticleView ()<UICollectionViewDelegate,UICollectionViewDataSource>
+@interface MPCircleRecommandArticleView ()<UICollectionViewDelegateFlowLayout,UICollectionViewDataSource,UICollectionViewDelegate>
 
 /** recommandVM */
 @property (nonatomic,strong) MPCircleRecommandViewModel *recommandVM;
@@ -45,7 +45,7 @@ static NSString *CircleRecommandCell    = @"recommmandArticleCell";
     NSLog(@"DELLOC : %@",NSStringFromClass(self.class));
 }
 
-#pragma mark - UICollectionViewDelegate & UICollectionViewDataSource
+#pragma mark - UICollectionViewDelegateFlowLayout & UICollectionViewDataSource
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return self.recommandSource.count;
 }
@@ -56,11 +56,22 @@ static NSString *CircleRecommandCell    = @"recommmandArticleCell";
     return cell;
 }
 
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    [MPModulesMsgSend sendCumtomMethodMsg:[self nearsetViewController] methodName:@selector(selectedRecommandArticle:) params:[NSNumber numberWithInteger:indexPath.item]];
+}
+
 #pragma mark - private methods
 - (void)setupUI {
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
     layout.itemSize = CGSizeMake(80, self.recommandH);
+    layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
+    layout.minimumLineSpacing = 0;
+    layout.minimumInteritemSpacing = 8;
+    layout.sectionInset = UIEdgeInsetsMake(0, 10, 0, 15);
     self.collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout];
+    self.collectionView.backgroundColor = [UIColor whiteColor];
+    self.collectionView.showsHorizontalScrollIndicator = NO;
+    self.collectionView.showsVerticalScrollIndicator = NO;
     [self.collectionView registerNib:[UINib nibWithNibName:@"MPRecommandCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:CircleRecommandCell];
     self.collectionView.dataSource = self;
     self.collectionView.delegate = self;

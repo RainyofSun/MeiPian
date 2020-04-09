@@ -31,12 +31,8 @@
 
 #pragma mark - public methods
 - (void)loadRecommandCellSource:(MPCircleRecommandModel *)modelSource {
-    if ([modelSource.thumb_image hasPrefix:@"https"]) {
-        [self.recommandImgView MPSetImageWithURL:modelSource.thumb_image];
-    } else {
-        self.recommandImgView.image = [UIImage imageNamed:modelSource.thumb_image];
-    }
-    [self.recommandImgView MPSetImageWithURL:modelSource.bedge_image_url];
+    [self.recommandImgView MPSetImageWithURL:modelSource.thumb_image];
+    [self.recommandLevelImgView MPSetImageWithURL:modelSource.bedge_image_url];
     self.articleTitleLab.text = modelSource.name;
 }
 

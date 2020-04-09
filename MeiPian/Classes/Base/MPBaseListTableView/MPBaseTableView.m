@@ -9,8 +9,14 @@
 #import "MPBaseTableView.h"
 #import "MPDolphinRefreshHeader.h"
 #import "MPAutoFooter.h"
+#import "MPCustomSliderBarView.h"
 
-@interface MPBaseTableView ()<UITableViewDelegate,UITableViewDataSource>
+@interface MPBaseTableView ()<UITableViewDelegate,UITableViewDataSource,UIScrollViewDelegate,MPCustomSliderBarDelegate>
+
+/** customSliderBar */
+@property (nonatomic,strong) MPCustomSliderBarView *customSliderBar;
+/** defaultSliderBarH */
+@property (nonatomic,assign) CGFloat defaultSliderBarH;
 
 @end
 
@@ -20,10 +26,25 @@
     if (self = [super initWithFrame:frame style:style]) {
         self.delegate = self;
         self.dataSource = self;
+        [self setDefaultData];
         [self setRefreshHeader];
         [self setRefreshFooter];
     }
     return self;
+}
+
+- (void)layoutSubviews {
+    [super layoutSubviews];
+//    NSLog(@"subviews %@",self.subviews);
+//    [self.subviews enumerateObjectsUsingBlock:^(__kindof UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+//        if ([obj isKindOfClass:[UIImageView class]]) {
+//            UIImageView *imgView = [[UIImageView alloc] init];
+//            imgView = obj;
+//            imgView.backgroundColor = [UIColor redColor];
+//        }
+//    }];
+//    self.subviews.lastObject.width = 2;
+//    self.subviews.lastObject.mj_x = 3;
 }
 
 - (void)dealloc {
@@ -37,9 +58,6 @@
 #pragma mark - public methods
 + (MPBaseTableView *)setupListView {
     MPBaseTableView *tableView = [[MPBaseTableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
-    tableView.backgroundColor = MAIN_LIGHT_GRAY_COLOR;
-    tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    tableView.isOpenFooterRefresh = YES;
     return tableView;
 }
 
@@ -112,12 +130,43 @@
 }
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    [self updateSliderBarHeight];
     if (self.tableDalegate != nil && [self.tableDalegate respondsToSelector:@selector(MPBaseTableView:willDisplayCell:withRowAndIndex:)]) {
         [self.tableDalegate MPBaseTableView:self willDisplayCell:cell withRowAndIndex:indexPath];
     }
 }
 
+#pragma mark - UIScrollViewDelegate
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    if (!self.isShowCustomSliderImgView) {
+        return;
+    }
+    self.customSliderBar.alpha = 1;
+    // 更新f滚动条位置
+    self.customSliderBar.yPosition = (self.customSliderBar.bounds.size.height - self.customSliderBar.barHeight) * scrollView.contentOffset.y / (scrollView.contentSize.height - self.customSliderBar.bounds.size.height);
+    NSLog(@"sliderBar %@ Self = %@",self.customSliderBar,self);
+}
+
+#pragma mark - MPCustomSliderBarDelegate
+- (void)scrollBarDidiScroll:(MPCustomSliderBarView *)scrollBar {
+    [self setContentOffset:CGPointMake(0, (self.contentSize.height - self.customSliderBar.bounds.size.height) * scrollBar.yPosition / (self.customSliderBar.bounds.size.height - self.customSliderBar.barHeight)) animated:YES];
+}
+
+- (void)scrollBarTouchAction:(MPCustomSliderBarView *)scrollBar {
+    [UIView animateWithDuration:scrollBar.barMoveDuration animations:^{
+        [self setContentOffset:CGPointMake(0, (self.contentSize.height - self.customSliderBar.bounds.size.height) * scrollBar.yPosition / (self.customSliderBar.bounds.size.height - self.customSliderBar.barHeight)) animated:YES];
+    }];
+}
+
 #pragma mark - private methods
+- (void)setDefaultData {
+    self.backgroundColor = MAIN_LIGHT_GRAY_COLOR;
+    self.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.isOpenFooterRefresh = YES;
+    self.isShowCustomSliderImgView = NO;
+    self.defaultSliderBarH = 40;
+}
+
 - (void)setRefreshHeader {
     self.mj_header = [MPDolphinRefreshHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
     // 马上进入刷新状态
@@ -128,6 +177,31 @@
     MPAutoFooter *footer = [MPAutoFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreData)];
     footer.triggerAutomaticallyRefreshPercent = 0.3;
     self.mj_footer = footer;
+}
+
+- (void)setCustomSliderBarView {
+    self.customSliderBar.alpha = 0;
+    self.customSliderBar.minBarHeight = self.defaultSliderBarH;
+    self.customSliderBar.foreColor = [UIColor redColor];
+    self.customSliderBar.backColor = [UIColor yellowColor];
+    self.customSliderBar.sliderBarDelegate = self;
+    [self addSubview:self.customSliderBar];
+}
+
+- (void)updateSliderBarHeight {
+    if (!self.isShowCustomSliderImgView) {
+        return;
+    }
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(.1f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        // 更新滚动条高度
+        if (self.contentSize.height <= self.bounds.size.height) {
+            self.customSliderBar.barHeight = self.defaultSliderBarH;
+        } else {
+            self.customSliderBar.barHeight = pow(self.bounds.size.height, 2) / self.contentSize.height;
+        }
+        // 更新滚动条Y位置
+        self.customSliderBar.yPosition = (self.bounds.size.height - self.customSliderBar.barHeight) * self.contentOffset.y / (self.contentSize.height - self.customSliderBar.bounds.size.height);
+    });
 }
 
 #pragma mark - setter
@@ -141,6 +215,21 @@
         }
     }
     [self reloadData];
+}
+
+- (void)setIsShowCustomSliderImgView:(BOOL)isShowCustomSliderImgView {
+    _isShowCustomSliderImgView = isShowCustomSliderImgView;
+    if (isShowCustomSliderImgView) {
+        [self setCustomSliderBarView];
+    }
+}
+
+#pragma mark - getter
+- (MPCustomSliderBarView *)customSliderBar {
+    if (!_customSliderBar) {
+        _customSliderBar = [[MPCustomSliderBarView alloc] initWithFrame:CGRectMake(CGRectGetMaxX([UIScreen mainScreen].bounds) - 20, 0, 20, [UIScreen mainScreen].bounds.size.height)];
+    }
+    return _customSliderBar;
 }
 
 @end

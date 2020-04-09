@@ -30,6 +30,10 @@
     NSLog(@"刷新JJ请求");
 }
 
+- (void)selectedRecommandArticle:(NSNumber *)recommandArticleTag {
+    NSLog(@"点击推荐文章 %@",recommandArticleTag);
+}
+
 #pragma mark - lazy
 - (MPCirclePageViewModel *)circleVM {
     if (!_circleVM) {
