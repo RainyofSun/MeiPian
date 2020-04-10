@@ -25,7 +25,7 @@ static CGFloat rubberBandDistance(CGFloat offset, CGFloat dimension) {
     return offset < 0.0f ? -result : result;
 }
 
-@interface MPSheYingView ()<UIScrollViewDelegate,UIGestureRecognizerDelegate>
+@interface MPSheYingView ()<UIGestureRecognizerDelegate,UIDynamicAnimatorDelegate>
 
 /**mainScrollView */
 @property (nonatomic,strong) UIScrollView *mainScrollView;
@@ -66,32 +66,12 @@ static CGFloat rubberBandDistance(CGFloat offset, CGFloat dimension) {
     [super layoutSubviews];
     [self.mainScrollView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsZero];
     self.loopView.frame = CGRectMake(0, 0, CGRectGetWidth(self.bounds), self.loopView.loopH);
-    self.articleView.frame = CGRectMake(0, self.loopView.loopH, CGRectGetWidth(self.bounds), ScreenHeight);
+    self.articleView.frame = CGRectMake(0, self.loopView.loopH, CGRectGetWidth(self.bounds), CGRectGetHeight(self.bounds));
 }
 
 - (void)dealloc {
     [self.animator removeAllBehaviors];
     NSLog(@"DELLOC : %@",NSStringFromClass(self.class));
-}
-
-#pragma mark - UIScrollViewDelegate
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    
-}
-
-/**
-*  滚动完毕就会调用（如果不是人为拖拽scrollView导致滚动完毕，才会调用这个方法）
-*/
-- (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView {
-    FLOG(@"不是人为拖拽scrollView导致滚动完毕");
-    
-}
-
-/**
- *  滚动完毕就会调用（如果是人为拖拽scrollView导致滚动完毕，才会调用这个方法）
- */
-- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
-    FLOG(@"人为拖拽scrollView导致滚动完毕");
 }
 
 #pragma mark - UIGestureRecognizerDelegate
@@ -176,6 +156,11 @@ static CGFloat rubberBandDistance(CGFloat offset, CGFloat dimension) {
     [recognizer setTranslation:CGPointZero inView:self];
 }
 
+#pragma mark - UIDynamicAnimatorDelegate
+- (void)dynamicAnimatorDidPause:(UIDynamicAnimator *)animator {
+    [self.articleView.listTableView customSliderBarDisAlphaAnimation];
+}
+
 #pragma mark - private methods
 - (void)setupUI {
     self.mainScrollView = [[UIScrollView alloc] init];
@@ -184,8 +169,7 @@ static CGFloat rubberBandDistance(CGFloat offset, CGFloat dimension) {
     } else {
         // Fallback on earlier versions
     }
-    self.mainScrollView.delegate = self;
-    self.mainScrollView.contentSize = CGSizeMake(0, ScreenHeight + self.loopView.loopH);
+    self.mainScrollView.contentSize = CGSizeMake(0, CGRectGetHeight(self.bounds) + self.loopView.loopH);
     self.mainScrollView.bounces = NO;
     self.mainScrollView.showsVerticalScrollIndicator = NO;
     self.mainScrollView.showsHorizontalScrollIndicator = NO;
@@ -201,6 +185,7 @@ static CGFloat rubberBandDistance(CGFloat offset, CGFloat dimension) {
     [self addGestureRecognizer:self.panGes];
     
     self.animator = [[UIDynamicAnimator alloc] initWithReferenceView:self];
+    self.animator.delegate = self;
     self.dynamicItem = [[MPDynamicItem alloc] init];
 }
 
@@ -208,6 +193,7 @@ static CGFloat rubberBandDistance(CGFloat offset, CGFloat dimension) {
 - (void)controlScrollForVertical:(CGFloat)detal AndState:(UIGestureRecognizerState)state {
     // 判断是MainScrollView滚动还是子ScrollView滚动,detal为手指移动的距离
     if (self.mainScrollView.contentOffset.y >= self.loopView.loopH) {
+        [self.articleView.listTableView customSliderBarShowAlphaAnimation];
         CGFloat offsetY = self.articleView.listTableView.contentOffset.y - detal;
         if (offsetY < 0) {
             // 当子ScrollView的contentOffSet小于0之后就b不再移动子ScrollView,而要移动mainScrollView
@@ -215,7 +201,7 @@ static CGFloat rubberBandDistance(CGFloat offset, CGFloat dimension) {
             self.mainScrollView.contentOffset = CGPointMake(0, self.mainScrollView.contentOffset.y - detal);
         } else if (offsetY > (self.articleView.listTableView.contentSize.height - self.articleView.listTableView.frame.size.height)) {
             // 当子ScrollView的contenOffset大于tableView的可移动距离时
-            offsetY = self.articleView.listTableView.contentOffset.y - rubberBandDistance(detal, ScreenHeight);
+            offsetY = self.articleView.listTableView.contentOffset.y - rubberBandDistance(detal, CGRectGetHeight(self.bounds));
         }
         NSLog(@"subTableView %f",offsetY);
         self.articleView.listTableView.contentOffset = CGPointMake(0, offsetY);
@@ -223,12 +209,12 @@ static CGFloat rubberBandDistance(CGFloat offset, CGFloat dimension) {
         CGFloat mainOffsetY = self.mainScrollView.contentOffset.y - detal;
         if (mainOffsetY < 0) {
             // 滚动到顶部之后继续往上滚动需要乘以一个小于1的系数
-            mainOffsetY = self.mainScrollView.contentOffset.y - rubberBandDistance(detal, ScreenHeight);
+            mainOffsetY = self.mainScrollView.contentOffset.y - rubberBandDistance(detal, CGRectGetHeight(self.bounds));
             CGFloat subScrollViewOffsetY = self.articleView.listTableView.contentOffset.y - detal;
             if (subScrollViewOffsetY < 0) {
                 // 触发子Scrollview下拉刷新
                 mainOffsetY = 0;
-                subScrollViewOffsetY = self.articleView.listTableView.contentOffset.y - rubberBandDistance(detal, ScreenHeight);
+                subScrollViewOffsetY = self.articleView.listTableView.contentOffset.y - rubberBandDistance(detal, CGRectGetHeight(self.bounds));
                 self.articleView.listTableView.contentOffset = CGPointMake(0, subScrollViewOffsetY);
                 if (subScrollViewOffsetY <= -30) {
                     [self.articleView manualTriggerArticleRefresh];

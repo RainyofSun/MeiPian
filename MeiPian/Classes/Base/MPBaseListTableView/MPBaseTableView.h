@@ -22,8 +22,14 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,assign) BOOL isCompleteRequest;
 /** isOpenFooterRefresh 是否开启上拉加载 默认开启 */
 @property (nonatomic,assign) BOOL isOpenFooterRefresh;
-/** isShowCustomSliderImgView 是否显示自定义的滚动条 默认不显示 */
+/** isShowCustomSliderImgView 是否显示自定义的滚动条 默认不显示 必须在tableView已添加到父view上后设置 */
 @property (nonatomic,assign) BOOL isShowCustomSliderImgView;
+/** sliderBarForeColor 滑动条前景色 */
+@property (nonatomic,strong) UIColor *sliderBarForeColor;
+/** sliderBarBackColor 滑动条背景色 */
+@property (nonatomic,strong) UIColor *sliderBarBackColor;
+/** sliderBarMinHeight 滑动条最小高度 默认40.f */
+@property (nonatomic,assign) CGFloat sliderBarMinHeight;
 
 /**
  创建列表
@@ -45,6 +51,15 @@ NS_ASSUME_NONNULL_BEGIN
  获取对应Index的Cell
  */
 - (nullable __kindof UITableViewCell *)MPBaseTableViewCellForRowAtIndex:(NSIndexPath *)index;
+
+/**
+ 自定义Slider出现动画
+ */
+- (void)customSliderBarShowAlphaAnimation;
+/**
+ 自定义Slider消失动画
+ */
+- (void)customSliderBarDisAlphaAnimation;
 
 @end
 

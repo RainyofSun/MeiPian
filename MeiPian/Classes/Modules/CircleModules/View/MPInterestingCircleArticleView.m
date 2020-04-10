@@ -94,6 +94,7 @@ static NSString *InterestCell = @"InterestIngCell";
     self.listTableView.tableDataSource = self;
     self.listTableView.scrollEnabled = NO;
     [self addSubview:self.listTableView];
+    self.listTableView.isShowCustomSliderImgView = YES;
     [self.listTableView registerClass:@"MPInterestTableViewCell" forTableViewCellWithReuseIdentifier:InterestCell withNibFile:YES];
     self.isLoadFirst = YES;
     self.manualRefreshStart = NO;

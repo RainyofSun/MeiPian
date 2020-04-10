@@ -83,8 +83,8 @@
 - (void)initInfo {
     _minBarHeight = 40.f;
     _barMoveDuration = 0.25f;
-    _foreColor = HexColor(0x2f9cd4);
-    _backColor = HexColor(0xe6e6e6);
+    _foreColor = [UIColor colorWithRed:143/255.0 green:143/255.0 blue:143/255.0 alpha:1];
+    _backColor = [UIColor clearColor];
     self.sliderBarEnabled = NO;
     
     self.layer.cornerRadius = self.bounds.size.width / 2;
@@ -143,7 +143,6 @@
 
 - (void)setYPosition:(CGFloat)yPosition {
     _yPosition = yPosition;
-    NSLog(@"更新滚动条位置 %f",yPosition);
     CGRect tempFrame = self.scrollBar.frame;
     tempFrame.origin.y = yPosition;
     self.scrollBar.frame = tempFrame;

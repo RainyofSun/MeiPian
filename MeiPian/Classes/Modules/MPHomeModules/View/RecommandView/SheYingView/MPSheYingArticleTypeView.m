@@ -7,13 +7,16 @@
 //
 
 #import "MPSheYingArticleTypeView.h"
+#import "MPSheYingArticleTypeViewModel.h"
 
 @interface MPSheYingArticleTypeView ()
 
 /** defaultSource */
-@property (nonatomic,strong) NSArray <NSString *>*defaultSource;
+@property (nonatomic,strong) NSArray <MPSheYingArticleTypeConfigModel *>*defaultSource;
 /** btnSource */
 @property (nonatomic,strong) NSMutableArray <UIButton *>*btnSource;
+/** typeVM */
+@property (nonatomic,strong) MPSheYingArticleTypeViewModel *typeVM;
 
 @end
 
@@ -41,7 +44,10 @@
 
 #pragma mark - private methods
 - (void)setDefaultData {
-    self.defaultSource = @[@"人像印记",@"爱花品茗",@"都市掠影",@"风景名胜",@"摄影达人"];
+    WeakSelf;
+    [self.typeVM MPSheYingArticleTypeInfo:^(id  _Nonnull returnValue) {
+        weakSelf.defaultSource = (NSArray <MPSheYingArticleTypeConfigModel *>*)returnValue;
+    }];
     self.btnSource = [NSMutableArray arrayWithCapacity:self.defaultSource.count];
 }
 
@@ -49,13 +55,13 @@
     CGFloat distance    = 8;
     CGFloat itemW       = (CGRectGetWidth(self.bounds) - 8 * (self.defaultSource.count - 1))/self.defaultSource.count;
     CGFloat itemH       = CGRectGetHeight(self.bounds);
-    NSArray <NSString *>*imgArray = @[@"renXiang",@"aiHua",@"duShi",@"fengJing",@"sheYing"];
     for (NSInteger i = 0; i < self.defaultSource.count; i ++) {
         UIButton *item = [UIButton buttonWithType:UIButtonTypeCustom];
         item.frame = CGRectMake((itemW + distance) * i , 0, itemW, itemH);
-        [item setTitle:self.defaultSource[i] forState:UIControlStateNormal];
+        [item setTitle:self.defaultSource[i].title forState:UIControlStateNormal];
         [item setTitleColor:MAIN_BLACK_COLOR forState:UIControlStateNormal];
-        [item setImage:[UIImage imageNamed:imgArray[i]] forState:UIControlStateNormal];
+        [item setImage:[UIImage imageNamed:self.defaultSource[i].icon] forState:UIControlStateNormal];
+        item.imageView.contentMode = UIViewContentModeScaleAspectFill;
         [self changeButtonImgTopAndTextBottom:8 item:item];
         item.titleLabel.font = [UIFont systemFontOfSize:15];
         [item addTarget:self action:@selector(touchArticleType:) forControlEvents:UIControlEventTouchUpInside];
@@ -74,5 +80,12 @@
     [sender setImageEdgeInsets:UIEdgeInsetsMake(0,2, titleSize.height + interval, -(titleSize.width))];
 }
 
+#pragma mark - lazy
+- (MPSheYingArticleTypeViewModel *)typeVM {
+    if (!_typeVM) {
+        _typeVM = [[MPSheYingArticleTypeViewModel alloc] init];
+    }
+    return _typeVM;
+}
 
 @end

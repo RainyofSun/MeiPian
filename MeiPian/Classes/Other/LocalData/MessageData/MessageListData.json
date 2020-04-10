@@ -1,0 +1,36 @@
+{
+    "data": {
+        "msg_list": [
+            {
+                "unread_count": 0,
+                "gift_msg_unread_count": 0,
+                "type": 1,
+                "uri": "meipian://notice/list?v3_group_type=1",
+                "title": "美篇",
+                "icon": "https://ss2.meipian.me/app/notice/news_icon_official_0304.png",
+                "bedge_icon": "https://ss2.meipian.me/app/vip.png",
+                "gift_icon": "https://ss2.meipian.me/app/flower_msg_icon.png",
+                "time": "5小时前"
+            },
+            {
+                "unread_count": 0,
+                "type": 2,
+                "uri": "meipian://notice/list?v3_group_type=2",
+                "title": "小美活动",
+                "icon": "https://ss2.meipian.me/app/icon/notice/xmhdx3.png",
+                "bedge_icon": "https://ss2.meipian.me/app/vip.png",
+                "time": "5小时前"
+            },
+            {
+                "unread_count": 0,
+                "type": 3,
+                "uri": "meipian://notice/list?v3_group_type=3",
+                "title": "美篇印记",
+                "icon": "https://ss2.meipian.me/app/notice/news_icon_official01_0304.png",
+                "bedge_icon": "https://ss2.meipian.me/app/vip.png",
+                "time": "5小时前"
+            }
+        ]
+    },
+    "code": 1000
+}

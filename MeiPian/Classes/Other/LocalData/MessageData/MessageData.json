@@ -1,0 +1,44 @@
+{
+    "data": {
+        "head_group_list": [{
+            "unread_count": 0,
+            "gift_msg_unread_count": 0,
+            "type": 1,
+            "uri": "meipian:\/\/notice\/list?v3_group_type=1",
+            "title": "赞与打赏",
+            "icon": "https:\/\/ss2.meipian.me\/app\/notice\/praise_and_reward_0312.png",
+            "bedge_icon": "",
+            "gift_icon": "https:\/\/ss2.meipian.me\/app\/flower_msg_icon.png"
+        }, {
+            "unread_count": 0,
+            "type": 2,
+            "uri": "meipian:\/\/notice\/list?v3_group_type=2",
+            "title": "评论",
+            "icon": "https:\/\/ss2.meipian.me\/app\/notice\/news_icon_comment_0312.png",
+            "bedge_icon": ""
+        }, {
+            "unread_count": 0,
+            "type": 3,
+            "uri": "meipian:\/\/notice\/list?v3_group_type=3",
+            "title": "粉丝",
+            "icon": "https:\/\/ss2.meipian.me\/app\/notice\/news_icon_fans_0312.png",
+            "bedge_icon": ""
+        }, {
+            "unread_count": 0,
+            "type": 4,
+            "uri": "meipian:\/\/notice\/list?v3_group_type=4",
+            "title": "收藏与转发",
+            "icon": "https:\/\/ss2.meipian.me\/app\/notice\/news_icon_book_0312.png",
+            "bedge_icon": ""
+        }],
+        "content_group_list": [],
+        "first_seq_id": 17494055,
+        "has_message": 0,
+        "circle_mgt": 0,
+        "contacts_stat": {
+            "contacts_joined": 0,
+            "contacts_added": 0
+        }
+    },
+    "code": 1000
+}

@@ -140,6 +140,12 @@
 		131673E42431E03E001FAF4C /* MPArticleAuthorModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 131673E32431E03E001FAF4C /* MPArticleAuthorModel.m */; };
 		131673E72431E144001FAF4C /* MPArticleOptionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 131673E62431E144001FAF4C /* MPArticleOptionModel.m */; };
 		131673EF2431E62B001FAF4C /* MPRecommadAllConfigModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 131673EE2431E62B001FAF4C /* MPRecommadAllConfigModel.m */; };
+		13168AE024404C4F00810423 /* MessageData.json in Resources */ = {isa = PBXBuildFile; fileRef = 13168ADF24404C4E00810423 /* MessageData.json */; };
+		13168AE2244051E700810423 /* MessageListData.json in Resources */ = {isa = PBXBuildFile; fileRef = 13168AE1244051E700810423 /* MessageListData.json */; };
+		13168AE42440540800810423 /* ArticleType.json in Resources */ = {isa = PBXBuildFile; fileRef = 13168AE32440540800810423 /* ArticleType.json */; };
+		13168AE72440544400810423 /* MPSheYingArticleTypeViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 13168AE62440544400810423 /* MPSheYingArticleTypeViewModel.m */; };
+		13168AEA244054AE00810423 /* MPSheYingArticleTypeConfigModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 13168AE9244054AE00810423 /* MPSheYingArticleTypeConfigModel.m */; };
+		13168AF024405E9400810423 /* MPMessagePageViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 13168AEF24405E9400810423 /* MPMessagePageViewModel.m */; };
 		131712C02423104B008A172E /* MPHomePageMainViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 131712BF2423104B008A172E /* MPHomePageMainViewModel.m */; };
 		131712CE24235E42008A172E /* MPAttentionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 131712CD24235E42008A172E /* MPAttentionView.m */; };
 		131712D124235E58008A172E /* MPRecommandView.m in Sources */ = {isa = PBXBuildFile; fileRef = 131712D024235E58008A172E /* MPRecommandView.m */; };
@@ -655,6 +661,16 @@
 		131673E62431E144001FAF4C /* MPArticleOptionModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPArticleOptionModel.m; sourceTree = "<group>"; };
 		131673ED2431E62B001FAF4C /* MPRecommadAllConfigModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPRecommadAllConfigModel.h; sourceTree = "<group>"; };
 		131673EE2431E62B001FAF4C /* MPRecommadAllConfigModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPRecommadAllConfigModel.m; sourceTree = "<group>"; };
+		13168ADF24404C4E00810423 /* MessageData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MessageData.json; sourceTree = "<group>"; };
+		13168AE1244051E700810423 /* MessageListData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MessageListData.json; sourceTree = "<group>"; };
+		13168AE32440540800810423 /* ArticleType.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ArticleType.json; sourceTree = "<group>"; };
+		13168AE52440544400810423 /* MPSheYingArticleTypeViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPSheYingArticleTypeViewModel.h; sourceTree = "<group>"; };
+		13168AE62440544400810423 /* MPSheYingArticleTypeViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPSheYingArticleTypeViewModel.m; sourceTree = "<group>"; };
+		13168AE8244054AE00810423 /* MPSheYingArticleTypeConfigModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPSheYingArticleTypeConfigModel.h; sourceTree = "<group>"; };
+		13168AE9244054AE00810423 /* MPSheYingArticleTypeConfigModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPSheYingArticleTypeConfigModel.m; sourceTree = "<group>"; };
+		13168AEB2440597300810423 /* 美篇.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "美篇.entitlements"; sourceTree = "<group>"; };
+		13168AEE24405E9400810423 /* MPMessagePageViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPMessagePageViewModel.h; sourceTree = "<group>"; };
+		13168AEF24405E9400810423 /* MPMessagePageViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPMessagePageViewModel.m; sourceTree = "<group>"; };
 		131712BE2423104B008A172E /* MPHomePageMainViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPHomePageMainViewModel.h; sourceTree = "<group>"; };
 		131712BF2423104B008A172E /* MPHomePageMainViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPHomePageMainViewModel.m; sourceTree = "<group>"; };
 		131712CC24235E42008A172E /* MPAttentionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPAttentionView.h; sourceTree = "<group>"; };
@@ -1157,6 +1173,7 @@
 		1312C77B242B2EB1005887B6 /* LocalData */ = {
 			isa = PBXGroup;
 			children = (
+				13168ADE24404C4E00810423 /* MessageData */,
 				1319E3F4243DB83F0044F36F /* CirclePage */,
 				1312C77C242B2EC1005887B6 /* HomePage */,
 			);
@@ -1226,6 +1243,7 @@
 		1312C7A8242B3B98005887B6 /* SheYing */ = {
 			isa = PBXGroup;
 			children = (
+				13168AE32440540800810423 /* ArticleType.json */,
 				1312C7B1242B3D98005887B6 /* SheYing0.json */,
 				1312C7AC242B3D96005887B6 /* SheYing1.json */,
 				1312C7B0242B3D97005887B6 /* SheYing2.json */,
@@ -1472,6 +1490,8 @@
 		13161F062421CFF400A1A373 /* MessageModules */ = {
 			isa = PBXGroup;
 			children = (
+				13168AED24405E7600810423 /* VM */,
+				13168AEC24405E6F00810423 /* View */,
 				13161F072421D00900A1A373 /* VC */,
 			);
 			path = MessageModules;
@@ -1642,6 +1662,31 @@
 				131673C42431C5CC001FAF4C /* MPRecommandAllViewModel.m */,
 			);
 			path = AllVM;
+			sourceTree = "<group>";
+		};
+		13168ADE24404C4E00810423 /* MessageData */ = {
+			isa = PBXGroup;
+			children = (
+				13168AE1244051E700810423 /* MessageListData.json */,
+				13168ADF24404C4E00810423 /* MessageData.json */,
+			);
+			path = MessageData;
+			sourceTree = "<group>";
+		};
+		13168AEC24405E6F00810423 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		13168AED24405E7600810423 /* VM */ = {
+			isa = PBXGroup;
+			children = (
+				13168AEE24405E9400810423 /* MPMessagePageViewModel.h */,
+				13168AEF24405E9400810423 /* MPMessagePageViewModel.m */,
+			);
+			path = VM;
 			sourceTree = "<group>";
 		};
 		131712BB2423101C008A172E /* VM */ = {
@@ -1855,6 +1900,8 @@
 			children = (
 				1319A2FA2435C458009EE296 /* MPSheYingViewModel.h */,
 				1319A2FB2435C458009EE296 /* MPSheYingViewModel.m */,
+				13168AE52440544400810423 /* MPSheYingArticleTypeViewModel.h */,
+				13168AE62440544400810423 /* MPSheYingArticleTypeViewModel.m */,
 			);
 			path = SheYingVM;
 			sourceTree = "<group>";
@@ -1864,6 +1911,8 @@
 			children = (
 				1319A3052435CB39009EE296 /* MPSheYingConfigModel.h */,
 				1319A3062435CB39009EE296 /* MPSheYingConfigModel.m */,
+				13168AE8244054AE00810423 /* MPSheYingArticleTypeConfigModel.h */,
+				13168AE9244054AE00810423 /* MPSheYingArticleTypeConfigModel.m */,
 			);
 			path = SheYingModel;
 			sourceTree = "<group>";
@@ -2982,6 +3031,7 @@
 		13DBCEA62410A98B00D99014 /* MeiPian */ = {
 			isa = PBXGroup;
 			children = (
+				13168AEB2440597300810423 /* 美篇.entitlements */,
 				13DBCEC02410AB3B00D99014 /* AppDelegate */,
 				13DBCEC72410B06300D99014 /* Classes */,
 				13DBCEC22410AB7200D99014 /* ProjectSupportFiles */,
@@ -3475,6 +3525,7 @@
 				13B3D4E1242B591E0081F9D3 /* Flatten_2_1.json in Resources */,
 				13B3D4AC242B591E0081F9D3 /* Flatten_0_3.json in Resources */,
 				1319E40B243DB9EA0044F36F /* CircleHomeTalks4.json in Resources */,
+				13168AE2244051E700810423 /* MessageListData.json in Resources */,
 				133E70EC2418D86000A4C3E4 /* MPPhoneLoginViewController.xib in Resources */,
 				13B3D495242B591E0081F9D3 /* Flatten_1_4.json in Resources */,
 				131B44BC24161AD400A99F73 /* up.png in Resources */,
@@ -3525,6 +3576,7 @@
 				1312C7FA242B41B6005887B6 /* LvXing6.json in Resources */,
 				131B44FC24161B0100A99F73 /* dot_black.json in Resources */,
 				131B451124161B0100A99F73 /* dot_white.json in Resources */,
+				13168AE42440540800810423 /* ArticleType.json in Resources */,
 				13B3D4D6242B591E0081F9D3 /* YingJi4.json in Resources */,
 				1312C791242B3A1A005887B6 /* all9.json in Resources */,
 				13B3D4A9242B591E0081F9D3 /* Flatten_6_0.json in Resources */,
@@ -3566,6 +3618,7 @@
 				131B451024161B0100A99F73 /* register_white.json in Resources */,
 				13DBCF552410B4A000D99014 /* MPMainViewController.xib in Resources */,
 				13B3D4C7242B591E0081F9D3 /* Flatten_7_3.json in Resources */,
+				13168AE024404C4F00810423 /* MessageData.json in Resources */,
 				1318CFC5242C5BB000AAB4CB /* 7.jinbi.caf in Resources */,
 				133E70E22418BC6A00A4C3E4 /* MPAccountLoginView.xib in Resources */,
 				13B3D4C6242B591E0081F9D3 /* Flatten_7_0.json in Resources */,
@@ -3797,6 +3850,7 @@
 				13DBCF022410B14900D99014 /* AppCycleScrollview.m in Sources */,
 				C8B22B582439595A00606175 /* MPBannerLoopModel.m in Sources */,
 				1334C02A243B3164001ECC00 /* MPTopicViewModel.m in Sources */,
+				13168AEA244054AE00810423 /* MPSheYingArticleTypeConfigModel.m in Sources */,
 				13DBCED42410B12A00D99014 /* TelePhoneTextField.m in Sources */,
 				1315E150241B772700F7B452 /* MPNewPWDViewModel.m in Sources */,
 				13161F27242209A100A1A373 /* MPCorpusBtn.m in Sources */,
@@ -3846,6 +3900,7 @@
 				1315B2A52436F5C900565B23 /* MPDynamicItem.m in Sources */,
 				131BB3AC241F199E0084B4BB /* BaseNetRequestConfig.m in Sources */,
 				133E70EB2418D86000A4C3E4 /* MPPhoneLoginViewController.m in Sources */,
+				13168AF024405E9400810423 /* MPMessagePageViewModel.m in Sources */,
 				1319A30D2435EBBC009EE296 /* MPSheYingBannerLoopView.m in Sources */,
 				13DBCF392410B15500D99014 /* UIPickerView+MalPicker.m in Sources */,
 				1315E137241B2D3B00F7B452 /* MPSMSCodeViewController.m in Sources */,
@@ -3907,6 +3962,7 @@
 				1319A3072435CB39009EE296 /* MPSheYingConfigModel.m in Sources */,
 				13DBCF0A2410B14900D99014 /* MPModulesMsgSend.m in Sources */,
 				131BB3AD241F199E0084B4BB /* BusinessRequestErrorHander.m in Sources */,
+				13168AE72440544400810423 /* MPSheYingArticleTypeViewModel.m in Sources */,
 				1319A30A2435EA50009EE296 /* MPSheYingView.m in Sources */,
 				1319E40F243DBF0C0044F36F /* MPCircleInterestArticleAuthorModel.m in Sources */,
 				131DF94C24349188006F25C3 /* MPJingXuanConfigModel.m in Sources */,
@@ -4093,6 +4149,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = "MeiPian/美篇.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GJXZ73B365;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -4116,6 +4173,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = "MeiPian/美篇.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GJXZ73B365;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;

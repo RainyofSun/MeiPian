@@ -86,6 +86,24 @@
     return [self cellForRowAtIndexPath:index];
 }
 
+- (void)customSliderBarShowAlphaAnimation {
+    if (!self.isShowCustomSliderImgView) {
+        return;
+    }
+    [UIView animateWithDuration:ALPHAANIMATIONTIME animations:^{
+        self.customSliderBar.alpha = 1;
+    }];
+}
+
+- (void)customSliderBarDisAlphaAnimation {
+    if (!self.isShowCustomSliderImgView) {
+           return;
+    }
+    [UIView animateWithDuration:ALPHAANIMATIONTIME delay:0.5 options:UIViewAnimationOptionCurveLinear animations:^{
+        self.customSliderBar.alpha = 0;
+    } completion:nil];
+}
+
 - (void)loadNewData {
     if (self.tableDataSource != nil && [self.tableDataSource respondsToSelector:@selector(MPDropRefreshLoadMoreSource)]) {
         [self.tableDataSource MPDropRefreshLoadMoreSource];
@@ -138,13 +156,11 @@
 
 #pragma mark - UIScrollViewDelegate
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    if (!self.isShowCustomSliderImgView) {
+    if (!self.isShowCustomSliderImgView || scrollView.contentOffset.y < 0) {
         return;
     }
-    self.customSliderBar.alpha = 1;
-    // 更新f滚动条位置
+    // 更新滚动条位置
     self.customSliderBar.yPosition = (self.customSliderBar.bounds.size.height - self.customSliderBar.barHeight) * scrollView.contentOffset.y / (scrollView.contentSize.height - self.customSliderBar.bounds.size.height);
-    NSLog(@"sliderBar %@ Self = %@",self.customSliderBar,self);
 }
 
 #pragma mark - MPCustomSliderBarDelegate
@@ -180,12 +196,16 @@
 }
 
 - (void)setCustomSliderBarView {
-    self.customSliderBar.alpha = 0;
-    self.customSliderBar.minBarHeight = self.defaultSliderBarH;
-    self.customSliderBar.foreColor = [UIColor redColor];
-    self.customSliderBar.backColor = [UIColor yellowColor];
-    self.customSliderBar.sliderBarDelegate = self;
-    [self addSubview:self.customSliderBar];
+    if (_customSliderBar) {
+        return;
+    }
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        self.customSliderBar = [[MPCustomSliderBarView alloc] initWithFrame:CGRectMake(CGRectGetMaxX([UIScreen mainScreen].bounds) - 5, 0, 3, CGRectGetHeight(self.bounds))];
+        self.customSliderBar.alpha = 0;
+        self.customSliderBar.minBarHeight = self.defaultSliderBarH;
+        self.customSliderBar.sliderBarDelegate = self;
+        [self.superview addSubview:self.customSliderBar];
+    });
 }
 
 - (void)updateSliderBarHeight {
@@ -224,12 +244,25 @@
     }
 }
 
-#pragma mark - getter
-- (MPCustomSliderBarView *)customSliderBar {
-    if (!_customSliderBar) {
-        _customSliderBar = [[MPCustomSliderBarView alloc] initWithFrame:CGRectMake(CGRectGetMaxX([UIScreen mainScreen].bounds) - 20, 0, 20, [UIScreen mainScreen].bounds.size.height)];
+- (void)setSliderBarForeColor:(UIColor *)sliderBarForeColor {
+    _sliderBarBackColor = sliderBarForeColor;
+    if (self.isShowCustomSliderImgView) {
+        self.customSliderBar.foreColor = sliderBarForeColor;
     }
-    return _customSliderBar;
+}
+
+- (void)setSliderBarBackColor:(UIColor *)sliderBarBackColor {
+    _sliderBarBackColor = sliderBarBackColor;
+    if (self.isShowCustomSliderImgView) {
+        self.customSliderBar.backColor = sliderBarBackColor;
+    }
+}
+
+- (void)setSliderBarMinHeight:(CGFloat)sliderBarMinHeight {
+    _sliderBarMinHeight = sliderBarMinHeight;
+    if (self.isShowCustomSliderImgView) {
+        self.customSliderBar.minBarHeight = sliderBarMinHeight;
+    }
 }
 
 @end
