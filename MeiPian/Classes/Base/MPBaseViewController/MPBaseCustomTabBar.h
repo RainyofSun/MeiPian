@@ -22,10 +22,13 @@
 
 /** tabBarDelegate */
 @property (nonatomic,weak) id<MPCustomTabBarDelegate> tabBarDelegate;
+/** selectedIndex */
+@property (nonatomic,readonly) NSInteger selectedIndex;
 
 - (instancetype)initWithTitleSource:(NSArray <NSString *>*)titles;
 - (instancetype)initWithTitleSource:(NSArray <NSString *>*)titles normalImgSources:(NSArray <NSString *>*)normalImgs selectedImgSources:(NSArray <NSString *>*)selectedImgs;
 
 - (void)setNormalItemTextColor:(UIColor *)normalColor selectedTextColor:(UIColor *)selectedColor;
+- (void)setTabBarItemBedgeNum:(NSInteger)bedgeNum;
 
 @end

@@ -7,8 +7,13 @@
 //
 
 #import "MPMessagePageViewController.h"
+#import "MPMessagePageViewModel.h"
+#import "MPBaseCustomTabBar.h"
 
 @interface MPMessagePageViewController ()
+
+/** messageVM */
+@property (nonatomic,strong) MPMessagePageViewModel *messageVM;
 
 @end
 
@@ -17,12 +22,28 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.view.backgroundColor = [UIColor systemGrayColor];
+    [self.messageVM loadMessageMainView:self];
+    [self.messageVM setMessageViewNavItem:self];
+    MPBaseCustomTabBar *tabBar = (MPBaseCustomTabBar *)self.tabBarController.tabBar;
+    [tabBar setTabBarItemBedgeNum:15];
 }
 
 #pragma mark - 消息透传
 - (void)reloadPageData {
     NSLog(@"刷新JJ请求");
+}
+
+// 点击消息类型
+- (void)selectedMessageType:(NSNumber *)senderTag {
+    NSLog(@"点击消息 %@",senderTag);
+}
+
+#pragma mark - lazy
+- (MPMessagePageViewModel *)messageVM {
+    if (!_messageVM) {
+        _messageVM = [[MPMessagePageViewModel alloc] init];
+    }
+    return _messageVM;
 }
 
 /*

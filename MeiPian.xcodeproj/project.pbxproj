@@ -146,6 +146,18 @@
 		13168AE72440544400810423 /* MPSheYingArticleTypeViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 13168AE62440544400810423 /* MPSheYingArticleTypeViewModel.m */; };
 		13168AEA244054AE00810423 /* MPSheYingArticleTypeConfigModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 13168AE9244054AE00810423 /* MPSheYingArticleTypeConfigModel.m */; };
 		13168AF024405E9400810423 /* MPMessagePageViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 13168AEF24405E9400810423 /* MPMessagePageViewModel.m */; };
+		1316D18C24440C4100A92AEE /* MPMessagePageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1316D18B24440C4100A92AEE /* MPMessagePageView.m */; };
+		1316D19124440DBD00A92AEE /* MPMessageTypeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1316D18F24440DBD00A92AEE /* MPMessageTypeTableViewCell.m */; };
+		1316D19224440DBD00A92AEE /* MPMessageTypeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1316D19024440DBD00A92AEE /* MPMessageTypeTableViewCell.xib */; };
+		1316D19624440E7500A92AEE /* MPPushMessageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1316D19424440E7500A92AEE /* MPPushMessageTableViewCell.m */; };
+		1316D19B244411B900A92AEE /* MPPushMsgView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1316D19A244411B900A92AEE /* MPPushMsgView.m */; };
+		1316D19D244411CC00A92AEE /* MPPushMsgView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1316D19C244411CC00A92AEE /* MPPushMsgView.xib */; };
+		1316D1A0244414FC00A92AEE /* MPMessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1316D19F244414FC00A92AEE /* MPMessageModel.m */; };
+		1316D1A3244415A800A92AEE /* MPPushMessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1316D1A2244415A800A92AEE /* MPPushMessageModel.m */; };
+		1316D1A62444167B00A92AEE /* MPMessageConfigModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1316D1A52444167B00A92AEE /* MPMessageConfigModel.m */; };
+		1316D1A9244416BE00A92AEE /* MPMessageTypeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1316D1A8244416BE00A92AEE /* MPMessageTypeModel.m */; };
+		1316D1AC244419EC00A92AEE /* MPMessageViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1316D1AB244419EC00A92AEE /* MPMessageViewModel.m */; };
+		1316D1AF2444734A00A92AEE /* MPBaseTabBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 1316D1AE2444734A00A92AEE /* MPBaseTabBarItem.m */; };
 		131712C02423104B008A172E /* MPHomePageMainViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 131712BF2423104B008A172E /* MPHomePageMainViewModel.m */; };
 		131712CE24235E42008A172E /* MPAttentionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 131712CD24235E42008A172E /* MPAttentionView.m */; };
 		131712D124235E58008A172E /* MPRecommandView.m in Sources */ = {isa = PBXBuildFile; fileRef = 131712D024235E58008A172E /* MPRecommandView.m */; };
@@ -671,6 +683,28 @@
 		13168AEB2440597300810423 /* 美篇.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "美篇.entitlements"; sourceTree = "<group>"; };
 		13168AEE24405E9400810423 /* MPMessagePageViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPMessagePageViewModel.h; sourceTree = "<group>"; };
 		13168AEF24405E9400810423 /* MPMessagePageViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPMessagePageViewModel.m; sourceTree = "<group>"; };
+		1316D18A24440C4100A92AEE /* MPMessagePageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPMessagePageView.h; sourceTree = "<group>"; };
+		1316D18B24440C4100A92AEE /* MPMessagePageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPMessagePageView.m; sourceTree = "<group>"; };
+		1316D18E24440DBD00A92AEE /* MPMessageTypeTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPMessageTypeTableViewCell.h; sourceTree = "<group>"; };
+		1316D18F24440DBD00A92AEE /* MPMessageTypeTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPMessageTypeTableViewCell.m; sourceTree = "<group>"; };
+		1316D19024440DBD00A92AEE /* MPMessageTypeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MPMessageTypeTableViewCell.xib; sourceTree = "<group>"; };
+		1316D19324440E7500A92AEE /* MPPushMessageTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPPushMessageTableViewCell.h; sourceTree = "<group>"; };
+		1316D19424440E7500A92AEE /* MPPushMessageTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPPushMessageTableViewCell.m; sourceTree = "<group>"; };
+		1316D199244411B900A92AEE /* MPPushMsgView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPPushMsgView.h; sourceTree = "<group>"; };
+		1316D19A244411B900A92AEE /* MPPushMsgView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPPushMsgView.m; sourceTree = "<group>"; };
+		1316D19C244411CC00A92AEE /* MPPushMsgView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MPPushMsgView.xib; sourceTree = "<group>"; };
+		1316D19E244414FC00A92AEE /* MPMessageModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPMessageModel.h; sourceTree = "<group>"; };
+		1316D19F244414FC00A92AEE /* MPMessageModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPMessageModel.m; sourceTree = "<group>"; };
+		1316D1A1244415A800A92AEE /* MPPushMessageModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPPushMessageModel.h; sourceTree = "<group>"; };
+		1316D1A2244415A800A92AEE /* MPPushMessageModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPPushMessageModel.m; sourceTree = "<group>"; };
+		1316D1A42444167B00A92AEE /* MPMessageConfigModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPMessageConfigModel.h; sourceTree = "<group>"; };
+		1316D1A52444167B00A92AEE /* MPMessageConfigModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPMessageConfigModel.m; sourceTree = "<group>"; };
+		1316D1A7244416BE00A92AEE /* MPMessageTypeModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPMessageTypeModel.h; sourceTree = "<group>"; };
+		1316D1A8244416BE00A92AEE /* MPMessageTypeModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPMessageTypeModel.m; sourceTree = "<group>"; };
+		1316D1AA244419EC00A92AEE /* MPMessageViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPMessageViewModel.h; sourceTree = "<group>"; };
+		1316D1AB244419EC00A92AEE /* MPMessageViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPMessageViewModel.m; sourceTree = "<group>"; };
+		1316D1AD2444734A00A92AEE /* MPBaseTabBarItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPBaseTabBarItem.h; sourceTree = "<group>"; };
+		1316D1AE2444734A00A92AEE /* MPBaseTabBarItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPBaseTabBarItem.m; sourceTree = "<group>"; };
 		131712BE2423104B008A172E /* MPHomePageMainViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPHomePageMainViewModel.h; sourceTree = "<group>"; };
 		131712BF2423104B008A172E /* MPHomePageMainViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPHomePageMainViewModel.m; sourceTree = "<group>"; };
 		131712CC24235E42008A172E /* MPAttentionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPAttentionView.h; sourceTree = "<group>"; };
@@ -1490,6 +1524,7 @@
 		13161F062421CFF400A1A373 /* MessageModules */ = {
 			isa = PBXGroup;
 			children = (
+				1316D19824440ED400A92AEE /* Model */,
 				13168AED24405E7600810423 /* VM */,
 				13168AEC24405E6F00810423 /* View */,
 				13161F072421D00900A1A373 /* VC */,
@@ -1676,6 +1711,9 @@
 		13168AEC24405E6F00810423 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				1316D18D24440D8F00A92AEE /* CellView */,
+				1316D18A24440C4100A92AEE /* MPMessagePageView.h */,
+				1316D18B24440C4100A92AEE /* MPMessagePageView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1685,8 +1723,40 @@
 			children = (
 				13168AEE24405E9400810423 /* MPMessagePageViewModel.h */,
 				13168AEF24405E9400810423 /* MPMessagePageViewModel.m */,
+				1316D1AA244419EC00A92AEE /* MPMessageViewModel.h */,
+				1316D1AB244419EC00A92AEE /* MPMessageViewModel.m */,
 			);
 			path = VM;
+			sourceTree = "<group>";
+		};
+		1316D18D24440D8F00A92AEE /* CellView */ = {
+			isa = PBXGroup;
+			children = (
+				1316D18E24440DBD00A92AEE /* MPMessageTypeTableViewCell.h */,
+				1316D18F24440DBD00A92AEE /* MPMessageTypeTableViewCell.m */,
+				1316D19024440DBD00A92AEE /* MPMessageTypeTableViewCell.xib */,
+				1316D19324440E7500A92AEE /* MPPushMessageTableViewCell.h */,
+				1316D19424440E7500A92AEE /* MPPushMessageTableViewCell.m */,
+				1316D199244411B900A92AEE /* MPPushMsgView.h */,
+				1316D19A244411B900A92AEE /* MPPushMsgView.m */,
+				1316D19C244411CC00A92AEE /* MPPushMsgView.xib */,
+			);
+			path = CellView;
+			sourceTree = "<group>";
+		};
+		1316D19824440ED400A92AEE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1316D19E244414FC00A92AEE /* MPMessageModel.h */,
+				1316D19F244414FC00A92AEE /* MPMessageModel.m */,
+				1316D1A1244415A800A92AEE /* MPPushMessageModel.h */,
+				1316D1A2244415A800A92AEE /* MPPushMessageModel.m */,
+				1316D1A42444167B00A92AEE /* MPMessageConfigModel.h */,
+				1316D1A52444167B00A92AEE /* MPMessageConfigModel.m */,
+				1316D1A7244416BE00A92AEE /* MPMessageTypeModel.h */,
+				1316D1A8244416BE00A92AEE /* MPMessageTypeModel.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		131712BB2423101C008A172E /* VM */ = {
@@ -2532,6 +2602,8 @@
 				13161EFA2420CAAF00A1A373 /* MPBaseCustomTabBar.m */,
 				13161EFC2420CB1000A1A373 /* MPBaseTabBarCustomView.h */,
 				13161EFD2420CB1000A1A373 /* MPBaseTabBarCustomView.m */,
+				1316D1AD2444734A00A92AEE /* MPBaseTabBarItem.h */,
+				1316D1AE2444734A00A92AEE /* MPBaseTabBarItem.m */,
 			);
 			path = MPBaseViewController;
 			sourceTree = "<group>";
@@ -3543,6 +3615,7 @@
 				131B44BB24161AD400A99F73 /* more.png in Resources */,
 				133E70B4241881B900A4C3E4 /* MPWeiChatLoginViewController.xib in Resources */,
 				1312C7E6242B4087005887B6 /* WenXue5.json in Resources */,
+				1316D19D244411CC00A92AEE /* MPPushMsgView.xib in Resources */,
 				1312C7CF242B3F42005887B6 /* QingGan1.json in Resources */,
 				13B3D49C242B591E0081F9D3 /* Flatten_8_4.json in Resources */,
 				13B3D4CA242B591E0081F9D3 /* YingJi7.json in Resources */,
@@ -3608,6 +3681,7 @@
 				13B3D49A242B591E0081F9D3 /* YingJi8.json in Resources */,
 				13B3D4C8242B591E0081F9D3 /* Flatten_7_2.json in Resources */,
 				13DBCF0F2410B14900D99014 /* ZXCategoryItemView.xib in Resources */,
+				1316D19224440DBD00A92AEE /* MPMessageTypeTableViewCell.xib in Resources */,
 				13B3D4B5242B591E0081F9D3 /* Flatten_5_7.json in Resources */,
 				131B44C324161AD400A99F73 /* follow.json in Resources */,
 				1312C78D242B3A1A005887B6 /* all5.json in Resources */,
@@ -3836,6 +3910,7 @@
 				1313D574242DE7040054A52D /* MPAttentionModelConfig.m in Sources */,
 				1319E412243DBF840044F36F /* MPCircleInterestArticleTalkModel.m in Sources */,
 				131DF94224347AD5006F25C3 /* MPJingXuanView.m in Sources */,
+				1316D1A3244415A800A92AEE /* MPPushMessageModel.m in Sources */,
 				13DBCF542410B4A000D99014 /* MPMainViewController.m in Sources */,
 				131745792429B3650062876F /* XLPageBasicTitleView.m in Sources */,
 				131673E72431E144001FAF4C /* MPArticleOptionModel.m in Sources */,
@@ -3873,6 +3948,7 @@
 				13DBCF122410B14900D99014 /* AppWriteLogGetDate.m in Sources */,
 				13DBCEA92410A98B00D99014 /* AppDelegate.m in Sources */,
 				131BB3B0241F199E0084B4BB /* AFNReqeustError.m in Sources */,
+				1316D18C24440C4100A92AEE /* MPMessagePageView.m in Sources */,
 				1315B2A22436E87C00565B23 /* MPLvXingView.m in Sources */,
 				133E70E02418BC5900A4C3E4 /* MPAccountLoginView.m in Sources */,
 				13DBCF142410B14900D99014 /* AppLogFileDate.m in Sources */,
@@ -3885,6 +3961,7 @@
 				13DBCEBA2410A98E00D99014 /* main.m in Sources */,
 				131712CE24235E42008A172E /* MPAttentionView.m in Sources */,
 				1315B29A2436E6C100565B23 /* MPWenXueConfigModel.m in Sources */,
+				1316D19124440DBD00A92AEE /* MPMessageTypeTableViewCell.m in Sources */,
 				131DF94F24349375006F25C3 /* MPJingXuanArticleModel.m in Sources */,
 				1319E3E5243D7BB20044F36F /* MPInterestTableViewCell.m in Sources */,
 				13161F222421FD9C00A1A373 /* MPCorpusView.m in Sources */,
@@ -3933,6 +4010,7 @@
 				1317457B2429B3650062876F /* XLPageTitleCell.m in Sources */,
 				131810C324177FA9004828A3 /* MPADDownLoadManager.m in Sources */,
 				1315B2862436E35500565B23 /* MPQingGanView.m in Sources */,
+				1316D1A0244414FC00A92AEE /* MPMessageModel.m in Sources */,
 				13DBCF3F2410B15500D99014 /* NSObject+Observer.m in Sources */,
 				131DF947243480F7006F25C3 /* MPJXTableViewCell.m in Sources */,
 				131745862429E41C0062876F /* MPHomePageSliderBarTitleCollectionViewCell.m in Sources */,
@@ -3950,6 +4028,7 @@
 				1317457A2429B3650062876F /* XLPageViewControllerConfig.m in Sources */,
 				13DBCF482410B15500D99014 /* UIViewController+VCJump.m in Sources */,
 				133E70DD2418BB9800A4C3E4 /* MPAccountLoginViewModel.m in Sources */,
+				1316D1AC244419EC00A92AEE /* MPMessageViewModel.m in Sources */,
 				C8F1D6EB24388720005A8D3A /* MPHomePageModel.m in Sources */,
 				13161F192421F77500A1A373 /* MPCorpusViewController.m in Sources */,
 				1315E13E241B2ECE00F7B452 /* MPSMSCodeView.m in Sources */,
@@ -3971,6 +4050,7 @@
 				13DBCF472410B15500D99014 /* UINavigationController+NavigationBar.m in Sources */,
 				13DBCF092410B14900D99014 /* RuntimeTool.m in Sources */,
 				13153DEA243C905900C70A9F /* MPCirclePageViewModel.m in Sources */,
+				1316D1A9244416BE00A92AEE /* MPMessageTypeModel.m in Sources */,
 				131BB3AF241F199E0084B4BB /* BussinessLogicError.m in Sources */,
 				131B45342416376900A99F73 /* MPBaseViewController.m in Sources */,
 				131B453D2416395F00A99F73 /* MPBaseWebViewController.m in Sources */,
@@ -4001,18 +4081,22 @@
 				131712D424235E78008A172E /* MPTopicView.m in Sources */,
 				1319E3DB243D73460044F36F /* MPInterestingCircleArticleView.m in Sources */,
 				131B455B2416422200A99F73 /* MPUserDefaultsCache.m in Sources */,
+				1316D1A62444167B00A92AEE /* MPMessageConfigModel.m in Sources */,
 				1315B2922436E5A500565B23 /* MPWenXueView.m in Sources */,
 				131673C92431CA83001FAF4C /* MPRecommandAllView.m in Sources */,
 				1318CFA9242C459600AAB4CB /* MPCalendarBtn.m in Sources */,
 				13DBCF082410B14900D99014 /* Reachability.m in Sources */,
 				1334C021243AD9FC001ECC00 /* MPSheYingArticleTypeView.m in Sources */,
+				1316D19B244411B900A92AEE /* MPPushMsgView.m in Sources */,
 				13DBCF0E2410B14900D99014 /* ZXCategorySliderBar.m in Sources */,
+				1316D1AF2444734A00A92AEE /* MPBaseTabBarItem.m in Sources */,
 				13DBCF3B2410B15500D99014 /* UIView+GetSuperVC.m in Sources */,
 				C8B22B5C24395A3500606175 /* MPBannerLoopViewModel.m in Sources */,
 				13DBCF042410B14900D99014 /* AppCycleCollectionViewCell.m in Sources */,
 				1313D561242D9CF10054A52D /* MPLocalData.m in Sources */,
 				13DBCF452410B15500D99014 /* UIButton+CustomBtn.m in Sources */,
 				131B454224163E5000A99F73 /* MPBaseViewController+CatchMsg.m in Sources */,
+				1316D19624440E7500A92AEE /* MPPushMessageTableViewCell.m in Sources */,
 				1315B28A2436E3E700565B23 /* MPQingGanConfigModel.m in Sources */,
 				13153DE0243C8DB400C70A9F /* MPCirclePageView.m in Sources */,
 				13DBCF112410B14900D99014 /* AppWriteLogToFile.m in Sources */,

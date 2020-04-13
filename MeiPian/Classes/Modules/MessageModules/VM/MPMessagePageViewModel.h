@@ -12,6 +12,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface MPMessagePageViewModel : MPBaseViewModel
 
+/// 加载消息的主界面
+- (void)loadMessageMainView:(UIViewController *)vc;
+/// 创建NavItem
+- (void)setMessageViewNavItem:(UIViewController *)vc;
+
 @end
 
 NS_ASSUME_NONNULL_END

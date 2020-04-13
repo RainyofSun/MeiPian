@@ -7,6 +7,7 @@
 //
 
 #import "MPBaseTabBarCustomView.h"
+#import "MPBaseTabBarItem.h"
 
 @interface MPBaseTabBarCustomView ()
 
@@ -17,7 +18,7 @@
 /** selectedImgs */
 @property (nonatomic,strong) NSArray <NSString *>*selectedImgs;
 /** itemSource */
-@property (nonatomic,strong) NSMutableArray <UIButton *>*itemSource;
+@property (nonatomic,strong) NSMutableArray <MPBaseTabBarItem *>*itemSource;
 /** normalColor */
 @property (nonatomic,strong) UIColor *normalColor;
 /** selectedColor */
@@ -58,6 +59,10 @@
     self.selectedColor = selectedColor;
 }
 
+- (void)setTabBarItemBedgeNum:(NSInteger)bedgeNum itemSelectedIndex:(NSInteger)selectedIndex {
+    self.itemSource[selectedIndex].bedgeNum = bedgeNum;
+}
+
 - (void)touchCustomTabBarItem:(UIButton *)sender {
     if (sender.selected) {
         return;
@@ -79,8 +84,7 @@
     CGFloat itemW = CGRectGetWidth(self.bounds)/_titles.count;
     CGFloat itemH = CGRectGetHeight(self.bounds);
     for (NSInteger i = 0; i < _titles.count; i ++) {
-        UIButton *item = [UIButton buttonWithType:UIButtonTypeCustom];
-        item.backgroundColor = [UIColor whiteColor];
+        MPBaseTabBarItem *item = [MPBaseTabBarItem buttonWithType:UIButtonTypeCustom];
         item.tag = i;
         item.frame = CGRectMake(itemW * i, 0, itemW, itemH);
         item.selected = (i == 0);

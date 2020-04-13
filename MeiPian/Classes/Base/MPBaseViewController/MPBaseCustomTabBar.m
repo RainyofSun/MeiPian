@@ -15,8 +15,8 @@
 @property (nonatomic,strong) MPBaseTabBarCustomView *customBarView;
 /** isAllowSwitchVC */
 @property (nonatomic,assign) BOOL isAllowSwitchVC;
-/** senderTag */
-@property (nonatomic,assign) NSInteger senderTag;
+/** selectedIndex */
+@property (nonatomic,assign,readwrite) NSInteger selectedIndex;
 
 @end
 
@@ -50,9 +50,13 @@
     [self.customBarView setNormalItemTextColor:normalColor selectedTextColor:selectedColor];
 }
 
+- (void)setTabBarItemBedgeNum:(NSInteger)bedgeNum {
+    [self.customBarView setTabBarItemBedgeNum:bedgeNum itemSelectedIndex:self.selectedIndex];
+}
+
 #pragma mark - MPTabBarDelegate
 - (void)touchMPTabBarItem:(NSInteger)senderTag {
-    self.senderTag = senderTag;
+    self.selectedIndex = senderTag;
     if (self.tabBarDelegate != nil && [self.tabBarDelegate respondsToSelector:@selector(shouldSelectedViewController:)]) {
         self.isAllowSwitchVC = [self.tabBarDelegate shouldSelectedViewController:senderTag];
     }
@@ -63,7 +67,7 @@
     _isAllowSwitchVC = isAllowSwitchVC;
     if (_isAllowSwitchVC) {
         if (self.tabBarDelegate != nil && [self.tabBarDelegate respondsToSelector:@selector(didSelectedViewController:)]) {
-            [self.tabBarDelegate didSelectedViewController:self.senderTag];
+            [self.tabBarDelegate didSelectedViewController:self.selectedIndex];
         }
     } else {
         NSLog(@"不允许切换");

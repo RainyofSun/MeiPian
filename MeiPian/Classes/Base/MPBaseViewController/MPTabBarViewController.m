@@ -80,6 +80,10 @@
     self.viewControllers = array;
 }
 
+- (NSUInteger)selectedIndex {
+    return self.customBar.selectedIndex;
+}
+
 /*
 #pragma mark - Navigation
 
