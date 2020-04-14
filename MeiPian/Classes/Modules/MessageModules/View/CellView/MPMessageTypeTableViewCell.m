@@ -7,16 +7,17 @@
 //
 
 #import "MPMessageTypeTableViewCell.h"
+#import "MPMessageTypeBtn.h"
 
 @interface MPMessageTypeTableViewCell ()
 
-@property (weak, nonatomic) IBOutlet UIButton *ZYDSBtn;
-@property (weak, nonatomic) IBOutlet UIButton *PLBtn;
-@property (weak, nonatomic) IBOutlet UIButton *FSBtn;
-@property (weak, nonatomic) IBOutlet UIButton *SCZFBtn;
+@property (weak, nonatomic) IBOutlet MPMessageTypeBtn *ZYDSBtn;
+@property (weak, nonatomic) IBOutlet MPMessageTypeBtn *PLBtn;
+@property (weak, nonatomic) IBOutlet MPMessageTypeBtn *FSBtn;
+@property (weak, nonatomic) IBOutlet MPMessageTypeBtn *SCZFBtn;
 
 /** btnSource */
-@property (nonatomic,strong) NSArray <UIButton *>*btnSource;
+@property (nonatomic,strong) NSArray <MPMessageTypeBtn *>*btnSource;
 
 @end
 
@@ -41,36 +42,28 @@
             {
                 [weakSelf.ZYDSBtn setTitle:obj.title forState:UIControlStateNormal];
                 [weakSelf.ZYDSBtn setTitleColor:MAIN_BLACK_COLOR forState:UIControlStateNormal];
-                [weakSelf.ZYDSBtn setImageWithURL:[NSURL URLWithString:obj.icon] forState:UIControlStateNormal placeholder:nil options:YYWebImageOptionSetImageWithFadeAnimation completion:^(UIImage * _Nullable image, NSURL * _Nonnull url, YYWebImageFromType from, YYWebImageStage stage, NSError * _Nullable error) {
-                    [weakSelf.ZYDSBtn changeButtonImgTopAndTextBottom:8];
-                }];
+                [weakSelf.ZYDSBtn setImageWithURL:[NSURL URLWithString:obj.icon] forState:UIControlStateNormal options:YYWebImageOptionSetImageWithFadeAnimation];
             }
                 break;
             case 1:
             {
                 [weakSelf.PLBtn setTitle:obj.title forState:UIControlStateNormal];
                 [weakSelf.PLBtn setTitleColor:MAIN_BLACK_COLOR forState:UIControlStateNormal];
-                [weakSelf.PLBtn setImageWithURL:[NSURL URLWithString:obj.icon] forState:UIControlStateNormal placeholder:nil options:YYWebImageOptionSetImageWithFadeAnimation completion:^(UIImage * _Nullable image, NSURL * _Nonnull url, YYWebImageFromType from, YYWebImageStage stage, NSError * _Nullable error) {
-                    [weakSelf.PLBtn changeButtonImgTopAndTextBottom:8];
-                }];
+                [weakSelf.PLBtn setImageWithURL:[NSURL URLWithString:obj.icon] forState:UIControlStateNormal options:YYWebImageOptionSetImageWithFadeAnimation];
             }
                 break;
             case 2:
             {
                 [weakSelf.FSBtn setTitle:obj.title forState:UIControlStateNormal];
                 [weakSelf.FSBtn setTitleColor:MAIN_BLACK_COLOR forState:UIControlStateNormal];
-                [weakSelf.FSBtn setImageWithURL:[NSURL URLWithString:obj.icon] forState:UIControlStateNormal placeholder:nil options:YYWebImageOptionSetImageWithFadeAnimation completion:^(UIImage * _Nullable image, NSURL * _Nonnull url, YYWebImageFromType from, YYWebImageStage stage, NSError * _Nullable error) {
-                    [weakSelf.FSBtn changeButtonImgTopAndTextBottom:8];
-                }];
+                [weakSelf.FSBtn setImageWithURL:[NSURL URLWithString:obj.icon] forState:UIControlStateNormal options:YYWebImageOptionSetImageWithFadeAnimation];
             }
                 break;
             case 3:
             {
                 [weakSelf.SCZFBtn setTitle:obj.title forState:UIControlStateNormal];
                 [weakSelf.SCZFBtn setTitleColor:MAIN_BLACK_COLOR forState:UIControlStateNormal];
-                [weakSelf.SCZFBtn setImageWithURL:[NSURL URLWithString:obj.icon] forState:UIControlStateNormal placeholder:nil options:YYWebImageOptionSetImageWithFadeAnimation completion:^(UIImage * _Nullable image, NSURL * _Nonnull url, YYWebImageFromType from, YYWebImageStage stage, NSError * _Nullable error) {
-                    [weakSelf.SCZFBtn changeButtonImgTopAndTextBottom:8];
-                }];
+                [weakSelf.SCZFBtn setImageWithURL:[NSURL URLWithString:obj.icon] forState:UIControlStateNormal options:YYWebImageOptionSetImageWithFadeAnimation];
             }
                 break;
             default:

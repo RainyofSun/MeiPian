@@ -86,6 +86,8 @@
 		1313D574242DE7040054A52D /* MPAttentionModelConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 1313D573242DE7040054A52D /* MPAttentionModelConfig.m */; };
 		1313D57A242E0B5F0054A52D /* MPInterestingPeopleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1313D578242E0B5F0054A52D /* MPInterestingPeopleTableViewCell.m */; };
 		1313D57B242E0B5F0054A52D /* MPInterestingPeopleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1313D579242E0B5F0054A52D /* MPInterestingPeopleTableViewCell.xib */; };
+		131424DE24455E8600D2F99E /* MPMessageTypeBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 131424DD24455E8600D2F99E /* MPMessageTypeBtn.m */; };
+		131424E92445671600D2F99E /* MPPushTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 131424E72445671600D2F99E /* MPPushTableViewCell.m */; };
 		13153DDB243C0CF200C70A9F /* BannerLoop1.json in Resources */ = {isa = PBXBuildFile; fileRef = 13153DD9243C0CF200C70A9F /* BannerLoop1.json */; };
 		13153DDC243C0CF200C70A9F /* BannerLoop2.json in Resources */ = {isa = PBXBuildFile; fileRef = 13153DDA243C0CF200C70A9F /* BannerLoop2.json */; };
 		13153DE0243C8DB400C70A9F /* MPCirclePageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 13153DDF243C8DB400C70A9F /* MPCirclePageView.m */; };
@@ -580,6 +582,10 @@
 		1313D577242E0B5F0054A52D /* MPInterestingPeopleTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPInterestingPeopleTableViewCell.h; sourceTree = "<group>"; };
 		1313D578242E0B5F0054A52D /* MPInterestingPeopleTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPInterestingPeopleTableViewCell.m; sourceTree = "<group>"; };
 		1313D579242E0B5F0054A52D /* MPInterestingPeopleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MPInterestingPeopleTableViewCell.xib; sourceTree = "<group>"; };
+		131424DC24455E8600D2F99E /* MPMessageTypeBtn.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPMessageTypeBtn.h; sourceTree = "<group>"; };
+		131424DD24455E8600D2F99E /* MPMessageTypeBtn.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPMessageTypeBtn.m; sourceTree = "<group>"; };
+		131424E72445671600D2F99E /* MPPushTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPPushTableViewCell.m; sourceTree = "<group>"; };
+		131424E82445671600D2F99E /* MPPushTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPPushTableViewCell.h; sourceTree = "<group>"; };
 		13153DD9243C0CF200C70A9F /* BannerLoop1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = BannerLoop1.json; sourceTree = "<group>"; };
 		13153DDA243C0CF200C70A9F /* BannerLoop2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = BannerLoop2.json; sourceTree = "<group>"; };
 		13153DDE243C8DB400C70A9F /* MPCirclePageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPCirclePageView.h; sourceTree = "<group>"; };
@@ -1732,6 +1738,8 @@
 		1316D18D24440D8F00A92AEE /* CellView */ = {
 			isa = PBXGroup;
 			children = (
+				131424DC24455E8600D2F99E /* MPMessageTypeBtn.h */,
+				131424DD24455E8600D2F99E /* MPMessageTypeBtn.m */,
 				1316D18E24440DBD00A92AEE /* MPMessageTypeTableViewCell.h */,
 				1316D18F24440DBD00A92AEE /* MPMessageTypeTableViewCell.m */,
 				1316D19024440DBD00A92AEE /* MPMessageTypeTableViewCell.xib */,
@@ -1740,6 +1748,8 @@
 				1316D199244411B900A92AEE /* MPPushMsgView.h */,
 				1316D19A244411B900A92AEE /* MPPushMsgView.m */,
 				1316D19C244411CC00A92AEE /* MPPushMsgView.xib */,
+				131424E82445671600D2F99E /* MPPushTableViewCell.h */,
+				131424E72445671600D2F99E /* MPPushTableViewCell.m */,
 			);
 			path = CellView;
 			sourceTree = "<group>";
@@ -3957,6 +3967,7 @@
 				131B45652416455A00A99F73 /* MPMainViewModel.m in Sources */,
 				1319E3ED243D7E510044F36F /* MPCircleInterestViewModel.m in Sources */,
 				13DBCF102410B14900D99014 /* ZXCategoryItemView.m in Sources */,
+				131424E92445671600D2F99E /* MPPushTableViewCell.m in Sources */,
 				133E70B3241881B900A4C3E4 /* MPWeiChatLoginViewController.m in Sources */,
 				13DBCEBA2410A98E00D99014 /* main.m in Sources */,
 				131712CE24235E42008A172E /* MPAttentionView.m in Sources */,
@@ -4042,6 +4053,7 @@
 				13DBCF0A2410B14900D99014 /* MPModulesMsgSend.m in Sources */,
 				131BB3AD241F199E0084B4BB /* BusinessRequestErrorHander.m in Sources */,
 				13168AE72440544400810423 /* MPSheYingArticleTypeViewModel.m in Sources */,
+				131424DE24455E8600D2F99E /* MPMessageTypeBtn.m in Sources */,
 				1319A30A2435EA50009EE296 /* MPSheYingView.m in Sources */,
 				1319E40F243DBF0C0044F36F /* MPCircleInterestArticleAuthorModel.m in Sources */,
 				131DF94C24349188006F25C3 /* MPJingXuanConfigModel.m in Sources */,

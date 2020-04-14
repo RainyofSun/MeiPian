@@ -13,6 +13,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface MPMessageViewModel : MPBaseViewModel
 
+/** bedgeNum */
+@property (nonatomic,readonly) NSInteger bedgeNum;
+
 /// 获取数据
 - (void)MPMessageRequestInfo:(ReturnValueBlock)dataBlock loadType:(MPLoadingType)loadType;
 

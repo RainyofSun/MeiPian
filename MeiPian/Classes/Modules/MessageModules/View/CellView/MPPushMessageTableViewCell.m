@@ -7,14 +7,18 @@
 //
 
 #import "MPPushMessageTableViewCell.h"
-#import "MPPushMsgView.h"
+#import "MPPushTableViewCell.h"
 
-@interface MPPushMessageTableViewCell ()
+static NSString *pushCell = @"PushTableViewCell";
 
-/** msgViewArray */
-@property (nonatomic,strong) NSMutableArray <MPPushMsgView *>*msgViewArray;
+@interface MPPushMessageTableViewCell ()<MPBaseTableViewDelegate,MPBaseTableViewDataSource>
+
 /** containerView */
 @property (nonatomic,strong) UIView *containerView;
+/** pushListView */
+@property (nonatomic,strong) MPBaseTableView *pushListView;
+/** pushSource */
+@property (nonatomic,strong) NSArray <MPPushMessageModel *>*pushSource;
 
 @end
 
@@ -27,51 +31,57 @@
     return self;
 }
 
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    self.pushListView.frame = CGRectMake(0, 8, CGRectGetWidth(self.bounds), CGRectGetHeight(self.bounds) - 8);
+}
+
 - (void)dealloc {
-    [self deallocViewMemory];
     NSLog(@"DELLOC : %@",NSStringFromClass(self.class));
 }
 
 #pragma mark - public methods
 - (void)loadPushMessageCellSource:(NSArray<MPPushMessageModel *> *)messageModel {
-    [self deallocViewMemory];
-    CGFloat pushViewH = (CGRectGetHeight(self.bounds) - 10)/messageModel.count;
-    for (NSInteger i = 0; i < messageModel.count; i ++) {
-        MPPushMsgView *pushView = [[[NSBundle mainBundle] loadNibNamed:@"MPPushMsgView" owner:nil options:nil] firstObject];
-        [pushView loadPushMsgViewSource:messageModel[i]];
-        [self.containerView addSubview:pushView];
-        pushView.frame = CGRectMake(0, pushViewH * i, CGRectGetWidth(self.bounds), pushViewH);
-    }
+    self.pushSource = messageModel;
+    self.pushListView.isCompleteRequest = YES;
+}
+
+#pragma mark - MPBaseTableViewDelegate & MPBaseTableViewDataSource
+- (NSInteger)MPNumberOfRowsInSection {
+    return self.pushSource.count;
+}
+
+- (CGFloat)MPHeightForRowAtIndexPath:(NSIndexPath *)index {
+    CGFloat pushViewH = (CGRectGetHeight(self.bounds) - 8)/self.pushSource.count;
+    return pushViewH;
+}
+
+- (UITableViewCell *)MPBaseTableView:(MPBaseTableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)index {
+    MPPushTableViewCell *cell = [tableView dequeueReusableTableViewCellWithIdentifier:pushCell forIndex:index];
+    [cell loadPushMsgViewSource:self.pushSource[index.row]];
+    return cell;
 }
 
 - (void)cellAlphaAnimation {
-    for (MPPushMsgView *pushView in self.msgViewArray) {
-        [pushView cellAlphaAnimation];
-    }
+    
 }
 
 #pragma mark - private methods
-- (void)deallocViewMemory {
-    for (MPPushMsgView *pushView in self.msgViewArray) {
-        [pushView removeFromSuperview];
-    }
-    [self.msgViewArray removeAllObjects];
-}
-
 - (void)setupUI {
-    self.backgroundColor = self.contentView.backgroundColor = self.containerView.backgroundColor = [UIColor clearColor];
-    [self.contentView addSubview:self.containerView];
-    self.containerView.frame = CGRectMake(0, 8, CGRectGetWidth(self.bounds), CGRectGetHeight(self.bounds) - 8);
+    self.pushListView = [MPBaseTableView setupListView];
+    self.pushListView.tableDalegate = self;
+    self.pushListView.tableDataSource = self;
+    self.pushListView.isOpenFooterRefresh = NO;
+    self.pushListView.isOpenHeaderRefresh = NO;
+    self.pushListView.bounces = NO;
+    self.pushListView.scrollEnabled = NO;
+    [self.contentView addSubview:self.pushListView];
+    [self.pushListView registerClass:@"MPPushTableViewCell" forTableViewCellWithReuseIdentifier:pushCell withNibFile:NO];
+    self.backgroundColor = self.contentView.backgroundColor = self.pushListView.backgroundColor = [UIColor clearColor];
+    self.selectionStyle = UITableViewCellSelectionStyleNone;
 }
 
 #pragma mark - lazy
-- (NSMutableArray<MPPushMsgView *> *)msgViewArray {
-    if (!_msgViewArray) {
-        _msgViewArray = [NSMutableArray array];
-    }
-    return _msgViewArray;
-}
-
 - (UIView *)containerView {
     if (!_containerView) {
         _containerView = [[UIView alloc] init];

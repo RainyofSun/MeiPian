@@ -14,6 +14,8 @@
 @property (nonatomic,strong) NSArray <MPPushMessageModel *>*pushMsgSource;;
 /** msgModel */
 @property (nonatomic,strong) MPMessageModel *msgModel;
+/** bedgeNum */
+@property (nonatomic,readwrite) NSInteger bedgeNum;
 
 @end
 
@@ -62,6 +64,7 @@
     for (MPPushMessageModel *pushModel in self.pushMsgSource) {
         pushModel.unreadNumW = [pushModel.unread_count.stringValue widthForFont:[UIFont systemFontOfSize:13]] + 10;
         pushModel.unreadNumW = pushModel.unreadNumW < 17 ? 17 : pushModel.unreadNumW;
+        self.bedgeNum += pushModel.unread_count.integerValue;
     }
     
     MPMessageConfigModel *configModel1 = [[MPMessageConfigModel alloc] init];

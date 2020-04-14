@@ -8,8 +8,8 @@
 
 #import "MPBaseTabBarItem.h"
 
-// 角标的高度默认17号字体高度
-static CGFloat bedgeH = 17;
+// 角标的高度默认15号字体高度
+static CGFloat bedgeH = 15;
 
 @interface MPBaseTabBarItem ()
 
@@ -53,7 +53,7 @@ static CGFloat bedgeH = 17;
         return;
     }
     NSString *bedgeStr = [NSString stringWithFormat:@"%ld",bedgeNum];
-    self.bedgeLab.font = [UIFont systemFontOfSize:15];
+    self.bedgeLab.font = [UIFont systemFontOfSize:13];
     self.bedgeLab.textColor = [UIColor whiteColor];
     self.bedgeLab.backgroundColor = [UIColor colorWithRed:251/255.0 green:69/255.0 blue:81/255.0 alpha:1];
     self.bedgeLab.layer.cornerRadius = bedgeH/2;

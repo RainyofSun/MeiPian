@@ -17,6 +17,8 @@
 @property (nonatomic,strong) MPCustomSliderBarView *customSliderBar;
 /** defaultSliderBarH */
 @property (nonatomic,assign) CGFloat defaultSliderBarH;
+/** editingStyle */
+@property (nonatomic,assign) UITableViewCellEditingStyle editingStyle;
 
 @end
 
@@ -31,20 +33,6 @@
         [self setRefreshFooter];
     }
     return self;
-}
-
-- (void)layoutSubviews {
-    [super layoutSubviews];
-//    NSLog(@"subviews %@",self.subviews);
-//    [self.subviews enumerateObjectsUsingBlock:^(__kindof UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-//        if ([obj isKindOfClass:[UIImageView class]]) {
-//            UIImageView *imgView = [[UIImageView alloc] init];
-//            imgView = obj;
-//            imgView.backgroundColor = [UIColor redColor];
-//        }
-//    }];
-//    self.subviews.lastObject.width = 2;
-//    self.subviews.lastObject.mj_x = 3;
 }
 
 - (void)dealloc {
@@ -105,7 +93,7 @@
 }
 
 - (void)loadNewData {
-    if (self.tableDataSource != nil && [self.tableDataSource respondsToSelector:@selector(MPDropRefreshLoadMoreSource)]) {
+    if (self.tableDataSource != nil && [self.tableDataSource respondsToSelector:@selector(MPDropRefreshLoadMoreSource)] && self.isOpenHeaderRefresh) {
         [self.tableDataSource MPDropRefreshLoadMoreSource];
     }
 }
@@ -154,6 +142,49 @@
     }
 }
 
+// 编辑模式
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (self.tableDataSource != nil && [self.tableDataSource respondsToSelector:@selector(MPBaseTableViewCanEditRowAtIndexPath:)] && self.isOpenEdit) {
+        return [self.tableDataSource MPBaseTableViewCanEditRowAtIndexPath:indexPath];
+    } else {
+        return self.isOpenEdit;
+    }
+}
+
+- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (self.tableDataSource != nil && [self.tableDataSource respondsToSelector:@selector(MPBaseTableViewEditingStyleForRowAtIndexPath:)] && self.isOpenEdit) {
+        self.editingStyle = [self.tableDataSource MPBaseTableViewEditingStyleForRowAtIndexPath:indexPath];
+    }
+    return self.editingStyle;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == self.editingStyle) {
+        if (self.tableDataSource != nil && [self.tableDataSource respondsToSelector:@selector(MPBaseTableViewCellEditingAtIndexPath:)] && self.isOpenEdit) {
+            [self.tableDataSource MPBaseTableViewCellEditingAtIndexPath:indexPath];
+        }
+    }
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath {
+    switch (self.editingStyle) {
+        case UITableViewCellEditingStyleDelete:
+            return @"删除";
+        case UITableViewCellEditingStyleInsert:
+            return @"插入";
+        default:
+            return @"";
+    }
+}
+
+- (UISwipeActionsConfiguration *)tableView:(UITableView *)tableView trailingSwipeActionsConfigurationForRowAtIndexPath:(NSIndexPath *)indexPath  API_AVAILABLE(ios(11.0)){
+    if (self.tableDataSource != nil && [self.tableDataSource respondsToSelector:@selector(MPBaseTableViewTrailingSwipeActionsConfigurationForRowAtIndexPath:)] && self.isOpenEdit) {
+        return [self.tableDataSource MPBaseTableViewTrailingSwipeActionsConfigurationForRowAtIndexPath:indexPath];
+    } else {
+        return nil;
+    }
+}
+
 #pragma mark - UIScrollViewDelegate
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     if (!self.isShowCustomSliderImgView || scrollView.contentOffset.y < 0) {
@@ -179,7 +210,10 @@
     self.backgroundColor = MAIN_LIGHT_GRAY_COLOR;
     self.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.isOpenFooterRefresh = YES;
+    self.isOpenHeaderRefresh = YES;
+    self.isOpenEdit          = NO;
     self.isShowCustomSliderImgView = NO;
+    self.editingStyle        = UITableViewCellEditingStyleDelete;
     self.defaultSliderBarH = 40;
 }
 
@@ -263,6 +297,19 @@
     if (self.isShowCustomSliderImgView) {
         self.customSliderBar.minBarHeight = sliderBarMinHeight;
     }
+}
+
+- (void)setIsOpenHeaderRefresh:(BOOL)isOpenHeaderRefresh {
+    _isOpenHeaderRefresh = isOpenHeaderRefresh;
+    if (!isOpenHeaderRefresh) {
+        [self.mj_header endRefreshing];
+        [self.mj_header removeFromSuperview];
+    }
+}
+
+- (void)setIsOpenEdit:(BOOL)isOpenEdit {
+    _isOpenEdit = isOpenEdit;
+    self.editing = isOpenEdit;
 }
 
 @end

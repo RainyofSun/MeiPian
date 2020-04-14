@@ -32,6 +32,36 @@ NS_ASSUME_NONNULL_BEGIN
 
 @optional;
 /**
+ 是否允许编辑
+ */
+- (BOOL)MPBaseTableViewCanEditRowAtIndexPath:(NSIndexPath *)index;
+
+/**
+ 编辑模式 默认删除
+ */
+- (UITableViewCellEditingStyle)MPBaseTableViewEditingStyleForRowAtIndexPath:(NSIndexPath *)index;
+
+/**
+ 进入编辑模式操作处理
+ */
+- (void)MPBaseTableViewCellEditingAtIndexPath:(NSIndexPath *)index;
+
+/**
+ 自定义删除按钮 仅限iOS11.0之后
+ Example:
+     UIContextualAction *deleteRowAction = [UIContextualAction contextualActionWithStyle:UIContextualActionStyleDestructive title:@"delete" handler:^(UIContextualAction * _Nonnull action, __kindof UIView * _Nonnull sourceView, void (^ _Nonnull completionHandler)(BOOL)) {
+         [self.titleArr removeObjectAtIndex:indexPath.row];
+         completionHandler (YES);
+         [self.tableView reloadData];
+     }];
+     deleteRowAction.image = [UIImage imageNamed:@"删除"];
+     deleteRowAction.backgroundColor = [UIColor redColor];
+     UISwipeActionsConfiguration *config = [UISwipeActionsConfiguration configurationWithActions:@[deleteRowAction]];
+     return config;
+ */
+- (UISwipeActionsConfiguration *)MPBaseTableViewTrailingSwipeActionsConfigurationForRowAtIndexPath:(NSIndexPath *)index API_AVAILABLE(ios(11.0));
+
+/**
  上拉加载更多数据
  */
 - (void)MPPullRefreshDataSource;

@@ -22,8 +22,12 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,assign) BOOL isCompleteRequest;
 /** isOpenFooterRefresh 是否开启上拉加载 默认开启 */
 @property (nonatomic,assign) BOOL isOpenFooterRefresh;
+/** isOpenHeaderRefresh 是否开启下拉刷新 默认开启 设置关闭会移除刷新 */
+@property (nonatomic,assign) BOOL isOpenHeaderRefresh;
 /** isShowCustomSliderImgView 是否显示自定义的滚动条 默认不显示 必须在tableView已添加到父view上后设置 */
 @property (nonatomic,assign) BOOL isShowCustomSliderImgView;
+/** isOpenEdit 是否开启编辑模式 默认不开启 */
+@property (nonatomic,assign) BOOL isOpenEdit;
 /** sliderBarForeColor 滑动条前景色 */
 @property (nonatomic,strong) UIColor *sliderBarForeColor;
 /** sliderBarBackColor 滑动条背景色 */

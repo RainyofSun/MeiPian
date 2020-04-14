@@ -29,6 +29,6 @@
 - (instancetype)initWithTitleSource:(NSArray <NSString *>*)titles normalImgSources:(NSArray <NSString *>*)normalImgs selectedImgSources:(NSArray <NSString *>*)selectedImgs;
 
 - (void)setNormalItemTextColor:(UIColor *)normalColor selectedTextColor:(UIColor *)selectedColor;
-- (void)setTabBarItemBedgeNum:(NSInteger)bedgeNum;
+- (void)setTabBarItemBedgeNum:(NSInteger)bedgeNum itemSelectedIndex:(NSInteger)selectedIndex;
 
 @end

@@ -50,8 +50,8 @@
     [self.customBarView setNormalItemTextColor:normalColor selectedTextColor:selectedColor];
 }
 
-- (void)setTabBarItemBedgeNum:(NSInteger)bedgeNum {
-    [self.customBarView setTabBarItemBedgeNum:bedgeNum itemSelectedIndex:self.selectedIndex];
+- (void)setTabBarItemBedgeNum:(NSInteger)bedgeNum itemSelectedIndex:(NSInteger)selectedIndex {
+    [self.customBarView setTabBarItemBedgeNum:bedgeNum itemSelectedIndex:selectedIndex];
 }
 
 #pragma mark - MPTabBarDelegate

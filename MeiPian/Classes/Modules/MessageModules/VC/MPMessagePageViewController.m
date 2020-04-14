@@ -8,7 +8,6 @@
 
 #import "MPMessagePageViewController.h"
 #import "MPMessagePageViewModel.h"
-#import "MPBaseCustomTabBar.h"
 
 @interface MPMessagePageViewController ()
 
@@ -24,8 +23,6 @@
     // Do any additional setup after loading the view from its nib.
     [self.messageVM loadMessageMainView:self];
     [self.messageVM setMessageViewNavItem:self];
-    MPBaseCustomTabBar *tabBar = (MPBaseCustomTabBar *)self.tabBarController.tabBar;
-    [tabBar setTabBarItemBedgeNum:15];
 }
 
 #pragma mark - 消息透传

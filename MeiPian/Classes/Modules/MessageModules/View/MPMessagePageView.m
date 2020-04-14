@@ -51,6 +51,7 @@ static NSString *MessagePushCell = @"PushMessageCell";
 }
 
 - (CGFloat)MPHeightForRowAtIndexPath:(NSIndexPath *)index {
+    NSLog(@"skskkssk %f",self.msgSource[index.row].cellHeight);
     return self.msgSource[index.row].cellHeight;
 }
 
