@@ -33,6 +33,12 @@
 
 #pragma mark - MPCustomTabBarDelegate
 - (BOOL)shouldSelectedViewController:(NSInteger)viewControllerIndex {
+    if (![MPUserStatusGlobalModel UserGlobalModel].isLogin) {
+        if (viewControllerIndex == 3 || viewControllerIndex == 4) {
+            [self presentNavVC:@"MPWeiChatLoginViewController"];
+            return NO;
+        }
+    }
     return YES;
 }
 

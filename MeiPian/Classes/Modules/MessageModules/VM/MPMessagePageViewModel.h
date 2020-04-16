@@ -16,6 +16,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)loadMessageMainView:(UIViewController *)vc;
 /// 创建NavItem
 - (void)setMessageViewNavItem:(UIViewController *)vc;
+/// 修改未读消息角标
+- (void)modifyTabBarUnreadCount:(NSNumber *)unreadNum viewController:(UIViewController *)vc;
 
 @end
 

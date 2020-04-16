@@ -32,9 +32,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 @optional;
 /**
- 是否允许编辑
+ 分组数 默认为1
  */
-- (BOOL)MPBaseTableViewCanEditRowAtIndexPath:(NSIndexPath *)index;
+- (NSInteger)MPNumberOfSections;
+
+/**
+ 组头/组尾视图
+ */
+- (UIView *)MPSectionHeaderFooter:(NSInteger)section isSectionHeader:(BOOL)sectionHeader;
 
 /**
  编辑模式 默认删除

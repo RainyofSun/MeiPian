@@ -45,13 +45,19 @@ static NSString *MessagePushCell = @"PushMessageCell";
     NSLog(@"DELLOC : %@",NSStringFromClass(self.class));
 }
 
+#pragma mark - 消息透传
+- (void)deletePushMsg:(NSNumber *)deleteIndex {
+    self.msgSource = [self.msgVM deletePushMsgInfo:deleteIndex.integerValue];
+    [MPModulesMsgSend sendCumtomMethodMsg:[self nearsetViewController] methodName:@selector(modifyUnreadCount:) params:[self.msgVM unreadMsgCount]];
+    self.listTableView.isCompleteRequest = YES;
+}
+
 #pragma mark - MPBaseTableViewDelegate & MPBaseTableViewDataSource
 - (NSInteger)MPNumberOfRowsInSection {
     return self.msgSource.count;
 }
 
 - (CGFloat)MPHeightForRowAtIndexPath:(NSIndexPath *)index {
-    NSLog(@"skskkssk %f",self.msgSource[index.row].cellHeight);
     return self.msgSource[index.row].cellHeight;
 }
 
@@ -123,6 +129,7 @@ static NSString *MessagePushCell = @"PushMessageCell";
         weakSelf.msgSource = (NSArray <MPMessageConfigModel *>*)returnValue;
         weakSelf.listTableView.isCompleteRequest = YES;
         weakSelf.isLoadFirst = NO;
+        [MPModulesMsgSend sendCumtomMethodMsg:[self nearsetViewController] methodName:@selector(modifyUnreadCount:) params:[self.msgVM unreadMsgCount]];
     } loadType:loadType];
 }
 

@@ -62,6 +62,10 @@ static NSString *pushCell = @"PushTableViewCell";
     return cell;
 }
 
+- (void)MPBaseTableViewCellEditingAtIndexPath:(NSIndexPath *)index {
+    [MPModulesMsgSend sendCumtomMethodMsg:self.superview.superview methodName:@selector(deletePushMsg:) params:[NSNumber numberWithInteger:index.row]];
+}
+
 - (void)cellAlphaAnimation {
     
 }
@@ -73,6 +77,7 @@ static NSString *pushCell = @"PushTableViewCell";
     self.pushListView.tableDataSource = self;
     self.pushListView.isOpenFooterRefresh = NO;
     self.pushListView.isOpenHeaderRefresh = NO;
+    self.pushListView.isOpenEdit = YES;
     self.pushListView.bounces = NO;
     self.pushListView.scrollEnabled = NO;
     [self.contentView addSubview:self.pushListView];

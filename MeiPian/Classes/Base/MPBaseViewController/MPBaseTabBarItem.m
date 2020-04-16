@@ -50,9 +50,13 @@ static CGFloat bedgeH = 15;
 - (void)setBedgeNum:(NSInteger)bedgeNum {
     _bedgeNum = bedgeNum;
     if (bedgeNum <= 0) {
+        if (_bedgeLab) {
+            self.bedgeLab.text = @"";
+            self.bedgeLab.alpha = 0;
+        }
         return;
     }
-    NSString *bedgeStr = [NSString stringWithFormat:@"%ld",bedgeNum];
+    NSString *bedgeStr = [NSString stringWithFormat:@"%ld",(long)bedgeNum];
     self.bedgeLab.font = [UIFont systemFontOfSize:13];
     self.bedgeLab.textColor = [UIColor whiteColor];
     self.bedgeLab.backgroundColor = [UIColor colorWithRed:251/255.0 green:69/255.0 blue:81/255.0 alpha:1];
@@ -60,6 +64,7 @@ static CGFloat bedgeH = 15;
     self.bedgeLab.clipsToBounds = YES;
     self.bedgeLab.text = bedgeStr;
     self.bedgeLab.textAlignment = NSTextAlignmentCenter;
+    self.bedgeLab.alpha = 1;
     CGFloat W = [self widthOfString:bedgeStr] + 10;
     W = W < bedgeH ? bedgeH : W;
     self.bedgeLab.frame = CGRectMake(CGRectGetWidth(self.bounds) - W * 1.07, 5, W, bedgeH);

@@ -18,6 +18,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// 获取数据
 - (void)MPMessageRequestInfo:(ReturnValueBlock)dataBlock loadType:(MPLoadingType)loadType;
+/// 删除推送消息数据
+- (NSArray <MPMessageConfigModel *>*)deletePushMsgInfo:(NSInteger)pushMsgIndex;
+/// 获取未读消息数目
+- (NSNumber *)unreadMsgCount;
 
 @end
 

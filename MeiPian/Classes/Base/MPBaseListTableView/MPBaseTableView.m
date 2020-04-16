@@ -52,6 +52,7 @@
 - (void)registerClass:(NSString *)cellClassName forTableViewCellWithReuseIdentifier:(NSString *)identifier withNibFile:(BOOL)hasXibFile {
     if (!identifier.length) {
         [NSException raise:@"This identifier must not be nil and must not be an empty string." format:@""];
+        return;
     }
     if (hasXibFile) {
         [self registerNib:[UINib nibWithNibName:cellClassName bundle:nil] forCellReuseIdentifier:identifier];
@@ -60,14 +61,36 @@
     }
 }
 
+- (void)registerClass:(NSString *)headerFooterName forHeaderFooterViewReuseIdentifier:(NSString *)identifier withNibFile:(BOOL)hasXibFile isSectionHeader:(BOOL)sectionHeader {
+    if (!identifier.length) {
+        [NSException raise:@"This identifier must not be nil and must not be an empty string." format:@""];
+        return;
+    }
+    if (hasXibFile) {
+        [self registerNib:[UINib nibWithNibName:headerFooterName bundle:nil] forHeaderFooterViewReuseIdentifier:identifier];
+    } else {
+        [self registerClass:[NSClassFromString(headerFooterName) class] forHeaderFooterViewReuseIdentifier:identifier];
+    }
+}
+
 - (UITableViewCell *)dequeueReusableTableViewCellWithIdentifier:(NSString *)identifier forIndex:(NSIndexPath *)index {
     if (!identifier.length) {
         [NSException raise:@"This identifier must not be nil and must not be an empty string." format:@""];
+        return nil;
     }
     if (!index) {
         [NSException raise:@"please change an identifier" format:@""];
+        return nil;
     }
     return [self dequeueReusableCellWithIdentifier:identifier forIndexPath:index];
+}
+
+- (UITableViewHeaderFooterView *)dequeueCustomReusableHeaderFooterViewWithIdentifier:(NSString *)identifier {
+    if (!identifier.length) {
+        [NSException raise:@"This identifier must not be nil and must not be an empty string." format:@""];
+        return nil;
+    }
+    return [self dequeueReusableHeaderFooterViewWithIdentifier:identifier];
 }
 
 - (UITableViewCell *)MPBaseTableViewCellForRowAtIndex:(NSIndexPath *)index {
@@ -105,6 +128,14 @@
 }
 
 #pragma mark - UITableViewDelegate & UITableViewDataSource
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    if (self.tableDataSource != nil && [self.tableDataSource respondsToSelector:@selector(MPNumberOfSections)]) {
+        return [self.tableDataSource MPNumberOfSections];
+    } else {
+        return 1;
+    }
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if (self.tableDataSource != nil && [self.tableDataSource respondsToSelector:@selector(MPNumberOfRowsInSection)]) {
         return [self.tableDataSource MPNumberOfRowsInSection];
@@ -144,11 +175,7 @@
 
 // 编辑模式
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (self.tableDataSource != nil && [self.tableDataSource respondsToSelector:@selector(MPBaseTableViewCanEditRowAtIndexPath:)] && self.isOpenEdit) {
-        return [self.tableDataSource MPBaseTableViewCanEditRowAtIndexPath:indexPath];
-    } else {
-        return self.isOpenEdit;
-    }
+    return self.isOpenEdit;
 }
 
 - (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -182,6 +209,39 @@
         return [self.tableDataSource MPBaseTableViewTrailingSwipeActionsConfigurationForRowAtIndexPath:indexPath];
     } else {
         return nil;
+    }
+}
+
+// 组头组尾视图
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    if (self.tableDataSource != nil && [self.tableDataSource respondsToSelector:@selector(MPSectionHeaderFooter:isSectionHeader:)]) {
+        return [self.tableDataSource MPSectionHeaderFooter:section isSectionHeader:YES];
+    } else {
+        return nil;
+    }
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    if (self.tableDalegate != nil && [self.tableDalegate respondsToSelector:@selector(MPHeightForHeaderInSection:isSectionHeader:)]) {
+       return [self.tableDalegate MPHeightForHeaderInSection:section isSectionHeader:YES];
+    } else {
+        return 0.00001;
+    }
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
+    if (self.tableDataSource != nil && [self.tableDataSource respondsToSelector:@selector(MPSectionHeaderFooter:isSectionHeader:)]) {
+        return [self.tableDataSource MPSectionHeaderFooter:section isSectionHeader:NO];
+    } else {
+        return nil;
+    }
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+    if (self.tableDalegate != nil && [self.tableDalegate respondsToSelector:@selector(MPHeightForHeaderInSection:isSectionHeader:)]) {
+       return [self.tableDalegate MPHeightForHeaderInSection:section isSectionHeader:NO];
+    } else {
+        return 0.00001;
     }
 }
 
@@ -305,11 +365,6 @@
         [self.mj_header endRefreshing];
         [self.mj_header removeFromSuperview];
     }
-}
-
-- (void)setIsOpenEdit:(BOOL)isOpenEdit {
-    _isOpenEdit = isOpenEdit;
-    self.editing = isOpenEdit;
 }
 
 @end

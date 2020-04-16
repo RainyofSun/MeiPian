@@ -7,8 +7,12 @@
 //
 
 #import "MPMinePageViewController.h"
+#import "MPMinePageViewModel.h"
 
 @interface MPMinePageViewController ()
+
+/** mineVM */
+@property (nonatomic,strong) MPMinePageViewModel *mineVM;
 
 @end
 
@@ -17,12 +21,20 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.view.backgroundColor = [UIColor systemPinkColor];
+    [self.mineVM loadMinePageMainView:self];
 }
 
 #pragma mark - 消息透传
 - (void)reloadPageData {
     NSLog(@"刷新JJ请求");
+}
+
+#pragma mark - lazy
+- (MPMinePageViewModel *)mineVM {
+    if (!_mineVM) {
+        _mineVM = [[MPMinePageViewModel alloc] init];
+    }
+    return _mineVM;
 }
 
 /*

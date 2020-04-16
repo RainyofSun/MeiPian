@@ -8,6 +8,7 @@
 
 #import "MPMessagePageViewModel.h"
 #import "MPMessagePageView.h"
+#import "MPBaseCustomTabBar.h"
 
 @interface MPMessagePageViewModel ()
 
@@ -39,6 +40,12 @@
     [leftItem setTitleColor:MAIN_BLACK_COLOR forState:UIControlStateNormal];
     [leftItem addTarget:self action:@selector(touchNavItem:) forControlEvents:UIControlEventTouchUpInside];
     [vc setNavigationLeftView:leftItem];
+}
+
+// 修改未读消息角标
+- (void)modifyTabBarUnreadCount:(NSNumber *)unreadNum viewController:(nonnull UIViewController *)vc{
+    MPBaseCustomTabBar *tabBar = (MPBaseCustomTabBar *)vc.tabBarController.tabBar;
+    [tabBar setTabBarItemBedgeNum:unreadNum.integerValue itemSelectedIndex:tabBar.selectedIndex];
 }
 
 - (void)touchNavItem:(UIButton *)sender {

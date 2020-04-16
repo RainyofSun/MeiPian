@@ -35,6 +35,11 @@
     NSLog(@"点击消息 %@",senderTag);
 }
 
+// 修改TabBarw未读消息角标
+- (void)modifyUnreadCount:(NSNumber *)unreadCount {
+    [self.messageVM modifyTabBarUnreadCount:unreadCount viewController:self];
+}
+
 #pragma mark - lazy
 - (MPMessagePageViewModel *)messageVM {
     if (!_messageVM) {

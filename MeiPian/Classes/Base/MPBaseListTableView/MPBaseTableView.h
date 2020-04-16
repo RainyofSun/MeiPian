@@ -46,10 +46,21 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)registerClass:(NSString *)cellClassName forTableViewCellWithReuseIdentifier:(NSString *)identifier withNibFile:(BOOL)hasXibFile;
 
 /**
+ 自定义组头/组尾
+ */
+- (void)registerClass:(NSString *)headerFooterName forHeaderFooterViewReuseIdentifier:(NSString *)identifier withNibFile:(BOOL)hasXibFile isSectionHeader:(BOOL)sectionHeader;
+
+/**
  自定义cell时用到
  返回复用的cell
  */
 - (__kindof UITableViewCell *)dequeueReusableTableViewCellWithIdentifier:(NSString *)identifier forIndex:(NSIndexPath *)index;
+
+/**
+ 获取对应的SectionHeader/SectionFooter
+ 返回复用的SectionHeader/SectionFooter
+ */
+- (nullable __kindof UITableViewHeaderFooterView *)dequeueCustomReusableHeaderFooterViewWithIdentifier:(NSString *)identifier;
 
 /**
  获取对应Index的Cell

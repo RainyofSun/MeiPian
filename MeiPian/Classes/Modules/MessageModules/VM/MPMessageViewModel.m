@@ -11,11 +11,15 @@
 @interface MPMessageViewModel ()
 
 /** pushMsgSource */
-@property (nonatomic,strong) NSArray <MPPushMessageModel *>*pushMsgSource;;
+@property (nonatomic,strong) NSMutableArray <MPPushMessageModel *>*pushMsgSource;
+/** configModelSource */
+@property (nonatomic,strong) NSMutableArray <MPMessageConfigModel *>*configModelSource;
 /** msgModel */
 @property (nonatomic,strong) MPMessageModel *msgModel;
 /** bedgeNum */
 @property (nonatomic,readwrite) NSInteger bedgeNum;
+/** subUnreadCount */
+@property (nonatomic,assign) NSInteger subUnreadCount;
 
 @end
 
@@ -54,8 +58,24 @@
     });
 }
 
+// 删除推送消息数据
+- (NSArray <MPMessageConfigModel *>*)deletePushMsgInfo:(NSInteger)pushMsgIndex {
+    MPMessageConfigModel *configModel = self.configModelSource.lastObject;
+    self.subUnreadCount = self.pushMsgSource[pushMsgIndex].unread_count.integerValue;
+    [self.pushMsgSource removeObjectAtIndex:pushMsgIndex];
+    configModel.pushMsg = self.pushMsgSource;
+    configModel.cellHeight = 75 * self.pushMsgSource.count + 8;
+    return [self.configModelSource copy];
+}
+
+// 获取未读消息数目
+- (NSNumber *)unreadMsgCount {
+    return [NSNumber numberWithInteger:(self.bedgeNum -= self.subUnreadCount)];
+}
+
 #pragma mark - private methods
 - (NSArray <MPMessageConfigModel *>*)combineSource {
+    self.subUnreadCount = self.bedgeNum = 0;
     MPMessageConfigModel *configModel0 = [[MPMessageConfigModel alloc] init];
     configModel0.cellStyle = MsgCellStyle_MsgTypeCell;
     configModel0.cellHeight = 110;
@@ -69,9 +89,10 @@
     
     MPMessageConfigModel *configModel1 = [[MPMessageConfigModel alloc] init];
     configModel1.cellStyle = MsgCellStyle_PushMsgcell;
-    configModel1.cellHeight = 75 * self.pushMsgSource.count + 10;
+    configModel1.cellHeight = 75 * self.pushMsgSource.count + 8;
     configModel1.pushMsg = self.pushMsgSource;
-    return @[configModel0,configModel1];
+    self.configModelSource = [NSMutableArray arrayWithObjects:configModel0,configModel1, nil];
+    return [self.configModelSource copy];
 }
 
 @end

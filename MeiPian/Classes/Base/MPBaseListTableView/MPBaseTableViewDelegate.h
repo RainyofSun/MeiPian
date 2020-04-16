@@ -29,6 +29,12 @@ NS_ASSUME_NONNULL_BEGIN
 - (CGFloat)MPHeightForRowAtIndexPath:(NSIndexPath *)index;
 
 /**
+ 设置SectionHeader/SectionFooter的高度
+ @return 返回SectionHeader/SectionFooter高度 默认高度0.00001
+ */
+- (CGFloat)MPHeightForHeaderInSection:(NSInteger)index isSectionHeader:(BOOL)sectionHeader;
+
+/**
  屏幕将要显示的cell
  @param tableView   实例
  @param cell        将要显示的cell
