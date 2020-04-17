@@ -39,7 +39,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  组头/组尾视图
  */
-- (UIView *)MPSectionHeaderFooter:(NSInteger)section isSectionHeader:(BOOL)sectionHeader;
+- (UIView *)MPBaseTableView:(MPBaseTableView *)tableview headerFooterInSection:(NSInteger)section isSectionHeader:(BOOL)sectionHeader;
 
 /**
  编辑模式 默认删除

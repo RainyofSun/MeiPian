@@ -14,6 +14,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// 加载主界面
 - (void)loadMinePageMainView:(UIViewController *)vc;
+/// 创建NavItem
+- (void)setMineViewNavItem:(UIViewController *)vc;
 
 @end
 

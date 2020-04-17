@@ -66,6 +66,7 @@
 - (void)setIsAllowSwitchVC:(BOOL)isAllowSwitchVC {
     _isAllowSwitchVC = isAllowSwitchVC;
     if (_isAllowSwitchVC) {
+        [self.customBarView changeTabBarItemsStatus:self.selectedIndex];
         if (self.tabBarDelegate != nil && [self.tabBarDelegate respondsToSelector:@selector(didSelectedViewController:)]) {
             [self.tabBarDelegate didSelectedViewController:self.selectedIndex];
         }

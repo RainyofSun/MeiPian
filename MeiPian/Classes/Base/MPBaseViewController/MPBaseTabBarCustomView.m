@@ -63,14 +63,18 @@
     self.itemSource[selectedIndex].bedgeNum = bedgeNum;
 }
 
-- (void)touchCustomTabBarItem:(UIButton *)sender {
-    if (sender.selected) {
-        return;
-    }
-    if (sender.tag != self.emptyTitleIndex) {
+- (void)changeTabBarItemsStatus:(NSInteger)senderTag {
+    MPBaseTabBarItem *sender = self.itemSource[senderTag];
+    if (senderTag != self.emptyTitleIndex) {
         [self resetItemStatus];
         [self switchItemAnimationScale:sender.titleLabel];
         sender.selected = !sender.selected;
+    }
+}
+
+- (void)touchCustomTabBarItem:(UIButton *)sender {
+    if (sender.selected) {
+        return;
     }
     if (self.mpTabBarrDelegate != nil && [self.mpTabBarrDelegate respondsToSelector:@selector(touchMPTabBarItem:)]) {
         [self.mpTabBarrDelegate touchMPTabBarItem:sender.tag];

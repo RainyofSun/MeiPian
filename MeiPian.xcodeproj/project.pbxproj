@@ -176,6 +176,16 @@
 		131745862429E41C0062876F /* MPHomePageSliderBarTitleCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 131745852429E41C0062876F /* MPHomePageSliderBarTitleCollectionViewCell.m */; };
 		13174589242A03B40062876F /* MPCustomHomePageNavView.m in Sources */ = {isa = PBXBuildFile; fileRef = 13174588242A03B40062876F /* MPCustomHomePageNavView.m */; };
 		1317458C242A14130062876F /* MPPageControlSliderBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1317458A242A14130062876F /* MPPageControlSliderBar.m */; };
+		1318043B24495C89007847FE /* MPMineViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1318043A24495C89007847FE /* MPMineViewModel.m */; };
+		1318043F24496730007847FE /* MPMineArticleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1318043D24496730007847FE /* MPMineArticleTableViewCell.m */; };
+		1318044324498B8B007847FE /* MPMineSliderBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1318044224498B8B007847FE /* MPMineSliderBarView.m */; };
+		131804472449921B007847FE /* MPMineInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 131804462449921B007847FE /* MPMineInfoModel.m */; };
+		1318044924499604007847FE /* MineInfo.json in Resources */ = {isa = PBXBuildFile; fileRef = 1318044824499604007847FE /* MineInfo.json */; };
+		1318044C244997E9007847FE /* MPGiftsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1318044B244997E9007847FE /* MPGiftsModel.m */; };
+		1318044F244999EC007847FE /* MPMineConfigModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1318044E244999EC007847FE /* MPMineConfigModel.m */; };
+		131804522449A06B007847FE /* MPMineArticleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 131804512449A06B007847FE /* MPMineArticleModel.m */; };
+		131804552449A157007847FE /* MPMineWorksModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 131804542449A157007847FE /* MPMineWorksModel.m */; };
+		131804582449A584007847FE /* MPArticleCellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 131804572449A584007847FE /* MPArticleCellViewModel.m */; };
 		131810C0241775F2004828A3 /* EGLSGlobalGCDTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 131810BF241775F2004828A3 /* EGLSGlobalGCDTimer.m */; };
 		131810C324177FA9004828A3 /* MPADDownLoadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 131810C224177FA9004828A3 /* MPADDownLoadManager.m */; };
 		131810C624178819004828A3 /* NSDate+CompareTime.m in Sources */ = {isa = PBXBuildFile; fileRef = 131810C524178819004828A3 /* NSDate+CompareTime.m */; };
@@ -747,6 +757,25 @@
 		13174588242A03B40062876F /* MPCustomHomePageNavView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPCustomHomePageNavView.m; sourceTree = "<group>"; };
 		1317458A242A14130062876F /* MPPageControlSliderBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPPageControlSliderBar.m; sourceTree = "<group>"; };
 		1317458B242A14130062876F /* MPPageControlSliderBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPPageControlSliderBar.h; sourceTree = "<group>"; };
+		1318043924495C89007847FE /* MPMineViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPMineViewModel.h; sourceTree = "<group>"; };
+		1318043A24495C89007847FE /* MPMineViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPMineViewModel.m; sourceTree = "<group>"; };
+		1318043C24496730007847FE /* MPMineArticleTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPMineArticleTableViewCell.h; sourceTree = "<group>"; };
+		1318043D24496730007847FE /* MPMineArticleTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPMineArticleTableViewCell.m; sourceTree = "<group>"; };
+		1318044124498B8B007847FE /* MPMineSliderBarView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPMineSliderBarView.h; sourceTree = "<group>"; };
+		1318044224498B8B007847FE /* MPMineSliderBarView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPMineSliderBarView.m; sourceTree = "<group>"; };
+		131804452449921B007847FE /* MPMineInfoModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPMineInfoModel.h; sourceTree = "<group>"; };
+		131804462449921B007847FE /* MPMineInfoModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPMineInfoModel.m; sourceTree = "<group>"; };
+		1318044824499604007847FE /* MineInfo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MineInfo.json; sourceTree = "<group>"; };
+		1318044A244997E9007847FE /* MPGiftsModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPGiftsModel.h; sourceTree = "<group>"; };
+		1318044B244997E9007847FE /* MPGiftsModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPGiftsModel.m; sourceTree = "<group>"; };
+		1318044D244999EC007847FE /* MPMineConfigModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPMineConfigModel.h; sourceTree = "<group>"; };
+		1318044E244999EC007847FE /* MPMineConfigModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPMineConfigModel.m; sourceTree = "<group>"; };
+		131804502449A06B007847FE /* MPMineArticleModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPMineArticleModel.h; sourceTree = "<group>"; };
+		131804512449A06B007847FE /* MPMineArticleModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPMineArticleModel.m; sourceTree = "<group>"; };
+		131804532449A157007847FE /* MPMineWorksModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPMineWorksModel.h; sourceTree = "<group>"; };
+		131804542449A157007847FE /* MPMineWorksModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPMineWorksModel.m; sourceTree = "<group>"; };
+		131804562449A584007847FE /* MPArticleCellViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPArticleCellViewModel.h; sourceTree = "<group>"; };
+		131804572449A584007847FE /* MPArticleCellViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPArticleCellViewModel.m; sourceTree = "<group>"; };
 		131810BE241775F2004828A3 /* EGLSGlobalGCDTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGLSGlobalGCDTimer.h; sourceTree = "<group>"; };
 		131810BF241775F2004828A3 /* EGLSGlobalGCDTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGLSGlobalGCDTimer.m; sourceTree = "<group>"; };
 		131810C124177FA9004828A3 /* MPADDownLoadManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPADDownLoadManager.h; sourceTree = "<group>"; };
@@ -1565,6 +1594,7 @@
 		13161F0D2421D02200A1A373 /* MineModules */ = {
 			isa = PBXGroup;
 			children = (
+				13180444244991BF007847FE /* Model */,
 				13926DA9244853AE00EEC373 /* View */,
 				13926DA52448528E00EEC373 /* VM */,
 				13161F0E2421D02B00A1A373 /* VC */,
@@ -1906,6 +1936,23 @@
 				13174588242A03B40062876F /* MPCustomHomePageNavView.m */,
 			);
 			path = CustomTopTitleView;
+			sourceTree = "<group>";
+		};
+		13180444244991BF007847FE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				131804452449921B007847FE /* MPMineInfoModel.h */,
+				131804462449921B007847FE /* MPMineInfoModel.m */,
+				1318044A244997E9007847FE /* MPGiftsModel.h */,
+				1318044B244997E9007847FE /* MPGiftsModel.m */,
+				1318044D244999EC007847FE /* MPMineConfigModel.h */,
+				1318044E244999EC007847FE /* MPMineConfigModel.m */,
+				131804502449A06B007847FE /* MPMineArticleModel.h */,
+				131804512449A06B007847FE /* MPMineArticleModel.m */,
+				131804532449A157007847FE /* MPMineWorksModel.h */,
+				131804542449A157007847FE /* MPMineWorksModel.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		131810BD241775F2004828A3 /* GlobalTimer */ = {
@@ -2959,6 +3006,7 @@
 		13926DA22448515400EEC373 /* MineData */ = {
 			isa = PBXGroup;
 			children = (
+				1318044824499604007847FE /* MineInfo.json */,
 				13926DA32448515400EEC373 /* MineData.json */,
 			);
 			path = MineData;
@@ -2969,6 +3017,10 @@
 			children = (
 				13926DA6244852AD00EEC373 /* MPMinePageViewModel.h */,
 				13926DA7244852AD00EEC373 /* MPMinePageViewModel.m */,
+				1318043924495C89007847FE /* MPMineViewModel.h */,
+				1318043A24495C89007847FE /* MPMineViewModel.m */,
+				131804562449A584007847FE /* MPArticleCellViewModel.h */,
+				131804572449A584007847FE /* MPArticleCellViewModel.m */,
 			);
 			path = VM;
 			sourceTree = "<group>";
@@ -2989,6 +3041,10 @@
 				13926DAE244857F200EEC373 /* MPMineInfoTableViewCell.h */,
 				13926DAF244857F200EEC373 /* MPMineInfoTableViewCell.m */,
 				13926DB0244857F200EEC373 /* MPMineInfoTableViewCell.xib */,
+				1318043C24496730007847FE /* MPMineArticleTableViewCell.h */,
+				1318043D24496730007847FE /* MPMineArticleTableViewCell.m */,
+				1318044124498B8B007847FE /* MPMineSliderBarView.h */,
+				1318044224498B8B007847FE /* MPMineSliderBarView.m */,
 			);
 			path = CellView;
 			sourceTree = "<group>";
@@ -3893,6 +3949,7 @@
 				131B44BA24161AD400A99F73 /* hand.png in Resources */,
 				13B3D4CD242B591E0081F9D3 /* Flatten_9_7.json in Resources */,
 				1319E405243DB9EA0044F36F /* CircleHomeTalks1.json in Resources */,
+				1318044924499604007847FE /* MineInfo.json in Resources */,
 				1312C7F3242B41B6005887B6 /* LvXing4.json in Resources */,
 				131B450024161B0100A99F73 /* character.json in Resources */,
 				13161F0C2421D01C00A1A373 /* MPMessagePageViewController.xib in Resources */,
@@ -3970,6 +4027,7 @@
 				1318CFB2242C584300AAB4CB /* MPDolphinRefreshHeader.m in Sources */,
 				131673E12431DEA4001FAF4C /* MPRecommandAllArticleModel.m in Sources */,
 				131810C0241775F2004828A3 /* EGLSGlobalGCDTimer.m in Sources */,
+				1318044C244997E9007847FE /* MPGiftsModel.m in Sources */,
 				13DBCF412410B15500D99014 /* NSString+JSEscape.m in Sources */,
 				13DBCF422410B15500D99014 /* UIControl+EventInterval.m in Sources */,
 				1313D574242DE7040054A52D /* MPAttentionModelConfig.m in Sources */,
@@ -3980,6 +4038,7 @@
 				131745792429B3650062876F /* XLPageBasicTitleView.m in Sources */,
 				131673E72431E144001FAF4C /* MPArticleOptionModel.m in Sources */,
 				13DBCF072410B14900D99014 /* UIScrollView+EmptyDataSet.m in Sources */,
+				1318043F24496730007847FE /* MPMineArticleTableViewCell.m in Sources */,
 				131B45622416453400A99F73 /* MPAdvertisingViewModel.m in Sources */,
 				1317458C242A14130062876F /* MPPageControlSliderBar.m in Sources */,
 				13161F122421D03D00A1A373 /* MPMinePageViewController.m in Sources */,
@@ -4018,6 +4077,7 @@
 				133E70E02418BC5900A4C3E4 /* MPAccountLoginView.m in Sources */,
 				13DBCF142410B14900D99014 /* AppLogFileDate.m in Sources */,
 				13DBCF3D2410B15500D99014 /* UITextField+ToolBar.m in Sources */,
+				131804552449A157007847FE /* MPMineWorksModel.m in Sources */,
 				131BB3B4241F1A170084B4BB /* DeviceUtils.m in Sources */,
 				131B45652416455A00A99F73 /* MPMainViewModel.m in Sources */,
 				1319E3ED243D7E510044F36F /* MPCircleInterestViewModel.m in Sources */,
@@ -4057,9 +4117,11 @@
 				1313D56E242DE24F0054A52D /* MPFindMoreModel.m in Sources */,
 				13DBCF3C2410B15500D99014 /* NSObject+FileCache.m in Sources */,
 				131DF95224349394006F25C3 /* MPJingXuanAuthorModel.m in Sources */,
+				1318044F244999EC007847FE /* MPMineConfigModel.m in Sources */,
 				13161EFE2420CB1000A1A373 /* MPBaseTabBarCustomView.m in Sources */,
 				13DBCF402410B15500D99014 /* UIButton+Timer.m in Sources */,
 				13DBCF432410B15500D99014 /* NSString+Extension.m in Sources */,
+				131804472449921B007847FE /* MPMineInfoModel.m in Sources */,
 				133E71002418E5B800A4C3E4 /* TelephoneCodeView.m in Sources */,
 				131745782429B3650062876F /* XLPageSegmentedTitleView.m in Sources */,
 				13161EFB2420CAAF00A1A373 /* MPBaseCustomTabBar.m in Sources */,
@@ -4130,6 +4192,7 @@
 				131810CC241796E2004828A3 /* MPWeiChatLoginView.m in Sources */,
 				131B45372416389600A99F73 /* MPTabBarViewController.m in Sources */,
 				13DBCF132410B14900D99014 /* AppWriteLogGetFile.m in Sources */,
+				131804582449A584007847FE /* MPArticleCellViewModel.m in Sources */,
 				13DBCF032410B14900D99014 /* AppPageControl.m in Sources */,
 				1315B29E2436E6EF00565B23 /* MPWenXueViewModel.m in Sources */,
 				1317457C2429B3650062876F /* XLPageViewControllerUtil.m in Sources */,
@@ -4153,6 +4216,7 @@
 				1316D1A62444167B00A92AEE /* MPMessageConfigModel.m in Sources */,
 				1315B2922436E5A500565B23 /* MPWenXueView.m in Sources */,
 				131673C92431CA83001FAF4C /* MPRecommandAllView.m in Sources */,
+				1318043B24495C89007847FE /* MPMineViewModel.m in Sources */,
 				1318CFA9242C459600AAB4CB /* MPCalendarBtn.m in Sources */,
 				13DBCF082410B14900D99014 /* Reachability.m in Sources */,
 				1334C021243AD9FC001ECC00 /* MPSheYingArticleTypeView.m in Sources */,
@@ -4165,8 +4229,10 @@
 				1313D561242D9CF10054A52D /* MPLocalData.m in Sources */,
 				13DBCF452410B15500D99014 /* UIButton+CustomBtn.m in Sources */,
 				131B454224163E5000A99F73 /* MPBaseViewController+CatchMsg.m in Sources */,
+				1318044324498B8B007847FE /* MPMineSliderBarView.m in Sources */,
 				1316D19624440E7500A92AEE /* MPPushMessageTableViewCell.m in Sources */,
 				1315B28A2436E3E700565B23 /* MPQingGanConfigModel.m in Sources */,
+				131804522449A06B007847FE /* MPMineArticleModel.m in Sources */,
 				13153DE0243C8DB400C70A9F /* MPCirclePageView.m in Sources */,
 				13926DAC244853C500EEC373 /* MPMinePageView.m in Sources */,
 				13DBCF112410B14900D99014 /* AppWriteLogToFile.m in Sources */,

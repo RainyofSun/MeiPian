@@ -214,8 +214,8 @@
 
 // 组头组尾视图
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    if (self.tableDataSource != nil && [self.tableDataSource respondsToSelector:@selector(MPSectionHeaderFooter:isSectionHeader:)]) {
-        return [self.tableDataSource MPSectionHeaderFooter:section isSectionHeader:YES];
+    if (self.tableDataSource != nil && [self.tableDataSource respondsToSelector:@selector(MPBaseTableView:headerFooterInSection:isSectionHeader:)]) {
+        return [self.tableDataSource MPBaseTableView:self headerFooterInSection:section isSectionHeader:YES];
     } else {
         return nil;
     }
@@ -230,8 +230,8 @@
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
-    if (self.tableDataSource != nil && [self.tableDataSource respondsToSelector:@selector(MPSectionHeaderFooter:isSectionHeader:)]) {
-        return [self.tableDataSource MPSectionHeaderFooter:section isSectionHeader:NO];
+    if (self.tableDataSource != nil && [self.tableDataSource respondsToSelector:@selector(MPBaseTableView:headerFooterInSection:isSectionHeader:)]) {
+        return [self.tableDataSource MPBaseTableView:self headerFooterInSection:section isSectionHeader:NO];
     } else {
         return nil;
     }

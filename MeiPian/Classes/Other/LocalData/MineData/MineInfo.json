@@ -1,0 +1,38 @@
+{
+    "data": {
+        "cover_img_url": "https://ss2.meipian.me/app/placeholder/column_placeholder_img.png",
+        "head_img_url": "https://ss2.meipian.me/users/84458246/bc5f917fdccd8e309dadf894c71a1a90",
+        "nickname":"Eric liu",
+        "gender": 1,
+        "favorite_count": 0,
+        "follow_count": 0,
+        "follower_count": 0,
+        "visit_count": 13,
+        "gifts": {
+            "flower_icon": "https://ss2.meipian.me/app/flower_icon@3x.png",
+            "flower_count": 0,
+            "flower_list_uri": "https://www.meipian.cn/wap/common-pages/view/flowerlist.html?type=2&authorId=84458246"
+        },
+        "member_type": 0,
+        "member_status": 0,
+        "member_dynamic_img": "https://ss2.meipian.me/app/not_member_dynamic_lebel.gif",
+        "famous_type": 0,
+        "bedge_img_url": "",
+        "label_img_url": "",
+        "author_label_icon": "",
+        "author_label_title": "",
+        "phone_num": "17611230316",
+        "works_count": 0,
+        "container_count": 0,
+        "praised_works_count": 0,
+        "column_visited_history_uri": "https://www.meipian.cn/article/column-visitor",
+        "province": "",
+        "city": "",
+        "balance": null,
+        "nickname_remaining_update_count": "1",
+        "nickname_next_modify_timestamp": 0,
+        "joined_circle_count": 0,
+        "follow_feed_unread": 0
+    },
+    "code": 1000
+}
