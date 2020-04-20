@@ -1,5 +1,5 @@
 //
-//  MPMineArticleTableViewCell.h
+//  MPMineArticleScrollView.h
 //  MeiPian
 //
 //  Created by EGLS_BMAC on 2020/4/17.
@@ -11,7 +11,10 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MPMineArticleTableViewCell : UITableViewCell
+@interface MPMineArticleScrollView : UIView
+
+/** artcileViewH */
+@property (nonatomic,readonly) CGFloat artcileViewH;
 
 - (void)loadMineArticleSource:(MPMineArticleModel *)articleSource;
 - (void)resetSubScrollViewContentOffSet:(NSNumber *)senderTag;

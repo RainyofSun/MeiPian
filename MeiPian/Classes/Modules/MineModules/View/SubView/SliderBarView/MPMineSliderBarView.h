@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MPMineSliderBarView : UITableViewHeaderFooterView
+@interface MPMineSliderBarView : UIView
 
 - (void)loadSliderBarTitleSource:(NSArray <NSString *>*)titleSource;
 - (void)switchSliderBarSlectedItem:(NSNumber *)senderTag;

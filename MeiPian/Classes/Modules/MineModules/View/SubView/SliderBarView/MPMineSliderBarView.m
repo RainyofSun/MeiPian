@@ -23,12 +23,13 @@ static CGFloat FontNum = 17;
 
 @implementation MPMineSliderBarView
 
-- (instancetype)initWithReuseIdentifier:(NSString *)reuseIdentifier {
-    if (self = [super initWithReuseIdentifier:reuseIdentifier]) {
+- (instancetype)init {
+    if (self = [super init]) {
         [self setupUI];
     }
     return self;
 }
+
 
 - (void)layoutSubviews {
     [super layoutSubviews];
@@ -59,12 +60,11 @@ static CGFloat FontNum = 17;
     sender.titleLabel.font = [UIFont boldSystemFontOfSize:FontNum];
     sender.selected = !sender.selected;
     self.lineLayer.centerX = sender.centerX;
-    [MPModulesMsgSend sendCumtomMethodMsg:self.superview.superview methodName:@selector(resetScrollViewContentOffset:) params:[NSNumber numberWithInteger:sender.tag]];
+    [MPModulesMsgSend sendCumtomMethodMsg:self.superview.superview.superview methodName:@selector(resetScrollViewContentOffset:) params:[NSNumber numberWithInteger:sender.tag]];
 }
 
 #pragma mark - private methods
 - (void)setupUI {
-    self.contentView.backgroundColor = [UIColor whiteColor];
     self.lineLayer.backgroundColor = MAIN_BLUE_COLOR.CGColor;
     
     [self addSubview:self.containerView];

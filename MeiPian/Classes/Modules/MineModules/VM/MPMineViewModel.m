@@ -62,13 +62,11 @@
     self.infoModel.visitStr = [self mineInfoAttributeStringBuilder:[NSString stringWithFormat:@"%@ 阅读",self.infoModel.visit_count]];
     model0.infoModel = self.infoModel;
     model0.cellHeightSource = @[@(220)];
-    model0.cellType = MineCellStyle_info;
+    model0.sliderTitleSource = @[[NSString stringWithFormat:@"作品 %lu",(unsigned long)self.articleModel.articles.count],@"作品集 0",@"收藏 0"];
     
     MPMineConfigModel *model1 = [[MPMineConfigModel alloc] init];
     model1.cellHeightSource = @[@(300 * self.articleModel.articles.count),@(600),@(600)];
-    model1.cellType = MineCellStyle_Article;
     model1.articleModel = self.articleModel;
-    model1.sliderTitleSource = @[[NSString stringWithFormat:@"作品 %lu",(unsigned long)self.articleModel.articles.count],@"作品集 0",@"收藏 0"];
 
     self.configSource = [NSMutableArray arrayWithObjects:model0,model1, nil];
     

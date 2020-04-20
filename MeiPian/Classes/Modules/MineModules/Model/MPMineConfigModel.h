@@ -12,11 +12,6 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-typedef enum : NSUInteger {
-    MineCellStyle_info,
-    MineCellStyle_Article,
-} MineCellStyle;
-
 @interface MPMineConfigModel : MPBaseModel
 
 /** infoModel */
@@ -27,8 +22,6 @@ typedef enum : NSUInteger {
 @property (nonatomic,strong) NSArray <NSString *>*sliderTitleSource;
 /** cellHeight */
 @property (nonatomic,strong) NSArray <NSNumber *>*cellHeightSource;
-/** cellType */
-@property (nonatomic,assign) MineCellStyle cellType;
 
 @end
 

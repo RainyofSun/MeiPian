@@ -7,15 +7,11 @@
 //
 
 #import "MPMinePageView.h"
-#import "MPMineInfoTableViewCell.h"
-#import "MPMineArticleTableViewCell.h"
-#import "MPMineSliderBarView.h"
 #import "MPMineViewModel.h"
+#import "MPMineInfoView.h"
+#import "MPMineArticleScrollView.h"
 #import "MPDynamicItem.h"
-
-static NSString *InfoCell = @"MineInfoCell";
-static NSString *ArticleCell = @"MineArticleCell";
-static NSString *SectionHeaderIdentifier = @"ArticleHeader";
+#import "MPDolphinRefreshHeader.h"
 
 /*f(x, d, c) = (x * d * c) / (d + c * x)
  where,
@@ -31,22 +27,22 @@ static CGFloat rubberBandDistance(CGFloat offset, CGFloat dimension) {
     return offset < 0.0f ? -result : result;
 }
 
-@interface MPMinePageView ()<MPBaseTableViewDelegate,MPBaseTableViewDataSource,UIGestureRecognizerDelegate,UIDynamicAnimatorDelegate>
+@interface MPMinePageView ()<UIGestureRecognizerDelegate,UIDynamicAnimatorDelegate>
 
-/** mineListView */
-@property (nonatomic,strong) MPBaseTableView *mineListView;
-/** sliderBarView */
-@property (nonatomic,strong) MPMineSliderBarView *sliderBarView;
+/**mainScrollView */
+@property (nonatomic,strong) UIScrollView *mainScrollView;
 /** mineVM */
 @property (nonatomic,strong) MPMineViewModel *mineVM;
+/** infoView */
+@property (nonatomic,strong) MPMineInfoView *infoView;
+/** articleView */
+@property (nonatomic,strong) MPMineArticleScrollView *articleView;
 /** mineSource */
 @property (nonatomic,strong) NSArray <MPMineConfigModel *>*mineSource;
 /** sliderbarSelectedIndex */
 @property (nonatomic,assign) NSInteger sliderbarSelectedIndex;
-/** isNeedRefreshSliderBarSource */
-@property (nonatomic,assign) BOOL isNeedRefreshSliderBarSource;
-/** mineInfoH */
-@property (nonatomic,assign) CGFloat mineInfoH;
+/** isBegingRefresh */
+@property (nonatomic,assign) CGFloat isBegingRefresh;
 
 /** panGes */
 @property (nonatomic,strong) UIPanGestureRecognizer *panGes;
@@ -80,7 +76,9 @@ static CGFloat rubberBandDistance(CGFloat offset, CGFloat dimension) {
 
 - (void)layoutSubviews {
     [super layoutSubviews];
-    [self.mineListView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsZero];
+    [self.mainScrollView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsZero];
+    self.infoView.frame = CGRectMake(0, 0, CGRectGetWidth(self.bounds), self.infoView.infoViewH);
+    self.articleView.frame = CGRectMake(0, self.infoView.infoViewH, CGRectGetWidth(self.bounds), self.articleView.artcileViewH);
 }
 
 - (void)dealloc {
@@ -92,104 +90,24 @@ static CGFloat rubberBandDistance(CGFloat offset, CGFloat dimension) {
 // 切换sliderBar
 - (void)switchSliderBar:(NSNumber *)senderTag {
     self.sliderbarSelectedIndex = senderTag.integerValue;
-    [self.sliderBarView switchSliderBarSlectedItem:senderTag];
-    self.mineListView.isCompleteRequest = YES;
+    [self.infoView switchSliderbarSelectedItem:senderTag];
 }
 
 // 重新调整偏移量
 - (void)resetScrollViewContentOffset:(NSNumber *)senderTag {
     self.sliderbarSelectedIndex = senderTag.integerValue;
-    MPMineArticleTableViewCell *cell = [self.mineListView MPBaseTableViewCellForRowAtIndex:[NSIndexPath indexPathForRow:0 inSection:(self.mineSource.count - 1)]];
-    [cell resetSubScrollViewContentOffSet:senderTag];
-    self.mineListView.isCompleteRequest = YES;
+    [self.articleView resetSubScrollViewContentOffSet:senderTag];
 }
 
-#pragma mark - MPBaseTableViewDelegate & MPBaseTableViewDataSource
-- (NSInteger)MPNumberOfSections {
-    return self.mineSource.count;
-}
-
-- (NSInteger)MPNumberOfRowsInSection {
-    return 1;
-}
-
-- (CGFloat)MPHeightForRowAtIndexPath:(NSIndexPath *)index {
-    if (index.section == 0) {
-        self.mineInfoH = self.mineSource[index.section].cellHeightSource.firstObject.floatValue;
-        return self.mineInfoH;
-    } else {
-        return self.mineSource[index.section].cellHeightSource[self.sliderbarSelectedIndex].floatValue;
-    }
-}
-
-- (UITableViewCell *)MPBaseTableView:(MPBaseTableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)index {
-    switch (self.mineSource[index.section].cellType) {
-        case MineCellStyle_info:
-        {
-            MPMineInfoTableViewCell *cell = [tableView dequeueReusableTableViewCellWithIdentifier:InfoCell forIndex:index];
-            [cell loadMineInfoSource:self.mineSource[index.section].infoModel];
-            return cell;
-        }
-        case MineCellStyle_Article:
-        {
-            MPMineArticleTableViewCell *cell = [tableView dequeueReusableTableViewCellWithIdentifier:ArticleCell forIndex:index];
-            [cell loadMineArticleSource:self.mineSource[index.section].articleModel];
-            return cell;
-        }
-        default:
-            break;
-    }
-    return nil;
-}
-
-- (UIView *)MPBaseTableView:(MPBaseTableView *)tableview headerFooterInSection:(NSInteger)section isSectionHeader:(BOOL)sectionHeader {
-    if (sectionHeader) {
-        if (section == 0) {
-            return nil;
-        }
-        self.sliderBarView = [tableview dequeueCustomReusableHeaderFooterViewWithIdentifier:SectionHeaderIdentifier];
-        self.isNeedRefreshSliderBarSource ? [self.sliderBarView loadSliderBarTitleSource:self.mineSource[section].sliderTitleSource] : nil;
-        self.isNeedRefreshSliderBarSource = NO;
-        return self.sliderBarView;
-    }
-    return nil;
-}
-
-- (CGFloat)MPHeightForHeaderInSection:(NSInteger)index isSectionHeader:(BOOL)sectionHeader {
-    if (sectionHeader) {
-        return index == 1 ? 50 : 0.00001;
-    } else {
-        return 0.00001;
-    }
-}
-
-- (void)MPDropRefreshLoadMoreSource {
+// 下拉刷新
+- (void)loadMineData {
     [self requestMineInfo];
-}
-
-#pragma mark - UIGestureRecognizerDelegate
-- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
-    if ([gestureRecognizer isKindOfClass:[UIPanGestureRecognizer class]]) {
-        UIPanGestureRecognizer *recognizer = (UIPanGestureRecognizer *)gestureRecognizer;
-        CGFloat currentY = [recognizer translationInView:self].y;
-        CGFloat currentX = [recognizer translationInView:self].x;
-        if (currentY == 0.0) {
-            return YES;
-        } else {
-            if (fabs(currentX)/currentY >= 5.0) {
-                return YES;
-            } else {
-                return NO;
-            }
-        }
-    }
-    return NO;
 }
 
 - (void)panGestureRecognizerAction:(UIPanGestureRecognizer *)recognizer {
     switch (recognizer.state) {
         case UIGestureRecognizerStateBegan:
-            self.currentScrollY = self.mineListView.contentOffset.y;
+            self.currentScrollY = self.mainScrollView.contentOffset.y;
             CGFloat currentY    = [recognizer translationInView:self].y;
             CGFloat currentX    = [recognizer translationInView:self].x;
             if (currentY == 0.0) {
@@ -251,25 +169,34 @@ static CGFloat rubberBandDistance(CGFloat offset, CGFloat dimension) {
 
 #pragma mark - UIDynamicAnimatorDelegate
 - (void)dynamicAnimatorDidPause:(UIDynamicAnimator *)animator {
-//    [self.interestView.listTableView customSliderBarDisAlphaAnimation];
+    self.isBegingRefresh = NO;
+    MPBaseTableView *subView = [self.articleView getArticleCellTableView];
+    [subView customSliderBarDisAlphaAnimation];
 }
 
 #pragma mark - private methods
 - (void)setDefaultData {
     self.sliderbarSelectedIndex = 0;
-    self.isNeedRefreshSliderBarSource = YES;
+    self.isBegingRefresh = NO;
 }
 
 - (void)setupUI {
-    self.mineListView = [MPBaseTableView setupListView];
-    self.mineListView.tableDalegate = self;
-    self.mineListView.tableDataSource = self;
-    self.mineListView.isOpenFooterRefresh = NO;
-    [self addSubview:self.mineListView];
-    [self.mineListView registerClass:@"MPMineInfoTableViewCell" forTableViewCellWithReuseIdentifier:InfoCell withNibFile:YES];
-    [self.mineListView registerClass:@"MPMineArticleTableViewCell" forTableViewCellWithReuseIdentifier:ArticleCell withNibFile:NO];
-    [self.mineListView registerClass:@"MPMineSliderBarView" forHeaderFooterViewReuseIdentifier:SectionHeaderIdentifier withNibFile:NO isSectionHeader:YES];
-    self.mineListView.scrollEnabled = NO;
+    self.mainScrollView = [[UIScrollView alloc] init];
+    if (@available(iOS 11.0, *)) {
+        self.mainScrollView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+    } else {
+        // Fallback on earlier versions
+    }
+    self.mainScrollView.contentSize = CGSizeMake(0, CGRectGetHeight(self.bounds) + self.infoView.infoViewH);
+    self.mainScrollView.bounces = NO;
+    self.mainScrollView.showsVerticalScrollIndicator = NO;
+    self.mainScrollView.showsHorizontalScrollIndicator = NO;
+    self.mainScrollView.backgroundColor = [UIColor clearColor];
+    self.mainScrollView.scrollEnabled = NO;
+    [self addSubview:self.mainScrollView];
+    
+    [self.mainScrollView addSubview:self.infoView];
+    [self.mainScrollView addSubview:self.articleView];
     
     self.panGes = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panGestureRecognizerAction:)];
     self.panGes.delegate = self;
@@ -278,43 +205,54 @@ static CGFloat rubberBandDistance(CGFloat offset, CGFloat dimension) {
     self.animator = [[UIDynamicAnimator alloc] initWithReferenceView:self];
     self.animator.delegate = self;
     self.dynamicItem = [[MPDynamicItem alloc] init];
+    [self setRefreshHeader];
+}
+
+- (void)setRefreshHeader {
+    self.mainScrollView.mj_header = [MPDolphinRefreshHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadMineData)];
+    // 马上进入刷新状态
+    [self.mainScrollView.mj_header beginRefreshing];
 }
 
 //控制上下滚动的方法
 - (void)controlScrollForVertical:(CGFloat)detal AndState:(UIGestureRecognizerState)state {
     // 判断是MainScrollView滚动还是子ScrollView滚动,detal为手指移动的距离
-    MPBaseTableView *subView = [self getSubTableView];
-    if (self.mineListView.contentOffset.y >= self.mineInfoH) {
-//        [self.interestView.listTableView customSliderBarShowAlphaAnimation];
+    MPBaseTableView *subView = [self.articleView getArticleCellTableView];
+    if (self.mainScrollView.contentOffset.y >= self.infoView.TopDistance) {
+        [subView customSliderBarShowAlphaAnimation];
         CGFloat offsetY = subView.contentOffset.y - detal;
         if (offsetY < 0) {
             // 当子ScrollView的contentOffSet小于0之后就b不再移动子ScrollView,而要移动mainScrollView
             offsetY = 0;
-            self.mineListView.contentOffset = CGPointMake(0, self.mineListView.contentOffset.y - detal);
+            self.mainScrollView.contentOffset = CGPointMake(0, self.mainScrollView.contentOffset.y - detal);
         } else if (offsetY > (subView.contentSize.height - subView.frame.size.height)) {
             // 当子ScrollView的contenOffset大于tableView的可移动距离时
-            offsetY =subView.contentOffset.y - rubberBandDistance(detal, CGRectGetHeight(self.bounds));
+            offsetY = subView.contentOffset.y - rubberBandDistance(detal, CGRectGetHeight(self.bounds));
         }
         NSLog(@"subTableView %f",offsetY);
         subView.contentOffset = CGPointMake(0, offsetY);
     } else {
-        CGFloat mainOffsetY = self.mineListView.contentOffset.y - detal;
+        CGFloat mainOffsetY = self.mainScrollView.contentOffset.y - detal;
         if (mainOffsetY < 0) {
             // 滚动到顶部之后继续往上滚动需要乘以一个小于1的系数
-            mainOffsetY = self.mineListView.contentOffset.y - rubberBandDistance(detal, CGRectGetHeight(self.bounds));
-        } else if (mainOffsetY > self.mineInfoH) {
-            mainOffsetY = self.mineInfoH;
+            mainOffsetY = self.mainScrollView.contentOffset.y - rubberBandDistance(detal, CGRectGetHeight(self.bounds));
+            if (mainOffsetY <= -30) {
+                // 触发下拉刷新
+                [self triggerMineInfoRefresh];
+            }
+        } else if (mainOffsetY > self.infoView.TopDistance) {
+            mainOffsetY = self.infoView.TopDistance;
         }
         NSLog(@"MainScrollView %f",mainOffsetY);
-        self.mineListView.contentOffset = CGPointMake(0, mainOffsetY);
+        self.mainScrollView.contentOffset = CGPointMake(0, mainOffsetY);
     }
     
     BOOL outsideFrame = [self outsideFrame];
     if (outsideFrame && (self.decelerationBehavior && !self.springBehavior)) {
         CGPoint target = CGPointZero;
         BOOL isMain = NO;
-        if (self.mineListView.contentOffset.y < 0) {
-            self.dynamicItem.center = self.mineListView.contentOffset;
+        if (self.mainScrollView.contentOffset.y < 0) {
+            self.dynamicItem.center = self.mainScrollView.contentOffset;
             target = CGPointZero;
             isMain = YES;
         } else if (subView.contentOffset.y > (subView.contentSize.height - subView.frame.size.height)) {
@@ -335,8 +273,8 @@ static CGFloat rubberBandDistance(CGFloat offset, CGFloat dimension) {
         springBehavior.frequency = 2;
         springBehavior.action = ^{
             if (isMain) {
-                weakSelf.mineListView.contentOffset = weakSelf.dynamicItem.center;
-                if (weakSelf.mineListView.contentOffset.y == 0) {
+                weakSelf.mainScrollView.contentOffset = weakSelf.dynamicItem.center;
+                if (weakSelf.mainScrollView.contentOffset.y == 0) {
                     subView.contentOffset = CGPointZero;
                 }
             } else {
@@ -355,10 +293,10 @@ static CGFloat rubberBandDistance(CGFloat offset, CGFloat dimension) {
 
 // 判断是否超出ViewFrame的边界
 - (BOOL)outsideFrame {
-    if (self.mineListView.contentOffset.y < 0) {
+    if (self.mainScrollView.contentOffset.y < 0) {
         return YES;
     }
-    MPBaseTableView *subView = [self getSubTableView];
+    MPBaseTableView *subView = [self.articleView getArticleCellTableView];
     if (subView.contentOffset.y < 0) {
         return YES;
     }
@@ -378,16 +316,24 @@ static CGFloat rubberBandDistance(CGFloat offset, CGFloat dimension) {
     return NO;
 }
 
-- (MPBaseTableView *)getSubTableView {
-    MPMineArticleTableViewCell *cell = [self.mineListView MPBaseTableViewCellForRowAtIndex:[NSIndexPath indexPathForRow:0 inSection:(self.mineSource.count - 1)]];
-    return [cell getArticleCellTableView];
+// 下拉触发刷新
+- (void)triggerMineInfoRefresh {
+    if (self.isBegingRefresh) {
+        NSLog(@"拦截无效刷新");
+        return;
+    }
+    self.isBegingRefresh = YES;
+    [self.mainScrollView.mj_header beginRefreshing];
 }
 
 - (void)requestMineInfo {
     WeakSelf;
     [self.mineVM MPMineInfoRequest:^(id  _Nonnull returnValue) {
         weakSelf.mineSource = (NSArray <MPMineConfigModel *>*)returnValue;
-        weakSelf.mineListView.isCompleteRequest = YES;
+        [weakSelf.infoView loadMineInfoSource:weakSelf.mineSource.firstObject.infoModel];
+        [weakSelf.infoView loadSliderBarSource:weakSelf.mineSource.firstObject.sliderTitleSource];
+        [weakSelf.articleView loadMineArticleSource:weakSelf.mineSource.lastObject.articleModel];
+        [weakSelf.mainScrollView.mj_header endRefreshing];
     }];
 }
 
@@ -397,6 +343,20 @@ static CGFloat rubberBandDistance(CGFloat offset, CGFloat dimension) {
         _mineVM = [[MPMineViewModel alloc] init];
     }
     return _mineVM;
+}
+
+- (MPMineInfoView *)infoView {
+    if (!_infoView) {
+        _infoView = [[[NSBundle mainBundle] loadNibNamed:@"MPMineInfoView" owner:nil options:nil] firstObject];
+    }
+    return _infoView;
+}
+
+- (MPMineArticleScrollView *)articleView {
+    if (!_articleView) {
+        _articleView = [[MPMineArticleScrollView alloc] init];
+    }
+    return _articleView;
 }
 
 @end

@@ -177,7 +177,7 @@
 		13174589242A03B40062876F /* MPCustomHomePageNavView.m in Sources */ = {isa = PBXBuildFile; fileRef = 13174588242A03B40062876F /* MPCustomHomePageNavView.m */; };
 		1317458C242A14130062876F /* MPPageControlSliderBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1317458A242A14130062876F /* MPPageControlSliderBar.m */; };
 		1318043B24495C89007847FE /* MPMineViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1318043A24495C89007847FE /* MPMineViewModel.m */; };
-		1318043F24496730007847FE /* MPMineArticleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1318043D24496730007847FE /* MPMineArticleTableViewCell.m */; };
+		1318043F24496730007847FE /* MPMineArticleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1318043D24496730007847FE /* MPMineArticleScrollView.m */; };
 		1318044324498B8B007847FE /* MPMineSliderBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1318044224498B8B007847FE /* MPMineSliderBarView.m */; };
 		131804472449921B007847FE /* MPMineInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 131804462449921B007847FE /* MPMineInfoModel.m */; };
 		1318044924499604007847FE /* MineInfo.json in Resources */ = {isa = PBXBuildFile; fileRef = 1318044824499604007847FE /* MineInfo.json */; };
@@ -336,6 +336,8 @@
 		131E8E1C244D4367005C8909 /* MPMineCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 131E8E1B244D4367005C8909 /* MPMineCollectionView.m */; };
 		131E8E25244D4CDA005C8909 /* MPMineArticleCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 131E8E23244D4CDA005C8909 /* MPMineArticleCellTableViewCell.m */; };
 		131E8E26244D4CDA005C8909 /* MPMineArticleCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 131E8E24244D4CDA005C8909 /* MPMineArticleCellTableViewCell.xib */; };
+		131E8E2A244D9B40005C8909 /* MPMineInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 131E8E29244D9B40005C8909 /* MPMineInfoView.m */; };
+		131E8E2C244D9B4C005C8909 /* MPMineInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 131E8E2B244D9B4C005C8909 /* MPMineInfoView.xib */; };
 		132C7E172419CF67007E3142 /* TelephoneCodeData.m in Sources */ = {isa = PBXBuildFile; fileRef = 132C7E162419CF67007E3142 /* TelephoneCodeData.m */; };
 		132C7E1A2419D977007E3142 /* TelephoneCodeIndexView.m in Sources */ = {isa = PBXBuildFile; fileRef = 132C7E192419D977007E3142 /* TelephoneCodeIndexView.m */; };
 		132C7E20241A2800007E3142 /* MPHomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 132C7E1E241A2800007E3142 /* MPHomePageViewController.m */; };
@@ -764,8 +766,8 @@
 		1317458B242A14130062876F /* MPPageControlSliderBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPPageControlSliderBar.h; sourceTree = "<group>"; };
 		1318043924495C89007847FE /* MPMineViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPMineViewModel.h; sourceTree = "<group>"; };
 		1318043A24495C89007847FE /* MPMineViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPMineViewModel.m; sourceTree = "<group>"; };
-		1318043C24496730007847FE /* MPMineArticleTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPMineArticleTableViewCell.h; sourceTree = "<group>"; };
-		1318043D24496730007847FE /* MPMineArticleTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPMineArticleTableViewCell.m; sourceTree = "<group>"; };
+		1318043C24496730007847FE /* MPMineArticleScrollView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPMineArticleScrollView.h; sourceTree = "<group>"; };
+		1318043D24496730007847FE /* MPMineArticleScrollView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPMineArticleScrollView.m; sourceTree = "<group>"; };
 		1318044124498B8B007847FE /* MPMineSliderBarView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPMineSliderBarView.h; sourceTree = "<group>"; };
 		1318044224498B8B007847FE /* MPMineSliderBarView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPMineSliderBarView.m; sourceTree = "<group>"; };
 		131804452449921B007847FE /* MPMineInfoModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPMineInfoModel.h; sourceTree = "<group>"; };
@@ -996,6 +998,9 @@
 		131E8E22244D4CDA005C8909 /* MPMineArticleCellTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPMineArticleCellTableViewCell.h; sourceTree = "<group>"; };
 		131E8E23244D4CDA005C8909 /* MPMineArticleCellTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPMineArticleCellTableViewCell.m; sourceTree = "<group>"; };
 		131E8E24244D4CDA005C8909 /* MPMineArticleCellTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MPMineArticleCellTableViewCell.xib; sourceTree = "<group>"; };
+		131E8E28244D9B40005C8909 /* MPMineInfoView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPMineInfoView.h; sourceTree = "<group>"; };
+		131E8E29244D9B40005C8909 /* MPMineInfoView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPMineInfoView.m; sourceTree = "<group>"; };
+		131E8E2B244D9B4C005C8909 /* MPMineInfoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MPMineInfoView.xib; sourceTree = "<group>"; };
 		132C7E152419CF67007E3142 /* TelephoneCodeData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TelephoneCodeData.h; sourceTree = "<group>"; };
 		132C7E162419CF67007E3142 /* TelephoneCodeData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TelephoneCodeData.m; sourceTree = "<group>"; };
 		132C7E182419D977007E3142 /* TelephoneCodeIndexView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TelephoneCodeIndexView.h; sourceTree = "<group>"; };
@@ -2898,6 +2903,16 @@
 			path = CellView;
 			sourceTree = "<group>";
 		};
+		131E8E27244D9B23005C8909 /* MineInfoView */ = {
+			isa = PBXGroup;
+			children = (
+				131E8E28244D9B40005C8909 /* MPMineInfoView.h */,
+				131E8E29244D9B40005C8909 /* MPMineInfoView.m */,
+				131E8E2B244D9B4C005C8909 /* MPMineInfoView.xib */,
+			);
+			path = MineInfoView;
+			sourceTree = "<group>";
+		};
 		132C7E1B241A27AF007E3142 /* MPHomeModules */ = {
 			isa = PBXGroup;
 			children = (
@@ -3089,16 +3104,17 @@
 		13926DA9244853AE00EEC373 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				13926DAD244857D300EEC373 /* CellView */,
+				13926DAD244857D300EEC373 /* SubView */,
 				13926DAA244853C500EEC373 /* MPMinePageView.h */,
 				13926DAB244853C500EEC373 /* MPMinePageView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
 		};
-		13926DAD244857D300EEC373 /* CellView */ = {
+		13926DAD244857D300EEC373 /* SubView */ = {
 			isa = PBXGroup;
 			children = (
+				131E8E27244D9B23005C8909 /* MineInfoView */,
 				131E8E20244D4CA2005C8909 /* SliderBarView */,
 				131E8E1F244D4C84005C8909 /* CollectionView */,
 				131E8E1E244D4C74005C8909 /* WorksView */,
@@ -3106,10 +3122,10 @@
 				13926DAE244857F200EEC373 /* MPMineInfoTableViewCell.h */,
 				13926DAF244857F200EEC373 /* MPMineInfoTableViewCell.m */,
 				13926DB0244857F200EEC373 /* MPMineInfoTableViewCell.xib */,
-				1318043C24496730007847FE /* MPMineArticleTableViewCell.h */,
-				1318043D24496730007847FE /* MPMineArticleTableViewCell.m */,
+				1318043C24496730007847FE /* MPMineArticleScrollView.h */,
+				1318043D24496730007847FE /* MPMineArticleScrollView.m */,
 			);
-			path = CellView;
+			path = SubView;
 			sourceTree = "<group>";
 		};
 		13B3D435242B591D0081F9D3 /* 1 */ = {
@@ -3956,6 +3972,7 @@
 				C8F1D6E42438846D005A8D3A /* TopBar.json in Resources */,
 				1312C7CD242B3F42005887B6 /* QingGan2.json in Resources */,
 				131B44D424161AD400A99F73 /* img_3.png in Resources */,
+				131E8E2C244D9B4C005C8909 /* MPMineInfoView.xib in Resources */,
 				1319E3E1243D78C60044F36F /* MPRecommandCollectionViewCell.xib in Resources */,
 				1334C02F243B3379001ECC00 /* MPTopicTableViewCell.xib in Resources */,
 				1312C7B3242B3D98005887B6 /* SheYing9.json in Resources */,
@@ -4102,7 +4119,7 @@
 				131745792429B3650062876F /* XLPageBasicTitleView.m in Sources */,
 				131673E72431E144001FAF4C /* MPArticleOptionModel.m in Sources */,
 				13DBCF072410B14900D99014 /* UIScrollView+EmptyDataSet.m in Sources */,
-				1318043F24496730007847FE /* MPMineArticleTableViewCell.m in Sources */,
+				1318043F24496730007847FE /* MPMineArticleScrollView.m in Sources */,
 				131B45622416453400A99F73 /* MPAdvertisingViewModel.m in Sources */,
 				1317458C242A14130062876F /* MPPageControlSliderBar.m in Sources */,
 				13161F122421D03D00A1A373 /* MPMinePageViewController.m in Sources */,
@@ -4139,6 +4156,7 @@
 				1316D18C24440C4100A92AEE /* MPMessagePageView.m in Sources */,
 				1315B2A22436E87C00565B23 /* MPLvXingView.m in Sources */,
 				133E70E02418BC5900A4C3E4 /* MPAccountLoginView.m in Sources */,
+				131E8E2A244D9B40005C8909 /* MPMineInfoView.m in Sources */,
 				13DBCF142410B14900D99014 /* AppLogFileDate.m in Sources */,
 				131E8E19244D4345005C8909 /* MPMineWorksView.m in Sources */,
 				13DBCF3D2410B15500D99014 /* UITextField+ToolBar.m in Sources */,

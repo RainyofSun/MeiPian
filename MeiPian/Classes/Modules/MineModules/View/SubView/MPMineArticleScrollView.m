@@ -1,18 +1,18 @@
 //
-//  MPMineArticleTableViewCell.m
+//  MPMineArticleScrollView.m
 //  MeiPian
 //
 //  Created by EGLS_BMAC on 2020/4/17.
 //  Copyright © 2020 EGLS_BMAC. All rights reserved.
 //
 
-#import "MPMineArticleTableViewCell.h"
+#import "MPMineArticleScrollView.h"
 #import "MPArticleCellViewModel.h"
 #import "MPMineArticleView.h"
 #import "MPMineWorksView.h"
 #import "MPMineCollectionView.h"
 
-@interface MPMineArticleTableViewCell ()<UIScrollViewDelegate>
+@interface MPMineArticleScrollView ()<UIScrollViewDelegate>
 
 /** cellVM */
 @property (nonatomic,strong) MPArticleCellViewModel *cellVM;
@@ -24,13 +24,15 @@
 @property (nonatomic,strong) MPMineWorksView *worksView;
 /** collectionView */
 @property (nonatomic,strong) MPMineCollectionView *collectionView;
+/** artcileViewH */
+@property (nonatomic,readwrite) CGFloat artcileViewH;
 
 @end
 
-@implementation MPMineArticleTableViewCell
+@implementation MPMineArticleScrollView
 
-- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
-    if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
+- (instancetype)init {
+    if (self = [super init]) {
         [self setupUI];
     }
     return self;
@@ -38,8 +40,8 @@
 
 - (void)layoutSubviews {
     [super layoutSubviews];
-    CGFloat cellW = CGRectGetWidth(self.contentView.bounds);
-    CGFloat cellH = CGRectGetHeight(self.contentView.bounds);
+    CGFloat cellW = CGRectGetWidth(self.bounds);
+    CGFloat cellH = CGRectGetHeight(self.bounds);
     [self.mainScrollView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsZero];
     self.articleView.frame = CGRectMake(0, 0, cellW, cellH);
     self.worksView.frame = CGRectMake(cellW, 0, cellW, cellH);
@@ -88,7 +90,6 @@
 
 #pragma mark - private methods
 - (void)setupUI {
-    self.selectionStyle = UITableViewCellSelectionStyleNone;
     if (@available(iOS 11.0, *)) {
         self.mainScrollView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
     } else {
@@ -102,10 +103,12 @@
     self.mainScrollView.showsHorizontalScrollIndicator = NO;
     self.mainScrollView.showsVerticalScrollIndicator = NO;
     self.mainScrollView.bounces = NO;
-    [self.contentView addSubview:self.mainScrollView];
+    [self addSubview:self.mainScrollView];
     [self.mainScrollView addSubview:self.articleView];
     [self.mainScrollView addSubview:self.worksView];
     [self.mainScrollView addSubview:self.collectionView];
+    
+    self.artcileViewH = 600;
 }
 
 #pragma mark - lazy
@@ -135,12 +138,6 @@
         _collectionView = [[MPMineCollectionView alloc] init];
     }
     return _collectionView;
-}
-
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
 }
 
 @end
