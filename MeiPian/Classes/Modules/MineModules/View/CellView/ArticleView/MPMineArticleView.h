@@ -13,6 +13,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface MPMineArticleView : UIView
 
+/** articleListView */
+@property (nonatomic,strong) MPBaseTableView *articleListView;
+
 - (void)loadArticleSource:(NSArray <MPMineWorksModel *>*)articleSource;
 
 @end

@@ -60,6 +60,10 @@
     [self.mainScrollView setContentOffset:CGPointMake(ScreenWidth * senderTag.integerValue, 0) animated:YES];
 }
 
+- (MPBaseTableView *)getArticleCellTableView {
+    return self.articleView.articleListView;
+}
+
 #pragma mark - UIScrollViewDelegate
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     

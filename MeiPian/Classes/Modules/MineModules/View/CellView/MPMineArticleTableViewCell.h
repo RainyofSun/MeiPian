@@ -15,6 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)loadMineArticleSource:(MPMineArticleModel *)articleSource;
 - (void)resetSubScrollViewContentOffSet:(NSNumber *)senderTag;
+- (MPBaseTableView *)getArticleCellTableView;
 
 @end
 

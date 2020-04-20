@@ -13,8 +13,6 @@ static NSString *ArticleCellSubCell   = @"ArticleViewSubCell";
 
 @interface MPMineArticleView ()<MPBaseTableViewDelegate,MPBaseTableViewDataSource>
 
-/** articleListView */
-@property (nonatomic,strong) MPBaseTableView *articleListView;
 /** articleSource */
 @property (nonatomic,strong) NSArray <MPMineWorksModel *>*articleSource;
 
@@ -69,6 +67,7 @@ static NSString *ArticleCellSubCell   = @"ArticleViewSubCell";
     self.articleListView.isOpenFooterRefresh = NO;
     self.articleListView.showsHorizontalScrollIndicator = NO;
     self.articleListView.showsVerticalScrollIndicator = NO;
+    self.articleListView.scrollEnabled = NO;
     [self addSubview:self.articleListView];
     [self.articleListView registerClass:@"MPMineArticleCellTableViewCell" forTableViewCellWithReuseIdentifier:ArticleCellSubCell withNibFile:YES];
 }
