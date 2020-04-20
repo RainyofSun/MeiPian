@@ -38,7 +38,6 @@
     NSTimeZone *timeZone = [NSTimeZone timeZoneWithName:@"Asia/Beijing"];
     [formatter setTimeZone:timeZone];
     NSDate *confromTimesp = [NSDate dateWithTimeIntervalSince1970:timestamp];
-    NSLog(@"1296035591  = %@",confromTimesp);
     NSString *confromTimespStr = [formatter stringFromDate:confromTimesp];
     //NSLog(@"&&&&&&&confromTimespStr = : %@",confromTimespStr);
     return confromTimespStr;

@@ -47,6 +47,10 @@ static CGFloat FontNum = 17;
     });
 }
 
+- (void)switchSliderBarSlectedItem:(NSNumber *)senderTag {
+    [self touchSliderBarItem:self.btnSource[senderTag.integerValue]];
+}
+
 - (void)touchSliderBarItem:(UIButton *)sender {
     if (sender.selected) {
         return;
@@ -55,6 +59,7 @@ static CGFloat FontNum = 17;
     sender.titleLabel.font = [UIFont boldSystemFontOfSize:FontNum];
     sender.selected = !sender.selected;
     self.lineLayer.centerX = sender.centerX;
+    [MPModulesMsgSend sendCumtomMethodMsg:self.superview.superview methodName:@selector(resetScrollViewContentOffset:) params:[NSNumber numberWithInteger:sender.tag]];
 }
 
 #pragma mark - private methods
@@ -78,6 +83,7 @@ static CGFloat FontNum = 17;
         btn.selected = (i == 0);
         btn.titleLabel.font = btn.selected ? [UIFont boldSystemFontOfSize:FontNum] : [UIFont systemFontOfSize:FontNum];
         [btn addTarget:self action:@selector(touchSliderBarItem:) forControlEvents:UIControlEventTouchUpInside];
+        btn.tag = i;
         [self.containerView addSubview:btn];
         [self.btnSource addObject:btn];
     }

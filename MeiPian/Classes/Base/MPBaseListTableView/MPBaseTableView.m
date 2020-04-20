@@ -367,4 +367,12 @@
     }
 }
 
+- (void)setIsOpenFooterRefresh:(BOOL)isOpenFooterRefresh {
+    _isOpenFooterRefresh = isOpenFooterRefresh;
+    if (!isOpenFooterRefresh) {
+        [self.mj_footer endRefreshing];
+        [self.mj_footer removeFromSuperview];
+    }
+}
+
 @end

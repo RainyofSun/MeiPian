@@ -14,6 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface MPMineArticleTableViewCell : UITableViewCell
 
 - (void)loadMineArticleSource:(MPMineArticleModel *)articleSource;
+- (void)resetSubScrollViewContentOffSet:(NSNumber *)senderTag;
 
 @end
 

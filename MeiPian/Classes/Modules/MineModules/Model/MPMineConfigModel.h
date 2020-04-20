@@ -26,7 +26,7 @@ typedef enum : NSUInteger {
 /** sliderTitleSource */
 @property (nonatomic,strong) NSArray <NSString *>*sliderTitleSource;
 /** cellHeight */
-@property (nonatomic,assign) CGFloat cellHeight;
+@property (nonatomic,strong) NSArray <NSNumber *>*cellHeightSource;
 /** cellType */
 @property (nonatomic,assign) MineCellStyle cellType;
 

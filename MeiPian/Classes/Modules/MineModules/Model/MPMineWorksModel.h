@@ -69,6 +69,12 @@ NS_ASSUME_NONNULL_BEGIN
 /** has_exposure */
 @property (nonatomic,strong) NSNumber *has_exposure;
 
+// 自定义字段
+/** articleTime */
+@property (nonatomic,strong) NSString *articleTime;
+/** comments */
+@property (nonatomic,strong) NSString *comments;
+
 @end
 
 NS_ASSUME_NONNULL_END

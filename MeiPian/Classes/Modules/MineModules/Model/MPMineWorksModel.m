@@ -19,4 +19,13 @@
     };
 }
 
+#pragma mark - getter
+- (NSString *)articleTime {
+    return [self timestampSwitchTime:self.create_time.integerValue andFormatter:@"YYYY-MM-dd"];
+}
+
+- (NSString *)comments {
+    return [NSString stringWithFormat:@"%@ 阅读   %@ 评论   %@ 点赞",self.visit_count,self.comment_count,self.praise_count];
+}
+
 @end

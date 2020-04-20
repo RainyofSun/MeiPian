@@ -331,6 +331,11 @@
 		131DF94C24349188006F25C3 /* MPJingXuanConfigModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 131DF94B24349188006F25C3 /* MPJingXuanConfigModel.m */; };
 		131DF94F24349375006F25C3 /* MPJingXuanArticleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 131DF94E24349375006F25C3 /* MPJingXuanArticleModel.m */; };
 		131DF95224349394006F25C3 /* MPJingXuanAuthorModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 131DF95124349394006F25C3 /* MPJingXuanAuthorModel.m */; };
+		131E8E16244D42A4005C8909 /* MPMineArticleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 131E8E15244D42A4005C8909 /* MPMineArticleView.m */; };
+		131E8E19244D4345005C8909 /* MPMineWorksView.m in Sources */ = {isa = PBXBuildFile; fileRef = 131E8E18244D4345005C8909 /* MPMineWorksView.m */; };
+		131E8E1C244D4367005C8909 /* MPMineCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 131E8E1B244D4367005C8909 /* MPMineCollectionView.m */; };
+		131E8E25244D4CDA005C8909 /* MPMineArticleCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 131E8E23244D4CDA005C8909 /* MPMineArticleCellTableViewCell.m */; };
+		131E8E26244D4CDA005C8909 /* MPMineArticleCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 131E8E24244D4CDA005C8909 /* MPMineArticleCellTableViewCell.xib */; };
 		132C7E172419CF67007E3142 /* TelephoneCodeData.m in Sources */ = {isa = PBXBuildFile; fileRef = 132C7E162419CF67007E3142 /* TelephoneCodeData.m */; };
 		132C7E1A2419D977007E3142 /* TelephoneCodeIndexView.m in Sources */ = {isa = PBXBuildFile; fileRef = 132C7E192419D977007E3142 /* TelephoneCodeIndexView.m */; };
 		132C7E20241A2800007E3142 /* MPHomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 132C7E1E241A2800007E3142 /* MPHomePageViewController.m */; };
@@ -982,6 +987,15 @@
 		131DF94E24349375006F25C3 /* MPJingXuanArticleModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPJingXuanArticleModel.m; sourceTree = "<group>"; };
 		131DF95024349394006F25C3 /* MPJingXuanAuthorModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPJingXuanAuthorModel.h; sourceTree = "<group>"; };
 		131DF95124349394006F25C3 /* MPJingXuanAuthorModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPJingXuanAuthorModel.m; sourceTree = "<group>"; };
+		131E8E14244D42A4005C8909 /* MPMineArticleView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPMineArticleView.h; sourceTree = "<group>"; };
+		131E8E15244D42A4005C8909 /* MPMineArticleView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPMineArticleView.m; sourceTree = "<group>"; };
+		131E8E17244D4345005C8909 /* MPMineWorksView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPMineWorksView.h; sourceTree = "<group>"; };
+		131E8E18244D4345005C8909 /* MPMineWorksView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPMineWorksView.m; sourceTree = "<group>"; };
+		131E8E1A244D4367005C8909 /* MPMineCollectionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPMineCollectionView.h; sourceTree = "<group>"; };
+		131E8E1B244D4367005C8909 /* MPMineCollectionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPMineCollectionView.m; sourceTree = "<group>"; };
+		131E8E22244D4CDA005C8909 /* MPMineArticleCellTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPMineArticleCellTableViewCell.h; sourceTree = "<group>"; };
+		131E8E23244D4CDA005C8909 /* MPMineArticleCellTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPMineArticleCellTableViewCell.m; sourceTree = "<group>"; };
+		131E8E24244D4CDA005C8909 /* MPMineArticleCellTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MPMineArticleCellTableViewCell.xib; sourceTree = "<group>"; };
 		132C7E152419CF67007E3142 /* TelephoneCodeData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TelephoneCodeData.h; sourceTree = "<group>"; };
 		132C7E162419CF67007E3142 /* TelephoneCodeData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TelephoneCodeData.m; sourceTree = "<group>"; };
 		132C7E182419D977007E3142 /* TelephoneCodeIndexView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TelephoneCodeIndexView.h; sourceTree = "<group>"; };
@@ -2837,6 +2851,53 @@
 			path = JingXuanModel;
 			sourceTree = "<group>";
 		};
+		131E8E1D244D4C64005C8909 /* ArticleView */ = {
+			isa = PBXGroup;
+			children = (
+				131E8E21244D4CB4005C8909 /* CellView */,
+				131E8E14244D42A4005C8909 /* MPMineArticleView.h */,
+				131E8E15244D42A4005C8909 /* MPMineArticleView.m */,
+			);
+			path = ArticleView;
+			sourceTree = "<group>";
+		};
+		131E8E1E244D4C74005C8909 /* WorksView */ = {
+			isa = PBXGroup;
+			children = (
+				131E8E17244D4345005C8909 /* MPMineWorksView.h */,
+				131E8E18244D4345005C8909 /* MPMineWorksView.m */,
+			);
+			path = WorksView;
+			sourceTree = "<group>";
+		};
+		131E8E1F244D4C84005C8909 /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				131E8E1A244D4367005C8909 /* MPMineCollectionView.h */,
+				131E8E1B244D4367005C8909 /* MPMineCollectionView.m */,
+			);
+			path = CollectionView;
+			sourceTree = "<group>";
+		};
+		131E8E20244D4CA2005C8909 /* SliderBarView */ = {
+			isa = PBXGroup;
+			children = (
+				1318044124498B8B007847FE /* MPMineSliderBarView.h */,
+				1318044224498B8B007847FE /* MPMineSliderBarView.m */,
+			);
+			path = SliderBarView;
+			sourceTree = "<group>";
+		};
+		131E8E21244D4CB4005C8909 /* CellView */ = {
+			isa = PBXGroup;
+			children = (
+				131E8E22244D4CDA005C8909 /* MPMineArticleCellTableViewCell.h */,
+				131E8E23244D4CDA005C8909 /* MPMineArticleCellTableViewCell.m */,
+				131E8E24244D4CDA005C8909 /* MPMineArticleCellTableViewCell.xib */,
+			);
+			path = CellView;
+			sourceTree = "<group>";
+		};
 		132C7E1B241A27AF007E3142 /* MPHomeModules */ = {
 			isa = PBXGroup;
 			children = (
@@ -3038,13 +3099,15 @@
 		13926DAD244857D300EEC373 /* CellView */ = {
 			isa = PBXGroup;
 			children = (
+				131E8E20244D4CA2005C8909 /* SliderBarView */,
+				131E8E1F244D4C84005C8909 /* CollectionView */,
+				131E8E1E244D4C74005C8909 /* WorksView */,
+				131E8E1D244D4C64005C8909 /* ArticleView */,
 				13926DAE244857F200EEC373 /* MPMineInfoTableViewCell.h */,
 				13926DAF244857F200EEC373 /* MPMineInfoTableViewCell.m */,
 				13926DB0244857F200EEC373 /* MPMineInfoTableViewCell.xib */,
 				1318043C24496730007847FE /* MPMineArticleTableViewCell.h */,
 				1318043D24496730007847FE /* MPMineArticleTableViewCell.m */,
-				1318044124498B8B007847FE /* MPMineSliderBarView.h */,
-				1318044224498B8B007847FE /* MPMineSliderBarView.m */,
 			);
 			path = CellView;
 			sourceTree = "<group>";
@@ -3764,6 +3827,7 @@
 				131B44D324161AD400A99F73 /* img_2.png in Resources */,
 				13153DDB243C0CF200C70A9F /* BannerLoop1.json in Resources */,
 				13B3D4DA242B591E0081F9D3 /* Flatten_4_1.json in Resources */,
+				131E8E26244D4CDA005C8909 /* MPMineArticleCellTableViewCell.xib in Resources */,
 				1318CFBF242C5BB000AAB4CB /* 4.dianziyin.caf in Resources */,
 				1312C7FA242B41B6005887B6 /* LvXing6.json in Resources */,
 				131B44FC24161B0100A99F73 /* dot_black.json in Resources */,
@@ -4076,6 +4140,7 @@
 				1315B2A22436E87C00565B23 /* MPLvXingView.m in Sources */,
 				133E70E02418BC5900A4C3E4 /* MPAccountLoginView.m in Sources */,
 				13DBCF142410B14900D99014 /* AppLogFileDate.m in Sources */,
+				131E8E19244D4345005C8909 /* MPMineWorksView.m in Sources */,
 				13DBCF3D2410B15500D99014 /* UITextField+ToolBar.m in Sources */,
 				131804552449A157007847FE /* MPMineWorksModel.m in Sources */,
 				131BB3B4241F1A170084B4BB /* DeviceUtils.m in Sources */,
@@ -4158,6 +4223,7 @@
 				13DBCF482410B15500D99014 /* UIViewController+VCJump.m in Sources */,
 				133E70DD2418BB9800A4C3E4 /* MPAccountLoginViewModel.m in Sources */,
 				1316D1AC244419EC00A92AEE /* MPMessageViewModel.m in Sources */,
+				131E8E25244D4CDA005C8909 /* MPMineArticleCellTableViewCell.m in Sources */,
 				C8F1D6EB24388720005A8D3A /* MPHomePageModel.m in Sources */,
 				13161F192421F77500A1A373 /* MPCorpusViewController.m in Sources */,
 				13926DA8244852AD00EEC373 /* MPMinePageViewModel.m in Sources */,
@@ -4172,6 +4238,7 @@
 				13DBCF0A2410B14900D99014 /* MPModulesMsgSend.m in Sources */,
 				131BB3AD241F199E0084B4BB /* BusinessRequestErrorHander.m in Sources */,
 				13168AE72440544400810423 /* MPSheYingArticleTypeViewModel.m in Sources */,
+				131E8E16244D42A4005C8909 /* MPMineArticleView.m in Sources */,
 				131424DE24455E8600D2F99E /* MPMessageTypeBtn.m in Sources */,
 				1319A30A2435EA50009EE296 /* MPSheYingView.m in Sources */,
 				1319E40F243DBF0C0044F36F /* MPCircleInterestArticleAuthorModel.m in Sources */,
@@ -4187,6 +4254,7 @@
 				131B453D2416395F00A99F73 /* MPBaseWebViewController.m in Sources */,
 				1319E3F3243D842E0044F36F /* MPCircleRecommandViewModel.m in Sources */,
 				131BB3AA241F199E0084B4BB /* BaseNetWorkingRequest.m in Sources */,
+				131E8E1C244D4367005C8909 /* MPMineCollectionView.m in Sources */,
 				132C7E1A2419D977007E3142 /* TelephoneCodeIndexView.m in Sources */,
 				131B455A2416422200A99F73 /* MPUserInfoCache.m in Sources */,
 				131810CC241796E2004828A3 /* MPWeiChatLoginView.m in Sources */,

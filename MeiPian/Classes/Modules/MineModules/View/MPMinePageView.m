@@ -26,6 +26,10 @@ static NSString *SectionHeaderIdentifier = @"ArticleHeader";
 @property (nonatomic,strong) MPMineViewModel *mineVM;
 /** mineSource */
 @property (nonatomic,strong) NSArray <MPMineConfigModel *>*mineSource;
+/** sliderbarSelectedIndex */
+@property (nonatomic,assign) NSInteger sliderbarSelectedIndex;
+/** isNeedRefreshSliderBarSource */
+@property (nonatomic,assign) BOOL isNeedRefreshSliderBarSource;
 
 @end
 
@@ -33,6 +37,7 @@ static NSString *SectionHeaderIdentifier = @"ArticleHeader";
 
 - (instancetype)init {
     if (self = [super init]) {
+        [self setDefaultData];
         [self setupUI];
     }
     return self;
@@ -47,6 +52,22 @@ static NSString *SectionHeaderIdentifier = @"ArticleHeader";
     NSLog(@"DELLOC : %@",NSStringFromClass(self.class));
 }
 
+#pragma mark - 消息透传
+// 切换sliderBar
+- (void)switchSliderBar:(NSNumber *)senderTag {
+    self.sliderbarSelectedIndex = senderTag.integerValue;
+    [self.sliderBarView switchSliderBarSlectedItem:senderTag];
+    self.mineListView.isCompleteRequest = YES;
+}
+
+// 重新调整偏移量
+- (void)resetScrollViewContentOffset:(NSNumber *)senderTag {
+    self.sliderbarSelectedIndex = senderTag.integerValue;
+    MPMineArticleTableViewCell *cell = [self.mineListView MPBaseTableViewCellForRowAtIndex:[NSIndexPath indexPathForRow:0 inSection:(self.mineSource.count - 1)]];
+    [cell resetSubScrollViewContentOffSet:senderTag];
+    self.mineListView.isCompleteRequest = YES;
+}
+
 #pragma mark - MPBaseTableViewDelegate & MPBaseTableViewDataSource
 - (NSInteger)MPNumberOfSections {
     return self.mineSource.count;
@@ -57,7 +78,11 @@ static NSString *SectionHeaderIdentifier = @"ArticleHeader";
 }
 
 - (CGFloat)MPHeightForRowAtIndexPath:(NSIndexPath *)index {
-    return self.mineSource[index.section].cellHeight;
+    if (index.section == 0) {
+        return self.mineSource[index.section].cellHeightSource.firstObject.floatValue;
+    } else {
+        return self.mineSource[index.section].cellHeightSource[self.sliderbarSelectedIndex].floatValue;
+    }
 }
 
 - (UITableViewCell *)MPBaseTableView:(MPBaseTableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)index {
@@ -85,9 +110,10 @@ static NSString *SectionHeaderIdentifier = @"ArticleHeader";
         if (section == 0) {
             return nil;
         }
-        MPMineSliderBarView *barView = [tableview dequeueCustomReusableHeaderFooterViewWithIdentifier:SectionHeaderIdentifier];
-        [barView loadSliderBarTitleSource:self.mineSource[section].sliderTitleSource];
-        return barView;
+        self.sliderBarView = [tableview dequeueCustomReusableHeaderFooterViewWithIdentifier:SectionHeaderIdentifier];
+        self.isNeedRefreshSliderBarSource ? [self.sliderBarView loadSliderBarTitleSource:self.mineSource[section].sliderTitleSource] : nil;
+        self.isNeedRefreshSliderBarSource = NO;
+        return self.sliderBarView;
     }
     return nil;
 }
@@ -105,6 +131,11 @@ static NSString *SectionHeaderIdentifier = @"ArticleHeader";
 }
 
 #pragma mark - private methods
+- (void)setDefaultData {
+    self.sliderbarSelectedIndex = 0;
+    self.isNeedRefreshSliderBarSource = YES;
+}
+
 - (void)setupUI {
     self.mineListView = [MPBaseTableView setupListView];
     self.mineListView.tableDalegate = self;

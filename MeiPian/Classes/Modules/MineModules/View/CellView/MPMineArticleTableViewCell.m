@@ -8,11 +8,22 @@
 
 #import "MPMineArticleTableViewCell.h"
 #import "MPArticleCellViewModel.h"
+#import "MPMineArticleView.h"
+#import "MPMineWorksView.h"
+#import "MPMineCollectionView.h"
 
-@interface MPMineArticleTableViewCell ()
+@interface MPMineArticleTableViewCell ()<UIScrollViewDelegate>
 
 /** cellVM */
 @property (nonatomic,strong) MPArticleCellViewModel *cellVM;
+/** mainScrollView */
+@property (nonatomic,strong) UIScrollView *mainScrollView;
+/** articleView */
+@property (nonatomic,strong) MPMineArticleView *articleView;
+/** worksView */
+@property (nonatomic,strong) MPMineWorksView *worksView;
+/** collectionView */
+@property (nonatomic,strong) MPMineCollectionView *collectionView;
 
 @end
 
@@ -27,7 +38,12 @@
 
 - (void)layoutSubviews {
     [super layoutSubviews];
-    
+    CGFloat cellW = CGRectGetWidth(self.contentView.bounds);
+    CGFloat cellH = CGRectGetHeight(self.contentView.bounds);
+    [self.mainScrollView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsZero];
+    self.articleView.frame = CGRectMake(0, 0, cellW, cellH);
+    self.worksView.frame = CGRectMake(cellW, 0, cellW, cellH);
+    self.collectionView.frame = CGRectMake(cellW * 2, 0, cellW, cellH);
 }
 
 - (void)dealloc {
@@ -37,11 +53,55 @@
 #pragma mark - public methods
 - (void)loadMineArticleSource:(MPMineArticleModel *)articleSource {
     self.cellVM.articleModel = articleSource;
+    [self.articleView loadArticleSource:self.cellVM.articleModel.articles];
+}
+
+- (void)resetSubScrollViewContentOffSet:(NSNumber *)senderTag {
+    [self.mainScrollView setContentOffset:CGPointMake(ScreenWidth * senderTag.integerValue, 0) animated:YES];
+}
+
+#pragma mark - UIScrollViewDelegate
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    
+}
+
+/**
+*  滚动完毕就会调用（如果不是人为拖拽scrollView导致滚动完毕，才会调用这个方法）
+*/
+- (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView {
+    FLOG(@"不是人为拖拽scrollView导致滚动完毕");
+    
+}
+
+/**
+ *  滚动完毕就会调用（如果是人为拖拽scrollView导致滚动完毕，才会调用这个方法）
+ */
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    FLOG(@"人为拖拽scrollView导致滚动完毕");
+    NSInteger tag = scrollView.contentOffset.x / ScreenWidth;
+    [MPModulesMsgSend sendCumtomMethodMsg:self.superview.superview methodName:@selector(switchSliderBar:) params:[NSNumber numberWithInteger:tag]];
 }
 
 #pragma mark - private methods
 - (void)setupUI {
     self.selectionStyle = UITableViewCellSelectionStyleNone;
+    if (@available(iOS 11.0, *)) {
+        self.mainScrollView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+    } else {
+        // Fallback on earlier versions
+    }
+    self.mainScrollView = [[UIScrollView alloc] init];
+    self.mainScrollView.backgroundColor = RGB(242, 244, 249);
+    self.mainScrollView.delegate = self;
+    self.mainScrollView.pagingEnabled = YES;
+    self.mainScrollView.contentSize = CGSizeMake(ScreenWidth * 3, 0);
+    self.mainScrollView.showsHorizontalScrollIndicator = NO;
+    self.mainScrollView.showsVerticalScrollIndicator = NO;
+    self.mainScrollView.bounces = NO;
+    [self.contentView addSubview:self.mainScrollView];
+    [self.mainScrollView addSubview:self.articleView];
+    [self.mainScrollView addSubview:self.worksView];
+    [self.mainScrollView addSubview:self.collectionView];
 }
 
 #pragma mark - lazy
@@ -50,6 +110,27 @@
         _cellVM = [[MPArticleCellViewModel alloc] init];
     }
     return _cellVM;
+}
+
+- (MPMineArticleView *)articleView {
+    if (!_articleView) {
+        _articleView = [[MPMineArticleView alloc] init];
+    }
+    return _articleView;
+}
+
+- (MPMineWorksView *)worksView {
+    if (!_worksView) {
+        _worksView = [[MPMineWorksView alloc] init];
+    }
+    return _worksView;
+}
+
+- (MPMineCollectionView *)collectionView {
+    if (!_collectionView) {
+        _collectionView = [[MPMineCollectionView alloc] init];
+    }
+    return _collectionView;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

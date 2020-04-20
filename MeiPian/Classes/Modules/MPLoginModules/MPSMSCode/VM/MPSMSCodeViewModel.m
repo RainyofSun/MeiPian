@@ -45,7 +45,7 @@ static NSInteger SMSCodeTime = 60;
             break;
         case 1:
             if (self.viewStyle == SMSCodeViewStyle_PhoneLogin) {
-                [MBHUDToastManager showWaitingWithTitle:@"登录中..." inView:vc.view];
+                [MBHUDToastManager showWaitingWithTitle:@"登录中..."];
                 [self setDefaultUserModel];
                 dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                     [MBHUDToastManager hideAlert];
