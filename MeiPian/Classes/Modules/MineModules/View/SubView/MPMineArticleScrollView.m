@@ -118,7 +118,7 @@
     [self.mainScrollView addSubview:self.worksView];
     [self.mainScrollView addSubview:self.collectionView];
     
-    self.artcileViewH = 600;
+    self.artcileViewH = ScreenHeight - kNavAndTabHeight - 50;
 }
 
 #pragma mark - lazy

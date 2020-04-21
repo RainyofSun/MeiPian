@@ -111,7 +111,6 @@ static CGFloat rubberBandDistance(CGFloat offset, CGFloat dimension) {
     dispatch_async(dispatch_get_main_queue(), ^{
         // 这里放异步执行任务代码
         NSLog(@"重设contentSize SubViewFrame %f",self.articleView.artcileViewH);
-        self.articleView.frame = CGRectMake(0, self.infoView.infoViewH, CGRectGetWidth(self.bounds), self.articleView.artcileViewH);
         self.mainScrollView.contentSize = CGSizeMake(0, self.articleView.artcileViewH + self.infoView.infoViewH);
     });
 }
