@@ -72,6 +72,9 @@ static CGFloat FontNum = 17;
 }
 
 - (void)setupBtns:(NSArray *)titleSource {
+    if (self.btnSource.count) {
+        return;
+    }
     self.btnSource = [NSMutableArray arrayWithCapacity:titleSource.count];
     CGFloat btnW = CGRectGetWidth(self.bounds) * 0.8 /titleSource.count;
     for (NSInteger i = 0; i < titleSource.count; i ++) {
@@ -87,8 +90,7 @@ static CGFloat FontNum = 17;
         [self.containerView addSubview:btn];
         [self.btnSource addObject:btn];
     }
-    self.lineLayer.frame = CGRectMake(0, CGRectGetHeight(self.bounds)-2, 30, 2);
-    self.lineLayer.centerX = self.btnSource.firstObject.centerX;
+    self.lineLayer.frame = CGRectMake((btnW - 30)/2, CGRectGetHeight(self.bounds)-2, 30, 2);
 }
 
 // 重置按钮状态

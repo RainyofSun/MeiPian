@@ -58,7 +58,15 @@
     [self.articleView loadArticleSource:self.cellVM.articleModel.articles];
 }
 
+- (void)loadMineArticleHeightSource:(NSArray<NSNumber *> *)articleHeightSource {
+    self.cellVM.articleHeightSource = articleHeightSource;
+    self.artcileViewH = [self.cellVM articlrViewH:0];
+    NSLog(@"Cell0 H %f",self.artcileViewH);
+}
+
 - (void)resetSubScrollViewContentOffSet:(NSNumber *)senderTag {
+    self.artcileViewH = [self.cellVM articlrViewH:senderTag.integerValue];
+    NSLog(@"按钮切换 H %f",self.artcileViewH);
     [self.mainScrollView setContentOffset:CGPointMake(ScreenWidth * senderTag.integerValue, 0) animated:YES];
 }
 
@@ -85,6 +93,8 @@
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
     FLOG(@"人为拖拽scrollView导致滚动完毕");
     NSInteger tag = scrollView.contentOffset.x / ScreenWidth;
+    self.artcileViewH = [self.cellVM articlrViewH:tag];
+    NSLog(@"滑动切换 H %f",self.artcileViewH);
     [MPModulesMsgSend sendCumtomMethodMsg:self.superview.superview methodName:@selector(switchSliderBar:) params:[NSNumber numberWithInteger:tag]];
 }
 

@@ -378,8 +378,6 @@
 		13926DA42448515400EEC373 /* MineData.json in Resources */ = {isa = PBXBuildFile; fileRef = 13926DA32448515400EEC373 /* MineData.json */; };
 		13926DA8244852AD00EEC373 /* MPMinePageViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 13926DA7244852AD00EEC373 /* MPMinePageViewModel.m */; };
 		13926DAC244853C500EEC373 /* MPMinePageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 13926DAB244853C500EEC373 /* MPMinePageView.m */; };
-		13926DB1244857F200EEC373 /* MPMineInfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 13926DAF244857F200EEC373 /* MPMineInfoTableViewCell.m */; };
-		13926DB2244857F200EEC373 /* MPMineInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13926DB0244857F200EEC373 /* MPMineInfoTableViewCell.xib */; };
 		13B3D491242B591E0081F9D3 /* Flatten_1_1.json in Resources */ = {isa = PBXBuildFile; fileRef = 13B3D436242B591D0081F9D3 /* Flatten_1_1.json */; };
 		13B3D492242B591E0081F9D3 /* Flatten_1_0.json in Resources */ = {isa = PBXBuildFile; fileRef = 13B3D437242B591D0081F9D3 /* Flatten_1_0.json */; };
 		13B3D493242B591E0081F9D3 /* Flatten_1_6.json in Resources */ = {isa = PBXBuildFile; fileRef = 13B3D438242B591D0081F9D3 /* Flatten_1_6.json */; };
@@ -1069,9 +1067,6 @@
 		13926DA7244852AD00EEC373 /* MPMinePageViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPMinePageViewModel.m; sourceTree = "<group>"; };
 		13926DAA244853C500EEC373 /* MPMinePageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPMinePageView.h; sourceTree = "<group>"; };
 		13926DAB244853C500EEC373 /* MPMinePageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPMinePageView.m; sourceTree = "<group>"; };
-		13926DAE244857F200EEC373 /* MPMineInfoTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPMineInfoTableViewCell.h; sourceTree = "<group>"; };
-		13926DAF244857F200EEC373 /* MPMineInfoTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPMineInfoTableViewCell.m; sourceTree = "<group>"; };
-		13926DB0244857F200EEC373 /* MPMineInfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MPMineInfoTableViewCell.xib; sourceTree = "<group>"; };
 		13B3D436242B591D0081F9D3 /* Flatten_1_1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Flatten_1_1.json; sourceTree = "<group>"; };
 		13B3D437242B591D0081F9D3 /* Flatten_1_0.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Flatten_1_0.json; sourceTree = "<group>"; };
 		13B3D438242B591D0081F9D3 /* Flatten_1_6.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Flatten_1_6.json; sourceTree = "<group>"; };
@@ -3119,9 +3114,6 @@
 				131E8E1F244D4C84005C8909 /* CollectionView */,
 				131E8E1E244D4C74005C8909 /* WorksView */,
 				131E8E1D244D4C64005C8909 /* ArticleView */,
-				13926DAE244857F200EEC373 /* MPMineInfoTableViewCell.h */,
-				13926DAF244857F200EEC373 /* MPMineInfoTableViewCell.m */,
-				13926DB0244857F200EEC373 /* MPMineInfoTableViewCell.xib */,
 				1318043C24496730007847FE /* MPMineArticleScrollView.h */,
 				1318043D24496730007847FE /* MPMineArticleScrollView.m */,
 			);
@@ -3911,7 +3903,6 @@
 				1312C7A1242B3B92005887B6 /* JingXuan7.json in Resources */,
 				131B44CF24161AD400A99F73 /* full_praise.json in Resources */,
 				13B3D4D5242B591E0081F9D3 /* Flatten_4_2.json in Resources */,
-				13926DB2244857F200EEC373 /* MPMineInfoTableViewCell.xib in Resources */,
 				1312C7F5242B41B6005887B6 /* LvXing2.json in Resources */,
 				1313D57B242E0B5F0054A52D /* MPInterestingPeopleTableViewCell.xib in Resources */,
 				131B44B924161AD400A99F73 /* unpraiseSmallData.json in Resources */,
@@ -4208,7 +4199,6 @@
 				133E71002418E5B800A4C3E4 /* TelephoneCodeView.m in Sources */,
 				131745782429B3650062876F /* XLPageSegmentedTitleView.m in Sources */,
 				13161EFB2420CAAF00A1A373 /* MPBaseCustomTabBar.m in Sources */,
-				13926DB1244857F200EEC373 /* MPMineInfoTableViewCell.m in Sources */,
 				131673EF2431E62B001FAF4C /* MPRecommadAllConfigModel.m in Sources */,
 				131DF93E24347A16006F25C3 /* MPJingXuanViewModel.m in Sources */,
 				1319E3F0243D84090044F36F /* MPCircleRecommandConfigModel.m in Sources */,

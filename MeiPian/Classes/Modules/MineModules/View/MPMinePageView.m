@@ -70,6 +70,7 @@ static CGFloat rubberBandDistance(CGFloat offset, CGFloat dimension) {
     if (self = [super init]) {
         [self setDefaultData];
         [self setupUI];
+        [self addHeightObserver];
     }
     return self;
 }
@@ -83,6 +84,7 @@ static CGFloat rubberBandDistance(CGFloat offset, CGFloat dimension) {
 
 - (void)dealloc {
     [self.animator removeAllBehaviors];
+    [self removeHeightObserver];
     NSLog(@"DELLOC : %@",NSStringFromClass(self.class));
 }
 
@@ -102,6 +104,16 @@ static CGFloat rubberBandDistance(CGFloat offset, CGFloat dimension) {
 // 下拉刷新
 - (void)loadMineData {
     [self requestMineInfo];
+}
+
+#pragma mark - KVC
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
+    dispatch_async(dispatch_get_main_queue(), ^{
+        // 这里放异步执行任务代码
+        NSLog(@"重设contentSize SubViewFrame %f",self.articleView.artcileViewH);
+        self.articleView.frame = CGRectMake(0, self.infoView.infoViewH, CGRectGetWidth(self.bounds), self.articleView.artcileViewH);
+        self.mainScrollView.contentSize = CGSizeMake(0, self.articleView.artcileViewH + self.infoView.infoViewH);
+    });
 }
 
 - (void)panGestureRecognizerAction:(UIPanGestureRecognizer *)recognizer {
@@ -187,7 +199,7 @@ static CGFloat rubberBandDistance(CGFloat offset, CGFloat dimension) {
     } else {
         // Fallback on earlier versions
     }
-    self.mainScrollView.contentSize = CGSizeMake(0, CGRectGetHeight(self.bounds) + self.infoView.infoViewH);
+    self.mainScrollView.contentSize = CGSizeMake(0, self.articleView.artcileViewH + self.infoView.infoViewH);
     self.mainScrollView.bounces = NO;
     self.mainScrollView.showsVerticalScrollIndicator = NO;
     self.mainScrollView.showsHorizontalScrollIndicator = NO;
@@ -206,6 +218,14 @@ static CGFloat rubberBandDistance(CGFloat offset, CGFloat dimension) {
     self.animator.delegate = self;
     self.dynamicItem = [[MPDynamicItem alloc] init];
     [self setRefreshHeader];
+}
+
+- (void)addHeightObserver {
+    [self.articleView MP_AddLEDObserver:self forKeyPath:@"artcileViewH" options:NSKeyValueObservingOptionNew context:nil];
+}
+
+- (void)removeHeightObserver {
+    [self.articleView MP_RemoveObserver:self forKeyPath:@"artcileViewH"];
 }
 
 - (void)setRefreshHeader {
@@ -333,6 +353,7 @@ static CGFloat rubberBandDistance(CGFloat offset, CGFloat dimension) {
         [weakSelf.infoView loadMineInfoSource:weakSelf.mineSource.firstObject.infoModel];
         [weakSelf.infoView loadSliderBarSource:weakSelf.mineSource.firstObject.sliderTitleSource];
         [weakSelf.articleView loadMineArticleSource:weakSelf.mineSource.lastObject.articleModel];
+        [weakSelf.articleView loadMineArticleHeightSource:weakSelf.mineSource.lastObject.cellHeightSource];
         [weakSelf.mainScrollView.mj_header endRefreshing];
     }];
 }

@@ -14,4 +14,9 @@
     NSLog(@"DELLOC : %@",NSStringFromClass(self.class));
 }
 
+#pragma mark - public methods
+- (CGFloat)articlrViewH:(NSInteger)senderTag {
+    return self.articleHeightSource[senderTag].floatValue;
+}
+
 @end

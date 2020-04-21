@@ -15,6 +15,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 /** articleModel */
 @property (nonatomic,strong) MPMineArticleModel *articleModel;
+/** articleHeightSource */
+@property (nonatomic,strong) NSArray <NSNumber *>*articleHeightSource;
+
+- (CGFloat)articlrViewH:(NSInteger)senderTag;
 
 @end
 
