@@ -104,12 +104,12 @@
     
     self.editInfoBtn.layer.cornerRadius = CGRectGetHeight(self.editInfoBtn.bounds)/2;
     self.editInfoBtn.clipsToBounds = YES;
-    self.editInfoBtn.layer.borderColor = HexColor(0xEEEEEE).CGColor;
+    self.editInfoBtn.layer.borderColor = RGB(223, 223, 223).CGColor;
     self.editInfoBtn.layer.borderWidth = 1.f;
     
     self.mineShareBtn.layer.cornerRadius = CGRectGetWidth(self.mineShareBtn.bounds)/2;
     self.mineShareBtn.clipsToBounds = YES;
-    self.mineShareBtn.layer.borderColor = HexColor(0xEEEEEE).CGColor;
+    self.mineShareBtn.layer.borderColor = RGB(223, 223, 223).CGColor;
     self.mineShareBtn.layer.borderWidth = 1.f;
 
     self.sliderBarView = [[MPMineSliderBarView alloc] init];

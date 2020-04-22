@@ -12,6 +12,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface MPMineWorksView : UIView
 
+/** worksListView */
+@property (nonatomic,strong) MPBaseTableView *worksListView;
+
 @end
 
 NS_ASSUME_NONNULL_END

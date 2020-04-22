@@ -18,6 +18,8 @@ static CGFloat FontNum = 17;
 @property (nonatomic,strong) NSMutableArray <UIButton *>*btnSource;
 /** lineLayer */
 @property (nonatomic,strong) CALayer *lineLayer;
+/** lineLayer */
+@property (nonatomic,strong) CALayer *lineLayer1;
 
 @end
 
@@ -29,7 +31,6 @@ static CGFloat FontNum = 17;
     }
     return self;
 }
-
 
 - (void)layoutSubviews {
     [super layoutSubviews];
@@ -66,9 +67,10 @@ static CGFloat FontNum = 17;
 #pragma mark - private methods
 - (void)setupUI {
     self.lineLayer.backgroundColor = MAIN_BLUE_COLOR.CGColor;
-    
+    self.lineLayer1.backgroundColor = RGB(239, 241, 244).CGColor;
     [self addSubview:self.containerView];
     [self.containerView.layer addSublayer:self.lineLayer];
+    [self.layer addSublayer:self.lineLayer1];
 }
 
 - (void)setupBtns:(NSArray *)titleSource {
@@ -91,6 +93,7 @@ static CGFloat FontNum = 17;
         [self.btnSource addObject:btn];
     }
     self.lineLayer.frame = CGRectMake((btnW - 30)/2, CGRectGetHeight(self.bounds)-2, 30, 2);
+    self.lineLayer1.frame = CGRectMake(0, CGRectGetHeight(self.bounds)-1, CGRectGetWidth(self.bounds), 1);
 }
 
 // 重置按钮状态
@@ -117,6 +120,13 @@ static CGFloat FontNum = 17;
         _lineLayer = [CALayer layer];
     }
     return _lineLayer;
+}
+
+- (CALayer *)lineLayer1 {
+    if (!_lineLayer1) {
+        _lineLayer1 = [CALayer layer];
+    }
+    return _lineLayer1;
 }
 
 @end

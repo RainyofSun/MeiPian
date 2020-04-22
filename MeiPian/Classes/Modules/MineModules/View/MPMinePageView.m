@@ -181,8 +181,6 @@ static CGFloat rubberBandDistance(CGFloat offset, CGFloat dimension) {
 #pragma mark - UIDynamicAnimatorDelegate
 - (void)dynamicAnimatorDidPause:(UIDynamicAnimator *)animator {
     self.isBegingRefresh = NO;
-    MPBaseTableView *subView = [self.articleView getArticleCellTableView];
-    [subView customSliderBarDisAlphaAnimation];
 }
 
 #pragma mark - private methods
@@ -204,6 +202,7 @@ static CGFloat rubberBandDistance(CGFloat offset, CGFloat dimension) {
     self.mainScrollView.showsHorizontalScrollIndicator = NO;
     self.mainScrollView.backgroundColor = [UIColor clearColor];
     self.mainScrollView.scrollEnabled = NO;
+    self.mainScrollView.delegate = self;
     [self addSubview:self.mainScrollView];
     
     [self.mainScrollView addSubview:self.infoView];
@@ -238,7 +237,6 @@ static CGFloat rubberBandDistance(CGFloat offset, CGFloat dimension) {
     // 判断是MainScrollView滚动还是子ScrollView滚动,detal为手指移动的距离
     MPBaseTableView *subView = [self.articleView getArticleCellTableView];
     if (self.mainScrollView.contentOffset.y >= self.infoView.TopDistance) {
-        [subView customSliderBarShowAlphaAnimation];
         CGFloat offsetY = subView.contentOffset.y - detal;
         if (offsetY < 0) {
             // 当子ScrollView的contentOffSet小于0之后就b不再移动子ScrollView,而要移动mainScrollView
@@ -264,6 +262,7 @@ static CGFloat rubberBandDistance(CGFloat offset, CGFloat dimension) {
         }
         NSLog(@"MainScrollView %f",mainOffsetY);
         self.mainScrollView.contentOffset = CGPointMake(0, mainOffsetY);
+        [MPModulesMsgSend sendCumtomMethodMsg:[self nearsetViewController] methodName:@selector(showOrHideNavTitleView:) params:[NSNumber numberWithFloat:mainOffsetY]];
     }
     
     BOOL outsideFrame = [self outsideFrame];
@@ -354,6 +353,10 @@ static CGFloat rubberBandDistance(CGFloat offset, CGFloat dimension) {
         [weakSelf.articleView loadMineArticleSource:weakSelf.mineSource.lastObject.articleModel];
         [weakSelf.articleView loadMineArticleHeightSource:weakSelf.mineSource.lastObject.cellHeightSource];
         [weakSelf.mainScrollView.mj_header endRefreshing];
+        [MPModulesMsgSend sendCumtomMethodMsg:[weakSelf nearsetViewController] methodName:@selector(reloadNavTitleView:) params:@{
+            @"head_img_url":weakSelf.mineSource.firstObject.infoModel.head_img_url,
+            @"nickname":weakSelf.mineSource.firstObject.infoModel.nickname
+        }];
     }];
 }
 

@@ -16,6 +16,10 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)loadMinePageMainView:(UIViewController *)vc;
 /// 创建NavItem
 - (void)setMineViewNavItem:(UIViewController *)vc;
+/// 创建NavTitle
+- (void)setMineNavTitleView:(UIViewController *)vc withUserInfo:(NSDictionary *)userInfo;
+/// 显示/隐藏NavTitleView
+- (void)controlNavTitleViewShowOrHide:(NSNumber *)contentOffsetY;
 
 @end
 

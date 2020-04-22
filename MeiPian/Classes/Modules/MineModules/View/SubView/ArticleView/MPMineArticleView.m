@@ -49,7 +49,7 @@ static NSString *ArticleCellSubCell   = @"ArticleViewSubCell";
 }
 
 - (CGFloat)MPHeightForRowAtIndexPath:(NSIndexPath *)index {
-    return 300;
+    return 290;
 }
 
 - (UITableViewCell *)MPBaseTableView:(MPBaseTableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)index {

@@ -65,7 +65,7 @@
     model0.sliderTitleSource = @[[NSString stringWithFormat:@"作品 %lu",(unsigned long)self.articleModel.articles.count],@"作品集 0",@"收藏 0"];
     
     MPMineConfigModel *model1 = [[MPMineConfigModel alloc] init];
-    model1.cellHeightSource = @[@(300 * self.articleModel.articles.count),@(600),@(600)];
+    model1.cellHeightSource = @[@(290 * self.articleModel.articles.count),@(600),@(600)];
     model1.articleModel = self.articleModel;
 
     self.configSource = [NSMutableArray arrayWithObjects:model0,model1, nil];

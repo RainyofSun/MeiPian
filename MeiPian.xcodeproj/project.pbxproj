@@ -88,6 +88,8 @@
 		1313D57B242E0B5F0054A52D /* MPInterestingPeopleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1313D579242E0B5F0054A52D /* MPInterestingPeopleTableViewCell.xib */; };
 		131424DE24455E8600D2F99E /* MPMessageTypeBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 131424DD24455E8600D2F99E /* MPMessageTypeBtn.m */; };
 		131424E92445671600D2F99E /* MPPushTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 131424E72445671600D2F99E /* MPPushTableViewCell.m */; };
+		13151DDA244FED53007BE058 /* MPMineNavTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 13151DD9244FED53007BE058 /* MPMineNavTitleView.m */; };
+		13151DE4245053A7007BE058 /* MPMineCollectionSliderBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 13151DE3245053A7007BE058 /* MPMineCollectionSliderBarView.m */; };
 		13153DDB243C0CF200C70A9F /* BannerLoop1.json in Resources */ = {isa = PBXBuildFile; fileRef = 13153DD9243C0CF200C70A9F /* BannerLoop1.json */; };
 		13153DDC243C0CF200C70A9F /* BannerLoop2.json in Resources */ = {isa = PBXBuildFile; fileRef = 13153DDA243C0CF200C70A9F /* BannerLoop2.json */; };
 		13153DE0243C8DB400C70A9F /* MPCirclePageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 13153DDF243C8DB400C70A9F /* MPCirclePageView.m */; };
@@ -606,6 +608,10 @@
 		131424DD24455E8600D2F99E /* MPMessageTypeBtn.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPMessageTypeBtn.m; sourceTree = "<group>"; };
 		131424E72445671600D2F99E /* MPPushTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPPushTableViewCell.m; sourceTree = "<group>"; };
 		131424E82445671600D2F99E /* MPPushTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPPushTableViewCell.h; sourceTree = "<group>"; };
+		13151DD8244FED53007BE058 /* MPMineNavTitleView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPMineNavTitleView.h; sourceTree = "<group>"; };
+		13151DD9244FED53007BE058 /* MPMineNavTitleView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPMineNavTitleView.m; sourceTree = "<group>"; };
+		13151DE2245053A7007BE058 /* MPMineCollectionSliderBarView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPMineCollectionSliderBarView.h; sourceTree = "<group>"; };
+		13151DE3245053A7007BE058 /* MPMineCollectionSliderBarView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPMineCollectionSliderBarView.m; sourceTree = "<group>"; };
 		13153DD9243C0CF200C70A9F /* BannerLoop1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = BannerLoop1.json; sourceTree = "<group>"; };
 		13153DDA243C0CF200C70A9F /* BannerLoop2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = BannerLoop2.json; sourceTree = "<group>"; };
 		13153DDE243C8DB400C70A9F /* MPCirclePageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPCirclePageView.h; sourceTree = "<group>"; };
@@ -2884,6 +2890,8 @@
 			children = (
 				1318044124498B8B007847FE /* MPMineSliderBarView.h */,
 				1318044224498B8B007847FE /* MPMineSliderBarView.m */,
+				13151DE2245053A7007BE058 /* MPMineCollectionSliderBarView.h */,
+				13151DE3245053A7007BE058 /* MPMineCollectionSliderBarView.m */,
 			);
 			path = SliderBarView;
 			sourceTree = "<group>";
@@ -3102,6 +3110,8 @@
 				13926DAD244857D300EEC373 /* SubView */,
 				13926DAA244853C500EEC373 /* MPMinePageView.h */,
 				13926DAB244853C500EEC373 /* MPMinePageView.m */,
+				13151DD8244FED53007BE058 /* MPMineNavTitleView.h */,
+				13151DD9244FED53007BE058 /* MPMineNavTitleView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -4100,6 +4110,7 @@
 				131673E12431DEA4001FAF4C /* MPRecommandAllArticleModel.m in Sources */,
 				131810C0241775F2004828A3 /* EGLSGlobalGCDTimer.m in Sources */,
 				1318044C244997E9007847FE /* MPGiftsModel.m in Sources */,
+				13151DE4245053A7007BE058 /* MPMineCollectionSliderBarView.m in Sources */,
 				13DBCF412410B15500D99014 /* NSString+JSEscape.m in Sources */,
 				13DBCF422410B15500D99014 /* UIControl+EventInterval.m in Sources */,
 				1313D574242DE7040054A52D /* MPAttentionModelConfig.m in Sources */,
@@ -4138,6 +4149,7 @@
 				13DBCF0C2410B14900D99014 /* MBHUDToastManager.m in Sources */,
 				13DBCF462410B15500D99014 /* UIView+Radius.m in Sources */,
 				13DBCF3E2410B15500D99014 /* UIViewController+Navigation.m in Sources */,
+				13151DDA244FED53007BE058 /* MPMineNavTitleView.m in Sources */,
 				133E70D92418BA9400A4C3E4 /* MPAccountLoginViewController.m in Sources */,
 				131B4552241641BD00A99F73 /* MPUserInfoModel.m in Sources */,
 				1319E3E0243D78C60044F36F /* MPRecommandCollectionViewCell.m in Sources */,

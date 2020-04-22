@@ -18,17 +18,17 @@
                     <rect key="frame" x="-8" y="0.0" width="430" height="270"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IrV-jT-8Ex">
-                            <rect key="frame" x="15" y="10" width="80" height="80"/>
+                            <rect key="frame" x="25" y="10" width="70" height="70"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="IrV-jT-8Ex" secondAttribute="height" multiplier="1:1" id="2gh-84-VhE"/>
-                                <constraint firstAttribute="width" constant="80" id="cQj-Mc-dUQ"/>
+                                <constraint firstAttribute="width" constant="70" id="cQj-Mc-dUQ"/>
                             </constraints>
                             <connections>
                                 <action selector="touchUserImgBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="dXm-j3-q3Q"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8UO-R7-srr">
-                            <rect key="frame" x="380.5" y="8" width="34.5" height="34.5"/>
+                            <rect key="frame" x="382" y="10" width="33" height="33"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="8UO-R7-srr" secondAttribute="height" multiplier="5:5" id="5Jx-ar-cwX"/>
                             </constraints>
@@ -38,10 +38,10 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Veq-4D-l2n">
-                            <rect key="frame" x="230.5" y="10" width="140" height="30"/>
+                            <rect key="frame" x="232" y="10" width="140" height="33"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="140" id="TH7-Zb-v4y"/>
-                                <constraint firstAttribute="height" constant="30" id="e4o-Wa-6cs"/>
+                                <constraint firstAttribute="height" constant="33" id="e4o-Wa-6cs"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                             <state key="normal" title="编辑资料">
@@ -52,7 +52,7 @@
                             </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Eric liu" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HnL-zE-mhZ">
-                            <rect key="frame" x="15" y="105" width="80" height="26.5"/>
+                            <rect key="frame" x="25" y="105" width="70" height="26.5"/>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -65,7 +65,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SPn-8R-QbZ">
-                            <rect key="frame" x="15" y="141.5" width="123" height="30"/>
+                            <rect key="frame" x="25" y="141.5" width="123" height="30"/>
                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                             <state key="normal" title="点击设置个性签名">
                                 <color key="titleColor" red="0.61960784310000006" green="0.61568627450000002" blue="0.61568627450000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -75,7 +75,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pWC-mX-xvv">
-                            <rect key="frame" x="15" y="181.5" width="31" height="20"/>
+                            <rect key="frame" x="25" y="181.5" width="31" height="20"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="20" id="bKF-Zk-tMm"/>
                             </constraints>
@@ -88,7 +88,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WT8-kJ-ydl">
-                            <rect key="frame" x="97" y="181.5" width="31" height="20"/>
+                            <rect key="frame" x="107" y="181.5" width="31" height="20"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="20" id="1hx-1p-APq"/>
                             </constraints>
@@ -101,7 +101,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bsq-Fi-VhV">
-                            <rect key="frame" x="56" y="181.5" width="31" height="20"/>
+                            <rect key="frame" x="66" y="181.5" width="31" height="20"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="20" id="K83-Ii-peJ"/>
                             </constraints>
@@ -124,16 +124,16 @@
                         <constraint firstItem="pWC-mX-xvv" firstAttribute="leading" secondItem="SPn-8R-QbZ" secondAttribute="leading" id="GvB-s6-4W2"/>
                         <constraint firstItem="BMv-2B-NV3" firstAttribute="leading" secondItem="HnL-zE-mhZ" secondAttribute="trailing" constant="8" id="Mjf-rO-EWb"/>
                         <constraint firstItem="8UO-R7-srr" firstAttribute="centerY" secondItem="Veq-4D-l2n" secondAttribute="centerY" id="PaJ-eC-iV8"/>
-                        <constraint firstItem="HnL-zE-mhZ" firstAttribute="top" secondItem="IrV-jT-8Ex" secondAttribute="bottom" constant="15" id="VpU-3i-y2r"/>
+                        <constraint firstItem="HnL-zE-mhZ" firstAttribute="top" secondItem="IrV-jT-8Ex" secondAttribute="bottom" constant="25" id="VpU-3i-y2r"/>
                         <constraint firstItem="SPn-8R-QbZ" firstAttribute="top" secondItem="HnL-zE-mhZ" secondAttribute="bottom" constant="10" id="a1s-zl-Qcg"/>
                         <constraint firstItem="WT8-kJ-ydl" firstAttribute="leading" secondItem="bsq-Fi-VhV" secondAttribute="trailing" constant="10" id="aXX-Ty-rSm"/>
                         <constraint firstItem="WT8-kJ-ydl" firstAttribute="height" secondItem="bsq-Fi-VhV" secondAttribute="height" id="eaq-Vx-ySs"/>
                         <constraint firstItem="bsq-Fi-VhV" firstAttribute="height" secondItem="pWC-mX-xvv" secondAttribute="height" id="esu-bR-hMp"/>
                         <constraint firstItem="HnL-zE-mhZ" firstAttribute="width" secondItem="IrV-jT-8Ex" secondAttribute="width" id="etg-o8-hJ5"/>
                         <constraint firstItem="HnL-zE-mhZ" firstAttribute="centerX" secondItem="IrV-jT-8Ex" secondAttribute="centerX" id="fmv-gT-kNA"/>
-                        <constraint firstItem="IrV-jT-8Ex" firstAttribute="leading" secondItem="eh5-5r-WUD" secondAttribute="leading" constant="15" id="hW4-Ca-cgv"/>
+                        <constraint firstItem="IrV-jT-8Ex" firstAttribute="leading" secondItem="eh5-5r-WUD" secondAttribute="leading" constant="25" id="hW4-Ca-cgv"/>
                         <constraint firstItem="Veq-4D-l2n" firstAttribute="top" secondItem="IrV-jT-8Ex" secondAttribute="top" id="inK-iJ-3bh"/>
-                        <constraint firstItem="8UO-R7-srr" firstAttribute="height" secondItem="Veq-4D-l2n" secondAttribute="height" multiplier="1.15" id="q5U-rg-ebJ"/>
+                        <constraint firstItem="8UO-R7-srr" firstAttribute="height" secondItem="Veq-4D-l2n" secondAttribute="height" id="q5U-rg-ebJ"/>
                         <constraint firstItem="IrV-jT-8Ex" firstAttribute="top" secondItem="eh5-5r-WUD" secondAttribute="top" constant="10" id="rbt-g9-tPC"/>
                         <constraint firstItem="bsq-Fi-VhV" firstAttribute="leading" secondItem="pWC-mX-xvv" secondAttribute="trailing" constant="10" id="rkZ-Vs-BzZ"/>
                         <constraint firstItem="pWC-mX-xvv" firstAttribute="top" secondItem="SPn-8R-QbZ" secondAttribute="bottom" constant="10" id="tht-l5-axe"/>

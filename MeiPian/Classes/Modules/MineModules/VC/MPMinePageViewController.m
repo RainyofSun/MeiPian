@@ -65,6 +65,16 @@
     NSLog(@"阅读我文章的次数");
 }
 
+// 创建NavTitleView
+- (void)reloadNavTitleView:(NSDictionary *)userInfo {
+    [self.mineVM setMineNavTitleView:self withUserInfo:userInfo];
+}
+
+// 控制Nav显示或者隐藏
+- (void)showOrHideNavTitleView:(NSNumber *)contentOffSetY {
+    [self.mineVM controlNavTitleViewShowOrHide:contentOffSetY];
+}
+
 #pragma mark - lazy
 - (MPMinePageViewModel *)mineVM {
     if (!_mineVM) {

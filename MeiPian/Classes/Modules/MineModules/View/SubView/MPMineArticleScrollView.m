@@ -26,6 +26,8 @@
 @property (nonatomic,strong) MPMineCollectionView *collectionView;
 /** artcileViewH */
 @property (nonatomic,readwrite) CGFloat artcileViewH;
+/** selectedIndex */
+@property (nonatomic,assign) NSInteger selectedIndex;
 
 @end
 
@@ -61,17 +63,25 @@
 - (void)loadMineArticleHeightSource:(NSArray<NSNumber *> *)articleHeightSource {
     self.cellVM.articleHeightSource = articleHeightSource;
     self.artcileViewH = [self.cellVM articlrViewH:0];
-    NSLog(@"Cell0 H %f",self.artcileViewH);
 }
 
 - (void)resetSubScrollViewContentOffSet:(NSNumber *)senderTag {
+    self.selectedIndex = senderTag.integerValue;
     self.artcileViewH = [self.cellVM articlrViewH:senderTag.integerValue];
-    NSLog(@"按钮切换 H %f",self.artcileViewH);
     [self.mainScrollView setContentOffset:CGPointMake(ScreenWidth * senderTag.integerValue, 0) animated:YES];
 }
 
 - (MPBaseTableView *)getArticleCellTableView {
-    return self.articleView.articleListView;
+    switch (self.selectedIndex) {
+        case 0:
+            return self.articleView.articleListView;
+        case 1:
+            return self.worksView.worksListView;
+        case 2:
+            return nil;
+        default:
+            return nil;
+    }
 }
 
 #pragma mark - UIScrollViewDelegate
@@ -92,10 +102,9 @@
  */
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
     FLOG(@"人为拖拽scrollView导致滚动完毕");
-    NSInteger tag = scrollView.contentOffset.x / ScreenWidth;
-    self.artcileViewH = [self.cellVM articlrViewH:tag];
-    NSLog(@"滑动切换 H %f",self.artcileViewH);
-    [MPModulesMsgSend sendCumtomMethodMsg:self.superview.superview methodName:@selector(switchSliderBar:) params:[NSNumber numberWithInteger:tag]];
+    self.selectedIndex = scrollView.contentOffset.x / ScreenWidth;
+    self.artcileViewH = [self.cellVM articlrViewH:self.selectedIndex];
+    [MPModulesMsgSend sendCumtomMethodMsg:self.superview.superview methodName:@selector(switchSliderBar:) params:[NSNumber numberWithInteger:self.selectedIndex]];
 }
 
 #pragma mark - private methods
@@ -119,6 +128,7 @@
     [self.mainScrollView addSubview:self.collectionView];
     
     self.artcileViewH = ScreenHeight - kNavAndTabHeight - 50;
+    self.selectedIndex = 0;
 }
 
 #pragma mark - lazy
