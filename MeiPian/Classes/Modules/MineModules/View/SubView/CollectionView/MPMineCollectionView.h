@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface MPMineCollectionView : UIView
 
+- (MPBaseTableView *)mineCollectionSubTabView;
+
 @end
 
 NS_ASSUME_NONNULL_END

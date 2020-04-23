@@ -45,6 +45,7 @@
     [self resetItemStatus];
     sender.selected = !sender.selected;
     sender.backgroundColor = RGB(242, 244, 246);
+    [MPModulesMsgSend sendCumtomMethodMsg:self.superview methodName:@selector(resetCollectionScrollViewContentOffset:) params:[NSNumber numberWithInteger:sender.tag]];
 }
 
 #pragma mark - private methods
@@ -77,6 +78,7 @@
         }
         item.layer.cornerRadius = itemH/2.3;
         item.clipsToBounds = YES;
+        item.tag = i;
         [self addSubview:item];
         [self.btnSource addObject:item];
     }

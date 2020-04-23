@@ -46,8 +46,6 @@
     CGFloat cellH = CGRectGetHeight(self.bounds);
     [self.mainScrollView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsZero];
     self.articleView.frame = CGRectMake(0, 0, cellW, cellH);
-    self.worksView.frame = CGRectMake(cellW, 0, cellW, cellH);
-    self.collectionView.frame = CGRectMake(cellW * 2, 0, cellW, cellH);
 }
 
 - (void)dealloc {
@@ -68,6 +66,24 @@
 - (void)resetSubScrollViewContentOffSet:(NSNumber *)senderTag {
     self.selectedIndex = senderTag.integerValue;
     self.artcileViewH = [self.cellVM articlrViewH:senderTag.integerValue];
+    switch (senderTag.integerValue) {
+        case 0:
+            break;
+        case 1:
+            if (!_worksView) {
+                [self.mainScrollView addSubview:self.worksView];
+                self.worksView.frame = CGRectMake(CGRectGetWidth(self.bounds) * senderTag.integerValue, 0, CGRectGetWidth(self.bounds), CGRectGetHeight(self.bounds));
+            }
+            break;
+        case 2:
+            if (!_collectionView) {
+                [self.mainScrollView addSubview:self.collectionView];
+                self.collectionView.frame = CGRectMake(CGRectGetWidth(self.bounds) * senderTag.integerValue, 0, CGRectGetWidth(self.bounds), CGRectGetHeight(self.bounds));
+            }
+            break;
+        default:
+            break;
+    }
     [self.mainScrollView setContentOffset:CGPointMake(ScreenWidth * senderTag.integerValue, 0) animated:YES];
 }
 
@@ -78,7 +94,7 @@
         case 1:
             return self.worksView.worksListView;
         case 2:
-            return nil;
+            return [self.collectionView mineCollectionSubTabView];
         default:
             return nil;
     }
@@ -124,8 +140,6 @@
     self.mainScrollView.bounces = NO;
     [self addSubview:self.mainScrollView];
     [self.mainScrollView addSubview:self.articleView];
-    [self.mainScrollView addSubview:self.worksView];
-    [self.mainScrollView addSubview:self.collectionView];
     
     self.artcileViewH = ScreenHeight - kNavAndTabHeight - 50;
     self.selectedIndex = 0;
