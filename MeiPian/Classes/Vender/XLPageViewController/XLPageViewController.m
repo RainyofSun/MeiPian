@@ -382,11 +382,17 @@ typedef void(^XLContentScollBlock)(BOOL scrollEnabled);
     return [self.titleView dequeueReusableCellWithIdentifier:identifier forIndex:index];
 }
 
-- (UIViewController *)cellVCForRowAtIndex:(NSInteger)index {
-    if (index >= self.shownVCArr.count) {
-        return nil;
+
+- (__kindof UIViewController *)cellVCForRowAtIndex:(NSInteger)index {
+    NSString *targetTitle = [self titleForIndex:index];
+    UIViewController *targetVC = nil;
+    for (UIViewController *vc in self.shownVCArr) {
+        if ([vc.xl_title isEqualToString:targetTitle]) {
+            targetVC = vc;
+            break;
+        }
     }
-    return [self.shownVCArr objectAtIndex:index];
+    return targetVC;
 }
 
 #pragma mark -
