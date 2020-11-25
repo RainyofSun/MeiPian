@@ -7,6 +7,7 @@
 //
 
 #import "MPBaseTabBarCustomView.h"
+#import "MPBaseTabBarItem.h"
 
 @interface MPBaseTabBarCustomView ()
 
@@ -17,7 +18,7 @@
 /** selectedImgs */
 @property (nonatomic,strong) NSArray <NSString *>*selectedImgs;
 /** itemSource */
-@property (nonatomic,strong) NSMutableArray <UIButton *>*itemSource;
+@property (nonatomic,strong) NSMutableArray <MPBaseTabBarItem *>*itemSource;
 /** normalColor */
 @property (nonatomic,strong) UIColor *normalColor;
 /** selectedColor */
@@ -58,14 +59,22 @@
     self.selectedColor = selectedColor;
 }
 
-- (void)touchCustomTabBarItem:(UIButton *)sender {
-    if (sender.selected) {
-        return;
-    }
-    if (sender.tag != self.emptyTitleIndex) {
+- (void)setTabBarItemBedgeNum:(NSInteger)bedgeNum itemSelectedIndex:(NSInteger)selectedIndex {
+    self.itemSource[selectedIndex].bedgeNum = bedgeNum;
+}
+
+- (void)changeTabBarItemsStatus:(NSInteger)senderTag {
+    MPBaseTabBarItem *sender = self.itemSource[senderTag];
+    if (senderTag != self.emptyTitleIndex) {
         [self resetItemStatus];
         [self switchItemAnimationScale:sender.titleLabel];
         sender.selected = !sender.selected;
+    }
+}
+
+- (void)touchCustomTabBarItem:(UIButton *)sender {
+    if (sender.selected) {
+        return;
     }
     if (self.mpTabBarrDelegate != nil && [self.mpTabBarrDelegate respondsToSelector:@selector(touchMPTabBarItem:)]) {
         [self.mpTabBarrDelegate touchMPTabBarItem:sender.tag];
@@ -79,8 +88,7 @@
     CGFloat itemW = CGRectGetWidth(self.bounds)/_titles.count;
     CGFloat itemH = CGRectGetHeight(self.bounds);
     for (NSInteger i = 0; i < _titles.count; i ++) {
-        UIButton *item = [UIButton buttonWithType:UIButtonTypeCustom];
-        item.backgroundColor = [UIColor whiteColor];
+        MPBaseTabBarItem *item = [MPBaseTabBarItem buttonWithType:UIButtonTypeCustom];
         item.tag = i;
         item.frame = CGRectMake(itemW * i, 0, itemW, itemH);
         item.selected = (i == 0);

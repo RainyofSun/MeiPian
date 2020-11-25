@@ -65,6 +65,10 @@ static NSString *const cellID = @"cellID";
     _heightProportion = 0.8;
 }
 
+- (void)dealloc {
+    NSLog(@"DELLOC : %@",NSStringFromClass(self.class));
+}
+
 - (void)setImageURLStringsGroup:(NSArray<NSString *> *)imageURLStringsGroup {
     _imageURLStringsGroup = imageURLStringsGroup;
     self.imgArr = [imageURLStringsGroup mutableCopy];
@@ -75,12 +79,26 @@ static NSString *const cellID = @"cellID";
 {
     return ([UIScreen mainScreen].bounds.size.width - self.itemWidth)/2;
 }
+
+- (void)setPageControlStyle {
+    _pageControl.currentColor = [UIColor whiteColor];
+    _pageControl.otherColor = [UIColor colorWithWhite:1 alpha:0.6];
+    //设置非选中点的宽度是高度的倍数(设置长条形状)
+    _pageControl.otherMultiple = 1;
+    //设置选中点的宽度是高度的倍数(设置长条形状)
+    _pageControl.currentMultiple = 1;
+    _pageControl.controlSpacing = 5;
+    _pageControl.controlSize = 6;
+    _pageControl.horizontalType = PageControlHorizontalRight;
+}
+
 -(void)layoutSubviews
 {
     [super layoutSubviews];
     
     self.collectionView.frame = CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height * self.heightProportion);
-    self.pageControl.frame = CGRectMake(0, CGRectGetMaxY(self.collectionView.bounds), self.bounds.size.width, self.bounds.size.height - CGRectGetMaxY(self.collectionView.bounds));
+    self.pageControl.frame = CGRectMake(0, self.bounds.size.height * 0.85, self.bounds.size.width, self.bounds.size.height * 0.15);
+    [self setPageControlStyle];
     self.flowLayout.itemSize = CGSizeMake(_itemWidth, self.collectionView.bounds.size.height);
     self.flowLayout.minimumLineSpacing = self.itemSpace;
     if (_imgArr.count == 1 || _imgArr.count == 2) {
@@ -281,7 +299,6 @@ static NSString *const cellID = @"cellID";
         bgImageView.contentMode = UIViewContentModeScaleToFill;
         bgImageView.layer.cornerRadius = self.imgCornerRadius;
         bgImageView.clipsToBounds = YES;
-        bgImageView.backgroundColor = HexColor(0xEDEFF4);
         [self addSubview:bgImageView];
         [self insertSubview:bgImageView belowSubview:self.collectionView];
         self.backgroundImageView = bgImageView;
@@ -363,13 +380,6 @@ static NSString *const cellID = @"cellID";
     if(_pageControl == nil)
     {
         _pageControl = [[AppPageControl alloc]init];
-        _pageControl.currentColor = [UIColor colorWithRed:255/255.0 green:139/255.0 blue:115/255.0 alpha:1];
-        _pageControl.otherColor = [UIColor colorWithRed:197/255.0 green:197/255.0 blue:197/255.0 alpha:1];
-        //设置非选中点的宽度是高度的倍数(设置长条形状)
-        _pageControl.otherMultiple = 5;
-        //设置选中点的宽度是高度的倍数(设置长条形状)
-        _pageControl.currentMultiple = 5;
-        _pageControl.controlSize = 3;
     }
     return _pageControl;
 }

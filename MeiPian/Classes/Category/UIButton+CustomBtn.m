@@ -12,7 +12,7 @@
 
 //蓝色箭头的返回按钮
 + (UIButton *)newBackArrowNavButtonWithTarget:(id)target action:(SEL)action {
-    return  [UIButton newcustomButtonWithTarget:target action:action normalImage:[UIImage imageNamed:@"ico_back_nor"] highlightedImage:[UIImage imageNamed:@"ico_back_clicked"] size:CGSizeMake(45, 45)];
+    return  [UIButton newcustomButtonWithTarget:target action:action normalImage:[UIImage imageNamed:@"navigationbar_back"] highlightedImage:[UIImage imageNamed:@"navigationbar_back"] size:CGSizeMake(45, 45)];
 }
 
 + (UIButton *)newClearNavButtonWithTitle:(NSString *)title target:(id)target action:(SEL)action {

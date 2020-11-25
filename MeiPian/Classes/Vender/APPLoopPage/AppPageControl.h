@@ -1,21 +1,26 @@
 //
 //  AppPageControl.h
-//  MeiPian
+//  XiaoYeMa
 //
-//  Created by YZ_BMAC on 2019/12/19.
-//  Copyright © 2019 YZ_BMAC. All rights reserved.
+//  Created by EGLS_BMAC on 2019/12/19.
+//  Copyright © 2019 EGLS_BMAC. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
-typedef NS_ENUM(NSUInteger,AppPageControlType){
-    PageControlMiddle = 0, //
-    PageControlRight, //
-    PageControlLeft //
+typedef NS_ENUM(NSUInteger,AppPageHorizontalControlType){
+    PageControlHorizontalMiddle = 0, //
+    PageControlHorizontalRight, //
+    PageControlHorizontalLeft, //
 };
 
+typedef NS_ENUM(NSUInteger,AppPageVerticalControlType) {
+    PageControlVerticalUp,
+    PageControlVerticalMid,
+    PageControlVerticalBottom,
+};
 
 @class AppPageControl;
 @protocol AppPageControlDelegate <NSObject>
@@ -33,9 +38,13 @@ typedef NS_ENUM(NSUInteger,AppPageControlType){
 
 
 /**
- 控件位置,默认中间
+ 控件水平位置,默认中间
  */
-@property (nonatomic, assign)   AppPageControlType type;
+@property (nonatomic, assign)   AppPageHorizontalControlType horizontalType;
+/**
+ 控件垂直位置,默认中间
+ */
+@property (nonatomic, assign)   AppPageVerticalControlType verticalType;
 /*
  分页数量
  */

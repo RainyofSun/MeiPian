@@ -11,6 +11,10 @@
 @implementation UIImageView (ImageScale)
 
 - (void)MPSetImageWithURL:(NSString *)imgUrl {
+    if (![imgUrl hasPrefix:@"http"]) {
+        self.image = [UIImage imageNamed:imgUrl];
+        return;
+    }
     [self setImageWithURL:[NSURL URLWithString:imgUrl] placeholder:[UIImage imageNamed:@"image_loading_wide"] options:YYWebImageOptionSetImageWithFadeAnimation completion:^(UIImage * _Nullable image, NSURL * _Nonnull url, YYWebImageFromType from, YYWebImageStage stage, NSError * _Nullable error) {
         
     }];

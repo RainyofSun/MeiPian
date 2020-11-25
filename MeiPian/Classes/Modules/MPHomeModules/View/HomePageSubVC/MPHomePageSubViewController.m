@@ -19,6 +19,17 @@
     // Do any additional setup after loading the view from its nib.
 }
 
+#pragma mark - 消息透传
+- (void)selectArticleType:(NSNumber *)senderTag {
+    NSLog(@"消息透传 %@",senderTag);
+}
+
+// 点击文章
+- (void)selectedArticle:(NSString *)url {
+    NSLog(@"文章林肯 %@",url);
+    [self pushVC:[MPModulesMsgSend sendMsg:url vcName:@"MPWebViewController"]];
+}
+
 #pragma mark - public methods
 - (void)addHomePageSubView:(UIView *)subView {
     [self.view addSubview:subView];

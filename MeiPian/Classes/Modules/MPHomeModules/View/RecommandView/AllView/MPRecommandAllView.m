@@ -96,6 +96,10 @@ static NSString *RecommandAdvertisingCell   = @"AdvertisingVideoCell";
     }
 }
 
+- (void)MPBaseTableView:(MPBaseTableView *)tableView didSelectedAtIndex:(NSIndexPath *)index {
+    [MPModulesMsgSend sendCumtomMethodMsg:[self nearsetViewController] methodName:@selector(selectedArticle:) params:ArticleURL(self.allArticleSource[index.row].recommandAllModel.article.mask_id)];
+}
+
 - (void)MPDropRefreshLoadMoreSource {
     [self requestRecommandAllViewData:(self.isFirstLoad ? MPLoadingType_Normal : MPLoadingType_Refresh)];
 }

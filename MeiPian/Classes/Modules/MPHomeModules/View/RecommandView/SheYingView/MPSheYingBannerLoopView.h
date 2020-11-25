@@ -12,6 +12,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface MPSheYingBannerLoopView : UIView
 
+/** loopH */
+@property (nonatomic,readonly) CGFloat loopH;
+
 @end
 
 NS_ASSUME_NONNULL_END

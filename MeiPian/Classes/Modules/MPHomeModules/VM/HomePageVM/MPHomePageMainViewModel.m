@@ -17,6 +17,8 @@
 #import "MPCustomHomePageNavView.h"
 #import "MPCalendarBtn.h"
 #import "MPHomePageConfigModel.h"
+#import "MPMessageViewModel.h"
+#import "MPBaseCustomTabBar.h"
 
 static NSString *topSliderBarIndifier = @"MPHomePageSliderBarTitle";
 
@@ -38,6 +40,8 @@ static NSString *topSliderBarIndifier = @"MPHomePageSliderBarTitle";
 @property (nonatomic,strong) NSMutableArray <NSString *>*titleArray;
 /** topBarSource */
 @property (nonatomic,strong) MPHomePageConfigModel *topBarModel;
+/** messageVM */
+@property (nonatomic,strong) MPMessageViewModel *messageVM;
 
 @end
 
@@ -76,6 +80,9 @@ static NSString *topSliderBarIndifier = @"MPHomePageSliderBarTitle";
     
     self.pageControlView.leftButton = leftBtn;
     self.pageControlView.rightButton = rightBtn;
+    
+    // 设置未读消息角标
+    [self setTabBarBedgeNum:vc];
 }
 
 #pragma mark - XLPageViewControllerDelegate
@@ -187,6 +194,15 @@ static NSString *topSliderBarIndifier = @"MPHomePageSliderBarTitle";
     return config;
 }
 
+// 设置tabBar未读消息角标
+- (void)setTabBarBedgeNum:(UIViewController *)vc {
+    WeakSelf;
+    [self.messageVM MPMessageRequestInfo:^(id  _Nonnull returnValue) {
+        MPBaseCustomTabBar *tabBar = (MPBaseCustomTabBar *)vc.tabBarController.tabBar;
+        [tabBar setTabBarItemBedgeNum:weakSelf.messageVM.bedgeNum itemSelectedIndex:3];
+    } loadType:MPLoadingType_Normal];
+}
+
 #pragma mark - lazy
 - (XLPageViewController *)pageControlView {
     if (!_pageControlView) {
@@ -221,6 +237,13 @@ static NSString *topSliderBarIndifier = @"MPHomePageSliderBarTitle";
         _albumView = [[MPPhotographAlbumView alloc] init];
     }
     return _albumView;
+}
+
+- (MPMessageViewModel *)messageVM {
+    if (!_messageVM) {
+        _messageVM = [[MPMessageViewModel alloc] init];
+    }
+    return _messageVM;
 }
 
 @end

@@ -24,5 +24,7 @@
 
 - (void)setupItems;
 - (void)setNormalItemTextColor:(UIColor *)normalColor selectedTextColor:(UIColor *)selectedColor;
+- (void)setTabBarItemBedgeNum:(NSInteger)bedgeNum itemSelectedIndex:(NSInteger)selectedIndex;
+- (void)changeTabBarItemsStatus:(NSInteger)senderTag;
 
 @end

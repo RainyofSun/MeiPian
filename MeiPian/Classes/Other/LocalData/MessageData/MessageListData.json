@@ -1,0 +1,37 @@
+{
+    "data": [
+        {
+            "unread_count": 125,
+            "gift_msg_unread_count": 0,
+            "type": 1,
+            "uri": "meipian://notice/list?v3_group_type=1",
+            "title": "美篇",
+            "info":"【美篇课堂】《滚滚长江东逝水》的演唱者是黄晓明",
+            "icon": "https://ss2.meipian.me/app/notice/news_icon_official_0304.png",
+            "bedge_icon": "https://ss2.meipian.me/app/vip.png",
+            "gift_icon": "https://ss2.meipian.me/app/flower_msg_icon.png",
+            "time": "2小时前"
+        },
+        {
+            "unread_count": 2,
+            "type": 2,
+            "uri": "meipian://notice/list?v3_group_type=2",
+            "title": "小美活动",
+            "info":"征稿活动“不负春光、不负韶华”邀你参加投稿活动",
+            "icon": "https://ss2.meipian.me/app/icon/notice/xmhdx3.png",
+            "bedge_icon": "https://ss2.meipian.me/app/vip.png",
+            "time": "3天前"
+        },
+        {
+            "unread_count": 30,
+            "type": 3,
+            "uri": "meipian://notice/list?v3_group_type=3",
+            "title": "美篇印记",
+            "info":"您的一张合计10.00元的代惠券即将过期,请前往使用",
+            "icon": "https://ss2.meipian.me/app/notice/news_icon_official01_0304.png",
+            "bedge_icon": "https://ss2.meipian.me/app/vip.png",
+            "time": "5天前"
+        }
+    ],
+    "code": 1000
+}

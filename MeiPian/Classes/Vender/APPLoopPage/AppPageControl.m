@@ -1,9 +1,9 @@
 //
 //  AppPageControl.m
-//  MeiPian
+//  XiaoYeMa
 //
-//  Created by YZ_BMAC on 2019/12/19.
-//  Copyright © 2019 YZ_BMAC. All rights reserved.
+//  Created by EGLS_BMAC on 2019/12/19.
+//  Copyright © 2019 EGLS_BMAC. All rights reserved.
 //
 
 #import "AppPageControl.h"
@@ -30,7 +30,8 @@
     _controlSpacing = 8;
     _otherColor = [UIColor grayColor];
     _currentColor = [UIColor orangeColor];
-    _type = PageControlMiddle;
+    _horizontalType = PageControlHorizontalMiddle;
+    _verticalType = PageControlVerticalMid;
 }
 
 
@@ -92,13 +93,19 @@
     }
 }
 
--(void)setType:(AppPageControlType)type{
-    if (_type != type) {
-        _type = type;
+- (void)setHorizontalType:(AppPageHorizontalControlType)horizontalType {
+    if (_horizontalType != horizontalType) {
+        _horizontalType = horizontalType;
         [self createPointView];
     }
 }
 
+- (void)setVerticalType:(AppPageVerticalControlType)verticalType {
+    if (_verticalType != verticalType) {
+        _verticalType = verticalType;
+        [self createPointView];
+    }
+}
 
 -(void)setNumberOfPages:(NSInteger)page{
     if(_numberOfPages == page)
@@ -142,18 +149,24 @@
     if(self.frame.size.width<mainWidth){
         startX = 0;
     }else{
-        if (_type == PageControlLeft) {
+        if (_horizontalType == PageControlHorizontalLeft) {
             startX = 10;
-        }else if (_type == PageControlMiddle){
+        }else if (_horizontalType == PageControlHorizontalMiddle){
             startX = (self.frame.size.width-mainWidth)/2.0;
-        }else if (_type == PageControlRight){
+        }else if (_horizontalType == PageControlHorizontalRight){
             startX = self.frame.size.width-mainWidth-10;
         }
     }
     if(self.frame.size.height<_controlSize){
         startY = 0;
     }else{
-        startY = (self.frame.size.height-_controlSize)/2;
+        if (_verticalType == PageControlVerticalUp) {
+            startY = self.frame.size.height * .3;
+        } else if (_verticalType == PageControlVerticalMid) {
+            startY = (self.frame.size.height-_controlSize)/2;
+        } else if (_verticalType == PageControlVerticalBottom) {
+            startY = self.frame.size.height * .7;
+        }
     }
     //动态创建点
     for (int page=0; page<_numberOfPages; page++) {
